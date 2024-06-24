@@ -1,0 +1,14 @@
+{
+  "name": "TECH-ANDGAR - PAGE OFICIAL",
+  "short_name": "TECH-ANDGAR",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "36x36",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
