@@ -18,10 +18,4 @@ Este fragmento de código que se usa para cambiar el propietario de una base de 
 Transformación de Widgets No-Desplazables a Desplazables: Convierte elementos no-desplazables en desplazables.
 SingleChildScrollview vs ListView:
 ListView: Para múltiples widgets desplazables. ListView( children: &amp;lt;Widget&amp;gt;[ Text(&amp;#39;Item 1&amp;#39;), Text(&amp;#39;Item 2&amp;#39;), // Más widgets ], ) SingleChildScrollview: Para un único widget, manejando múltiples desplazamientos internos.</description></item><item><title>Contacto</title><link>https://tech-andgar.me/es/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/contact/</guid><description>H E L L O @ T E C H - A N D G A R . M E</description></item><item><title>Proyectos</title><link>https://tech-andgar.me/es/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/projects/</guid><description>Proyectos secundarios Link to heading He realizado varios proyectos paralelos en los últimos años. Aquí están algunos de los que me enorgullezco.
-14 Ítems de los proyectos: 🗃️ Tipo 🎁 Proyecto 🛠 Tecnologías Package Dart exception_handler
-A Dart package for streamlined API handling and robust exception management in Flutter apps. * Flutter
-* Dart
-* GitHub Actions
-* Coveralls
-App mobile clean-flutter-app (Source code)
-Application made in Flutter using TDD, Clean Architecture, Design Patterns and SOLID principles.</description></item></channel></rss>
+14 Ítems de los proyectos: 🗃️ Tipo 🎁 Proyecto 🛠 Tecnologías 🔍 Vista previa Package Dart exception_handler A Dart package for streamlined API handling and robust exception management in Flutter apps. Flutter Dart GitHub Actions Coveralls App mobile clean-flutter-app (Source code) Application made in Flutter using TDD, Clean Architecture, Design Patterns and SOLID principles.</description></item></channel></rss>
