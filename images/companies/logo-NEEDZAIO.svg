@@ -1,0 +1,61 @@
+<svg id="logo-needzaio-svg" data-bbox="4.994 88.535 765.005 87.996" xmlns="http://www.w3.org/2000/svg" data-type="ugc" aria-hidden="true"
+    viewBox="4.97 88.52 765.03 88.02">
+    <title>Logo NEEDZAIO</title>
+    <path fill="#fff"
+        d="M62.058 142.408 22.192 90.004H4.994v6.452l33.808 44.729 25.797 33.88h15.876V90.004H62.058v52.404ZM4.994 175.067h18.417v-25.618L4.994 125.055v50.012ZM113.867 123.93v51.136h64.683v-16.672h-46.119V140.55h40.061v-16.62h-58.625ZM177.966 106.673v-16.67h-64.099v16.67h64.099ZM211.943 123.93v51.136h64.683v-16.672h-46.119V140.55h40.061v-16.62h-58.625ZM276.042 106.673v-16.67h-64.099v16.67h64.099ZM343.219 90.004h-33.125v16.914h33.173c15.292 0 25.601 10.559 25.601 25.618v.246c0 15.056-10.309 25.371-25.601 25.371H330.71v.048h-20.616v16.867h33.125c26.725 0 45.142-18.576 45.142-42.532v-.246c0-23.906-18.417-42.286-45.142-42.286ZM492.62 104.229V90.004h-69.327v16.426h45.289l-14.756 17.157h22.132l16.662-19.358ZM421.826 160.837v14.228h70.792V158.64h-46.757l15.292-17.796h-22.18l-17.147 19.993ZM724.955 88.535c-26.234 0-45.289 19.799-45.289 43.998v.246c0 24.149 18.81 43.752 45.043 43.752 26.234 0 45.29-19.798 45.29-43.998v-.246c0-24.148-18.81-43.752-45.044-43.752Zm25.503 44.241c0 14.567-10.456 26.496-25.503 26.496-15.046 0-25.746-12.172-25.746-26.742v-.245c0-14.568 10.457-26.496 25.503-26.496 15.047 0 25.746 12.171 25.746 26.741v.246Z">
+    </path>
+    <g filter="url(#a)">
+        <path fill="color(display-p3 .2588 .7922 .1608)" d="M646.129 90.004h-18.711v85.013h18.711V90.004Z"></path>
+    </g>
+    <g clip-path="url(#b)">
+        <g filter="url(#c)">
+            <path fill="color(display-p3 .2588 .7922 .1608)"
+                d="M520.555 173.439h18.816l22.4-45.391 8.336 16.887 19.02.237-27.31-55.344-41.262 83.611Z"></path>
+        </g>
+        <g filter="url(#d)">
+            <path fill="color(display-p3 .2588 .7922 .1608)"
+                d="M576.557 158.012h18.908l7.613 15.426H584.17l-7.613-15.426Z"></path>
+        </g>
+    </g>
+    <defs fill="none">
+        <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="273.012" width="206.711"
+            y=".004" x="533.418" id="a">
+            <feFlood result="BackgroundImageFix" flood-opacity="0"></feFlood>
+            <feColorMatrix result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" in="SourceAlpha">
+            </feColorMatrix>
+            <feOffset dy="4"></feOffset>
+            <feGaussianBlur stdDeviation="47"></feGaussianBlur>
+            <feComposite operator="out" in2="hardAlpha"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.827451 0 0 0 0 1 0 0 0 0 0.721569 0 0 0 0.25 0"></feColorMatrix>
+            <feBlend result="effect1_dropShadow_1070_6336" in2="BackgroundImageFix"></feBlend>
+            <feBlend result="shape" in2="effect1_dropShadow_1070_6336" in="SourceGraphic"></feBlend>
+        </filter>
+        <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="271.609" width="256.572"
+            y="-.172" x="426.555" id="c">
+            <feFlood result="BackgroundImageFix" flood-opacity="0"></feFlood>
+            <feColorMatrix result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" in="SourceAlpha">
+            </feColorMatrix>
+            <feOffset dy="4"></feOffset>
+            <feGaussianBlur stdDeviation="47"></feGaussianBlur>
+            <feComposite operator="out" in2="hardAlpha"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.827451 0 0 0 0 1 0 0 0 0 0.721569 0 0 0 0.25 0"></feColorMatrix>
+            <feBlend result="effect1_dropShadow_1070_6336" in2="BackgroundImageFix"></feBlend>
+            <feBlend result="shape" in2="effect1_dropShadow_1070_6336" in="SourceGraphic"></feBlend>
+        </filter>
+        <filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="203.426" width="214.521"
+            y="68.012" x="482.557" id="d">
+            <feFlood result="BackgroundImageFix" flood-opacity="0"></feFlood>
+            <feColorMatrix result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" in="SourceAlpha">
+            </feColorMatrix>
+            <feOffset dy="4"></feOffset>
+            <feGaussianBlur stdDeviation="47"></feGaussianBlur>
+            <feComposite operator="out" in2="hardAlpha"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.827451 0 0 0 0 1 0 0 0 0 0.721569 0 0 0 0.25 0"></feColorMatrix>
+            <feBlend result="effect1_dropShadow_1070_6336" in2="BackgroundImageFix"></feBlend>
+            <feBlend result="shape" in2="effect1_dropShadow_1070_6336" in="SourceGraphic"></feBlend>
+        </filter>
+        <clipPath id="b">
+            <path transform="translate(473 51)" fill="#fff" d="M207 0v212H0V0h207z"></path>
+        </clipPath>
+    </defs>
+</svg>
