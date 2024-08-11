@@ -34,7 +34,10 @@ Feel free to challenge me, disagree with me, or tell me I'm completely nuts in t
 
 Copyright (C) 2024 by Andres Garcia
 
-Site content is licensed under the *Creative Commons Attribution 4.0 International* license (CC-BY-4.0).
+This website's written `content` is licensed under the [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/). In addition, the underlying `source code` used to format and display that content is licensed under the [MIT License](LICENSE-MIT.md).
+
+While this repository is available publicly, all `content` is subject to copyright and may not be re-used or copied into other website projects. The `content` is everything in this site's `content` folder or documentation and code. Other parts of this project, like `assets` and `layouts`, are available for educational use and can be copied to your projects. You **MUST NOT** re-use the full (complete) theme, but you **MAY** use parts and principles of it.
+
 
 ## Credits
 
