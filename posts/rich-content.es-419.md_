@@ -15,7 +15,7 @@ O Hugo vem com vários [Shortcodes Internos](https://gohugo.io/content-managemen
 
 ## Shortcode do YouTube com privacidade melhorada
 
-{{< youtube ZJthWmvUzzc >}}
+{{< lite_youtube video_url="ZJthWmvUzzc" >}}
 
 <br>
 
