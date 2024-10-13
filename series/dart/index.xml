@@ -1,4 +1,457 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dart on TECH-ANDGAR</title><link>https://tech-andgar.me/series/dart/</link><description>Recent content in Dart on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/series/dart/index.xml" rel="self" type="application/rss+xml"/><item><title>Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?</title><link>https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</guid><description>Error Handling in Dart: Should You Use try/catch, Return Values, or Functional Approaches? Link to heading Summary Link to heading This article explores different strategies for error handling in Dart, comparing the traditional try/catch approach with more modern methods such as using return values, custom classes, and functional approaches using packages like dartz and fpdart. You&amp;rsquo;ll learn when and why to use each approach, with practical examples and performance considerations.</description></item><item><title>`http_status` Dart Package: A Comprehensive Guide</title><link>https://tech-andgar.me/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-http_status-package/</guid><description>http_status Dart Package: A Comprehensive Guide Link to heading Description Link to heading Constants: http_status provides convenient static constants representing all HTTP status codes defined in RFC 1945 (HTTP/1.0), RFC 2616 (HTTP/1.1), and RFC 2518 (WebDAV). Clarity: Each constant offers a clear name (e.g., ok, notFound, forbidden), making it easy to understand the meaning of a status code at a glance. Information: Constants also provide a concise description of the status code, which can be helpful in debugging or understanding API responses.</description></item><item><title>Dart - Use late allocation if possible</title><link>https://tech-andgar.me/posts/dart-late-keyword/</link><pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-late-keyword/</guid><description>Dart v2.9 added the late modifier on variables.
-When Null Safety is enabled, it is sometimes necessary to explicitly state that we will initialize a non-null variable later. Dart cannot always assume that a variable will be initialized later, as in the case of high-level variables. The following example would throw an error in Dart.
-This can be used in the following two cases.
-Late assign: promise to assign later</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dart on TECH-ANDGAR</title><link>https://tech-andgar.me/series/dart/</link><description>Recent content in Dart on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/series/dart/index.xml" rel="self" type="application/rss+xml"/><item><title>Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?</title><link>https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</guid><description>&lt;h1 id="error-handling-in-dart-should-you-use-trycatch-return-values-or-functional-approaches">
+ Error Handling in Dart: Should You Use &lt;code>try/catch&lt;/code>, Return Values, or Functional Approaches?
+ &lt;a class="heading-link" href="#error-handling-in-dart-should-you-use-trycatch-return-values-or-functional-approaches">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="summary">
+ Summary
+ &lt;a class="heading-link" href="#summary">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>This article explores different strategies for error handling in Dart, comparing the traditional &lt;code>try/catch&lt;/code> approach with more modern methods such as using return values, custom classes, and functional approaches using packages like &lt;code>dartz&lt;/code> and &lt;code>fpdart&lt;/code>. You&amp;rsquo;ll learn when and why to use each approach, with practical examples and performance considerations.&lt;/p></description></item><item><title>`http_status` Dart Package: A Comprehensive Guide</title><link>https://tech-andgar.me/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-http_status-package/</guid><description>&lt;h1 id="http_status-dart-package-a-comprehensive-guide">
+ &lt;code>http_status&lt;/code> Dart Package: A Comprehensive Guide
+ &lt;a class="heading-link" href="#http_status-dart-package-a-comprehensive-guide">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="description">
+ Description
+ &lt;a class="heading-link" href="#description">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>&lt;strong>Constants:&lt;/strong> &lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code>&lt;/a> provides convenient static constants representing all HTTP status codes defined in RFC 1945 (HTTP/1.0), RFC 2616 (HTTP/1.1), and RFC 2518 (WebDAV).&lt;/li>
+&lt;li>&lt;strong>Clarity:&lt;/strong> Each constant offers a clear name (e.g., &lt;code>ok&lt;/code>, &lt;code>notFound&lt;/code>, &lt;code>forbidden&lt;/code>), making it easy to understand the meaning of a status code at a glance.&lt;/li>
+&lt;li>&lt;strong>Information:&lt;/strong> Constants also provide a concise description of the status code, which can be helpful in debugging or understanding API responses.&lt;/li>
+&lt;/ul>
+&lt;h2 id="http-status-codes">
+ Http Status Codes
+ &lt;a class="heading-link" href="#http-status-codes">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;table>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: left">Code&lt;/th>
+ &lt;th style="text-align: left">Http Status Name&lt;/th>
+ &lt;th style="text-align: left">&lt;a href="https://github.com/DartForge/http_status/tree/2.1.0" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> (v1.x - v2.x Deprecated)&lt;/a>&lt;/th>
+ &lt;th style="text-align: left">&lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> (v2.x - v3.x)&lt;/a>&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: left">100&lt;/td>
+ &lt;td style="text-align: left">Continue&lt;/td>
+ &lt;td style="text-align: left">Continue / CONTINUE&lt;/td>
+ &lt;td style="text-align: left">continue_&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">101&lt;/td>
+ &lt;td style="text-align: left">Switching Protocols&lt;/td>
+ &lt;td style="text-align: left">Switching_Protocols / SWITCHING_PROTOCOLS&lt;/td>
+ &lt;td style="text-align: left">switchingProtocols&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">102&lt;/td>
+ &lt;td style="text-align: left">Processing&lt;/td>
+ &lt;td style="text-align: left">Processing / PROCESSING&lt;/td>
+ &lt;td style="text-align: left">processing&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">103&lt;/td>
+ &lt;td style="text-align: left">Early Hints&lt;/td>
+ &lt;td style="text-align: left">-&lt;/td>
+ &lt;td style="text-align: left">earlyHints&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">200&lt;/td>
+ &lt;td style="text-align: left">OK&lt;/td>
+ &lt;td style="text-align: left">Ok / OK&lt;/td>
+ &lt;td style="text-align: left">ok&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">201&lt;/td>
+ &lt;td style="text-align: left">Created&lt;/td>
+ &lt;td style="text-align: left">Created / CREATED&lt;/td>
+ &lt;td style="text-align: left">created&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">202&lt;/td>
+ &lt;td style="text-align: left">Accepted&lt;/td>
+ &lt;td style="text-align: left">Accepted / ACCEPTED&lt;/td>
+ &lt;td style="text-align: left">accepted&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">203&lt;/td>
+ &lt;td style="text-align: left">Non Authoritative Information&lt;/td>
+ &lt;td style="text-align: left">NonAuthoritative_Information / NON_AUTHORITATIVE_INFORMATION&lt;/td>
+ &lt;td style="text-align: left">nonAuthoritativeInformation&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">204&lt;/td>
+ &lt;td style="text-align: left">No Content&lt;/td>
+ &lt;td style="text-align: left">No_Content / NO_CONTENT&lt;/td>
+ &lt;td style="text-align: left">noContent&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">205&lt;/td>
+ &lt;td style="text-align: left">Reset Content&lt;/td>
+ &lt;td style="text-align: left">Reset_Content / RESET_CONTENT&lt;/td>
+ &lt;td style="text-align: left">resetContent&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">206&lt;/td>
+ &lt;td style="text-align: left">Partial Content&lt;/td>
+ &lt;td style="text-align: left">Partial_Content / PARTIAL_CONTENT&lt;/td>
+ &lt;td style="text-align: left">partialContent&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">207&lt;/td>
+ &lt;td style="text-align: left">Multi-Status&lt;/td>
+ &lt;td style="text-align: left">MultiStatus / MULTISTATUS&lt;/td>
+ &lt;td style="text-align: left">multiStatus&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">208&lt;/td>
+ &lt;td style="text-align: left">Already Reported&lt;/td>
+ &lt;td style="text-align: left">Already_Reported / ALREADY_REPORTED&lt;/td>
+ &lt;td style="text-align: left">alreadyReported&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">226&lt;/td>
+ &lt;td style="text-align: left">I&amp;rsquo;M Used&lt;/td>
+ &lt;td style="text-align: left">IM_Used / IM_USED&lt;/td>
+ &lt;td style="text-align: left">imUsed&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">300&lt;/td>
+ &lt;td style="text-align: left">Multiple Choices&lt;/td>
+ &lt;td style="text-align: left">Multiple_Choices / MULTIPLE_CHOICES&lt;/td>
+ &lt;td style="text-align: left">multipleChoices&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">301&lt;/td>
+ &lt;td style="text-align: left">Moved Permanently&lt;/td>
+ &lt;td style="text-align: left">Moved_Permanently / MOVED_PERMANENTLY&lt;/td>
+ &lt;td style="text-align: left">movedPermanently&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">302&lt;/td>
+ &lt;td style="text-align: left">Found / Moved Temporarily&lt;/td>
+ &lt;td style="text-align: left">Found / Moved_Temporarily / FOUND / MOVED_TEMPORARILY&lt;/td>
+ &lt;td style="text-align: left">found / movedTemporarily&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">303&lt;/td>
+ &lt;td style="text-align: left">See Other&lt;/td>
+ &lt;td style="text-align: left">See_Other / SEE_OTHER&lt;/td>
+ &lt;td style="text-align: left">seeOther&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">304&lt;/td>
+ &lt;td style="text-align: left">Not Modified&lt;/td>
+ &lt;td style="text-align: left">Not_Modified / NOT_MODIFIED&lt;/td>
+ &lt;td style="text-align: left">notModified&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">305&lt;/td>
+ &lt;td style="text-align: left">Use Proxy&lt;/td>
+ &lt;td style="text-align: left">Use_Proxy / USE_PROXY&lt;/td>
+ &lt;td style="text-align: left">useProxy&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">307&lt;/td>
+ &lt;td style="text-align: left">Temporary Redirect&lt;/td>
+ &lt;td style="text-align: left">Temporary_Redirect / TEMPORARY_REDIRECT&lt;/td>
+ &lt;td style="text-align: left">temporaryRedirect&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">308&lt;/td>
+ &lt;td style="text-align: left">Permanent Redirect&lt;/td>
+ &lt;td style="text-align: left">Permanent_Redirect / PERMANENT_REDIRECT&lt;/td>
+ &lt;td style="text-align: left">permanentRedirect&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">400&lt;/td>
+ &lt;td style="text-align: left">Bad Request&lt;/td>
+ &lt;td style="text-align: left">Bad_Request / BAD_REQUEST&lt;/td>
+ &lt;td style="text-align: left">badRequest&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">401&lt;/td>
+ &lt;td style="text-align: left">Unauthorized&lt;/td>
+ &lt;td style="text-align: left">Unauthorized / UNAUTHORIZED&lt;/td>
+ &lt;td style="text-align: left">unauthorized&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">402&lt;/td>
+ &lt;td style="text-align: left">Payment Required&lt;/td>
+ &lt;td style="text-align: left">Payment_Required / PAYMENT_REQUIRED&lt;/td>
+ &lt;td style="text-align: left">paymentRequired&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">403&lt;/td>
+ &lt;td style="text-align: left">Forbidden&lt;/td>
+ &lt;td style="text-align: left">Forbidden / FORBIDDEN&lt;/td>
+ &lt;td style="text-align: left">forbidden&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">404&lt;/td>
+ &lt;td style="text-align: left">Not Found&lt;/td>
+ &lt;td style="text-align: left">Not_Found / NOT_FOUND&lt;/td>
+ &lt;td style="text-align: left">notFound&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">405&lt;/td>
+ &lt;td style="text-align: left">Method Not Allowed&lt;/td>
+ &lt;td style="text-align: left">Method_Not_Allowed / METHOD_NOT_ALLOWED&lt;/td>
+ &lt;td style="text-align: left">methodNotAllowed&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">406&lt;/td>
+ &lt;td style="text-align: left">Not Acceptable&lt;/td>
+ &lt;td style="text-align: left">Not_Acceptable / NOT_ACCEPTABLE&lt;/td>
+ &lt;td style="text-align: left">notAcceptable&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">407&lt;/td>
+ &lt;td style="text-align: left">Proxy Authentication Required&lt;/td>
+ &lt;td style="text-align: left">Proxy_Authentication_Required / PROXY_AUTHENTICATION_REQUIRED&lt;/td>
+ &lt;td style="text-align: left">proxyAuthenticationRequired&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">408&lt;/td>
+ &lt;td style="text-align: left">Request Timeout&lt;/td>
+ &lt;td style="text-align: left">Request_Timeout / REQUEST_TIMEOUT&lt;/td>
+ &lt;td style="text-align: left">requestTimeout&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">409&lt;/td>
+ &lt;td style="text-align: left">Conflict&lt;/td>
+ &lt;td style="text-align: left">Conflict / CONFLICT&lt;/td>
+ &lt;td style="text-align: left">conflict&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">410&lt;/td>
+ &lt;td style="text-align: left">Gone&lt;/td>
+ &lt;td style="text-align: left">Gone / GONE&lt;/td>
+ &lt;td style="text-align: left">gone&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">411&lt;/td>
+ &lt;td style="text-align: left">Length Required&lt;/td>
+ &lt;td style="text-align: left">Length_Required / LENGTH_REQUIRED&lt;/td>
+ &lt;td style="text-align: left">lengthRequired&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">412&lt;/td>
+ &lt;td style="text-align: left">Precondition Failed&lt;/td>
+ &lt;td style="text-align: left">Precondition_Failed / PRECONDITION_FAILED&lt;/td>
+ &lt;td style="text-align: left">preconditionFailed&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">413&lt;/td>
+ &lt;td style="text-align: left">Request Entity Too Large&lt;/td>
+ &lt;td style="text-align: left">Payload_Too_Large / PAYLOAD_TOO_LARGE / Request_Entity_Too_Large / REQUEST_ENTITY_TOO_LARGE&lt;/td>
+ &lt;td style="text-align: left">requestEntityTooLarge&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">414&lt;/td>
+ &lt;td style="text-align: left">Request-URI Too Long&lt;/td>
+ &lt;td style="text-align: left">RequestURI_Too_Long / REQUESTURI_TOO_LONG / Request_Uri_Too_Long / REQUEST_URI_TOO_LONG&lt;/td>
+ &lt;td style="text-align: left">requestUriTooLong&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">415&lt;/td>
+ &lt;td style="text-align: left">Unsupported Media Type&lt;/td>
+ &lt;td style="text-align: left">Unsupported_Media_Type / UNSUPPORTED_MEDIA_TYPE&lt;/td>
+ &lt;td style="text-align: left">unsupportedMediaType&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">416&lt;/td>
+ &lt;td style="text-align: left">Requested Range Not Satisfiable&lt;/td>
+ &lt;td style="text-align: left">Requested_Range_Not_Satisfiable / REQUESTED_RANGE_NOT_SATISFIABLE&lt;/td>
+ &lt;td style="text-align: left">requestedRangeNotSatisfiable&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">417&lt;/td>
+ &lt;td style="text-align: left">Expectation Failed&lt;/td>
+ &lt;td style="text-align: left">Expectation_Failed / EXPECTATION_FAILED&lt;/td>
+ &lt;td style="text-align: left">expectationFailed&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">418&lt;/td>
+ &lt;td style="text-align: left">I&amp;rsquo;m a teapot&lt;/td>
+ &lt;td style="text-align: left">-&lt;/td>
+ &lt;td style="text-align: left">imATeapot&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">419&lt;/td>
+ &lt;td style="text-align: left">Insufficient Space on Resource&lt;/td>
+ &lt;td style="text-align: left">-&lt;/td>
+ &lt;td style="text-align: left">insufficientSpaceOnResource&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">420&lt;/td>
+ &lt;td style="text-align: left">Method Failure&lt;/td>
+ &lt;td style="text-align: left">-&lt;/td>
+ &lt;td style="text-align: left">methodFailure&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">421&lt;/td>
+ &lt;td style="text-align: left">Misdirected Request&lt;/td>
+ &lt;td style="text-align: left">Misdirected_Request / MISDIRECTED_REQUEST&lt;/td>
+ &lt;td style="text-align: left">misdirectedRequest&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">422&lt;/td>
+ &lt;td style="text-align: left">Unprocessable Entity&lt;/td>
+ &lt;td style="text-align: left">Unprocessable_Entity / UNPROCESSABLE_ENTITY&lt;/td>
+ &lt;td style="text-align: left">unprocessableEntity&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">423&lt;/td>
+ &lt;td style="text-align: left">Locked&lt;/td>
+ &lt;td style="text-align: left">Locked / LOCKED&lt;/td>
+ &lt;td style="text-align: left">locked&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">424&lt;/td>
+ &lt;td style="text-align: left">Failed Dependency&lt;/td>
+ &lt;td style="text-align: left">Failed_Dependency / FAILED_DEPENDENCY&lt;/td>
+ &lt;td style="text-align: left">failedDependency&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">426&lt;/td>
+ &lt;td style="text-align: left">Upgrade Required&lt;/td>
+ &lt;td style="text-align: left">Upgrade_Required / UPGRADE_REQUIRED&lt;/td>
+ &lt;td style="text-align: left">upgradeRequired&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">428&lt;/td>
+ &lt;td style="text-align: left">Precondition Required&lt;/td>
+ &lt;td style="text-align: left">Precondition_Required / PRECONDITION_REQUIRED&lt;/td>
+ &lt;td style="text-align: left">preconditionRequired&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">429&lt;/td>
+ &lt;td style="text-align: left">Too Many Requests&lt;/td>
+ &lt;td style="text-align: left">Too_Many_Requests / TOO_MANY_REQUESTS&lt;/td>
+ &lt;td style="text-align: left">tooManyRequests&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">431&lt;/td>
+ &lt;td style="text-align: left">Request Header Fields Too Large&lt;/td>
+ &lt;td style="text-align: left">Request_Header_Fields_Too_Large / REQUEST_HEADER_FIELDS_TOO_LARGE&lt;/td>
+ &lt;td style="text-align: left">requestHeaderFieldsTooLarge&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">444&lt;/td>
+ &lt;td style="text-align: left">Connection Closed Without Response&lt;/td>
+ &lt;td style="text-align: left">Connection_Closed_Without_Response / CONNECTION_CLOSED_WITHOUT_RESPONSE&lt;/td>
+ &lt;td style="text-align: left">connectionClosedWithoutResponse&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">451&lt;/td>
+ &lt;td style="text-align: left">Unavailable For Legal Reasons&lt;/td>
+ &lt;td style="text-align: left">Unavailable_For_Legal_Reasons / UNAVAILABLE_FOR_LEGAL_REASONS&lt;/td>
+ &lt;td style="text-align: left">unavailableForLegalReasons&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">499&lt;/td>
+ &lt;td style="text-align: left">Client Closed Request&lt;/td>
+ &lt;td style="text-align: left">Client_Closed_Request / CLIENT_CLOSED_REQUEST&lt;/td>
+ &lt;td style="text-align: left">clientClosedRequest&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">500&lt;/td>
+ &lt;td style="text-align: left">Internal Server Error&lt;/td>
+ &lt;td style="text-align: left">Internal_Server_Error / INTERNAL_SERVER_ERROR&lt;/td>
+ &lt;td style="text-align: left">internalServerError&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">501&lt;/td>
+ &lt;td style="text-align: left">Not Implemented&lt;/td>
+ &lt;td style="text-align: left">Not_Implemented / NOT_IMPLEMENTED&lt;/td>
+ &lt;td style="text-align: left">notImplemented&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">502&lt;/td>
+ &lt;td style="text-align: left">Bad Gateway&lt;/td>
+ &lt;td style="text-align: left">Bad_Gateway / BAD_GATEWAY&lt;/td>
+ &lt;td style="text-align: left">badGateway&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">503&lt;/td>
+ &lt;td style="text-align: left">Service Unavailable&lt;/td>
+ &lt;td style="text-align: left">Service_Unavailable / SERVICE_UNAVAILABLE&lt;/td>
+ &lt;td style="text-align: left">serviceUnavailable&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">504&lt;/td>
+ &lt;td style="text-align: left">Gateway Timeout&lt;/td>
+ &lt;td style="text-align: left">Gateway_Timeout / GATEWAY_TIMEOUT&lt;/td>
+ &lt;td style="text-align: left">gatewayTimeout&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">505&lt;/td>
+ &lt;td style="text-align: left">HTTP Version Not Supported&lt;/td>
+ &lt;td style="text-align: left">HTTP_Version_Not_Supported / HTTP_VERSION_NOT_SUPPORTED&lt;/td>
+ &lt;td style="text-align: left">httpVersionNotSupported&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">506&lt;/td>
+ &lt;td style="text-align: left">Variant Also Negotiates&lt;/td>
+ &lt;td style="text-align: left">Variant_Also_Negotiates / VARIANT_ALSO_NEGOTIATES&lt;/td>
+ &lt;td style="text-align: left">variantAlsoNegotiates&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">507&lt;/td>
+ &lt;td style="text-align: left">Insufficient Storage&lt;/td>
+ &lt;td style="text-align: left">Insufficient_Storage / INSUFFICIENT_STORAGE&lt;/td>
+ &lt;td style="text-align: left">insufficientStorage&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">508&lt;/td>
+ &lt;td style="text-align: left">Loop Detected&lt;/td>
+ &lt;td style="text-align: left">Loop_Detected / LOOP_DETECTED&lt;/td>
+ &lt;td style="text-align: left">loopDetected&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">510&lt;/td>
+ &lt;td style="text-align: left">Not Extended&lt;/td>
+ &lt;td style="text-align: left">Not_Extended / NOT_EXTENDED&lt;/td>
+ &lt;td style="text-align: left">notExtended&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">511&lt;/td>
+ &lt;td style="text-align: left">Network Authentication Required&lt;/td>
+ &lt;td style="text-align: left">Network_Authentication_Required / NETWORK_AUTHENTICATION_REQUIRED&lt;/td>
+ &lt;td style="text-align: left">networkAuthenticationRequired&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: left">599&lt;/td>
+ &lt;td style="text-align: left">Network Connect Timeout Error&lt;/td>
+ &lt;td style="text-align: left">Network_Connect_Timeout_Error / NETWORK_CONNECT_TIMEOUT_ERROR&lt;/td>
+ &lt;td style="text-align: left">networkConnectTimeoutError&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
+&lt;/table>
+&lt;p>A library for debugging and displaying http status codes.
+Includes 63 status codes, messages and desciptions sourced from
+the official spec &lt;a href="https://tools.ietf.org/html/rfc723" class="external-link" target="_blank" rel="noopener">https://tools.ietf.org/html/rfc723&lt;/a> and &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/" class="external-link" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/&lt;/a>&lt;/p></description></item><item><title>Dart - Use late allocation if possible</title><link>https://tech-andgar.me/posts/dart-late-keyword/</link><pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-late-keyword/</guid><description>&lt;p>Dart v2.9 added the &lt;strong>late&lt;/strong> modifier on variables.&lt;/p>
+&lt;p>When Null Safety is enabled, it is sometimes necessary to explicitly state that we will initialize a non-null variable later.
+Dart cannot always assume that a variable will be initialized later, as in the case of high-level variables. The following example would throw an error in Dart.&lt;/p>
+&lt;p>This can be used in the following two cases.&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Late assign: promise to assign later&lt;/p></description></item></channel></rss>

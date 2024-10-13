@@ -1,3 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LCOV on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/lcov/</link><description>Recent content in LCOV on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/lcov/index.xml" rel="self" type="application/rss+xml"/><item><title>La cobertura de pruebas (Test Coverage) en Flutter</title><link>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</guid><description>LCOV es una herramienta gráfica para las pruebas de cobertura de GCC con gcov. Crea páginas HTML que contienen el código fuente anotado con información de cobertura mediante la recopilación de datos gcov de múltiples archivos fuente. LCOV soporta la medición de &amp;ldquo;Cobertura de líneas&amp;rdquo; y &amp;ldquo;Cobertura de funciones&amp;rdquo;.
-El informe de LCOV tiene el siguiente aspecto:
-Instalación Link to heading Instalar en Ubuntu Link to heading sudo apt-get update -qq -y sudo apt-get install lcov -y Instalar en Mac Link to heading brew install lcov Instalar en Windows Link to heading Se requiere:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>LCOV on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/lcov/</link><description>Recent content in LCOV on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/lcov/index.xml" rel="self" type="application/rss+xml"/><item><title>La cobertura de pruebas (Test Coverage) en Flutter</title><link>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</guid><description>&lt;p>LCOV es una herramienta gráfica para las pruebas de cobertura de GCC con gcov. Crea páginas HTML que contienen el código fuente anotado con información de cobertura mediante la recopilación de datos gcov de múltiples archivos fuente. LCOV soporta la medición de &amp;ldquo;Cobertura de líneas&amp;rdquo; y &amp;ldquo;Cobertura de funciones&amp;rdquo;.&lt;/p>
+&lt;p>El informe de LCOV tiene el siguiente aspecto:&lt;/p>
+&lt;p>&lt;img alt="image.png" src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png">&lt;/p>
+&lt;h2 id="instalación">
+ Instalación
+ &lt;a class="heading-link" href="#instalaci%c3%b3n">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="instalar-en-ubuntu">
+ Instalar en Ubuntu
+ &lt;a class="heading-link" href="#instalar-en-ubuntu">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo apt-get update -qq -y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt-get install lcov -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="instalar-en-mac">
+ Instalar en Mac
+ &lt;a class="heading-link" href="#instalar-en-mac">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">brew install lcov
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="instalar-en-windows">
+ Instalar en Windows
+ &lt;a class="heading-link" href="#instalar-en-windows">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>Se requiere:&lt;/p></description></item></channel></rss>

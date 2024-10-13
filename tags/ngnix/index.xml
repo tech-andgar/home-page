@@ -1,1 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ngnix on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/ngnix/</link><description>Recent content in Ngnix on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 20 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/ngnix/index.xml" rel="self" type="application/rss+xml"/><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>View logs ngnix Link to heading $ cat /var/log/nginx/error.log # OR $ sudo tail -n 20 /var/log/nginx/error.log Check configuration nginx Link to heading $ nginx -c /etc/nginx/nginx.conf -t Reset service nginx on Ubuntu Link to heading $ sudo systemctl restart nginx Reload configuration of service nginx on Ubuntu Link to heading $ sudo systemctl reload nginx Assign permissitions for user of nginx on Ubuntu Link to heading $ chown -R www-data:www-data /var/www/domain.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ngnix on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/ngnix/</link><description>Recent content in Ngnix on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 20 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/ngnix/index.xml" rel="self" type="application/rss+xml"/><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix">
+ View logs ngnix
+ &lt;a class="heading-link" href="#view-logs-ngnix">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cat /var/log/nginx/error.log
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># OR&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ sudo tail -n &lt;span class="m">20&lt;/span> /var/log/nginx/error.log
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="check-configuration-nginx">
+ Check configuration nginx
+ &lt;a class="heading-link" href="#check-configuration-nginx">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ nginx -c /etc/nginx/nginx.conf -t
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="reset-service-nginx-on-ubuntu">
+ Reset service nginx on Ubuntu
+ &lt;a class="heading-link" href="#reset-service-nginx-on-ubuntu">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ sudo systemctl restart nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="reload-configuration-of-service-nginx-on-ubuntu">
+ Reload configuration of service nginx on Ubuntu
+ &lt;a class="heading-link" href="#reload-configuration-of-service-nginx-on-ubuntu">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ sudo systemctl reload nginx
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="assign-permissitions-for-user-of-nginx-on-ubuntu">
+ Assign permissitions for user of nginx on Ubuntu
+ &lt;a class="heading-link" href="#assign-permissitions-for-user-of-nginx-on-ubuntu">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ chown -R www-data:www-data /var/www/domain.com/subdomain/*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="copy-project-to-folder-www-public-nginx">
+ Copy project to folder WWW public Nginx
+ &lt;a class="heading-link" href="#copy-project-to-folder-www-public-nginx">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cp -rL /root/projects/project1/dist/public /var/www/domain.me/subdomain/project
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="fix-permissions-for-user-of-nginx-on-ubuntu">
+ Fix permissions for user of nginx on Ubuntu
+ &lt;a class="heading-link" href="#fix-permissions-for-user-of-nginx-on-ubuntu">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ chmod -R &lt;span class="m">755&lt;/span> */ &lt;span class="c1"># or 751 Fix Permissions Folder&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ chmod -R &lt;span class="m">644&lt;/span> */* &lt;span class="c1"># Fix Permissions Files&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="copy-project-to-folder-www-public-nginx-and-fix-permissions">
+ Copy project to folder WWW public Nginx and Fix permissions
+ &lt;a class="heading-link" href="#copy-project-to-folder-www-public-nginx-and-fix-permissions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ cp -rL /root/projects/Personal/demo_project_backend/app/dist/pwa /var/www/tech-andgar.me/subdomain/pwa &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> chmod -R &lt;span class="m">755&lt;/span> */ &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> chmod -R &lt;span class="m">644&lt;/span> */*
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="link-symbolic">
+ Link symbolic
+ &lt;a class="heading-link" href="#link-symbolic">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ln -s /root/projects/Personal/demo_project_backend/app/dist/pwa/* /var/www/tech-andgar.me/subdomain/demo_cobrando
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ ln -sv /root/projects/Personal/demo_project_backend/app/dist/pwa /var/www/tech-andgar.me/subdomain
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pm2-freeze-list-process-for-startup">
+ PM2 Freeze list process for startup
+ &lt;a class="heading-link" href="#pm2-freeze-list-process-for-startup">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># [PM2] Freeze a process list on reboot via:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ pm2 save
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="pm2-remove-startup">
+ PM2 remove startup
+ &lt;a class="heading-link" href="#pm2-remove-startup">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># [PM2] Remove init script via:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$ pm2 unstartup systemd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="git-push">
+ Git push
+ &lt;a class="heading-link" href="#git-push">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ git push -u origin master
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

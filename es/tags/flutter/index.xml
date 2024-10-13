@@ -1,6 +1,89 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/flutter/</link><description>Recent content in Flutter on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Playlist - FlutterConf Latam 2023 - Medellín, Colombia (Con Interpretación Lengua de Señas Colombiana LSC) - No oficial</title><link>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</guid><description>FlutterConf Latam 2023, Medellín, Colombia - No oficial Link to heading Playlist YT
-Con audio español y interpretación Lengua de Señas Colombiana (LSC) Link to heading Performance Best Practices Link to heading Expositor: David Rios - Track 2 - 2023/10/25 17:20
-Watch on YouTube: "" Powering your Flutter apps with gRPC Link to heading Expositor: Gianfranco Papa - Track 1 - 2023/10/25 16:22
-Watch on YouTube: "" Llevando Flutter a Extremo: Más allá del móvil, el escritorio y la web Link to heading Expositor: Dolph Hincapie - Talleres - 2023/10/25 14:05</description></item><item><title>La cobertura de pruebas (Test Coverage) en Flutter</title><link>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</guid><description>LCOV es una herramienta gráfica para las pruebas de cobertura de GCC con gcov. Crea páginas HTML que contienen el código fuente anotado con información de cobertura mediante la recopilación de datos gcov de múltiples archivos fuente. LCOV soporta la medición de &amp;ldquo;Cobertura de líneas&amp;rdquo; y &amp;ldquo;Cobertura de funciones&amp;rdquo;.
-El informe de LCOV tiene el siguiente aspecto:
-Instalación Link to heading Instalar en Ubuntu Link to heading sudo apt-get update -qq -y sudo apt-get install lcov -y Instalar en Mac Link to heading brew install lcov Instalar en Windows Link to heading Se requiere:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/flutter/</link><description>Recent content in Flutter on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 27 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Playlist - FlutterConf Latam 2023 - Medellín, Colombia (Con Interpretación Lengua de Señas Colombiana LSC) - No oficial</title><link>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</guid><description>&lt;h1 id="flutterconf-latam-2023-medellín-colombia---no-oficial">
+ FlutterConf Latam 2023, Medellín, Colombia - No oficial
+ &lt;a class="heading-link" href="#flutterconf-latam-2023-medell%c3%adn-colombia---no-oficial">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="https://www.youtube.com/playlist?list=PLY8qSd9OJKNeNELeYve5mZ1C95p3iOoj6" class="external-link" target="_blank" rel="noopener">Playlist YT&lt;/a>&lt;/p>
+&lt;h2 id="con-audio-español-y-interpretación-lengua-de-señas-colombiana-lsc">
+ Con audio español y interpretación Lengua de Señas Colombiana (&lt;strong>LSC&lt;/strong>)
+ &lt;a class="heading-link" href="#con-audio-espa%c3%b1ol-y-interpretaci%c3%b3n-lengua-de-se%c3%b1as-colombiana-lsc">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="performance-best-practices">
+ Performance Best Practices
+ &lt;a class="heading-link" href="#performance-best-practices">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>Expositor: David Rios - Track 2 - 2023/10/25 17:20&lt;/p>
+
+
+
+ &lt;div
+ style="
+ position: relative;
+ padding-bottom: 56.25%;
+ height: 0;
+ overflow: hidden;
+ "
+ >
+ &lt;lite-youtube
+ videotitle=""
+ videoid="bxU2iMYCIs8"
+ videoStartAt=""
+ posterquality="maxresdefault"
+ params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
+ >
+ &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=bxU2iMYCIs8">Watch on YouTube: ""&lt;/a>
+ &lt;/lite-youtube>
+ &lt;/div>
+
+&lt;hr>
+&lt;!-- raw HTML omitted -->
+&lt;h3 id="powering-your-flutter-apps-with-grpc">
+ Powering your Flutter apps with gRPC
+ &lt;a class="heading-link" href="#powering-your-flutter-apps-with-grpc">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>Expositor: Gianfranco Papa - Track 1 - 2023/10/25 16:22&lt;/p></description></item><item><title>La cobertura de pruebas (Test Coverage) en Flutter</title><link>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</guid><description>&lt;p>LCOV es una herramienta gráfica para las pruebas de cobertura de GCC con gcov. Crea páginas HTML que contienen el código fuente anotado con información de cobertura mediante la recopilación de datos gcov de múltiples archivos fuente. LCOV soporta la medición de &amp;ldquo;Cobertura de líneas&amp;rdquo; y &amp;ldquo;Cobertura de funciones&amp;rdquo;.&lt;/p>
+&lt;p>El informe de LCOV tiene el siguiente aspecto:&lt;/p>
+&lt;p>&lt;img alt="image.png" src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png">&lt;/p>
+&lt;h2 id="instalación">
+ Instalación
+ &lt;a class="heading-link" href="#instalaci%c3%b3n">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="instalar-en-ubuntu">
+ Instalar en Ubuntu
+ &lt;a class="heading-link" href="#instalar-en-ubuntu">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo apt-get update -qq -y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt-get install lcov -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="instalar-en-mac">
+ Instalar en Mac
+ &lt;a class="heading-link" href="#instalar-en-mac">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">brew install lcov
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="instalar-en-windows">
+ Instalar en Windows
+ &lt;a class="heading-link" href="#instalar-en-windows">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>Se requiere:&lt;/p></description></item></channel></rss>
