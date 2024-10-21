@@ -27,408 +27,408 @@
 &lt;table>
  &lt;thead>
  &lt;tr>
- &lt;th style="text-align: left">Code&lt;/th>
- &lt;th style="text-align: left">Nombre de estado HTTP&lt;/th>
- &lt;th style="text-align: left">&lt;a href="https://github.com/DartForge/http_status/tree/2.1.0" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> v1.x - v2.x Deprecated (obsoleto)&lt;/a>&lt;/th>
- &lt;th style="text-align: left">&lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> (v2.x - v3.x)&lt;/a>&lt;/th>
+ &lt;th>Code&lt;/th>
+ &lt;th>Nombre de estado HTTP&lt;/th>
+ &lt;th>&lt;a href="https://github.com/DartForge/http_status/tree/2.1.0" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> v1.x - v2.x Deprecated (obsoleto)&lt;/a>&lt;/th>
+ &lt;th>&lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> (v2.x - v3.x)&lt;/a>&lt;/th>
  &lt;/tr>
  &lt;/thead>
  &lt;tbody>
  &lt;tr>
- &lt;td style="text-align: left">100&lt;/td>
- &lt;td style="text-align: left">Continue&lt;/td>
- &lt;td style="text-align: left">Continue / CONTINUE&lt;/td>
- &lt;td style="text-align: left">continue_&lt;/td>
+ &lt;td>100&lt;/td>
+ &lt;td>Continue&lt;/td>
+ &lt;td>Continue / CONTINUE&lt;/td>
+ &lt;td>continue_&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">101&lt;/td>
- &lt;td style="text-align: left">Switching Protocols&lt;/td>
- &lt;td style="text-align: left">Switching_Protocols / SWITCHING_PROTOCOLS&lt;/td>
- &lt;td style="text-align: left">switchingProtocols&lt;/td>
+ &lt;td>101&lt;/td>
+ &lt;td>Switching Protocols&lt;/td>
+ &lt;td>Switching_Protocols / SWITCHING_PROTOCOLS&lt;/td>
+ &lt;td>switchingProtocols&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">102&lt;/td>
- &lt;td style="text-align: left">Processing&lt;/td>
- &lt;td style="text-align: left">Processing / PROCESSING&lt;/td>
- &lt;td style="text-align: left">processing&lt;/td>
+ &lt;td>102&lt;/td>
+ &lt;td>Processing&lt;/td>
+ &lt;td>Processing / PROCESSING&lt;/td>
+ &lt;td>processing&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">103&lt;/td>
- &lt;td style="text-align: left">Early Hints&lt;/td>
- &lt;td style="text-align: left">-&lt;/td>
- &lt;td style="text-align: left">earlyHints&lt;/td>
+ &lt;td>103&lt;/td>
+ &lt;td>Early Hints&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>earlyHints&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">200&lt;/td>
- &lt;td style="text-align: left">OK&lt;/td>
- &lt;td style="text-align: left">Ok / OK&lt;/td>
- &lt;td style="text-align: left">ok&lt;/td>
+ &lt;td>200&lt;/td>
+ &lt;td>OK&lt;/td>
+ &lt;td>Ok / OK&lt;/td>
+ &lt;td>ok&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">201&lt;/td>
- &lt;td style="text-align: left">Created&lt;/td>
- &lt;td style="text-align: left">Created / CREATED&lt;/td>
- &lt;td style="text-align: left">created&lt;/td>
+ &lt;td>201&lt;/td>
+ &lt;td>Created&lt;/td>
+ &lt;td>Created / CREATED&lt;/td>
+ &lt;td>created&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">202&lt;/td>
- &lt;td style="text-align: left">Accepted&lt;/td>
- &lt;td style="text-align: left">Accepted / ACCEPTED&lt;/td>
- &lt;td style="text-align: left">accepted&lt;/td>
+ &lt;td>202&lt;/td>
+ &lt;td>Accepted&lt;/td>
+ &lt;td>Accepted / ACCEPTED&lt;/td>
+ &lt;td>accepted&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">203&lt;/td>
- &lt;td style="text-align: left">Non Authoritative Information&lt;/td>
- &lt;td style="text-align: left">NonAuthoritative_Information / NON_AUTHORITATIVE_INFORMATION&lt;/td>
- &lt;td style="text-align: left">nonAuthoritativeInformation&lt;/td>
+ &lt;td>203&lt;/td>
+ &lt;td>Non Authoritative Information&lt;/td>
+ &lt;td>NonAuthoritative_Information / NON_AUTHORITATIVE_INFORMATION&lt;/td>
+ &lt;td>nonAuthoritativeInformation&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">204&lt;/td>
- &lt;td style="text-align: left">No Content&lt;/td>
- &lt;td style="text-align: left">No_Content / NO_CONTENT&lt;/td>
- &lt;td style="text-align: left">noContent&lt;/td>
+ &lt;td>204&lt;/td>
+ &lt;td>No Content&lt;/td>
+ &lt;td>No_Content / NO_CONTENT&lt;/td>
+ &lt;td>noContent&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">205&lt;/td>
- &lt;td style="text-align: left">Reset Content&lt;/td>
- &lt;td style="text-align: left">Reset_Content / RESET_CONTENT&lt;/td>
- &lt;td style="text-align: left">resetContent&lt;/td>
+ &lt;td>205&lt;/td>
+ &lt;td>Reset Content&lt;/td>
+ &lt;td>Reset_Content / RESET_CONTENT&lt;/td>
+ &lt;td>resetContent&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">206&lt;/td>
- &lt;td style="text-align: left">Partial Content&lt;/td>
- &lt;td style="text-align: left">Partial_Content / PARTIAL_CONTENT&lt;/td>
- &lt;td style="text-align: left">partialContent&lt;/td>
+ &lt;td>206&lt;/td>
+ &lt;td>Partial Content&lt;/td>
+ &lt;td>Partial_Content / PARTIAL_CONTENT&lt;/td>
+ &lt;td>partialContent&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">207&lt;/td>
- &lt;td style="text-align: left">Multi-Status&lt;/td>
- &lt;td style="text-align: left">MultiStatus / MULTISTATUS&lt;/td>
- &lt;td style="text-align: left">multiStatus&lt;/td>
+ &lt;td>207&lt;/td>
+ &lt;td>Multi-Status&lt;/td>
+ &lt;td>MultiStatus / MULTISTATUS&lt;/td>
+ &lt;td>multiStatus&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">208&lt;/td>
- &lt;td style="text-align: left">Already Reported&lt;/td>
- &lt;td style="text-align: left">Already_Reported / ALREADY_REPORTED&lt;/td>
- &lt;td style="text-align: left">alreadyReported&lt;/td>
+ &lt;td>208&lt;/td>
+ &lt;td>Already Reported&lt;/td>
+ &lt;td>Already_Reported / ALREADY_REPORTED&lt;/td>
+ &lt;td>alreadyReported&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">226&lt;/td>
- &lt;td style="text-align: left">I&amp;rsquo;M Used&lt;/td>
- &lt;td style="text-align: left">IM_Used / IM_USED&lt;/td>
- &lt;td style="text-align: left">imUsed&lt;/td>
+ &lt;td>226&lt;/td>
+ &lt;td>I&amp;rsquo;M Used&lt;/td>
+ &lt;td>IM_Used / IM_USED&lt;/td>
+ &lt;td>imUsed&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">300&lt;/td>
- &lt;td style="text-align: left">Multiple Choices&lt;/td>
- &lt;td style="text-align: left">Multiple_Choices / MULTIPLE_CHOICES&lt;/td>
- &lt;td style="text-align: left">multipleChoices&lt;/td>
+ &lt;td>300&lt;/td>
+ &lt;td>Multiple Choices&lt;/td>
+ &lt;td>Multiple_Choices / MULTIPLE_CHOICES&lt;/td>
+ &lt;td>multipleChoices&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">301&lt;/td>
- &lt;td style="text-align: left">Moved Permanently&lt;/td>
- &lt;td style="text-align: left">Moved_Permanently / MOVED_PERMANENTLY&lt;/td>
- &lt;td style="text-align: left">movedPermanently&lt;/td>
+ &lt;td>301&lt;/td>
+ &lt;td>Moved Permanently&lt;/td>
+ &lt;td>Moved_Permanently / MOVED_PERMANENTLY&lt;/td>
+ &lt;td>movedPermanently&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">302&lt;/td>
- &lt;td style="text-align: left">Found / Moved Temporarily&lt;/td>
- &lt;td style="text-align: left">Found / Moved_Temporarily / FOUND / MOVED_TEMPORARILY&lt;/td>
- &lt;td style="text-align: left">found / movedTemporarily&lt;/td>
+ &lt;td>302&lt;/td>
+ &lt;td>Found / Moved Temporarily&lt;/td>
+ &lt;td>Found / Moved_Temporarily / FOUND / MOVED_TEMPORARILY&lt;/td>
+ &lt;td>found / movedTemporarily&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">303&lt;/td>
- &lt;td style="text-align: left">See Other&lt;/td>
- &lt;td style="text-align: left">See_Other / SEE_OTHER&lt;/td>
- &lt;td style="text-align: left">seeOther&lt;/td>
+ &lt;td>303&lt;/td>
+ &lt;td>See Other&lt;/td>
+ &lt;td>See_Other / SEE_OTHER&lt;/td>
+ &lt;td>seeOther&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">304&lt;/td>
- &lt;td style="text-align: left">Not Modified&lt;/td>
- &lt;td style="text-align: left">Not_Modified / NOT_MODIFIED&lt;/td>
- &lt;td style="text-align: left">notModified&lt;/td>
+ &lt;td>304&lt;/td>
+ &lt;td>Not Modified&lt;/td>
+ &lt;td>Not_Modified / NOT_MODIFIED&lt;/td>
+ &lt;td>notModified&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">305&lt;/td>
- &lt;td style="text-align: left">Use Proxy&lt;/td>
- &lt;td style="text-align: left">Use_Proxy / USE_PROXY&lt;/td>
- &lt;td style="text-align: left">useProxy&lt;/td>
+ &lt;td>305&lt;/td>
+ &lt;td>Use Proxy&lt;/td>
+ &lt;td>Use_Proxy / USE_PROXY&lt;/td>
+ &lt;td>useProxy&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">307&lt;/td>
- &lt;td style="text-align: left">Temporary Redirect&lt;/td>
- &lt;td style="text-align: left">Temporary_Redirect / TEMPORARY_REDIRECT&lt;/td>
- &lt;td style="text-align: left">temporaryRedirect&lt;/td>
+ &lt;td>307&lt;/td>
+ &lt;td>Temporary Redirect&lt;/td>
+ &lt;td>Temporary_Redirect / TEMPORARY_REDIRECT&lt;/td>
+ &lt;td>temporaryRedirect&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">308&lt;/td>
- &lt;td style="text-align: left">Permanent Redirect&lt;/td>
- &lt;td style="text-align: left">Permanent_Redirect / PERMANENT_REDIRECT&lt;/td>
- &lt;td style="text-align: left">permanentRedirect&lt;/td>
+ &lt;td>308&lt;/td>
+ &lt;td>Permanent Redirect&lt;/td>
+ &lt;td>Permanent_Redirect / PERMANENT_REDIRECT&lt;/td>
+ &lt;td>permanentRedirect&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">400&lt;/td>
- &lt;td style="text-align: left">Bad Request&lt;/td>
- &lt;td style="text-align: left">Bad_Request / BAD_REQUEST&lt;/td>
- &lt;td style="text-align: left">badRequest&lt;/td>
+ &lt;td>400&lt;/td>
+ &lt;td>Bad Request&lt;/td>
+ &lt;td>Bad_Request / BAD_REQUEST&lt;/td>
+ &lt;td>badRequest&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">401&lt;/td>
- &lt;td style="text-align: left">Unauthorized&lt;/td>
- &lt;td style="text-align: left">Unauthorized / UNAUTHORIZED&lt;/td>
- &lt;td style="text-align: left">unauthorized&lt;/td>
+ &lt;td>401&lt;/td>
+ &lt;td>Unauthorized&lt;/td>
+ &lt;td>Unauthorized / UNAUTHORIZED&lt;/td>
+ &lt;td>unauthorized&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">402&lt;/td>
- &lt;td style="text-align: left">Payment Required&lt;/td>
- &lt;td style="text-align: left">Payment_Required / PAYMENT_REQUIRED&lt;/td>
- &lt;td style="text-align: left">paymentRequired&lt;/td>
+ &lt;td>402&lt;/td>
+ &lt;td>Payment Required&lt;/td>
+ &lt;td>Payment_Required / PAYMENT_REQUIRED&lt;/td>
+ &lt;td>paymentRequired&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">403&lt;/td>
- &lt;td style="text-align: left">Forbidden&lt;/td>
- &lt;td style="text-align: left">Forbidden / FORBIDDEN&lt;/td>
- &lt;td style="text-align: left">forbidden&lt;/td>
+ &lt;td>403&lt;/td>
+ &lt;td>Forbidden&lt;/td>
+ &lt;td>Forbidden / FORBIDDEN&lt;/td>
+ &lt;td>forbidden&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">404&lt;/td>
- &lt;td style="text-align: left">Not Found&lt;/td>
- &lt;td style="text-align: left">Not_Found / NOT_FOUND&lt;/td>
- &lt;td style="text-align: left">notFound&lt;/td>
+ &lt;td>404&lt;/td>
+ &lt;td>Not Found&lt;/td>
+ &lt;td>Not_Found / NOT_FOUND&lt;/td>
+ &lt;td>notFound&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">405&lt;/td>
- &lt;td style="text-align: left">Method Not Allowed&lt;/td>
- &lt;td style="text-align: left">Method_Not_Allowed / METHOD_NOT_ALLOWED&lt;/td>
- &lt;td style="text-align: left">methodNotAllowed&lt;/td>
+ &lt;td>405&lt;/td>
+ &lt;td>Method Not Allowed&lt;/td>
+ &lt;td>Method_Not_Allowed / METHOD_NOT_ALLOWED&lt;/td>
+ &lt;td>methodNotAllowed&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">406&lt;/td>
- &lt;td style="text-align: left">Not Acceptable&lt;/td>
- &lt;td style="text-align: left">Not_Acceptable / NOT_ACCEPTABLE&lt;/td>
- &lt;td style="text-align: left">notAcceptable&lt;/td>
+ &lt;td>406&lt;/td>
+ &lt;td>Not Acceptable&lt;/td>
+ &lt;td>Not_Acceptable / NOT_ACCEPTABLE&lt;/td>
+ &lt;td>notAcceptable&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">407&lt;/td>
- &lt;td style="text-align: left">Proxy Authentication Required&lt;/td>
- &lt;td style="text-align: left">Proxy_Authentication_Required / PROXY_AUTHENTICATION_REQUIRED&lt;/td>
- &lt;td style="text-align: left">proxyAuthenticationRequired&lt;/td>
+ &lt;td>407&lt;/td>
+ &lt;td>Proxy Authentication Required&lt;/td>
+ &lt;td>Proxy_Authentication_Required / PROXY_AUTHENTICATION_REQUIRED&lt;/td>
+ &lt;td>proxyAuthenticationRequired&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">408&lt;/td>
- &lt;td style="text-align: left">Request Timeout&lt;/td>
- &lt;td style="text-align: left">Request_Timeout / REQUEST_TIMEOUT&lt;/td>
- &lt;td style="text-align: left">requestTimeout&lt;/td>
+ &lt;td>408&lt;/td>
+ &lt;td>Request Timeout&lt;/td>
+ &lt;td>Request_Timeout / REQUEST_TIMEOUT&lt;/td>
+ &lt;td>requestTimeout&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">409&lt;/td>
- &lt;td style="text-align: left">Conflict&lt;/td>
- &lt;td style="text-align: left">Conflict / CONFLICT&lt;/td>
- &lt;td style="text-align: left">conflict&lt;/td>
+ &lt;td>409&lt;/td>
+ &lt;td>Conflict&lt;/td>
+ &lt;td>Conflict / CONFLICT&lt;/td>
+ &lt;td>conflict&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">410&lt;/td>
- &lt;td style="text-align: left">Gone&lt;/td>
- &lt;td style="text-align: left">Gone / GONE&lt;/td>
- &lt;td style="text-align: left">gone&lt;/td>
+ &lt;td>410&lt;/td>
+ &lt;td>Gone&lt;/td>
+ &lt;td>Gone / GONE&lt;/td>
+ &lt;td>gone&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">411&lt;/td>
- &lt;td style="text-align: left">Length Required&lt;/td>
- &lt;td style="text-align: left">Length_Required / LENGTH_REQUIRED&lt;/td>
- &lt;td style="text-align: left">lengthRequired&lt;/td>
+ &lt;td>411&lt;/td>
+ &lt;td>Length Required&lt;/td>
+ &lt;td>Length_Required / LENGTH_REQUIRED&lt;/td>
+ &lt;td>lengthRequired&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">412&lt;/td>
- &lt;td style="text-align: left">Precondition Failed&lt;/td>
- &lt;td style="text-align: left">Precondition_Failed / PRECONDITION_FAILED&lt;/td>
- &lt;td style="text-align: left">preconditionFailed&lt;/td>
+ &lt;td>412&lt;/td>
+ &lt;td>Precondition Failed&lt;/td>
+ &lt;td>Precondition_Failed / PRECONDITION_FAILED&lt;/td>
+ &lt;td>preconditionFailed&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">413&lt;/td>
- &lt;td style="text-align: left">Request Entity Too Large&lt;/td>
- &lt;td style="text-align: left">Payload_Too_Large / PAYLOAD_TOO_LARGE / Request_Entity_Too_Large / REQUEST_ENTITY_TOO_LARGE&lt;/td>
- &lt;td style="text-align: left">requestEntityTooLarge&lt;/td>
+ &lt;td>413&lt;/td>
+ &lt;td>Request Entity Too Large&lt;/td>
+ &lt;td>Payload_Too_Large / PAYLOAD_TOO_LARGE / Request_Entity_Too_Large / REQUEST_ENTITY_TOO_LARGE&lt;/td>
+ &lt;td>requestEntityTooLarge&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">414&lt;/td>
- &lt;td style="text-align: left">Request-URI Too Long&lt;/td>
- &lt;td style="text-align: left">RequestURI_Too_Long / REQUESTURI_TOO_LONG / Request_Uri_Too_Long / REQUEST_URI_TOO_LONG&lt;/td>
- &lt;td style="text-align: left">requestUriTooLong&lt;/td>
+ &lt;td>414&lt;/td>
+ &lt;td>Request-URI Too Long&lt;/td>
+ &lt;td>RequestURI_Too_Long / REQUESTURI_TOO_LONG / Request_Uri_Too_Long / REQUEST_URI_TOO_LONG&lt;/td>
+ &lt;td>requestUriTooLong&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">415&lt;/td>
- &lt;td style="text-align: left">Unsupported Media Type&lt;/td>
- &lt;td style="text-align: left">Unsupported_Media_Type / UNSUPPORTED_MEDIA_TYPE&lt;/td>
- &lt;td style="text-align: left">unsupportedMediaType&lt;/td>
+ &lt;td>415&lt;/td>
+ &lt;td>Unsupported Media Type&lt;/td>
+ &lt;td>Unsupported_Media_Type / UNSUPPORTED_MEDIA_TYPE&lt;/td>
+ &lt;td>unsupportedMediaType&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">416&lt;/td>
- &lt;td style="text-align: left">Requested Range Not Satisfiable&lt;/td>
- &lt;td style="text-align: left">Requested_Range_Not_Satisfiable / REQUESTED_RANGE_NOT_SATISFIABLE&lt;/td>
- &lt;td style="text-align: left">requestedRangeNotSatisfiable&lt;/td>
+ &lt;td>416&lt;/td>
+ &lt;td>Requested Range Not Satisfiable&lt;/td>
+ &lt;td>Requested_Range_Not_Satisfiable / REQUESTED_RANGE_NOT_SATISFIABLE&lt;/td>
+ &lt;td>requestedRangeNotSatisfiable&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">417&lt;/td>
- &lt;td style="text-align: left">Expectation Failed&lt;/td>
- &lt;td style="text-align: left">Expectation_Failed / EXPECTATION_FAILED&lt;/td>
- &lt;td style="text-align: left">expectationFailed&lt;/td>
+ &lt;td>417&lt;/td>
+ &lt;td>Expectation Failed&lt;/td>
+ &lt;td>Expectation_Failed / EXPECTATION_FAILED&lt;/td>
+ &lt;td>expectationFailed&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">418&lt;/td>
- &lt;td style="text-align: left">I&amp;rsquo;m a teapot&lt;/td>
- &lt;td style="text-align: left">-&lt;/td>
- &lt;td style="text-align: left">imATeapot&lt;/td>
+ &lt;td>418&lt;/td>
+ &lt;td>I&amp;rsquo;m a teapot&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>imATeapot&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">419&lt;/td>
- &lt;td style="text-align: left">Insufficient Space on Resource&lt;/td>
- &lt;td style="text-align: left">-&lt;/td>
- &lt;td style="text-align: left">insufficientSpaceOnResource&lt;/td>
+ &lt;td>419&lt;/td>
+ &lt;td>Insufficient Space on Resource&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>insufficientSpaceOnResource&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">420&lt;/td>
- &lt;td style="text-align: left">Method Failure&lt;/td>
- &lt;td style="text-align: left">-&lt;/td>
- &lt;td style="text-align: left">methodFailure&lt;/td>
+ &lt;td>420&lt;/td>
+ &lt;td>Method Failure&lt;/td>
+ &lt;td>-&lt;/td>
+ &lt;td>methodFailure&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">421&lt;/td>
- &lt;td style="text-align: left">Misdirected Request&lt;/td>
- &lt;td style="text-align: left">Misdirected_Request / MISDIRECTED_REQUEST&lt;/td>
- &lt;td style="text-align: left">misdirectedRequest&lt;/td>
+ &lt;td>421&lt;/td>
+ &lt;td>Misdirected Request&lt;/td>
+ &lt;td>Misdirected_Request / MISDIRECTED_REQUEST&lt;/td>
+ &lt;td>misdirectedRequest&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">422&lt;/td>
- &lt;td style="text-align: left">Unprocessable Entity&lt;/td>
- &lt;td style="text-align: left">Unprocessable_Entity / UNPROCESSABLE_ENTITY&lt;/td>
- &lt;td style="text-align: left">unprocessableEntity&lt;/td>
+ &lt;td>422&lt;/td>
+ &lt;td>Unprocessable Entity&lt;/td>
+ &lt;td>Unprocessable_Entity / UNPROCESSABLE_ENTITY&lt;/td>
+ &lt;td>unprocessableEntity&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">423&lt;/td>
- &lt;td style="text-align: left">Locked&lt;/td>
- &lt;td style="text-align: left">Locked / LOCKED&lt;/td>
- &lt;td style="text-align: left">locked&lt;/td>
+ &lt;td>423&lt;/td>
+ &lt;td>Locked&lt;/td>
+ &lt;td>Locked / LOCKED&lt;/td>
+ &lt;td>locked&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">424&lt;/td>
- &lt;td style="text-align: left">Failed Dependency&lt;/td>
- &lt;td style="text-align: left">Failed_Dependency / FAILED_DEPENDENCY&lt;/td>
- &lt;td style="text-align: left">failedDependency&lt;/td>
+ &lt;td>424&lt;/td>
+ &lt;td>Failed Dependency&lt;/td>
+ &lt;td>Failed_Dependency / FAILED_DEPENDENCY&lt;/td>
+ &lt;td>failedDependency&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">426&lt;/td>
- &lt;td style="text-align: left">Upgrade Required&lt;/td>
- &lt;td style="text-align: left">Upgrade_Required / UPGRADE_REQUIRED&lt;/td>
- &lt;td style="text-align: left">upgradeRequired&lt;/td>
+ &lt;td>426&lt;/td>
+ &lt;td>Upgrade Required&lt;/td>
+ &lt;td>Upgrade_Required / UPGRADE_REQUIRED&lt;/td>
+ &lt;td>upgradeRequired&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">428&lt;/td>
- &lt;td style="text-align: left">Precondition Required&lt;/td>
- &lt;td style="text-align: left">Precondition_Required / PRECONDITION_REQUIRED&lt;/td>
- &lt;td style="text-align: left">preconditionRequired&lt;/td>
+ &lt;td>428&lt;/td>
+ &lt;td>Precondition Required&lt;/td>
+ &lt;td>Precondition_Required / PRECONDITION_REQUIRED&lt;/td>
+ &lt;td>preconditionRequired&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">429&lt;/td>
- &lt;td style="text-align: left">Too Many Requests&lt;/td>
- &lt;td style="text-align: left">Too_Many_Requests / TOO_MANY_REQUESTS&lt;/td>
- &lt;td style="text-align: left">tooManyRequests&lt;/td>
+ &lt;td>429&lt;/td>
+ &lt;td>Too Many Requests&lt;/td>
+ &lt;td>Too_Many_Requests / TOO_MANY_REQUESTS&lt;/td>
+ &lt;td>tooManyRequests&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">431&lt;/td>
- &lt;td style="text-align: left">Request Header Fields Too Large&lt;/td>
- &lt;td style="text-align: left">Request_Header_Fields_Too_Large / REQUEST_HEADER_FIELDS_TOO_LARGE&lt;/td>
- &lt;td style="text-align: left">requestHeaderFieldsTooLarge&lt;/td>
+ &lt;td>431&lt;/td>
+ &lt;td>Request Header Fields Too Large&lt;/td>
+ &lt;td>Request_Header_Fields_Too_Large / REQUEST_HEADER_FIELDS_TOO_LARGE&lt;/td>
+ &lt;td>requestHeaderFieldsTooLarge&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">444&lt;/td>
- &lt;td style="text-align: left">Connection Closed Without Response&lt;/td>
- &lt;td style="text-align: left">Connection_Closed_Without_Response / CONNECTION_CLOSED_WITHOUT_RESPONSE&lt;/td>
- &lt;td style="text-align: left">connectionClosedWithoutResponse&lt;/td>
+ &lt;td>444&lt;/td>
+ &lt;td>Connection Closed Without Response&lt;/td>
+ &lt;td>Connection_Closed_Without_Response / CONNECTION_CLOSED_WITHOUT_RESPONSE&lt;/td>
+ &lt;td>connectionClosedWithoutResponse&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">451&lt;/td>
- &lt;td style="text-align: left">Unavailable For Legal Reasons&lt;/td>
- &lt;td style="text-align: left">Unavailable_For_Legal_Reasons / UNAVAILABLE_FOR_LEGAL_REASONS&lt;/td>
- &lt;td style="text-align: left">unavailableForLegalReasons&lt;/td>
+ &lt;td>451&lt;/td>
+ &lt;td>Unavailable For Legal Reasons&lt;/td>
+ &lt;td>Unavailable_For_Legal_Reasons / UNAVAILABLE_FOR_LEGAL_REASONS&lt;/td>
+ &lt;td>unavailableForLegalReasons&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">499&lt;/td>
- &lt;td style="text-align: left">Client Closed Request&lt;/td>
- &lt;td style="text-align: left">Client_Closed_Request / CLIENT_CLOSED_REQUEST&lt;/td>
- &lt;td style="text-align: left">clientClosedRequest&lt;/td>
+ &lt;td>499&lt;/td>
+ &lt;td>Client Closed Request&lt;/td>
+ &lt;td>Client_Closed_Request / CLIENT_CLOSED_REQUEST&lt;/td>
+ &lt;td>clientClosedRequest&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">500&lt;/td>
- &lt;td style="text-align: left">Internal Server Error&lt;/td>
- &lt;td style="text-align: left">Internal_Server_Error / INTERNAL_SERVER_ERROR&lt;/td>
- &lt;td style="text-align: left">internalServerError&lt;/td>
+ &lt;td>500&lt;/td>
+ &lt;td>Internal Server Error&lt;/td>
+ &lt;td>Internal_Server_Error / INTERNAL_SERVER_ERROR&lt;/td>
+ &lt;td>internalServerError&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">501&lt;/td>
- &lt;td style="text-align: left">Not Implemented&lt;/td>
- &lt;td style="text-align: left">Not_Implemented / NOT_IMPLEMENTED&lt;/td>
- &lt;td style="text-align: left">notImplemented&lt;/td>
+ &lt;td>501&lt;/td>
+ &lt;td>Not Implemented&lt;/td>
+ &lt;td>Not_Implemented / NOT_IMPLEMENTED&lt;/td>
+ &lt;td>notImplemented&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">502&lt;/td>
- &lt;td style="text-align: left">Bad Gateway&lt;/td>
- &lt;td style="text-align: left">Bad_Gateway / BAD_GATEWAY&lt;/td>
- &lt;td style="text-align: left">badGateway&lt;/td>
+ &lt;td>502&lt;/td>
+ &lt;td>Bad Gateway&lt;/td>
+ &lt;td>Bad_Gateway / BAD_GATEWAY&lt;/td>
+ &lt;td>badGateway&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">503&lt;/td>
- &lt;td style="text-align: left">Service Unavailable&lt;/td>
- &lt;td style="text-align: left">Service_Unavailable / SERVICE_UNAVAILABLE&lt;/td>
- &lt;td style="text-align: left">serviceUnavailable&lt;/td>
+ &lt;td>503&lt;/td>
+ &lt;td>Service Unavailable&lt;/td>
+ &lt;td>Service_Unavailable / SERVICE_UNAVAILABLE&lt;/td>
+ &lt;td>serviceUnavailable&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">504&lt;/td>
- &lt;td style="text-align: left">Gateway Timeout&lt;/td>
- &lt;td style="text-align: left">Gateway_Timeout / GATEWAY_TIMEOUT&lt;/td>
- &lt;td style="text-align: left">gatewayTimeout&lt;/td>
+ &lt;td>504&lt;/td>
+ &lt;td>Gateway Timeout&lt;/td>
+ &lt;td>Gateway_Timeout / GATEWAY_TIMEOUT&lt;/td>
+ &lt;td>gatewayTimeout&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">505&lt;/td>
- &lt;td style="text-align: left">HTTP Version Not Supported&lt;/td>
- &lt;td style="text-align: left">HTTP_Version_Not_Supported / HTTP_VERSION_NOT_SUPPORTED&lt;/td>
- &lt;td style="text-align: left">httpVersionNotSupported&lt;/td>
+ &lt;td>505&lt;/td>
+ &lt;td>HTTP Version Not Supported&lt;/td>
+ &lt;td>HTTP_Version_Not_Supported / HTTP_VERSION_NOT_SUPPORTED&lt;/td>
+ &lt;td>httpVersionNotSupported&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">506&lt;/td>
- &lt;td style="text-align: left">Variant Also Negotiates&lt;/td>
- &lt;td style="text-align: left">Variant_Also_Negotiates / VARIANT_ALSO_NEGOTIATES&lt;/td>
- &lt;td style="text-align: left">variantAlsoNegotiates&lt;/td>
+ &lt;td>506&lt;/td>
+ &lt;td>Variant Also Negotiates&lt;/td>
+ &lt;td>Variant_Also_Negotiates / VARIANT_ALSO_NEGOTIATES&lt;/td>
+ &lt;td>variantAlsoNegotiates&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">507&lt;/td>
- &lt;td style="text-align: left">Insufficient Storage&lt;/td>
- &lt;td style="text-align: left">Insufficient_Storage / INSUFFICIENT_STORAGE&lt;/td>
- &lt;td style="text-align: left">insufficientStorage&lt;/td>
+ &lt;td>507&lt;/td>
+ &lt;td>Insufficient Storage&lt;/td>
+ &lt;td>Insufficient_Storage / INSUFFICIENT_STORAGE&lt;/td>
+ &lt;td>insufficientStorage&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">508&lt;/td>
- &lt;td style="text-align: left">Loop Detected&lt;/td>
- &lt;td style="text-align: left">Loop_Detected / LOOP_DETECTED&lt;/td>
- &lt;td style="text-align: left">loopDetected&lt;/td>
+ &lt;td>508&lt;/td>
+ &lt;td>Loop Detected&lt;/td>
+ &lt;td>Loop_Detected / LOOP_DETECTED&lt;/td>
+ &lt;td>loopDetected&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">510&lt;/td>
- &lt;td style="text-align: left">Not Extended&lt;/td>
- &lt;td style="text-align: left">Not_Extended / NOT_EXTENDED&lt;/td>
- &lt;td style="text-align: left">notExtended&lt;/td>
+ &lt;td>510&lt;/td>
+ &lt;td>Not Extended&lt;/td>
+ &lt;td>Not_Extended / NOT_EXTENDED&lt;/td>
+ &lt;td>notExtended&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">511&lt;/td>
- &lt;td style="text-align: left">Network Authentication Required&lt;/td>
- &lt;td style="text-align: left">Network_Authentication_Required / NETWORK_AUTHENTICATION_REQUIRED&lt;/td>
- &lt;td style="text-align: left">networkAuthenticationRequired&lt;/td>
+ &lt;td>511&lt;/td>
+ &lt;td>Network Authentication Required&lt;/td>
+ &lt;td>Network_Authentication_Required / NETWORK_AUTHENTICATION_REQUIRED&lt;/td>
+ &lt;td>networkAuthenticationRequired&lt;/td>
  &lt;/tr>
  &lt;tr>
- &lt;td style="text-align: left">599&lt;/td>
- &lt;td style="text-align: left">Network Connect Timeout Error&lt;/td>
- &lt;td style="text-align: left">Network_Connect_Timeout_Error / NETWORK_CONNECT_TIMEOUT_ERROR&lt;/td>
- &lt;td style="text-align: left">networkConnectTimeoutError&lt;/td>
+ &lt;td>599&lt;/td>
+ &lt;td>Network Connect Timeout Error&lt;/td>
+ &lt;td>Network_Connect_Timeout_Error / NETWORK_CONNECT_TIMEOUT_ERROR&lt;/td>
+ &lt;td>networkConnectTimeoutError&lt;/td>
  &lt;/tr>
  &lt;/tbody>
 &lt;/table>
