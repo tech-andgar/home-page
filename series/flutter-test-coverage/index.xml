@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter Test Coverage on TECH-ANDGAR</title><link>https://tech-andgar.me/series/flutter-test-coverage/</link><description>Recent content in Flutter Test Coverage on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 30 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/series/flutter-test-coverage/index.xml" rel="self" type="application/rss+xml"/><item><title>Flutter Test Coverage</title><link>https://tech-andgar.me/posts/flutter-test-coverage/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-test-coverage/</guid><description>&lt;p>LCOV is a graphical tool for GCC coverage testing with gcov. It creates HTML pages containing source code annotated with coverage information by collecting gcov data from multiple source files. LCOV supports &amp;ldquo;Line Coverage&amp;rdquo; and &amp;ldquo;Function Coverage&amp;rdquo; measurement.&lt;/p>
 &lt;p>The LCOV report looks as follows:&lt;/p>
-&lt;p>&lt;img alt="image.png" src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png">&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png" alt="image.png">&lt;/p>
 &lt;h2 id="installation">
  Installation
  &lt;a class="heading-link" href="#installation">
