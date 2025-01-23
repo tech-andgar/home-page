@@ -507,4 +507,26 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
 &lt;p>Esto puede ser usado en los siguientes dos casos.&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>Late assign: promesa de asignación más tarde&lt;/p></description></item></channel></rss>
+&lt;p>Late assign: promesa de asignación más tarde&lt;/p></description></item><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;h1 id="preguntas-de-entrevista-sobre-flutter">
+ Preguntas de Entrevista sobre Flutter
+ &lt;a class="heading-link" href="#preguntas-de-entrevista-sobre-flutter">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="preguntas">
+ Preguntas
+ &lt;a class="heading-link" href="#preguntas">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="preguntas-de-flutter">
+ Preguntas de Flutter
+ &lt;a class="heading-link" href="#preguntas-de-flutter">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>&lt;strong>¿Qué es Flutter y cuáles son sus principales ventajas?&lt;/strong>&lt;/p>
+&lt;p>Flutter es un kit de herramientas de UI creado por Google. Ayuda a los desarrolladores en el desarrollo de aplicaciones multiplataforma, permitiendo crear aplicaciones para Android, iOS, web y escritorio con una sola base de código.&lt;/p></description></item></channel></rss>

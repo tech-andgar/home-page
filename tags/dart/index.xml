@@ -454,4 +454,28 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 &lt;p>This can be used in the following two cases.&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>Late assign: promise to assign later&lt;/p></description></item></channel></rss>
+&lt;p>Late assign: promise to assign later&lt;/p></description></item><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions">
+ Flutter Interview Questions
+ &lt;a class="heading-link" href="#flutter-interview-questions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="questions">
+ Questions
+ &lt;a class="heading-link" href="#questions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="flutter-questions">
+ Flutter Questions
+ &lt;a class="heading-link" href="#flutter-questions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>&lt;strong>What is Flutter and what are its main advantages?&lt;/strong>
+Flutter is a UI toolkit created by Google. It helps developers in cross-platform application development, allowing them to create Android, iOS, web, and desktop apps with a single codebase.&lt;/p>
+&lt;p>&lt;strong>What development environment is required to create Flutter applications?&lt;/strong>
+To create Flutter applications, you need to install the Dart SDK and Flutter SDK. Additionally, you should install the Flutter plugin in Android Studio, VS Code, or IntelliJ IDEA.&lt;/p></description></item></channel></rss>

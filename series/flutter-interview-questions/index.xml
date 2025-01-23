@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter Interview Questions on TECH-ANDGAR</title><link>https://tech-andgar.me/series/flutter-interview-questions/</link><description>Recent content in Flutter Interview Questions on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/series/flutter-interview-questions/index.xml" rel="self" type="application/rss+xml"/><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions">
+ Flutter Interview Questions
+ &lt;a class="heading-link" href="#flutter-interview-questions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="questions">
+ Questions
+ &lt;a class="heading-link" href="#questions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="flutter-questions">
+ Flutter Questions
+ &lt;a class="heading-link" href="#flutter-questions">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>&lt;strong>What is Flutter and what are its main advantages?&lt;/strong>
+Flutter is a UI toolkit created by Google. It helps developers in cross-platform application development, allowing them to create Android, iOS, web, and desktop apps with a single codebase.&lt;/p>
+&lt;p>&lt;strong>What development environment is required to create Flutter applications?&lt;/strong>
+To create Flutter applications, you need to install the Dart SDK and Flutter SDK. Additionally, you should install the Flutter plugin in Android Studio, VS Code, or IntelliJ IDEA.&lt;/p></description></item></channel></rss>

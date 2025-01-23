@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/es/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 21 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/index.xml" rel="self" type="application/rss+xml"/><item><title>Innovación en la Accesibilidad: ¿Inclusión Real o Barrera para la Comunidad Sorda?</title><link>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</guid><description>&lt;h1 id="innovación-en-la-accesibilidad-inclusión-real-o-barrera-para-la-comunidad-sorda">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/es/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/index.xml" rel="self" type="application/rss+xml"/><item><title>Resolviendo Artefactos con `ImageFilter.blur` en Flutter en Android, iOS y macOS</title><link>https://tech-andgar.me/es/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="resolviendo-artefactos-con-imagefilterblur-en-flutter-en-android-ios-y-macos">
+ Resolviendo Artefactos con &lt;code>ImageFilter.blur&lt;/code> en Flutter en Android, iOS y macOS
+ &lt;a class="heading-link" href="#resolviendo-artefactos-con-imagefilterblur-en-flutter-en-android-ios-y-macos">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;p>&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener">&lt;img src="https://tech-andgar.me/images/posts/2024-10-27-solving-artifacts-imagefilter-blur-flutter.es/preview-issue.webp" alt="Flutter ImageFilter.blur Issue">&lt;/a>&lt;/p>
+&lt;h2 id="introducción">
+ Introducción
+ &lt;a class="heading-link" href="#introducci%c3%b3n">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Al desarrollar aplicaciones móviles y de escritorio con Flutter, es común utilizar efectos de desenfoque para mejorar la interfaz de usuario. Uno de los métodos más utilizados es &lt;code>ImageFilter.blur&lt;/code>. Sin embargo, algunos desarrolladores han encontrado artefactos visuales al aplicar este efecto en Android, iOS y macOS, mientras que en la web funciona correctamente. En este artículo, exploraremos este problema, entenderemos la razón detrás de él y proporcionaremos una solución efectiva.&lt;/p></description></item><item><title>Innovación en la Accesibilidad: ¿Inclusión Real o Barrera para la Comunidad Sorda?</title><link>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</guid><description>&lt;h1 id="innovación-en-la-accesibilidad-inclusión-real-o-barrera-para-la-comunidad-sorda">
  Innovación en la Accesibilidad: ¿Inclusión Real o Barrera para la Comunidad Sorda?
  &lt;a class="heading-link" href="#innovaci%c3%b3n-en-la-accesibilidad-inclusi%c3%b3n-real-o-barrera-para-la-comunidad-sorda">
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
@@ -1411,7 +1426,29 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h3>
-&lt;p>Se requiere:&lt;/p></description></item><item><title>Acerca de</title><link>https://tech-andgar.me/es/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/about/</guid><description>&lt;p>¡Hola! Soy Andrés García, un &lt;strong>desarrollador Sordo de aplicaciones móviles Full-Stack especializado en Flutter&lt;/strong>, con &lt;strong>más de 6 años de experiencia&lt;/strong> y cuya lengua materna es Lengua de Señas Colombia (LSC). Mi pasión radica en explorar la intersección entre tecnología, lógica y comunicación para crear soluciones digitales innovadoras y accesibles.&lt;/p>
+&lt;p>Se requiere:&lt;/p></description></item><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;h1 id="preguntas-de-entrevista-sobre-flutter">
+ Preguntas de Entrevista sobre Flutter
+ &lt;a class="heading-link" href="#preguntas-de-entrevista-sobre-flutter">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h1>
+&lt;h2 id="preguntas">
+ Preguntas
+ &lt;a class="heading-link" href="#preguntas">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="preguntas-de-flutter">
+ Preguntas de Flutter
+ &lt;a class="heading-link" href="#preguntas-de-flutter">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;p>&lt;strong>¿Qué es Flutter y cuáles son sus principales ventajas?&lt;/strong>&lt;/p>
+&lt;p>Flutter es un kit de herramientas de UI creado por Google. Ayuda a los desarrolladores en el desarrollo de aplicaciones multiplataforma, permitiendo crear aplicaciones para Android, iOS, web y escritorio con una sola base de código.&lt;/p></description></item><item><title>Acerca de</title><link>https://tech-andgar.me/es/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/about/</guid><description>&lt;p>¡Hola! Soy Andrés García, un &lt;strong>desarrollador Sordo de aplicaciones móviles Full-Stack especializado en Flutter&lt;/strong>, con &lt;strong>más de 6 años de experiencia&lt;/strong> y cuya lengua materna es Lengua de Señas Colombia (LSC). Mi pasión radica en explorar la intersección entre tecnología, lógica y comunicación para crear soluciones digitales innovadoras y accesibles.&lt;/p>
 &lt;p>Mi experiencia abarca:&lt;/p>
 &lt;p>• Desarrollo móvil: &lt;strong>Flutter, Dart&lt;/strong>&lt;/p>
 &lt;p>• Tecnologías web: ES6+, HTML5, CSS3, &lt;strong>Vue.js&lt;/strong>, TypeScript&lt;/p>
@@ -1471,8 +1508,7 @@ Convierte elementos no-desplazables en desplazables.&lt;/p>
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h3>
-&lt;p>Esta Política de Privacidad describe cómo TECH-ANDGAR (&amp;ldquo;nosotros&amp;rdquo;, &amp;ldquo;nuestro&amp;rdquo; o &amp;ldquo;nos&amp;rdquo;) recopila, utiliza y protege su información cuando visita e interactúa con nuestro sitio web &lt;a href="https://tech-andgar.me" class="external-link" target="_blank" rel="noopener">https://tech-andgar.me&lt;/a> (&amp;ldquo;Sitio Web&amp;rdquo;). Al utilizar el Sitio Web, usted acepta los términos de esta Política de Privacidad. Si no está de acuerdo con estos términos, por favor deje de usar el Sitio Web de inmediato.&lt;/p></description></item><item><title>Contacto</title><link>https://tech-andgar.me/es/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/contact/</guid><description>&lt;!-- raw HTML omitted -->
-&lt;p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través de las siguientes opciones.&lt;/p>
+&lt;p>Esta Política de Privacidad describe cómo TECH-ANDGAR (&amp;ldquo;nosotros&amp;rdquo;, &amp;ldquo;nuestro&amp;rdquo; o &amp;ldquo;nos&amp;rdquo;) recopila, utiliza y protege su información cuando visita e interactúa con nuestro sitio web &lt;a href="https://tech-andgar.me" class="external-link" target="_blank" rel="noopener">https://tech-andgar.me&lt;/a> (&amp;ldquo;Sitio Web&amp;rdquo;). Al utilizar el Sitio Web, usted acepta los términos de esta Política de Privacidad. Si no está de acuerdo con estos términos, por favor deje de usar el Sitio Web de inmediato.&lt;/p></description></item><item><title>Contacto</title><link>https://tech-andgar.me/es/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/contact/</guid><description>&lt;p>Si deseas ponerte en contacto conmigo, puedes hacerlo a través de las siguientes opciones.&lt;/p>
 &lt;p>Estoy encantado de responder tus preguntas, discutir proyectos potenciales o simplemente charlar sobre tecnología.&lt;/p>
 &lt;p>Puedes contactarme en&lt;/p>
 &lt;p>H E L L O @ T E C H - A N D G A R . M E&lt;/p>
