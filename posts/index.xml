@@ -517,24 +517,40 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h1>
-&lt;h2 id="questions">
- Questions
- &lt;a class="heading-link" href="#questions">
+&lt;h2 id="question-categories">
+ Question Categories
+ &lt;a class="heading-link" href="#question-categories">
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h2>
-&lt;h3 id="flutter-questions">
- Flutter Questions
- &lt;a class="heading-link" href="#flutter-questions">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>&lt;strong>What is Flutter and what are its main advantages?&lt;/strong>
-Flutter is a UI toolkit created by Google. It helps developers in cross-platform application development, allowing them to create Android, iOS, web, and desktop apps with a single codebase.&lt;/p>
-&lt;p>&lt;strong>What development environment is required to create Flutter applications?&lt;/strong>
-To create Flutter applications, you need to install the Dart SDK and Flutter SDK. Additionally, you should install the Flutter plugin in Android Studio, VS Code, or IntelliJ IDEA.&lt;/p></description></item><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix">
+&lt;ul>
+&lt;li>&lt;a href="#flutter-interview-questions" >Flutter Interview Questions&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#question-categories" >Question Categories&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#questions" >Questions&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#flutter-questions" >Flutter Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#dart-questions" >Dart Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#api-questions" >API Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#sharedpreferences" >SharedPreferences&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#google-maps-api" >Google Maps API&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#payment-gateway-in-flutter" >Payment Gateway in Flutter&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#getx-questions" >GetX Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#firebase-questions" >Firebase Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#git-questions" >Git Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#general-app-development-questions" >General App Development Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#project-specific-flutter-questions" >Project-Specific Flutter Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#technical-leadership-and-senior-developer-questions" >Technical Leadership and Senior Developer Questions&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#omdb-movie-app-specific-questions" >OMDB Movie App Specific Questions&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>Basic Flutter Concepts&lt;/strong>&lt;/p></description></item><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix">
  View logs ngnix
  &lt;a class="heading-link" href="#view-logs-ngnix">
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
