@@ -54,6 +54,151 @@
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h1>
+&lt;h2 id="technical-terms-tldr">
+ Technical Terms TLDR
+ &lt;a class="heading-link" href="#technical-terms-tldr">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;h3 id="core-flutter-terms">
+ Core Flutter Terms
+ &lt;a class="heading-link" href="#core-flutter-terms">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Flutter/Dart&lt;/li>
+&lt;li>Widget (StatefulWidget/StatelessWidget)&lt;/li>
+&lt;li>BuildContext&lt;/li>
+&lt;li>MaterialApp&lt;/li>
+&lt;li>Scaffold&lt;/li>
+&lt;/ul>
+&lt;h3 id="state-management">
+ State Management
+ &lt;a class="heading-link" href="#state-management">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Provider&lt;/li>
+&lt;li>Riverpod&lt;/li>
+&lt;li>Bloc&lt;/li>
+&lt;li>GetX&lt;/li>
+&lt;li>InheritedWidget&lt;/li>
+&lt;/ul>
+&lt;h3 id="architecture">
+ Architecture
+ &lt;a class="heading-link" href="#architecture">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Clean Architecture&lt;/li>
+&lt;li>SOLID Principles&lt;/li>
+&lt;li>Repository Pattern&lt;/li>
+&lt;li>Dependency Injection&lt;/li>
+&lt;li>MVC/MVVM&lt;/li>
+&lt;/ul>
+&lt;h3 id="testing">
+ Testing
+ &lt;a class="heading-link" href="#testing">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Unit Tests&lt;/li>
+&lt;li>Widget Tests&lt;/li>
+&lt;li>Integration Tests&lt;/li>
+&lt;li>Golden Tests&lt;/li>
+&lt;li>Mockito/Mocktail&lt;/li>
+&lt;/ul>
+&lt;h3 id="performance">
+ Performance
+ &lt;a class="heading-link" href="#performance">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Memory Management&lt;/li>
+&lt;li>Widget Tree&lt;/li>
+&lt;li>BuildContext&lt;/li>
+&lt;li>setState&lt;/li>
+&lt;li>dispose()&lt;/li>
+&lt;/ul>
+&lt;h3 id="security">
+ Security
+ &lt;a class="heading-link" href="#security">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Biometric Authentication&lt;/li>
+&lt;li>Secure Storage&lt;/li>
+&lt;li>API Security&lt;/li>
+&lt;li>Certificate Pinning&lt;/li>
+&lt;/ul>
+&lt;h3 id="development-tools">
+ Development Tools
+ &lt;a class="heading-link" href="#development-tools">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>CI/CD&lt;/li>
+&lt;li>GitHub Actions&lt;/li>
+&lt;li>Bitrise&lt;/li>
+&lt;li>Firebase&lt;/li>
+&lt;li>Azure DevOps&lt;/li>
+&lt;/ul>
+&lt;h3 id="common-apis">
+ Common APIs
+ &lt;a class="heading-link" href="#common-apis">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>REST API&lt;/li>
+&lt;li>GraphQL&lt;/li>
+&lt;li>WebSocket&lt;/li>
+&lt;li>JWT&lt;/li>
+&lt;li>OAuth&lt;/li>
+&lt;/ul>
+&lt;h3 id="databasestorage">
+ Database/Storage
+ &lt;a class="heading-link" href="#databasestorage">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>SQLite&lt;/li>
+&lt;li>Hive&lt;/li>
+&lt;li>SharedPreferences&lt;/li>
+&lt;li>Firebase Realtime Database&lt;/li>
+&lt;li>Cloud Firestore&lt;/li>
+&lt;/ul>
+&lt;h3 id="navigation">
+ Navigation
+ &lt;a class="heading-link" href="#navigation">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
+&lt;li>Navigator 2.0&lt;/li>
+&lt;li>GoRouter&lt;/li>
+&lt;li>Deep Linking&lt;/li>
+&lt;li>Route Management&lt;/li>
+&lt;/ul>
 &lt;h2 id="question-categories">
  Question Categories
  &lt;a class="heading-link" href="#question-categories">
