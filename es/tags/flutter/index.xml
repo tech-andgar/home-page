@@ -102,6 +102,7 @@
  &lt;/a>
 &lt;/h3>
 &lt;p>Se requiere:&lt;/p></description></item><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;ul>
+&lt;li>&lt;a href="#t%c3%a9rminos-t%c3%a9cnicos-TLDR" >Términos técnicos TLDR&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#preguntas-de-entrevista-sobre-flutter" >Preguntas de Entrevista sobre Flutter&lt;/a>
 &lt;ul>
 &lt;li>&lt;a href="#categor%c3%adas-de-preguntas" >Categorías de Preguntas&lt;/a>&lt;/li>
@@ -147,13 +148,20 @@
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h1>
-&lt;h2 id="categorías-de-preguntas">
- Categorías de Preguntas
- &lt;a class="heading-link" href="#categor%c3%adas-de-preguntas">
+&lt;h2 id="términos-técnicos-tldr">
+ Términos técnicos TLDR
+ &lt;a class="heading-link" href="#t%c3%a9rminos-t%c3%a9cnicos-tldr">
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h2>
-&lt;ol>
+&lt;h3 id="1-fundamentos-de-flutter--dart">
+ 1. Fundamentos de Flutter &amp;amp; Dart
+ &lt;a class="heading-link" href="#1-fundamentos-de-flutter--dart">
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h3>
+&lt;ul>
 &lt;li>
-&lt;p>&lt;strong>Conceptos Básicos de Flutter&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item></channel></rss>
