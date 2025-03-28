@@ -2301,10 +2301,10 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
 
  &lt;li class="splide__slide">
- &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="🎉 And let&amp;#39;s highlight the wonderful presentation by 💻Andrés ‌ García: their session on Dart and Flutter was truly impressive. They showed us how these technologies work together to create smooth, high-performance animations without sacrificing quality. A true inspiration and a spectacular experience for all attendees! 🎨🚀 (auto-translated from Spanish) - Juan Felipe Jimenez Pacheco Software Engineer Inetum ">
+ &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="He proactively proposed an idea that reduced the manual steps in pull request processing from four to one, automating solution generation. This resulted in a dramatic 75% reduction in processing time. He also implemented this in GitHub Actions and contributed to the project&amp;#39;s initial setup, demonstrating well-architected, spotless, and seamless work that exceeded my expectations. - Milad Vafaeifard Lead Software Engineer | Tech Content Creator | Open-Source Contributor Epam ">
  
  
  
- &lt;p class="text-content" id="textContent" aria-hidden="true">🎉 And let&amp;#39;s highlight the wonderful presentation by 💻Andrés ‌ García: their session on Dart and Flutter was truly impressive. They showed us how these technologies work together&lt;span id="dots" aria-hidden="true">...&lt;/span>‏&lt;span id="moreText" aria-hidden="true">to create smooth, high-performance animations without sacrificing quality. A true inspiration and a spectacular experience for all attendees! 🎨🚀 (auto-translated from Spanish)&lt;/span>
+ &lt;p class="text-content" id="textContent" aria-hidden="true">He proactively proposed an idea that reduced the manual steps in pull request processing from four to one, automating solution generation. This resulted in a dramatic 75% reduct&lt;span id="dots" aria-hidden="true">...&lt;/span>‏&lt;span id="moreText" aria-hidden="true">ion in processing time. He also implemented this in GitHub Actions and contributed to the project&amp;#39;s initial setup, demonstrating well-architected, spotless, and seamless work that exceeded my expectations.&lt;/span>
  &lt;span class="read-more-link" onclick="toggleTextOverflowSpan(this)">Read More ▼&lt;/span>
  &lt;/p></description></item></channel></rss>

@@ -2381,10 +2381,10 @@ Convierte elementos no-desplazables en desplazables.&lt;/p>
  
 
  &lt;li class="splide__slide">
- &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="🎉 Y destacar la presentación maravillosa de 💻Andrés ‌ García: su sesión sobre Dart y Flutter fue realmente impresionante. Nos mostró cómo estas tecnologías trabajan en conjunto para crear animaciones fluidas y de alto rendimiento sin perder calidad. ¡Una verdadera inspiración y un espectáculo para todos los asistentes! 🎨🚀 - Juan Felipe Jimenez Pacheco Software Engineer Inetum ">
+ &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="Propuso de forma proactiva una idea que reducía de cuatro a uno los pasos manuales en el procesamiento de solicitudes pull, automatizando la generación de soluciones. El resultado fue una drástica reducción del 75% en el tiempo de procesamiento. También lo implementó en GitHub Actions y contribuyó a la configuración inicial del proyecto, demostrando un trabajo bien diseñado, impecable y sin fisuras que superó mis expectativas. - Milad Vafaeifard Lead Software Engineer | Tech Content Creator | Open-Source Contributor Epam ">
  
  
  
- &lt;p class="text-content" id="textContent" aria-hidden="true">🎉 Y destacar la presentación maravillosa de 💻Andrés ‌ García: su sesión sobre Dart y Flutter fue realmente impresionante. Nos mostró cómo estas tecnologías trabajan en conjunto pa&lt;span id="dots" aria-hidden="true">...&lt;/span>‏&lt;span id="moreText" aria-hidden="true">ra crear animaciones fluidas y de alto rendimiento sin perder calidad. ¡Una verdadera inspiración y un espectáculo para todos los asistentes! 🎨🚀&lt;/span>
+ &lt;p class="text-content" id="textContent" aria-hidden="true">Propuso de forma proactiva una idea que reducía de cuatro a uno los pasos manuales en el procesamiento de solicitudes pull, automatizando la generación de soluciones. El resultado&lt;span id="dots" aria-hidden="true">...&lt;/span>‏&lt;span id="moreText" aria-hidden="true">fue una drástica reducción del 75% en el tiempo de procesamiento. También lo implementó en GitHub Actions y contribuyó a la configuración inicial del proyecto, demostrando un trabajo bien diseñado, impecable y sin fisuras que superó mis expectativas.&lt;/span>
  &lt;span class="read-more-link" onclick="toggleTextOverflowSpan(this)">Leer más ▼&lt;/span>
  &lt;/p></description></item></channel></rss>
