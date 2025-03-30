@@ -1,21 +1,33 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="200.000000pt" height="200.000000pt" viewBox="0 0 200.000000 200.000000"
- preserveAspectRatio="xMidYMid meet">
-<metadata>
-Created by potrace 1.16, written by Peter Selinger 2001-2019
-</metadata>
-<g transform="translate(0.000000,200.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-<path d="M709 1583 c-46 -28 -59 -63 -59 -153 0 -81 0 -82 -22 -76 -62 18
--237 38 -271 32 -49 -9 -104 -58 -117 -104 -9 -34 -1 -64 97 -352 187 -551
-176 -528 251 -551 66 -19 114 0 189 76 78 79 98 91 543 320 201 103 377 199
-392 213 60 55 41 128 -45 179 -28 17 -228 121 -443 232 -354 182 -395 201
--440 201 -27 0 -60 -8 -75 -17z m-154 -243 c249 -29 732 -103 757 -116 34 -18
-48 -43 48 -89 0 -31 -12 -49 -98 -143 -55 -59 -202 -211 -328 -339 -196 -198
--235 -233 -271 -242 -45 -12 -95 0 -120 30 -18 23 -273 778 -273 810 0 39 27
-78 65 95 31 15 48 14 220 -6z"/>
-</g>
+<svg
+  version="1.2"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 500 500"
+  width="64"
+  height="64"
+>
+  <style>
+    .s0 {
+      fill: #000000;
+    }
+    .s1 {
+      fill: #ffffff;
+      stroke: #000000;
+      paint-order: stroke fill markers;
+      stroke-linejoin: round;
+      stroke-width: 6;
+    }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #FFF; }
+    }
+  </style>
+  <path
+    fill-rule="evenodd"
+    class="s0"
+    d="m204.3 61.5c-13.5-7.1-30.6-7.3-44.4-0.7-13.8 6.6-22.4 19-22.4 32.5v273.3c0 13.5 8.6 26 22.4 32.6 13.8 6.6 30.9 6.2 44.4-0.7l263.7-136.7c13.1-6.8 21.1-18.8 21.1-31.8 0-13.1-8-25-21.1-31.9z"
+  ></path>
+  <path
+    fill-rule="evenodd"
+    class="s1"
+    d="m62.1 131.6c-14.1-2.2-29.3 2.8-39.5 12.8-10.2 10-14.1 23.7-10 35.6l82.9 242c4.1 11.9 15.5 20.3 29.7 22 14.3 1.6 29.2-3.8 39.1-14.1l192-201c9.5-9.9 12.9-23 9-34.5-4-11.6-14.7-19.7-28.3-21.8z"
+  ></path>
 </svg>
