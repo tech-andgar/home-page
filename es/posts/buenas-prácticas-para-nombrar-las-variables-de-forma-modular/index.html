@@ -10,391 +10,370 @@ to search this site with&nbsp;
 <label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/es/about/ data-cursor=block>Acerca de</a></li><li class=navigation-item><a class=navigation-link href=/es/posts/ data-cursor=block>Blog</a></li><li class=navigation-item><a class=navigation-link href=/es/projects/ data-cursor=block>Proyectos</a></li><li class=navigation-item><a class=navigation-link href=/es/talks/ data-cursor=block>Charlas</a></li><li class=navigation-item><a class=navigation-link href=/es/contact/ data-cursor=block>Contacto</a></li><li class=navigation-item><a class=navigation-link href=https://link.tech-andgar.me/CVAFGR202404DEV data-cursor=block>CV</a></li><li class=navigation-item><a class=navigation-link href=/es/privacy-policy/ data-cursor=block>Política de Privacidad</a></li><li class="navigation-item nav-link-search"><a href=# class=navigation-link title=Search data-cursor=block><i class="fa fa-search"></i></a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=/ data-cursor=block>English 🇬🇧</a></li></ul></section></nav><div class=content><section class="container post"><article data-pagefind-body><header><div class=post-title><h1 data-pagefind-meta=title class=title><a class=title-link href=https://tech-andgar.me/es/posts/buenas-pr%C3%A1cticas-para-nombrar-las-variables-de-forma-modular/>Buenas prácticas para nombrar las variables de forma modular</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
 <time data-pagefind-meta=date[datetime] datetime=2022-10-19T00:00:00Z>octubre 19, 2022
 </time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
-6 minutos de lectura.</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
+14 minutos de lectura.</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
 <a href=/es/categories/lenguaje-de-programaci%C3%B3n/>Lenguaje De Programación</a></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
 <span class=tag><a href=/es/tags/nombrar-las-variables/>Nombrar Las Variables</a>
 </span><span class=separator>•</span>
-<span class=tag><a href=/es/tags/nombramiento-las-variables/>Nombramiento Las Variables</a></span></div></div></header><div class=post-content><img src=/images/posts/best_practices_naming_modular_variables_programming.webp alt="Featured image"><h1 id=estándar-nombramiento-las-variables-de-forma-modular>Estándar nombramiento las variables de forma modular
-<a class=heading-link href=#est%c3%a1ndar-nombramiento-las-variables-de-forma-modular><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h1><p>Cuando trabajas con un lenguaje de programación, es necesario aprovechar el poder de las variables. Sin embargo, si creas nombres de variables espontáneamente a medida que programas, lo más probable es que tu convención de nomenclatura carezca de cohesión. Deberías pensar en organizar los nombres de tus variables (y del proyecto en general) de forma modular. Esto aportará estructura y unidad a tu proyecto en su conjunto, lo que facilitará su comprensión y navegación.</p><h2 id=una-sugerencia-de-nomenclatura>Una sugerencia de nomenclatura
-<a class=heading-link href=#una-sugerencia-de-nomenclatura><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Digamos que necesitas una variable para el color del texto en tu proyecto.
-¿Deberías llamarla <code>text-color</code> o <code>color-text</code>? ¿Cómo se decide?
-Elegir uno al azar puede contribuir a la falta de estructura a medida que aumenta el número de variables en tu proyecto. Como se ha comprobado en la práctica, a menudo olvidamos exactamente cómo hemos nombrado las variables para determinados proyectos, lo que puede llevar a la confusión y a métodos de búsqueda y sustitución global de nombres de variables que llevan mucho tiempo.</p><p>Lo que necesitamos es una regla para definir y seleccionar nuestros nombres de variables. Una excelente manera de mantener la modularidad en tu proyecto es agrupar las variables que comparten relaciones y puntos en común. Entonces, puedes nombrarlas ordenando las palabras que describen su función de <strong>genérico a específico de izquierda a derecha</strong>.</p><p>Por ejemplo, si tienes cuatro variables para cuatro colores de borde diferentes, puedes nombrarlas todas comenzando por <code>border</code> (ya que es el término genérico que todas comparten) y ser más específico con una lectura de izquierda a derecha. Agrupar y nombrar las variables de esta manera hace que tu código sea más fácil de leer, comprender y recordar.</p><h3 id=sin-patrón-no-debe-utilizar-este-ejemplo>Sin patrón (No debe utilizar este ejemplo)
-<a class=heading-link href=#sin-patr%c3%b3n-no-debe-utilizar-este-ejemplo><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blueBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightBlueBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightestBlueBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>darkGreenBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>darkestBorderGreen</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>redBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* CSS */</span>
+<span class=tag><a href=/es/tags/nombramiento-las-variables/>Nombramiento Las Variables</a></span></div></div></header><div class=post-content><img src=/images/posts/best_practices_naming_modular_variables_programming.webp alt="Featured image"><h1 id=propuesta-de-estándar-nomenclatura-jerárquica-para-variables-de-lo-general-a-lo-específico>Propuesta de Estándar: Nomenclatura Jerárquica para Variables de lo General a lo Específico
+<a class=heading-link href=#propuesta-de-est%c3%a1ndar-nomenclatura-jer%c3%a1rquica-para-variables-de-lo-general-a-lo-espec%c3%adfico><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h1><h2 id=el-problema-nombres-de-variables-inconsistentes-y-caóticos>El Problema: Nombres de Variables Inconsistentes y Caóticos
+<a class=heading-link href=#el-problema-nombres-de-variables-inconsistentes-y-ca%c3%b3ticos><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Al programar, especialmente en el desarrollo de UI y sistemas de diseño, el nombramiento de variables es fundamental. Sin embargo, un enfoque ad-hoc y espontáneo a menudo conduce a convenciones incoherentes, especialmente a medida que el proyecto crece o participan más colaboradores. Recordar nombres exactos se vuelve una carga, lo que resulta en búsquedas globales ineficientes, refactorizaciones costosas y una disminución general de la legibilidad y mantenibilidad del código. Necesitamos un enfoque estructurado y predecible.</p><p><strong>Síntomas Comunes del Problema:</strong></p><ul><li><code>primaryColor</code> vs <code>main_color</code> vs <code>themePrimary</code></li><li><code>buttonHover</code> vs <code>btnMouseOver</code> vs <code>hoverButtonBg</code></li><li><code>text_size_small</code> vs <code>smallFontSize</code> vs <code>fontSzS</code></li><li>Variables ambiguas como <code>highlight</code>, <code>border</code>, <code>temp</code>, <code>data</code></li><li>Dificultad para encontrar todas las variables relacionadas con un componente (<code>button</code>, <code>card</code>).</li><li>Inconsistencia al añadir nuevas variantes (¿<code>darkRed</code>, <code>redDark</code>, <code>darkerRed</code>?).</li></ul><h2 id=la-solución-nomenclatura-jerárquica-modular-y-predictiva>La Solución: Nomenclatura Jerárquica Modular y Predictiva
+<a class=heading-link href=#la-soluci%c3%b3n-nomenclatura-jer%c3%a1rquica-modular-y-predictiva><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Proponemos un estándar de nomenclatura basado en una <strong>jerarquía clara y consistente</strong>, ordenando las partes del nombre <strong>de lo general a lo específico</strong>, de izquierda a derecha. Este enfoque no solo agrupa lógicamente las variables relacionadas, sino que mejora drásticamente la predictibilidad, la mantenibilidad y aprovecha al máximo las capacidades de autocompletado de los IDEs modernos.</p><p><strong>El Patrón Central Recomendado:</strong></p><p>La estructura general que recomendamos sigue este orden:</p><p><code>[Categoría/Contexto] -> Elemento/Componente -> Propiedad/Atributo -> [Variante/Estado]</code></p><p>Donde:</p><ul><li><strong>[Categoría/Contexto] (Opcional pero recomendado en sistemas grandes):</strong> Un agrupador de alto nivel que define un área funcional, tema o sub-sistema (ej: <code>ui-kit</code>, <code>theme</code>, <code>feature-auth</code>, <code>semantic-color</code>). A menudo puede estar implícito por la ubicación del archivo/módulo, pero explicitarlo en el nombre aumenta la claridad global.</li><li><strong>Elemento/Componente:</strong> El sujeto principal al que se aplica la variable. Puede ser un componente UI específico (<code>button</code>, <code>card</code>, <code>input</code>), un concepto abstracto (<code>color</code>, <code>spacing</code>, <code>font</code>, <code>border</code>, <code>icon</code>), o incluso una entidad más amplia (<code>userProfile</code>, <code>searchResults</code>).</li><li><strong>Propiedad/Atributo:</strong> La característica específica que se está definiendo para el Elemento (ej: <code>color</code>, <code>size</code>, <code>font-family</code>, <code>background-color</code>, <code>margin</code>, <code>z-index</code>, <code>opacity</code>, <code>padding</code>, <code>weight</code>).</li><li><strong>[Variante/Estado] (Opcional):</strong> Modificadores que especifican una variación, estado o excepción a la norma. Esto incluye estados interactivos (<code>hover</code>, <code>focus</code>, <code>disabled</code>, <code>active</code>), variantes semánticas o de propósito (<code>primary</code>, <code>secondary</code>, <code>error</code>, <code>success</code>, <code>info</code>), tamaños (<code>large</code>, <code>small</code>, <code>compact</code>), estilos visuales (<code>light</code>, <code>dark</code>, <code>subtle</code>) u otras distinciones necesarias. Se pueden encadenar si es lógico y necesario (ej: <code>disabled-light</code>).</li></ul><p><strong>Nota sobre Casos &ldquo;Default&rdquo; o &ldquo;Base&rdquo;:</strong></p><p>Para el valor más común o por defecto de una propiedad, se recomienda usar el nombre más corto y directo posible (ej: <code>textColor</code>, <code>buttonBackgroundColor</code>) si no genera ambigüedad en el contexto. Los sufijos como <code>-default</code>, <code>-base</code>, o <code>-medium</code> pueden usarse cuando sea necesario diferenciar explícitamente la variante principal de otras (ej: <code>fontSizeMedium</code> vs <code>fontSizeLarge</code>, <code>colorBrandBase</code> vs <code>colorBrandDark</code>). La consistencia dentro de un grupo de variables relacionadas es clave.</p><p><strong>Nota sobre Convenciones de Casos:</strong></p><p>Esta estructura jerárquica es el concepto fundamental. Debe adaptarse a las convenciones de mayúsculas/minúsculas estándar del lenguaje o plataforma específica:</p><ul><li><strong>CSS/SCSS/Less:</strong> <code>kebab-case</code> (ej: <code>--button-background-color-primary-hover</code>)</li><li><strong>JavaScript/TypeScript:</strong> <code>camelCase</code> (ej: <code>buttonBackgroundColorPrimaryHover</code>) o <code>PascalCase</code> para constantes/enums si la guía de estilo lo indica.</li><li><strong>Dart/Flutter:</strong> <code>camelCase</code> (ej: <code>buttonBackgroundColorPrimaryHover</code>)</li><li><strong>JSON/YAML (Tokens):</strong> <code>kebab-case</code> o <code>camelCase</code> son comunes.</li><li><strong>Swift:</strong> <code>camelCase</code> (ej: <code>buttonBackgroundColorPrimaryHover</code>)</li></ul><h2 id=ejemplo-1-paleta-de-colores-básica>Ejemplo 1: Paleta de Colores Básica
+<a class=heading-link href=#ejemplo-1-paleta-de-colores-b%c3%a1sica><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Incluso para definir tonos de un color, la estructura aporta claridad. Aquí, el &ldquo;Elemento&rdquo; es el concepto del color (<code>blue</code>, <code>grey</code>).</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Muestra orden inconsistente, mezcla de conceptos (matiz vs. sombra), ambigüedad y dificultad para escalar.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// No Recomendado: Inconsistente, ambiguo, difícil de escalar
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>BadPalette</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>blue</span> <span class=o>=</span> <span class=s1>&#39;#007bff&#39;</span><span class=p>;</span>         <span class=c1>// Ok, ¿pero es el base?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>darkBlue</span> <span class=o>=</span> <span class=s1>&#39;#0056b3&#39;</span><span class=p>;</span>    <span class=c1>// Variante antes que elemento
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>mediumBlue</span> <span class=o>=</span> <span class=s1>&#39;#0069d9&#39;</span><span class=p>;</span> <span class=c1>// ¿Orden relativo? ¿Más oscuro o claro?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>blueDarkest</span> <span class=o>=</span> <span class=s1>&#39;#003d80&#39;</span><span class=p>;</span> <span class=c1>// Variante después, inconsistente
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>light_blue</span> <span class=o>=</span> <span class=s1>&#39;#17a2b8&#39;</span><span class=p>;</span> <span class=c1>// ¿Matiz diferente? ¿Snake_case?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>lightestBlue</span> <span class=o>=</span> <span class=s1>&#39;#b8daff&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>accent</span> <span class=o>=</span> <span class=s1>&#39;#ff00ff&#39;</span><span class=p>;</span>      <span class=c1>// ¿Acento para qué? ¿Primario? ¿Secundario?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>grey</span> <span class=o>=</span> <span class=s1>&#39;#ccc&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>grayDark</span> <span class=o>=</span> <span class=s1>&#39;#888&#39;</span><span class=p>;</span>       <span class=c1>// &#39;grey&#39; vs &#39;gray&#39;
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>lighterGreyValue</span> <span class=o>=</span> <span class=s1>&#39;#eee&#39;</span><span class=p>;</span><span class=c1>// Incluye &#39;Value&#39; innecesariamente
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* No Recomendado: Inconsistente, ambiguo, difícil de escalar */</span>
 </span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--light-blue-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--lightest-blue-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--dark-green-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--darkest-border-green</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--red-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--blue</span><span class=p>:</span> <span class=mh>#007bff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--dark-blue</span><span class=p>:</span> <span class=mh>#0056b3</span><span class=p>;</span>        <span class=c>/* Variante antes */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--medium-blue</span><span class=p>:</span> <span class=mh>#0069d9</span><span class=p>;</span>     <span class=c>/* ¿Orden? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--blue-darkest</span><span class=p>:</span> <span class=mh>#003d80</span><span class=p>;</span>     <span class=c>/* Variante después */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--light-blue</span><span class=p>:</span> <span class=mh>#17a2b8</span><span class=p>;</span>       <span class=c>/* ¿Matiz diferente? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--lightest-blue</span><span class=p>:</span> <span class=mh>#b8daff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--accentColor</span><span class=p>:</span> <span class=mh>#ff00ff</span><span class=p>;</span>     <span class=c>/* ¿camelCase en CSS? ¿Acento para qué? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--grey</span><span class=p>:</span> <span class=mh>#ccc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--gray-dark</span><span class=p>:</span> <span class=mh>#888</span><span class=p>;</span>           <span class=c>/* &#39;grey&#39; vs &#39;gray&#39; */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--lighter-grey-value</span><span class=p>:</span> <span class=mh>#eee</span><span class=p>;</span> <span class=c>/* Palabra innecesaria */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--red</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--darkRed</span><span class=p>:</span> <span class=kc>darkred</span><span class=p>;</span>         <span class=c>/* ¿Y si necesito uno intermedio? */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><h3 id=genérico---específico-se-recomienda-utilizar-este-ejemplo>Genérico -> Específico (Se recomienda utilizar este ejemplo)
-<a class=heading-link href=#gen%c3%a9rico---espec%c3%adfico-se-recomienda-utilizar-este-ejemplo><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderBlue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderBlueLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderBlueLightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderGreenDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderGreenDarkest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderRed</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* CSS */</span>
+</span></span></code></pre></div><p><strong>Enfoque Jerárquico Recomendado (<code>Elemento -> [Variante]</code>):</strong> Claro, consistente y escalable.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Recomendado: Elemento(Color) -&gt; Variante
+</span></span></span><span class=line><span class=cl><span class=c1>// (Asumiendo colores base, no ligados a un componente específico)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>ColorPalette</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Prefijo &#39;color&#39; opcional para agrupar, actúa como mini-categoría
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorBlueBase</span>    <span class=o>=</span> <span class=s1>&#39;#007bff&#39;</span><span class=p>;</span> <span class=c1>// O colorBlue500
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorBlueDark</span>    <span class=o>=</span> <span class=s1>&#39;#0056b3&#39;</span><span class=p>;</span> <span class=c1>// O colorBlue700
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorBlueDarker</span>  <span class=o>=</span> <span class=s1>&#39;#003d80&#39;</span><span class=p>;</span> <span class=c1>// O colorBlue900
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorBlueLight</span>   <span class=o>=</span> <span class=s1>&#39;#5cadff&#39;</span><span class=p>;</span> <span class=c1>// O colorBlue300
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorBlueLighter</span> <span class=o>=</span> <span class=s1>&#39;#b8daff&#39;</span><span class=p>;</span> <span class=c1>// O colorBlue100
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Matiz diferente, nombrarlo explícitamente como Elemento
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorCyanBase</span>    <span class=o>=</span> <span class=s1>&#39;#17a2b8&#39;</span><span class=p>;</span> <span class=c1>// O colorCyan500
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Escala de Grises consistente
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyBase</span>    <span class=o>=</span> <span class=s1>&#39;#cccccc&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey500
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyDark</span>    <span class=o>=</span> <span class=s1>&#39;#888888&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey700
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyDarker</span>  <span class=o>=</span> <span class=s1>&#39;#333333&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey900
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyLight</span>   <span class=o>=</span> <span class=s1>&#39;#dddddd&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey300
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyLighter</span> <span class=o>=</span> <span class=s1>&#39;#eeeeee&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey100
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Recomendado: Elemento(Color) -&gt; Variante */</span>
 </span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-blue-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-blue-lightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-green-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-green-darkest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-red</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* Prefijo &#39;--color-&#39; opcional */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-blue-base</span><span class=p>:</span>    <span class=mh>#007bff</span><span class=p>;</span>  <span class=c>/* O --color-blue-500 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-blue-dark</span><span class=p>:</span>    <span class=mh>#0056b3</span><span class=p>;</span>  <span class=c>/* O --color-blue-700 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-blue-darker</span><span class=p>:</span>  <span class=mh>#003d80</span><span class=p>;</span>  <span class=c>/* O --color-blue-900 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-blue-light</span><span class=p>:</span>   <span class=mh>#5cadff</span><span class=p>;</span>  <span class=c>/* O --color-blue-300 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-blue-lighter</span><span class=p>:</span> <span class=mh>#b8daff</span><span class=p>;</span>  <span class=c>/* O --color-blue-100 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* Matiz diferente */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-cyan-base</span><span class=p>:</span>    <span class=mh>#17a2b8</span><span class=p>;</span>  <span class=c>/* O --color-cyan-500 */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* Escala de Grises */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-grey-base</span><span class=p>:</span>    <span class=mh>#cccccc</span><span class=p>;</span>  <span class=c>/* O --color-grey-500 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-grey-dark</span><span class=p>:</span>    <span class=mh>#888888</span><span class=p>;</span>  <span class=c>/* O --color-grey-700 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-grey-darker</span><span class=p>:</span>  <span class=mh>#333333</span><span class=p>;</span>  <span class=c>/* O --color-grey-900 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-grey-light</span><span class=p>:</span>   <span class=mh>#dddddd</span><span class=p>;</span>  <span class=c>/* O --color-grey-300 */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-grey-lighter</span><span class=p>:</span> <span class=mh>#eeeeee</span><span class=p>;</span>  <span class=c>/* O --color-grey-100 */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><h2 id=de-lo-más-general-a-lo-más-específico-un-ejemplo>De lo más general a lo más específico: Un ejemplo
-<a class=heading-link href=#de-lo-m%c3%a1s-general-a-lo-m%c3%a1s-espec%c3%adfico-un-ejemplo><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Supongamos que estamos trabajando en un lenguaje de programación y queremos crear una serie de variables que definan la paleta de colores de nuestro proyecto. Si estamos trabajando con un tono de blue (azul), podríamos crear algunas variables como esta</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Hmmm... no es mejor
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>darkBlue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>mediumBlue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>darkestBlue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightBlue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightestBlue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Hmmm... no es mejor */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
+</span></span></code></pre></div><h2 id=ejemplo-2-estilos-de-ui-comunes-design-tokens>Ejemplo 2: Estilos de UI Comunes (Design Tokens)
+<a class=heading-link href=#ejemplo-2-estilos-de-ui-comunes-design-tokens><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Aplicando <code>Elemento -> Propiedad -> [Variante]</code> a variables de estilo diversas.</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Muestra orden inconsistente, ambigüedad sobre la propiedad, abreviaturas inconsistentes, nombres genéricos y mezcla de niveles de abstracción.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// No Recomendado: Inconsistente, ambiguo, abreviaturas, genérico
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>BadStyleGuide</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderColor</span> <span class=o>=</span> <span class=s1>&#39;#ccc&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>darkBorderColor</span> <span class=o>=</span> <span class=s1>&#39;#888&#39;</span><span class=p>;</span>   <span class=c1>// Variante antes
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>lightColorBorder</span> <span class=o>=</span> <span class=s1>&#39;#eee&#39;</span><span class=p>;</span> <span class=c1>// Orden invertido, &#39;Color&#39; redundante?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>highlight</span> <span class=o>=</span> <span class=s1>&#39;yellow&#39;</span><span class=p>;</span>      <span class=c1>// ¿Qué propiedad? ¿Background? ¿Text?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>link</span> <span class=o>=</span> <span class=s1>&#39;blue&#39;</span><span class=p>;</span>             <span class=c1>// ¿Color? ¿Decoration? ¿FontSize?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>linkDark</span> <span class=o>=</span> <span class=s1>&#39;navy&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>text</span> <span class=o>=</span> <span class=s1>&#39;#333&#39;</span><span class=p>;</span>             <span class=c1>// ¿Color? ¿Size? ¿Weight?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>colorText</span> <span class=o>=</span> <span class=s1>&#39;#333&#39;</span><span class=p>;</span>        <span class=c1>// Orden invertido
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>linkColorLight</span> <span class=o>=</span> <span class=s1>&#39;lightblue&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightestTextColor</span> <span class=o>=</span> <span class=s1>&#39;#aaa&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>bgColor</span> <span class=o>=</span> <span class=s1>&#39;white&#39;</span><span class=p>;</span>         <span class=c1>// Abreviatura &#39;bg&#39;
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>backgroundColor</span> <span class=o>=</span> <span class=s1>&#39;#f0f0f0&#39;</span><span class=p>;</span> <span class=c1>// No abreviado, inconsistente
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>padding1</span> <span class=o>=</span> <span class=m>8.0</span><span class=p>;</span>            <span class=c1>// &#39;1&#39; es genérico, ¿qué significa?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>marginSmall</span> <span class=o>=</span> <span class=m>4.0</span><span class=p>;</span>         <span class=c1>// ¿Relativo a qué? ¿Es px, dp, rem?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kt>double</span> <span class=n>mainFontSize</span> <span class=o>=</span> <span class=m>16.0</span><span class=p>;</span>    <span class=c1>// Incluye tipo en nombre (menos común en Dart)
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>buttonPadding</span><span class=p>;</span>             <span class=c1>// Mezcla tokens con estilos de componente
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* No Recomendado: Inconsistente, ambiguo, abreviaturas, genérico */</span>
 </span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--dark-blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--medium-blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--darkest-blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--light-blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--lightest-blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-color</span><span class=p>:</span> <span class=mh>#ccc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--dark-border-color</span><span class=p>:</span> <span class=mh>#888</span><span class=p>;</span>      <span class=c>/* Variante antes */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--light-color-border</span><span class=p>:</span> <span class=mh>#eee</span><span class=p>;</span>     <span class=c>/* Orden invertido */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--highlight</span><span class=p>:</span> <span class=kc>yellow</span><span class=p>;</span>            <span class=c>/* Ambiguo (background?, text?) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--link</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>                   <span class=c>/* Ambiguo (color?, decoration?) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--link-dark</span><span class=p>:</span> <span class=kc>navy</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--text</span><span class=p>:</span> <span class=mh>#333</span><span class=p>;</span>                   <span class=c>/* Ambiguo (color?, size?) */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--color-text</span><span class=p>:</span> <span class=mh>#333</span><span class=p>;</span>             <span class=c>/* Orden invertido */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--link-color-light</span><span class=p>:</span> <span class=kc>lightblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--lightest-text-color</span><span class=p>:</span> <span class=mh>#aaa</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--bg-color</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>              <span class=c>/* Abreviatura */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--background-color-hover</span><span class=p>:</span> <span class=mh>#f0f0f0</span><span class=p>;</span> <span class=c>/* Sin abreviar */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--padding-1</span><span class=p>:</span> <span class=mi>8</span><span class=kt>px</span><span class=p>;</span>               <span class=c>/* ¿Qué es &#39;1&#39;? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--margin-small</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>            <span class=c>/* ¿Comparado con qué? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-width</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span><span class=p>;</span>            <span class=c>/* Demasiado genérico para un sistema */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>Una mejor manera de nombrar estas variables sería empezar con la palabra genérica que todas tienen en común: <strong>blue</strong>. Luego, podemos ir concretando de izquierda a derecha:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Es mejor
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blueDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blueMedium</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blueDarkest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blueLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>blueLightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Es mejor */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
+</span></span></code></pre></div><p><strong>Enfoque Jerárquico Recomendado (<code>Elemento -> Propiedad -> [Variante]</code>):</strong> Claro, predecible, agrupa lógicamente y potencia el autocompletado.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Recomendado: Elemento -&gt; Propiedad -&gt; [Variante]
+</span></span></span><span class=line><span class=cl><span class=c1>// (Ejemplo para Design Tokens en Dart. Usar Color, double, etc.)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>import</span> <span class=s1>&#39;package:flutter/material.dart&#39;</span><span class=p>;</span> <span class=c1>// O equivalente si no es Flutter
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>DesignTokens</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Border ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>borderColorDefault</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFCCCCCC</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>borderColorSubtle</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFEEEEEE</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>borderColorIntense</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF888888</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>borderWidthHairline</span> <span class=o>=</span> <span class=m>1.0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>borderWidthThick</span> <span class=o>=</span> <span class=m>3.0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>borderRadiusSmall</span> <span class=o>=</span> <span class=m>4.0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>borderRadiusMedium</span> <span class=o>=</span> <span class=m>8.0</span><span class=p>;</span> <span class=c1>// Base/Default
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Background ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>backgroundColorSurface</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>white</span><span class=p>;</span> <span class=c1>// Default
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>backgroundColorHover</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFF0F0F0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>backgroundColorDisabled</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFE9ECEF</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>backgroundColorSelected</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFE0E0FF</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Text ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>textColorDefault</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF333333</span><span class=p>);</span> <span class=c1>// Base
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>textColorSubtle</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF666666</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>textColorPlaceholder</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF999999</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>textColorDisabled</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFAAAAAA</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>textColorOnError</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span> <span class=c1>// Semántico
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>fontSizeSmall</span> <span class=o>=</span> <span class=m>14.0</span><span class=p>;</span> <span class=c1>// Asumiendo 16 es base
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>fontSizeMedium</span> <span class=o>=</span> <span class=m>16.0</span><span class=p>;</span> <span class=c1>// Base
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>fontSizeLarge</span> <span class=o>=</span> <span class=m>20.0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>String</span> <span class=n>fontFamilyBody</span> <span class=o>=</span> <span class=s1>&#39;Roboto&#39;</span><span class=p>;</span> <span class=c1>// Ejemplo
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>String</span> <span class=n>fontFamilyHeading</span> <span class=o>=</span> <span class=s1>&#39;Merriweather&#39;</span><span class=p>;</span> <span class=c1>// Ejemplo
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>FontWeight</span> <span class=n>fontWeightRegular</span> <span class=o>=</span> <span class=n>FontWeight</span><span class=p>.</span><span class=n>w400</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>FontWeight</span> <span class=n>fontWeightBold</span> <span class=o>=</span> <span class=n>FontWeight</span><span class=p>.</span><span class=n>w700</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Link (asumiendo que es color de texto) ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>linkTextColorDefault</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>linkTextColorHover</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF00008B</span><span class=p>);</span> <span class=c1>// darkblue
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>linkTextColorVisited</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>purple</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Focus ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>focusOutlineColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>focusOutlineWidth</span> <span class=o>=</span> <span class=m>2.0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// static const double focusOutlineOffset = 1.0; // Menos común en Dart
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Highlight ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>highlightBackgroundColorInfo</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFADD8E6</span><span class=p>);</span> <span class=c1>// lightblue
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>highlightBackgroundColorWarning</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFFFFFE0</span><span class=p>);</span> <span class=c1>// lightyellow
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Spacing (usar nombres T-shirt size o escala numérica) ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>spacingSmall</span> <span class=o>=</span> <span class=m>4.0</span><span class=p>;</span>   <span class=c1>// sp-1 o spaceXs
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>spacingMedium</span> <span class=o>=</span> <span class=m>8.0</span><span class=p>;</span>  <span class=c1>// sp-2 o spaceSm
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>spacingLarge</span> <span class=o>=</span> <span class=m>16.0</span><span class=p>;</span> <span class=c1>// sp-3 o spaceMd
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>spacingXLarge</span> <span class=o>=</span> <span class=m>32.0</span><span class=p>;</span> <span class=c1>// sp-4 o spaceLg
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Recomendado: Elemento -&gt; Propiedad -&gt; [Variante] */</span>
 </span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue-medium</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue-darkest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--blue-lightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Border --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-color-default</span><span class=p>:</span> <span class=mh>#ccc</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-color-subtle</span><span class=p>:</span> <span class=mh>#eee</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-color-intense</span><span class=p>:</span> <span class=mh>#888</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-width-hairline</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-width-thick</span><span class=p>:</span> <span class=mi>3</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-radius-small</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--border-radius-medium</span><span class=p>:</span> <span class=mi>8</span><span class=kt>px</span><span class=p>;</span> <span class=c>/* Base/Default */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Background --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--background-color-surface</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span> <span class=c>/* Default */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--background-color-hover</span><span class=p>:</span> <span class=mh>#f0f0f0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--background-color-disabled</span><span class=p>:</span> <span class=mh>#e9ecef</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--background-color-selected</span><span class=p>:</span> <span class=mh>#e0e0ff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Text --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--text-color-default</span><span class=p>:</span> <span class=mh>#333</span><span class=p>;</span> <span class=c>/* Base */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--text-color-subtle</span><span class=p>:</span> <span class=mh>#666</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--text-color-placeholder</span><span class=p>:</span> <span class=mh>#999</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--text-color-disabled</span><span class=p>:</span> <span class=mh>#aaa</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--text-color-on-error</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span> <span class=c>/* Semántico */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-size-small</span><span class=p>:</span> <span class=mf>0.875</span><span class=kt>rem</span><span class=p>;</span> <span class=c>/* 14px si base es 16px */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-size-medium</span><span class=p>:</span> <span class=mi>1</span><span class=kt>rem</span><span class=p>;</span>    <span class=c>/* Base */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-size-large</span><span class=p>:</span> <span class=mf>1.25</span><span class=kt>rem</span><span class=p>;</span>  <span class=c>/* 20px */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-family-body</span><span class=p>:</span> <span class=kc>sans-serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-family-heading</span><span class=p>:</span> <span class=kc>serif</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-weight-regular</span><span class=p>:</span> <span class=mi>400</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--font-weight-bold</span><span class=p>:</span> <span class=mi>700</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Link --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--link-text-color-default</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span> <span class=c>/* Más explícito */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--link-text-color-hover</span><span class=p>:</span> <span class=kc>darkblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--link-text-color-visited</span><span class=p>:</span> <span class=kc>purple</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Focus --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--focus-outline-color</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--focus-outline-width</span><span class=p>:</span> <span class=mi>2</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--focus-outline-offset</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Highlight --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--highlight-background-color-info</span><span class=p>:</span> <span class=kc>lightblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--highlight-background-color-warning</span><span class=p>:</span> <span class=kc>lightyellow</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Spacing --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--spacing-small</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>   <span class=c>/* sp-1 o space-xs */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--spacing-medium</span><span class=p>:</span> <span class=mi>8</span><span class=kt>px</span><span class=p>;</span>  <span class=c>/* sp-2 o space-sm */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--spacing-large</span><span class=p>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span> <span class=c>/* sp-3 o space-md */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--spacing-xlarge</span><span class=p>:</span> <span class=mi>32</span><span class=kt>px</span><span class=p>;</span> <span class=c>/* sp-4 o space-lg */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>Esto no solo ayuda a recordar, sino que también permite que el editor de texto (como VSCode, Android Studio, Sublime Text, etc.) sugiera fácilmente los colores. De esta manera, no tienes que memorizar exactamente cómo nombraste tus variables. En su lugar, puedes comenzar con un término genérico y luego ir siendo más específico a medida que el editor de texto te sugiere los nombres de las variables. Todo lo que tienes que recordar es que quieres un color <strong>blue</strong>. Entonces, comienzas a escribir &ldquo;blue&rdquo; y puedes obtener una lista de todos los diferentes tonos de <strong>blue</strong> (azul) que has creado.</p><h2 id=ejemplo-de-sugerencia>Ejemplo de sugerencia
-<a class=heading-link href=#ejemplo-de-sugerencia><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Imagina que estoy trabajando en un gran proyecto y he agrupado todas mis variables que contienen valores de color anteponiéndoles la palabra genérica que todas tienen en común: color.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Hmmm... no es mejor
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>darkBorderColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightColorBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>highlight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>link</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>linkDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>text</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorText</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>linkColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>lightestTextColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Hmmm... no es mejor */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
+</span></span></code></pre></div><h2 id=ejemplo-3-escalando-con-categorías-componentes-específicos-o-temas>Ejemplo 3: Escalando con Categorías (Componentes Específicos o Temas)
+<a class=heading-link href=#ejemplo-3-escalando-con-categor%c3%adas-componentes-espec%c3%adficos-o-temas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>En sistemas complejos con componentes específicos, múltiples temas o variantes semánticas, añadir una <strong>Categoría</strong> al principio proporciona máxima claridad y organización.</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Mezcla estilos globales y específicos sin jerarquía clara, nombres inconsistentes para estados, componente al final o ausente.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// No Recomendado: Mezcla global/específico, inconsistencia, falta jerarquía
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>BadAppTheme</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Globales?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>primaryColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>errorColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// Componentes específicos mezclados y mal nombrados
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>buttonHoverBg</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF0056b3</span><span class=p>);</span> <span class=c1>// ¿Qué botón? ¿Primario?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>disabledButtonBackground</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>grey</span><span class=p>;</span> <span class=c1>// ¿Qué botón?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>secondaryButtonTextColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>backgroundColorButtonPrimary</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>blue</span><span class=p>;</span> <span class=c1>// Componente al final
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>inputBorderError</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span> <span class=c1>// Propiedad antes de estado
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>errorInputBackground</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFFFF0F0</span><span class=p>);</span> <span class=c1>// Ok, pero inconsistente
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>iconColorError</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span> <span class=c1>// ¿Qué icono? ¿Dentro del input?
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>darkThemePrimaryButtonBg</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>lightBlue</span><span class=p>;</span> <span class=c1>// Tema como prefijo simple
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* No Recomendado: Mezcla global/específico, inconsistencia, falta jerarquía */</span>
 </span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--dark-border-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--light-color-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--highlight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--link</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--link-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--link-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--lightest-text-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* Globales? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--primary-color</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--error-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* Específicos mezclados y mal nombrados */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-hover-bg</span><span class=p>:</span> <span class=kc>darkblue</span><span class=p>;</span>          <span class=c>/* ¿Qué botón? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-background-disabled</span><span class=p>:</span> <span class=kc>lightgray</span><span class=p>;</span><span class=c>/* ¿Qué botón? */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--secondary-button-text</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--background-color-button-primary</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span> <span class=c>/* Componente al final */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--input-border-error</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>            <span class=c>/* Propiedad antes de estado */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--error-input-background-color</span><span class=p>:</span> <span class=mh>#fff0f0</span><span class=p>;</span> <span class=c>/* Ok, pero inconsistente */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--icon-color-error</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>              <span class=c>/* ¿Qué icono? */</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* Theming inconsistente */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--dark-primary-button-background</span><span class=p>:</span> <span class=kc>lightblue</span><span class=p>;</span> <span class=c>/* Prefijo simple */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// OK
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorBorder</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorBorderDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorBorderLight</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorHighlight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorLink</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorLinkDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorLinkLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorText</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorTextLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorTextLightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorBackground</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorBackgroundLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorBackgroundDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorTextStroke</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorTextStrokeLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>colorTextStrokeDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl><span class=c>/* O peor aún, sin variables para temas */</span>
+</span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>primary-button</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>background-color</span><span class=p>:</span> <span class=kc>lightblue</span><span class=p>;</span> <span class=c>/* Hardcoded */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* OK */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
+</span></span></code></pre></div><p><strong>Enfoque Jerárquico Recomendado (<code>[Categoría] -> Elemento -> Propiedad -> [Variante/Estado]</code>):</strong> Máxima claridad y organización.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Recomendado: [Categoria] -&gt; Elemento -&gt; Propiedad -&gt; [Variante/Estado]
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>import</span> <span class=s1>&#39;package:flutter/material.dart&#39;</span><span class=p>;</span> <span class=c1>// O equivalente
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=kd>class</span> <span class=nc>AppTheme</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Component: Button Primary --- (Categoría: button, Elemento: primary)
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonPrimaryBackgroundColorDefault</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonPrimaryBackgroundColorHover</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF0056b3</span><span class=p>);</span> <span class=c1>// darkblue
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonPrimaryBackgroundColorDisabled</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>grey</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonPrimaryTextColorDefault</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonPrimaryTextColorDisabled</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF666666</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonPrimaryBorderColorFocus</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Component: Button Secondary ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonSecondaryBackgroundColorDefault</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>grey</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonSecondaryBackgroundColorHover</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF666666</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>buttonSecondaryTextColorDefault</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// ...etc
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Component: Input, State: Error --- (Categoría: input, Elemento: self?, Estado: error)
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>inputErrorBackgroundColor</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFFFF0F0</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>inputErrorBorderColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>inputErrorTextColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span> <span class=c1>// Texto DENTRO del input
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>inputErrorIconColor</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span> <span class=c1>// Icono DENTRO del input
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Global Theming Tokens --- (Categoría: theme)
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>themeBackgroundColorPrimary</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>themeBackgroundColorSecondary</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFF8F9FA</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>themeTextColorPrimary</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF212529</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>themeTextColorSecondary</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF6C757D</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// --- Dark Theme Overrides ---
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// Podrían estar en una clase separada `DarkAppTheme extends AppTheme`
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// o usar un Map, o prefijar/sufijar consistentemente si es simple.
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=c1>// Ejemplo con variables separadas (menos ideal si hay muchas):
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>themeDarkBackgroundColorPrimary</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFF212529</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>Color</span> <span class=n>themeDarkTextColorPrimary</span> <span class=o>=</span> <span class=n>Color</span><span class=p>(</span><span class=mh>0xFFF8F9FA</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// O sobreescribiendo la misma variable en un contexto diferente
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Ejemplo de uso en Flutter (conceptual)
+</span></span></span><span class=line><span class=cl><span class=c1>// Widget build(BuildContext context) {
+</span></span></span><span class=line><span class=cl><span class=c1>//   bool isDarkMode = Theme.of(context).brightness == Brightness.dark;
+</span></span></span><span class=line><span class=cl><span class=c1>//   Color buttonBg = isDarkMode
+</span></span></span><span class=line><span class=cl><span class=c1>//       ? AppTheme.buttonPrimaryBackgroundColorDefaultDark // Si existiera
+</span></span></span><span class=line><span class=cl><span class=c1>//       : AppTheme.buttonPrimaryBackgroundColorDefault;
+</span></span></span><span class=line><span class=cl><span class=c1>//   // ...
+</span></span></span><span class=line><span class=cl><span class=c1>// }
+</span></span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Recomendado: [Categoria] -&gt; Elemento -&gt; Propiedad -&gt; [Variante/Estado] */</span>
 </span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-border</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-border-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-border-light</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Component: Button Primary --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-background-color-default</span><span class=p>:</span> <span class=kc>blue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-background-color-hover</span><span class=p>:</span> <span class=kc>darkblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-background-color-disabled</span><span class=p>:</span> <span class=kc>lightgray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-text-color-default</span><span class=p>:</span> <span class=kc>white</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-text-color-disabled</span><span class=p>:</span> <span class=kc>gray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-border-color-focus</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--color-highlight</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Component: Button Secondary --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-secondary-background-color-default</span><span class=p>:</span> <span class=kc>gray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-secondary-background-color-hover</span><span class=p>:</span> <span class=kc>darkgray</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-secondary-text-color-default</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* ...etc */</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--color-link</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-link-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-link-light</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Component: Input, State: Error --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--input-error-background-color</span><span class=p>:</span> <span class=mh>#fff0f0</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--input-error-border-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--input-error-text-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span> <span class=c>/* Texto DENTRO del input */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--input-error-icon-color</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span> <span class=c>/* Icono DENTRO del input */</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text-lightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--color-background</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-background-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-background-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text-stroke</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text-stroke-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--color-text-stroke-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* --- Global Theme Tokens --- */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-background-color-primary</span><span class=p>:</span> <span class=mh>#ffffff</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-background-color-secondary</span><span class=p>:</span> <span class=mh>#f8f9fa</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-text-color-primary</span><span class=p>:</span> <span class=mh>#212529</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-text-color-secondary</span><span class=p>:</span> <span class=mh>#6c757d</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Si existen otros parámetros que no están relacionados en el mismo archivo o clase,
-</span></span></span><span class=line><span class=cl><span class=c1>// no deberían estar allí, ya que esto violaría el principio de responsabilidad única (SRP).
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>fontFamilyTextLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>fontFamilyTextDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>sizeTextStrokeLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>sizeTextStrokeDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>sizeTextLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>sizeTextDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c>/* Dark Theme usando atributo de datos */</span>
+</span></span><span class=line><span class=cl><span class=o>[</span><span class=nt>data-theme</span><span class=o>=</span><span class=s2>&#34;dark&#34;</span><span class=o>]</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* Sobrescribir tokens globales del tema */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-background-color-primary</span><span class=p>:</span> <span class=mh>#212529</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-background-color-secondary</span><span class=p>:</span> <span class=mh>#343a40</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-text-color-primary</span><span class=p>:</span> <span class=mh>#f8f9fa</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--theme-text-color-secondary</span><span class=p>:</span> <span class=mh>#adb5bd</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c>/* Sobrescribir variables específicas de componentes si es necesario */</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-background-color-default</span><span class=p>:</span> <span class=kc>lightblue</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-background-color-hover</span><span class=p>:</span> <span class=kc>cyan</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--button-primary-text-color-default</span><span class=p>:</span> <span class=kc>black</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=nv>--input-error-border-color</span><span class=p>:</span> <span class=kc>orange</span><span class=p>;</span> <span class=c>/* Ejemplo: Error en Dark es naranja */</span>
+</span></span><span class=line><span class=cl>  <span class=c>/* ...etc */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Si existen otros parámetros que no están relacionados en el mismo archivo o clase,
-</span></span></span><span class=line><span class=cl><span class=c> no deberían estar allí, ya que esto violaría el principio de responsabilidad única (SRP). */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
-</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--font-family-text-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--font-family-text-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--size-text-stroke-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--size-text-stroke-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--size-text-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--size-text-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>Si una clase o archivo tiene varias responsabilidades con las variables, se debe considerar aplicar otro patrón de diseño: categorización (o tipificación) de lo genérico a lo específico.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Es mejor
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>borderColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>highlightColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>linkColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>linkColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>linkColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>backgroundColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>backgroundColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>backgroundColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textColorLightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textSize</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textSizeLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textSizeDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textFontFamily</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textStrokeColor</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textStrokeColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textStrokeColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>textStrokeSize</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* Es mejor */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
-</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--border-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--highlight-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--link-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--link-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--link-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--background-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--background-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--background-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--text-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-color-lightest</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--text-size</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-sizeLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-sizeDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-fontFamily</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=err>--text-stroke-color</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-stroke-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-stroke-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--text-stroke-size</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>Si se utilizan variaciones del mismo tipo en un archivo o en una clase</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// OK
-</span></span></span><span class=line><span class=cl><span class=c1>// Dart / TypeScript
-</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>Style</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl>  <span class=c1>// Primary
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>primaryIconColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryIconColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryIconColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryIconColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryTextColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryTextColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryTextColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryTextColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryBackgroundColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryBackgroundColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryBackgroundColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>primaryBackgroundColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=c1>// Secondary
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>secondaryIconColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryIconColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryIconColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryIconColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryTextColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryTextColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryTextColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryTextColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryBackgroundColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryBackgroundColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryBackgroundColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>secondaryBackgroundColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=c1>// Tertiary
-</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>var</span> <span class=n>tertiaryIconColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryIconColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryIconColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryIconColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryTextColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryTextColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryTextColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryTextColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryBackgroundColorLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryBackgroundColorDisabledLight</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryBackgroundColorDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>tertiaryBackgroundColorDisabledDark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=p>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* OK */</span>
-</span></span><span class=line><span class=cl><span class=c>/* CSS */</span>
-</span></span><span class=line><span class=cl><span class=p>:</span><span class=nd>root</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl>  <span class=c>/* Primary */</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-icon-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-icon-color--disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-icon-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-icon-color--disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-text-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-text-color-disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-text-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-text-color-disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-background-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-background-color-disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-background-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--primary-background-color-disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=c>/* Secondary */</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-icon-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-icon-color--disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-icon-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-icon-color--disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-text-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-text-color-disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-text-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-text-color-disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-background-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-background-color-disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-background-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--secondary-background-color-disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=c>/* Tertiary */</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-icon-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-icon-color--disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-icon-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-icon-color--disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-text-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-text-color-disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-text-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-text-color-disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-background-color-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-background-color-disabled-light</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-background-color-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>--tertiary-background-color-disabled-dark</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=err>...</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><h2 id=conclusión>Conclusión
+</span></span></code></pre></div><h2 id=beneficios-clave-de-la-nomenclatura-jerárquica>Beneficios Clave de la Nomenclatura Jerárquica
+<a class=heading-link href=#beneficios-clave-de-la-nomenclatura-jer%c3%a1rquica><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ol><li><strong>Legibilidad y Comprensión:</strong> La estructura predecible hace que el código sea auto-explicativo. Es fácil deducir el propósito de una variable sin necesidad de buscar su definición.</li><li><strong>Mantenibilidad y Refactorización:</strong> Encontrar y modificar variables relacionadas es trivial. Cambiar un color base o un tamaño afecta a todas las variables que derivan de él de forma organizada.</li><li><strong>Autocompletado Potenciado (IntelliSense):</strong> Escribir la parte general (<code>button-</code>, <code>text-color-</code>, <code>theme-dark-</code>) permite al IDE filtrar y sugerir rápidamente las opciones específicas disponibles. Esto reduce drásticamente la carga cognitiva y los errores tipográficos.</li><li><strong>Colaboración Consistente:</strong> Un estándar claro y compartido elimina la ambigüedad y asegura que todos los miembros del equipo (incluyendo futuros miembros) nombren las variables de manera uniforme.</li><li><strong>Escalabilidad:</strong> El sistema se adapta bien a medida que el proyecto crece en complejidad, número de componentes o variantes de tema.</li><li><strong>Claridad Conceptual:</strong> Fomenta pensar en la estructura del sistema (componentes, propiedades, estados, variantes) de forma modular y sistemática durante el diseño y la codificación.</li></ol><h2 id=relación-con-principios-de-diseño-srp-y-cohesión>Relación con Principios de Diseño (SRP y Cohesión)
+<a class=heading-link href=#relaci%c3%b3n-con-principios-de-dise%c3%b1o-srp-y-cohesi%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Esta nomenclatura funciona de manera óptima cuando el código subyacente está bien estructurado. Si nombrar variables se vuelve excesivamente complejo o largo porque un único archivo, clase o componente intenta gestionar demasios conceptos dispares (colores base, estilos de botones específicos, configuración de API, lógica de negocio), puede ser una señal de alerta (<code>code smell</code>) indicando una baja cohesión o una violación del <strong>Principio de Responsabilidad Única (Single Responsibility Principle - SRP)</strong>. Refactorizar hacia módulos, archivos o componentes más pequeños y cohesivos no solo mejora la organización general del código, sino que también simplifica enormemente la aplicación efectiva de este estándar de nomenclatura.</p><h2 id=alcance-y-aplicabilidad>Alcance y Aplicabilidad
+<a class=heading-link href=#alcance-y-aplicabilidad><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Este patrón de nomenclatura jerárquica brilla especialmente en la definición de:</p><ul><li><strong>Design Tokens:</strong> Colores, tipografía, espaciado, sombras, radios, etc.</li><li><strong>Variables de Estilo:</strong> CSS/SCSS/Less, CSS-in-JS, estilos en línea tipados (React Native, Flutter).</li><li><strong>Variables de Configuración de UI:</strong> Temas (light/dark), densidades, modos de visualización.</li><li><strong>Constantes de Interfaz:</strong> Claves de localización (ej: <code>screenLoginButtonSubmitLabel</code>), identificadores de eventos analíticos (ej: <code>analyticsEventUserProfileEditSaveClick</code>).</li></ul><p>Aunque su origen está en la UI, el principio fundamental de <strong>nombrar jerárquicamente de lo general a lo específico</strong> es una heurística poderosa y valiosa aplicable a muchos otros dominios del nombramiento en programación (ej: configuración de backend, constantes de dominio, identificadores de recursos).</p><h2 id=conclusión>Conclusión
 <a class=heading-link href=#conclusi%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Nombrar tus variables de esta manera modular te ayudará a entender tu proyecto conceptualmente antes de codificar, mientras codificas y después de codificar. Es una situación en la que todos ganan.</p></div><footer><section class=see-also></section><div class=comments><script>let getTheme=window.localStorage&&window.localStorage.getItem("colorscheme");getTheme=getTheme??"";let s=document.createElement("script");s.src="https://giscus.app/client.js",s.setAttribute("data-repo","tech-andgar/home-page"),s.setAttribute("data-repo-id","R_kgDOMNN8Yw"),s.setAttribute("data-category","Comments"),s.setAttribute("data-category-id","DIC_kwDOGJTFUc4CXnjc"),s.setAttribute("data-mapping","pathname"),s.setAttribute("data-term",""),s.setAttribute("data-strict","0"),s.setAttribute("data-reactions-enabled","1"),s.setAttribute("data-emit-metadata","0"),s.setAttribute("data-input-position","bottom"),s.setAttribute("data-theme",getTheme),s.setAttribute("data-lang","en"),s.setAttribute("data-loading",""),s.setAttribute("crossorigin","anonymous"),s.setAttribute("async",""),document.querySelector("div.comments").innerHTML="",document.querySelector("div.comments").appendChild(s)</script></div></footer></article></section></div><footer class=footer><section class=container><p>H E L L O @ T E C H - A N D G A R . M E</p>Licensed under <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA-4.0</a>
+<span class=sr-only>Link to heading</span></a></h2><p>Adoptar un estándar de nomenclatura jerárquico y modular como el propuesto (<code>[Categoría] -> Elemento -> Propiedad -> [Variante/Estado]</code>) requiere una disciplina inicial, pero los beneficios a largo plazo en legibilidad, mantenibilidad, colaboración y escalabilidad son inmensos. Proporciona una estructura robusta y predecible que reduce la fricción en el desarrollo y mejora la calidad general de la base de código. Es una inversión fundamental para la salud y longevidad de cualquier proyecto de software, especialmente aquellos con interfaces de usuario complejas o sistemas de diseño evolutivos.</p><p>*<em><strong>Este artículo fue escrito y curado por Andres García, con el apoyo de una inteligencia artificial que utiliza aprendizaje automático (machine learning) para producir texto.</strong></em></p></div><footer><section class=see-also></section><div class=comments><script>let getTheme=window.localStorage&&window.localStorage.getItem("colorscheme");getTheme=getTheme??"";let s=document.createElement("script");s.src="https://giscus.app/client.js",s.setAttribute("data-repo","tech-andgar/home-page"),s.setAttribute("data-repo-id","R_kgDOMNN8Yw"),s.setAttribute("data-category","Comments"),s.setAttribute("data-category-id","DIC_kwDOGJTFUc4CXnjc"),s.setAttribute("data-mapping","pathname"),s.setAttribute("data-term",""),s.setAttribute("data-strict","0"),s.setAttribute("data-reactions-enabled","1"),s.setAttribute("data-emit-metadata","0"),s.setAttribute("data-input-position","bottom"),s.setAttribute("data-theme",getTheme),s.setAttribute("data-lang","en"),s.setAttribute("data-loading",""),s.setAttribute("crossorigin","anonymous"),s.setAttribute("async",""),document.querySelector("div.comments").innerHTML="",document.querySelector("div.comments").appendChild(s)</script></div></footer></article></section></div><footer class=footer><section class=container><p>H E L L O @ T E C H - A N D G A R . M E</p>Licensed under <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA-4.0</a>
 ·
 ©
 2020 -
