@@ -1656,10 +1656,54 @@ Convierte elementos no-desplazables en desplazables.&lt;/p>
 &lt;p>O programando una llamada utilizando el calendario de abajo:&lt;/p>
 
 
+&lt;a data-cal-link="tech-andgar/30min-free">Programar un tiempo conmigo&lt;/a>
 
-&lt;link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-&lt;script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async>&lt;/script>
-&lt;a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tech-andgar/30min'});return false;">Programar un tiempo conmigo&lt;/a>
+
+&lt;script type="text/javascript">
+ (function (C, A, L) {
+ let p = function (a, ar) {
+ a.q.push(ar);
+ };
+ let d = C.document;
+ C.Cal =
+ C.Cal ||
+ function () {
+ let cal = C.Cal;
+ let ar = arguments;
+ if (!cal.loaded) {
+ cal.ns = {};
+ cal.q = cal.q || [];
+ d.head.appendChild(d.createElement("script")).src = A;
+ cal.loaded = true;
+ }
+ if (ar[0] === L) {
+ const api = function () {
+ p(api, arguments);
+ };
+ const namespace = ar[1];
+ api.q = api.q || [];
+ if (typeof namespace === "string") {
+ cal.ns[namespace] = cal.ns[namespace] || api;
+ p(cal.ns[namespace], ar);
+ p(cal, ["initNamespace", namespace]);
+ } else p(cal, ar);
+ return;
+ }
+ p(cal, ar);
+ };
+ })(window, "https://app.cal.com/embed/embed.js", "init");
+ Cal("init", "meeting-free", { origin: "https://app.cal.com" });
+ 
+ 
+ 
+ 
+
+ Cal.ns["meeting-free"]("ui", {
+ hideEventTypeDetails: false,
+ layout: "month_view",
+ });
+&lt;/script>
+
 
 &lt;p>Sígueme en las redes sociales:&lt;/p></description></item><item><title>Proyectos</title><link>https://tech-andgar.me/es/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/projects/</guid><description>&lt;h2>DE CONFIANZA POR&lt;/h2>
 

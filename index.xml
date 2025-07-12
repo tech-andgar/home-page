@@ -1502,78 +1502,56 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 &lt;p>Or by scheduling a call using the calendar below:&lt;/p>
 
 
-
-&lt;link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-&lt;script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async>&lt;/script>
-&lt;a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tech-andgar/30min'});return false;">Schedule time with me&lt;/a>
-
-&lt;p>Follow me on social media:&lt;/p>
-
- &lt;ul id="social-icons">
- 
- 
- &lt;li>
- &lt;a href="https://link.tech-andgar.me/github" aria-label="GitHub" >
- &lt;i class="fa-brands fa-github fa-2x" aria-hidden="true">&lt;/i>
- &lt;/a>
- &lt;/li>
- 
- 
- 
- &lt;li>
- &lt;a href="https://link.tech-andgar.me/stackoverflow" aria-label="Stackoverflow" >
- &lt;i class="fa-brands fa-stack-overflow fa-2x" aria-hidden="true">&lt;/i>
- &lt;/a>
- &lt;/li>
- 
- 
- 
- &lt;li>
- &lt;a href="https://link.tech-andgar.me/linkedin" aria-label="LinkedIn" >
- &lt;i class="fa-brands fa-linkedin fa-2x" aria-hidden="true">&lt;/i>
- &lt;/a>
- &lt;/li>
- 
- 
- 
- &lt;li>
- &lt;a href="https://link.tech-andgar.me/youtube" aria-label="YouTube" >
- &lt;i class="fa-brands fa-youtube fa-2x" aria-hidden="true">&lt;/i>
- &lt;/a>
- &lt;/li>
- 
- 
- 
- &lt;li>
- &lt;a href="https://link.tech-andgar.me/twitter" aria-label="X" >
- &lt;i class="fa-brands fa-x-twitter fa-2x" aria-hidden="true">&lt;/i>
- &lt;/a>
- &lt;/li>
- 
- 
- &lt;/ul>
+&lt;a data-cal-link="tech-andgar/30min-free">Schedule time with me&lt;/a>
 
 
-&lt;style>
- #social-icons {
- list-style: none;
- margin: 3rem 0 1rem 0;
- padding: 0;
-
- li {
- display: inline-block;
- position: relative;
-
- a {
- color: light-dark(#212121, #dadada);
- text-transform: uppercase;
- margin-left: 1rem;
- margin-right: 1rem;
- font-size: 1.6rem;
+&lt;script type="text/javascript">
+ (function (C, A, L) {
+ let p = function (a, ar) {
+ a.q.push(ar);
+ };
+ let d = C.document;
+ C.Cal =
+ C.Cal ||
+ function () {
+ let cal = C.Cal;
+ let ar = arguments;
+ if (!cal.loaded) {
+ cal.ns = {};
+ cal.q = cal.q || [];
+ d.head.appendChild(d.createElement("script")).src = A;
+ cal.loaded = true;
  }
+ if (ar[0] === L) {
+ const api = function () {
+ p(api, arguments);
+ };
+ const namespace = ar[1];
+ api.q = api.q || [];
+ if (typeof namespace === "string") {
+ cal.ns[namespace] = cal.ns[namespace] || api;
+ p(cal.ns[namespace], ar);
+ p(cal, ["initNamespace", namespace]);
+ } else p(cal, ar);
+ return;
  }
- }
-&lt;/style></description></item><item><title>Projects</title><link>https://tech-andgar.me/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/projects/</guid><description>&lt;h2>TRUSTED BY&lt;/h2>
+ p(cal, ar);
+ };
+ })(window, "https://app.cal.com/embed/embed.js", "init");
+ Cal("init", "meeting-free", { origin: "https://app.cal.com" });
+ 
+ 
+ 
+ 
+
+ Cal.ns["meeting-free"]("ui", {
+ hideEventTypeDetails: false,
+ layout: "month_view",
+ });
+&lt;/script>
+
+
+&lt;p>Follow me on social media:&lt;/p></description></item><item><title>Projects</title><link>https://tech-andgar.me/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/projects/</guid><description>&lt;h2>TRUSTED BY&lt;/h2>
 
 &lt;div class="container-card_company">
  &lt;div class="cards_company static-cards_company">
