@@ -1,5 +1,5 @@
 (() => {
-  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/ProjectsFilter.ts
+  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/projects_filter.ts
   var ProjectsFilter = class {
     constructor() {
       this.typeFilter = document.getElementById("type-filter");
@@ -62,7 +62,7 @@
     }
   };
 
-  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/ProjectModal.ts
+  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/project_modal.ts
   var ProjectModal = class {
     constructor() {
       this.modalTriggers = document.querySelectorAll(".project-btn[data-modal-target]");
@@ -179,7 +179,7 @@
     }
   };
 
-  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/FullscreenModal.ts
+  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/fullscreen_modal.ts
   var FullscreenModal = class {
     constructor() {
       this.fullscreenModal = document.getElementById("fullscreen-modal");
