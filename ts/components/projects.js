@@ -138,7 +138,7 @@
     findModal(targetId) {
       let modal = document.querySelector(targetId);
       if (!modal && targetId.startsWith("#")) {
-        const escapedId = "#" + this.escapeSelector(targetId);
+        const escapedId = `#${this.escapeSelector(targetId)}`;
         console.log("Trying escaped selector:", escapedId);
         modal = document.querySelector(escapedId);
       }
@@ -150,7 +150,7 @@
       return modal;
     }
     escapeSelector(id) {
-      return id.replace("#", "").replace(/[\"!#$%&'()*+,./:;<=>?@[\\]^`{|}~]/g, "\\\\$&");
+      return id.replace("#", "").replace(/["!#$%&'()*+,./:;<=>?@[\\]^`{|}~]/g, "\\\\$&");
     }
     showModal(modal) {
       modal.style.display = "block";
