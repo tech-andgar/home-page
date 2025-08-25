@@ -33,7 +33,8 @@
       }
     }
     addEventListeners() {
-      if (this.typeFilter && this.categoryFilter && this.techFilter && this.complexityFilter) {
+      const clearFiltersBtn = document.getElementById("clear-filters-btn");
+      if (this.typeFilter && this.categoryFilter && this.techFilter && this.complexityFilter && clearFiltersBtn) {
         this.typeFilter.addEventListener("change", () => this.filterProjects());
         this.categoryFilter.addEventListener(
           "change",
@@ -44,7 +45,15 @@
           "change",
           () => this.filterProjects()
         );
+        clearFiltersBtn.addEventListener("click", () => this.clearFilters());
       }
+    }
+    clearFilters() {
+      this.typeFilter.value = "all";
+      this.categoryFilter.value = "all";
+      this.techFilter.value = "all";
+      this.complexityFilter.value = "all";
+      this.filterProjects();
     }
     filterProjects() {
       const selectedType = this.typeFilter.value;
