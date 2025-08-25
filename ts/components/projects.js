@@ -2,10 +2,21 @@
   // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/projects_filter.ts
   var ProjectsFilter = class {
     constructor() {
-      this.typeFilter = document.getElementById("type-filter");
-      this.categoryFilter = document.getElementById("category-filter");
-      this.techFilter = document.getElementById("tech-filter");
-      this.projectCards = document.querySelectorAll(".project-card, .test-project-card");
+      this.typeFilter = document.getElementById(
+        "type-filter"
+      );
+      this.categoryFilter = document.getElementById(
+        "category-filter"
+      );
+      this.techFilter = document.getElementById(
+        "tech-filter"
+      );
+      this.complexityFilter = document.getElementById(
+        "complexity-filter"
+      );
+      this.projectCards = document.querySelectorAll(
+        ".project-card, .test-project-card"
+      );
       this.visibleCountElement = document.getElementById("visible-count");
       this.totalCountElement = document.getElementById("total-count");
       this.totalProjects = this.projectCards.length;
@@ -22,25 +33,35 @@
       }
     }
     addEventListeners() {
-      if (this.typeFilter && this.categoryFilter && this.techFilter) {
+      if (this.typeFilter && this.categoryFilter && this.techFilter && this.complexityFilter) {
         this.typeFilter.addEventListener("change", () => this.filterProjects());
-        this.categoryFilter.addEventListener("change", () => this.filterProjects());
+        this.categoryFilter.addEventListener(
+          "change",
+          () => this.filterProjects()
+        );
         this.techFilter.addEventListener("change", () => this.filterProjects());
+        this.complexityFilter.addEventListener(
+          "change",
+          () => this.filterProjects()
+        );
       }
     }
     filterProjects() {
       const selectedType = this.typeFilter.value;
       const selectedCategory = this.categoryFilter.value;
       const selectedTech = this.techFilter.value;
+      const selectedComplexity = this.complexityFilter.value;
       let visibleCount = 0;
       this.projectCards.forEach((card) => {
         const cardType = card.dataset.type;
         const cardCategory = card.dataset.category;
         const cardTechs = JSON.parse(card.dataset.techs || "[]");
+        const cardComplexity = card.dataset.complexity;
         const typeMatch = selectedType === "all" || cardType === selectedType;
         const categoryMatch = selectedCategory === "all" || cardCategory === selectedCategory;
         const techMatch = selectedTech === "all" || cardTechs.includes(selectedTech);
-        if (typeMatch && categoryMatch && techMatch) {
+        const complexityMatch = selectedComplexity === "all" || cardComplexity === selectedComplexity;
+        if (typeMatch && categoryMatch && techMatch && complexityMatch) {
           if (card instanceof HTMLElement) {
             card.style.display = "grid";
             visibleCount++;
@@ -50,7 +71,9 @@
         }
       });
       this.updateCounter(visibleCount);
-      console.log(`Filtered: ${visibleCount}/${this.totalProjects} projects visible (Type: ${selectedType}, Category: ${selectedCategory}, Tech: ${selectedTech})`);
+      console.log(
+        `Filtered: ${visibleCount}/${this.totalProjects} projects visible (Type: ${selectedType}, Category: ${selectedCategory}, Tech: ${selectedTech}, Complexity: ${selectedComplexity})`
+      );
     }
     updateCounter(visibleCount) {
       if (this.visibleCountElement) {
