@@ -34,805 +34,470 @@
  &lt;span class="sr-only">Link to heading&lt;/span>
  &lt;/a>
 &lt;/h2>
-&lt;p>Este artículo explora las diferentes estrategias para el manejo de errores en Dart, comparando el enfoque tradicional de &lt;code>try/catch&lt;/code> con métodos más modernos como el uso de valores de retorno, clases personalizadas y enfoques funcionales utilizando paquetes como &lt;code>dartz&lt;/code> y &lt;code>fpdart&lt;/code>. Aprenderás cuándo y por qué usar cada enfoque, con ejemplos prácticos y consideraciones de rendimiento.&lt;/p></description></item><item><title>Charlas</title><link>https://tech-andgar.me/es/talks/</link><pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/talks/</guid><description>&lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
+&lt;p>Este artículo explora las diferentes estrategias para el manejo de errores en Dart, comparando el enfoque tradicional de &lt;code>try/catch&lt;/code> con métodos más modernos como el uso de valores de retorno, clases personalizadas y enfoques funcionales utilizando paquetes como &lt;code>dartz&lt;/code> y &lt;code>fpdart&lt;/code>. Aprenderás cuándo y por qué usar cada enfoque, con ejemplos prácticos y consideraciones de rendimiento.&lt;/p></description></item><item><title>Charlas</title><link>https://tech-andgar.me/es/talks/</link><pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/talks/</guid><description>&lt;div id="talk-filters" class="talk-filters">
+ &lt;div class="filter-group">
+ &lt;label for="topic-filter">Filtrar por Tema:&lt;/label>
+ &lt;select id="topic-filter">
+ &lt;option value="all">Todos los Temas&lt;/option>
  
- &lt;span>
- 1: Conversatorio : &lt;span data-pagefind-meta="title">Interview Preparation - Tips&lt;/span> (01:19:24)
- &lt;br>[Lengua de Señas Internacional (ISL) - Sin Audio]
- &lt;/span>
  
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Interview&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Work&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Software Engineering&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Software Engineer&lt;/span>
  
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2025-01-29" data-pagefind-meta="date[datetime]">2025-01-29&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Virtual&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@DeafTech"
- target="_blank"
- >
- DeafTech
- &lt;/a>
  
- &lt;/div>
-
  
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="Interview Preparation - Tips"
- videoid="TPtvh7lgcu4"
- videoStartAt="3"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=TPtvh7lgcu4">Watch on YouTube: "Interview Preparation - Tips"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
  
  
  
-
  
  
  
  
-
  
  
  
  
-
  
  
-
  
  
  
  
-
  
  
  
  
-
  
  
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
  
- &lt;span>
- 2: Seminario web: &lt;br> &lt;span data-pagefind-meta="title">CNL: Celebrating Deaf Awareness Month with the Deaf &amp;amp; Hard of Hearing WG&lt;/span> (00:10:25)
- &lt;br>[Lengua de Señas Internacional (ISL) con Inglés y con Subtítulos Inglés]
- &lt;/span>
  
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Deaf Awareness Month&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >CNCF Accessibility&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >DHoH (Deaf and Hard of Hearing) Inclusion&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >AI for Accessibility&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Sign Language&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Assistive Technology&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Interpreter Access&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Inclusive Communication&lt;/span>
  
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2024-09-25" data-pagefind-meta="date[datetime]">2024-09-25&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Virtual&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@cncf"
- target="_blank"
- >
- CNCF [Cloud Native Computing Foundation]
- &lt;/a>
  
- &lt;/div>
-
  
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="CNL: Celebrating Deaf Awareness Month with the Deaf &amp;amp; Hard of Hearing WG"
- videoid="elnn73OA9f8"
- videoStartAt="1150"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=elnn73OA9f8">Watch on YouTube: "CNL: Celebrating Deaf Awareness Month with the Deaf &amp;amp; Hard of Hearing WG"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
  
  
  
-
  
  
  
  
-
  
  
  
  
-
  
  
-
  
  
  
  
-
  
  
  
  
-
  
  
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
  
- &lt;span>
- 3: Seminario presencial Google I/O Extended 2024 - Bogotá: &lt;br> &lt;span data-pagefind-meta="title">Flutter y Dart: Empoderando el Desarrollo de Aplicaciones como Nunca Antes &lt;/span> (00:31:41)
- &lt;br>[Lengua de Señas Colombiana (LSC) con voz en off español y con Subtítulos automáticos en otros idiomas]
- &lt;/span>
  
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Flutter&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Dart&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Web Development&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Mobile Development&lt;/span>
  
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2024-07-27" data-pagefind-meta="date[datetime]">2024-07-27&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Bogotá D.C., Colombia&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@GDGBogotaCO"
- target="_blank"
- >
- GDG Bogotá
- &lt;/a>
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;option value="Accessibility">Accessibility&lt;/option>
+ 
+ &lt;option value="AI">AI&lt;/option>
+ 
+ &lt;option value="AI for Accessibility">AI for Accessibility&lt;/option>
+ 
+ &lt;option value="Assistive Technology">Assistive Technology&lt;/option>
+ 
+ &lt;option value="CNCF Accessibility">CNCF Accessibility&lt;/option>
+ 
+ &lt;option value="Community Deaf">Community Deaf&lt;/option>
+ 
+ &lt;option value="Culture Deaf">Culture Deaf&lt;/option>
+ 
+ &lt;option value="Dart">Dart&lt;/option>
+ 
+ &lt;option value="Deaf">Deaf&lt;/option>
+ 
+ &lt;option value="Deaf Awareness Month">Deaf Awareness Month&lt;/option>
+ 
+ &lt;option value="Deaf Culture">Deaf Culture&lt;/option>
+ 
+ &lt;option value="DHoH (Deaf and Hard of Hearing) Inclusion">DHoH (Deaf and Hard of Hearing) Inclusion&lt;/option>
+ 
+ &lt;option value="Disability">Disability&lt;/option>
+ 
+ &lt;option value="Educational Technology">Educational Technology&lt;/option>
+ 
+ &lt;option value="Flutter">Flutter&lt;/option>
+ 
+ &lt;option value="Inclusion">Inclusion&lt;/option>
+ 
+ &lt;option value="Inclusive Communication">Inclusive Communication&lt;/option>
+ 
+ &lt;option value="Innovation">Innovation&lt;/option>
+ 
+ &lt;option value="Interpreter Access">Interpreter Access&lt;/option>
+ 
+ &lt;option value="Interview">Interview&lt;/option>
+ 
+ &lt;option value="Junior">Junior&lt;/option>
+ 
+ &lt;option value="Mexican Sign Language">Mexican Sign Language&lt;/option>
+ 
+ &lt;option value="Mobile Development">Mobile Development&lt;/option>
+ 
+ &lt;option value="OCP">OCP&lt;/option>
+ 
+ &lt;option value="Open-Closed Principle">Open-Closed Principle&lt;/option>
+ 
+ &lt;option value="Senior">Senior&lt;/option>
+ 
+ &lt;option value="Sign Language">Sign Language&lt;/option>
+ 
+ &lt;option value="Single Responsibility Principle">Single Responsibility Principle&lt;/option>
+ 
+ &lt;option value="Software Engineer">Software Engineer&lt;/option>
+ 
+ &lt;option value="Software Engineering">Software Engineering&lt;/option>
+ 
+ &lt;option value="SOLID">SOLID&lt;/option>
+ 
+ &lt;option value="SRP">SRP&lt;/option>
+ 
+ &lt;option value="Teamwork">Teamwork&lt;/option>
+ 
+ &lt;option value="Technology">Technology&lt;/option>
+ 
+ &lt;option value="Web Development">Web Development&lt;/option>
+ 
+ &lt;option value="Work">Work&lt;/option>
+ 
+ &lt;/select>
  &lt;/div>
 
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="Flutter y Dart: Empoderando el Desarrollo de Aplicaciones como Nunca Antes "
- videoid="2zJuksmpfug"
- videoStartAt="19241"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=2zJuksmpfug">Watch on YouTube: "Flutter y Dart: Empoderando el Desarrollo de Aplicaciones como Nunca Antes "&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
+ &lt;div class="filter-group">
+ &lt;label for="type-filter">Filtrar por Tipo:&lt;/label>
+ &lt;select id="type-filter">
+ &lt;option value="all">Todos los Tipos&lt;/option>
  
  
  
-
  
  
-
  
  
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
  
- &lt;span>
- 4: Seminario web : &lt;span data-pagefind-meta="title">Ready to Write Clean, Dive into SOLID with Signers! (Part I &amp;amp; II - &amp;#39;SO&amp;#39;)&lt;/span> (00:36:30)
- &lt;br>[Lengua de Señas Internacional (ISL) - Sin Audio]
- &lt;/span>
  
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
  
- &lt;span class="topic" data-pagefind-meta="topic" >SOLID&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Single Responsibility Principle&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >SRP&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Open-Closed Principle&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >OCP&lt;/span>
  
- &lt;span class="topic" data-pagefind-meta="topic" >Software Engineering&lt;/span>
  
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2024-06-19" data-pagefind-meta="date[datetime]">2024-06-19&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Virtual&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@SignLanguageTech"
- target="_blank"
- >
- Sign Language Tech
- &lt;/a>
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;option value="conversation">conversation&lt;/option>
+ 
+ &lt;option value="essay">essay&lt;/option>
+ 
+ &lt;option value="in_person_seminar">in_person_seminar&lt;/option>
+ 
+ &lt;option value="webinar">webinar&lt;/option>
+ 
+ &lt;/select>
  &lt;/div>
 
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="Ready to Write Clean, Dive into SOLID with Signers! (Part I &amp;amp; II - &amp;#39;SO&amp;#39;)"
- videoid="seEiY29lMG0"
- videoStartAt="362"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=seEiY29lMG0">Watch on YouTube: "Ready to Write Clean, Dive into SOLID with Signers! (Part I &amp;amp; II - &amp;#39;SO&amp;#39;)"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
+ &lt;div class="filter-group">
+ &lt;label for="language-filter">Filtrar por Idioma:&lt;/label>
+ &lt;select id="language-filter">
+ &lt;option value="all">Todos los Idiomas&lt;/option>
  
  
  
-
  
  
-
  
  
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
- 
- &lt;span>
- 5: Seminario web : &lt;span data-pagefind-meta="title">Let’s discuss how to get prompted from Software Engineer to Senior Software Engineer&lt;/span> (00:43:38)
- &lt;br>[Lengua de Señas Internacional (ISL) - Sin Audio]
- &lt;/span>
- 
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Software Engineering&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Software Engineer&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Junior&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Senior&lt;/span>
- 
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2024-06-15" data-pagefind-meta="date[datetime]">2024-06-15&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Virtual&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@tech-andgar"
- target="_blank"
- >
- TECH-ANDGAR
- &lt;/a>
- &amp;nbsp;-&amp;nbsp;&lt;strong>Invitado de los oradores:&lt;/strong>
- 
- &lt;span class="speaker">Milad Vafaeifard&lt;/span>
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;option value="ISL">ISL&lt;/option>
+ 
+ &lt;option value="LSC">LSC&lt;/option>
+ 
+ &lt;option value="LSM">LSM&lt;/option>
+ 
+ &lt;/select>
  &lt;/div>
 
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="Let’s discuss how to get prompted from Software Engineer to Senior Software Engineer"
- videoid="XVo6Dopz4I8"
- videoStartAt="17"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=XVo6Dopz4I8">Watch on YouTube: "Let’s discuss how to get prompted from Software Engineer to Senior Software Engineer"&lt;/a>
- &lt;/lite-youtube>
+ &lt;div class="filter-group">
+ &lt;label for="search-input">Buscar:&lt;/label>
+ &lt;input type="text" id="search-input" placeholder="Buscar charlas...">
  &lt;/div>
- &lt;/details>
- &lt;br />
+ &lt;div class="filter-group">
+ &lt;button id="clear-filters-btn">Limpiar Filtros&lt;/button>
  &lt;/div>
+&lt;/div>
 
- 
- 
- 
+&lt;script>
+ document.addEventListener('DOMContentLoaded', function() {
+ const topicFilter = document.getElementById('topic-filter');
+ const typeFilter = document.getElementById('type-filter');
+ const languageFilter = document.getElementById('language-filter');
+ const searchInput = document.getElementById('search-input');
+ const talkItems = document.querySelectorAll('.container-fluid[data-pagefind-body]');
 
- 
- 
+ function filterTalks() {
+ const selectedTopic = topicFilter.value;
+ const selectedType = typeFilter.value;
+ const selectedLanguage = languageFilter.value;
+ const searchTerm = searchInput.value.toLowerCase();
 
- 
- 
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
- 
- &lt;span>
- 6: Seminario web : &lt;span data-pagefind-meta="title">Flutter and Dart Empowering App Development like Never Before &lt;/span> (00:54:05)
- &lt;br>[Lengua de Señas Internacional (ISL) - Sin Audio]
- &lt;/span>
- 
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Flutter&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Dart&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Web Development&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Mobile Development&lt;/span>
- 
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2024-05-17" data-pagefind-meta="date[datetime]">2024-05-17&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Virtual&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@SpaceCodingX"
- target="_blank"
- >
- Space Codingx
- &lt;/a>
- 
- &lt;/div>
-
- Video modificado - Video original en el canal YT:
- &lt;a
- href="http://youtube.com/watch?v=7wS3iKpsaSo"
- target="_blank"
- >
- Space Codingx
- &lt;/a>
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="Flutter and Dart Empowering App Development like Never Before "
- videoid="t9tqWdel6sc"
- videoStartAt="181"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=t9tqWdel6sc">Watch on YouTube: "Flutter and Dart Empowering App Development like Never Before "&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
- 
- 
- 
-
- 
- 
-
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
- 
- &lt;span>
- 7: Conversatorio: &lt;br> &lt;span data-pagefind-meta="title">CIENCIA PARA LA INCLUSIÓN, INCLUSIÓN PARA LA CIENCIA&lt;/span> (00:27:42)
- &lt;br>[Lengua de Señas Colombiana (LSC) con Español y con Subtítulos Español y automáticos en otros idiomas]
- &lt;/span>
- 
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Inclusion&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Technology&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Disability&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Innovation&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Accessibility&lt;/span>
- 
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2020-12-15" data-pagefind-meta="date[datetime]">2020-12-15&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Bogotá D.C., Colombia&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@consejeriaparaladiscapacid5204"
- target="_blank"
- >
- Consejería para la Discapacidad
- &lt;/a>
- 
- &lt;/div>
-
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="CIENCIA PARA LA INCLUSIÓN, INCLUSIÓN PARA LA CIENCIA"
- videoid="PUIb00-ACcY"
- videoStartAt="2617"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=PUIb00-ACcY">Watch on YouTube: "CIENCIA PARA LA INCLUSIÓN, INCLUSIÓN PARA LA CIENCIA"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
- 
- 
- 
-
- 
- 
- 
- 
-
- 
- 
- 
- 
-
- 
- 
-
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
- 
- &lt;span>
- 8: Conversatorio: &lt;br> &lt;span data-pagefind-meta="title">Conversatorio Ciencia para la Inclusión&lt;/span> (00:04:45)
- &lt;br>[Lengua de Señas Colombiana (LSC) con Español y con Subtítulos Español y automáticos en otros idiomas]
- &lt;/span>
- 
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Inclusion&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Technology&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Disability&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Innovation&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Accessibility&lt;/span>
- 
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2020-12-07" data-pagefind-meta="date[datetime]">2020-12-07&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Bogotá D.C., Colombia&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@MincienciasCanalOficial"
- target="_blank"
- >
- Minciencias Canal Oficial
- &lt;/a>
- 
- &lt;/div>
-
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="Conversatorio Ciencia para la Inclusión"
- videoid="bGYAGfMosWY"
- videoStartAt="7862"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=bGYAGfMosWY">Watch on YouTube: "Conversatorio Ciencia para la Inclusión"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
- 
- 
- 
-
- 
- 
-
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
-
- &lt;div class="container-fluid" data-pagefind-body>
- &lt;details>
- &lt;summary>
-
- 
- &lt;span>
- 9: Ensayo : &lt;span data-pagefind-meta="title">¿Cómo se escucha el silencio? - [Eng:&amp;#39;How do you hear silence?&amp;#39;]&lt;/span> (00:20:00)
- &lt;br>[Lengua de Señas Colombiana (LSC) con Subtítulos Español y automáticos en otros idiomas - Sin Audio]
- &lt;/span>
- 
-
- &lt;div>
- &lt;strong>Tag:&lt;/strong>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Sign Language&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Deaf&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Culture Deaf&lt;/span>
- 
- &lt;span class="topic" data-pagefind-meta="topic" >Community Deaf&lt;/span>
- 
- &lt;/div>
- &lt;/summary>
-
- &lt;div style="padding-top: 1rem;">
- &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2018-05-07" data-pagefind-meta="date[datetime]">2018-05-07&lt;/time>&amp;nbsp;-&amp;nbsp;
- &lt;strong>Ubicación:&lt;/strong> Bogotá D.C., Colombia&amp;nbsp;-&amp;nbsp;
- &lt;strong>Canal de YouTube:&lt;/strong>
- &lt;a
- href="http://youtube.com/@tech-andgar"
- target="_blank"
- >
- TECH-ANDGAR
- &lt;/a>
- 
- &lt;/div>
-
- 
-
- &lt;br />
- &lt;div
- style="
- position: relative;
- padding-bottom: 56.25%;
- height: 0;
- overflow: hidden;
- "
- >
- &lt;lite-youtube
- videotitle="¿Cómo se escucha el silencio? - [Eng:&amp;#39;How do you hear silence?&amp;#39;]"
- videoid="6lWRI5gwbm4"
- videoStartAt="0"
- params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=6lWRI5gwbm4">Watch on YouTube: "¿Cómo se escucha el silencio? - [Eng:&amp;#39;How do you hear silence?&amp;#39;]"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
- &lt;/details>
- &lt;br />
- &lt;/div>
-
-
-&lt;style>
- .topic {
- background-color: light-dark(#4b4b4b, rgb(177, 177, 177));
- color: light-dark(white, rgb(34, 34, 34));
- padding: 3px 8px;
- border-radius: 5px;
+ talkItems.forEach(item => {
+ const topics = Array.from(item.querySelectorAll('.topic')).map(span => span.textContent);
+ const talkType = item.querySelector('summary span').textContent.split(':')[1].trim().split(' ')[0]; 
+ const languages = item.querySelector('summary span').textContent.match(/\[(.*?)\]/);
+ let itemLanguages = [];
+ if (languages &amp;&amp; languages[1]) {
+ itemLanguages = languages[1].split(/\s*&amp;\s*|\s*with\s*|\s*-\s*/).map(lang => lang.trim()).filter(n => n);
  }
 
- .speaker {
- background-color: light-dark(#d3d1d1, rgb(163, 163, 163));
- color: light-dark(rgb(35, 34, 34), rgb(19, 19, 19));
- padding: 5px 10px;
- border-radius: 5px;
+ const title = item.querySelector('[data-pagefind-meta="title"]') ? item.querySelector('[data-pagefind-meta="title"]').textContent.toLowerCase() : '';
+ const description = item.querySelector('p') ? item.querySelector('p').textContent.toLowerCase() : '';
+ const speaker = Array.from(item.querySelectorAll('.speaker')).map(span => span.textContent.toLowerCase());
+ const eventName = item.querySelector('summary span') ? item.querySelector('summary span').textContent.toLowerCase() : '';
+
+ const matchesTopic = selectedTopic === 'all' || topics.includes(selectedTopic);
+ const matchesType = selectedType === 'all' || talkType.toLowerCase() === selectedType.toLowerCase();
+ const matchesLanguage = selectedLanguage === 'all' || itemLanguages.includes(selectedLanguage);
+ const matchesSearch = searchTerm === '' ||
+ title.includes(searchTerm) ||
+ description.includes(searchTerm) ||
+ speaker.some(s => s.includes(searchTerm)) ||
+ eventName.includes(searchTerm);
+
+ if (matchesTopic &amp;&amp; matchesType &amp;&amp; matchesLanguage &amp;&amp; matchesSearch) {
+ item.style.display = '';
+ } else {
+ item.style.display = 'none';
+ }
+ });
  }
 
- details > summary {
- span {
- font-weight: 500;
- }
+ topicFilter.addEventListener('change', filterTalks);
+ typeFilter.addEventListener('change', filterTalks);
+ languageFilter.addEventListener('change', filterTalks);
+ searchInput.addEventListener('keyup', filterTalks);
 
- span:hover {
- font-weight: 500;
- transition: all 0.25s ease-in;
- transition-duration: 0.25s;
- transition-delay: 0s;
- color: light-dark(#1565c0, #42a5f5) !important;
- text-decoration-line: underline;
- text-decoration-style: solid;
- text-decoration-color: currentcolor;
- text-decoration-thickness: 0.0625rem;
- cursor: pointer !important;
- }
- }
-&lt;/style></description></item><item><title>`http_status` Paquete de Dart: Una Guía Completa</title><link>https://tech-andgar.me/es/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-http_status-package/</guid><description>&lt;h1 id="http_status-paquete-de-dart-una-guía-completa">
+ const clearFiltersBtn = document.getElementById('clear-filters-btn');
+ clearFiltersBtn.addEventListener('click', function() {
+ topicFilter.value = 'all';
+ typeFilter.value = 'all';
+ languageFilter.value = 'all';
+ searchInput.value = '';
+ filterTalks();
+ });
+
+ filterTalks(); 
+ });
+&lt;/script>
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ &lt;div class="container-fluid talks-container" data-pagefind-body>
+ &lt;details class="talk-item">
+ &lt;summary>
+
+ 
+ &lt;span>
+ 1: Seminario presencial: 2° Encuentro Michoacano de Lengua de Señas Mexicana
+ 
+ &lt;br>[Lengua de Señas Colombiana (LSC) y Lengua de Señas Internacional (ISL) y LSM con Español]
+ &lt;/span>
+ 
+
+ 
+ &lt;div class="talk-tags-label">Tag:&lt;/div>
+ &lt;div class="tags">
+ 
+ &lt;span class="tag-item topic">Educational Technology&lt;/span>
+ 
+ &lt;span class="tag-item topic">AI&lt;/span>
+ 
+ &lt;span class="tag-item topic">Accessibility&lt;/span>
+ 
+ &lt;span class="tag-item topic">Sign Language&lt;/span>
+ 
+ &lt;span class="tag-item topic">Deaf Culture&lt;/span>
+ 
+ &lt;span class="tag-item topic">Mexican Sign Language&lt;/span>
+ 
+ &lt;span class="tag-item topic">Teamwork&lt;/span>
+ 
+ &lt;/div>
+ 
+ &lt;/summary>
+
+ &lt;div style="padding-top: 1rem;">
+ &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2025-06-05" data-pagefind-meta="date[datetime]">2025-06-05&lt;/time>&amp;nbsp;-&amp;nbsp;
+ &lt;strong>Ubicación:&lt;/strong> Michoacán, México
+ 
+ 
+ &lt;/div>
+
+ 
+
+ 
+ &lt;br />
+ 
+ &lt;p>Participation as presencial speaker:&lt;/p></description></item><item><title>`http_status` Paquete de Dart: Una Guía Completa</title><link>https://tech-andgar.me/es/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-http_status-package/</guid><description>&lt;h1 id="http_status-paquete-de-dart-una-guía-completa">
  &lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code>&lt;/a> Paquete de Dart: Una Guía Completa
  &lt;a class="heading-link" href="#http_status-paquete-de-dart-una-gu%c3%ada-completa">
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
