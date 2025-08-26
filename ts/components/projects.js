@@ -51,14 +51,14 @@
     clearFilters() {
       this.typeFilter.value = "all";
       this.categoryFilter.value = "all";
-      this.techFilter.value = "all";
+      this.techFilter.value = "";
       this.complexityFilter.value = "all";
       this.filterProjects();
     }
     filterProjects() {
       const selectedType = this.typeFilter.value;
       const selectedCategory = this.categoryFilter.value;
-      const selectedTech = this.techFilter.value;
+      const selectedTech = this.techFilter.value.toLowerCase();
       const selectedComplexity = this.complexityFilter.value;
       let visibleCount = 0;
       this.projectCards.forEach((card) => {
@@ -68,7 +68,9 @@
         const cardComplexity = card.dataset.complexity;
         const typeMatch = selectedType === "all" || cardType === selectedType;
         const categoryMatch = selectedCategory === "all" || cardCategory === selectedCategory;
-        const techMatch = selectedTech === "all" || cardTechs.includes(selectedTech);
+        const techMatch = selectedTech === "all" || cardTechs.some(
+          (tech) => tech.toLowerCase().includes(selectedTech)
+        );
         const complexityMatch = selectedComplexity === "all" || cardComplexity === selectedComplexity;
         if (typeMatch && categoryMatch && techMatch && complexityMatch) {
           if (card instanceof HTMLElement) {
