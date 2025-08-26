@@ -464,6 +464,7 @@
  
 
  
+ &lt;div class="talk-tags-wrapper">
  &lt;div class="talk-tags-label">Tag:&lt;/div>
  &lt;div class="tags">
  
@@ -482,6 +483,7 @@
  &lt;span class="tag-item topic">Teamwork&lt;/span>
  
  &lt;/div>
+ &lt;/div>
  
  &lt;/summary>
 
@@ -489,6 +491,9 @@
  &lt;strong>Fecha:&lt;/strong> &lt;time datetime="2025-06-05" data-pagefind-meta="date[datetime]">2025-06-05&lt;/time>&amp;nbsp;-&amp;nbsp;
  &lt;strong>Ubicación:&lt;/strong> Michoacán, México
  
+ 
+ 
+
  
  &lt;/div>
 
@@ -1254,7 +1259,7 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
 &lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item><item><title>Acerca de</title><link>https://tech-andgar.me/es/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/about/</guid><description>&lt;p>¡Hola! Soy Andrés García, un &lt;strong>desarrollador Sordo de aplicaciones móviles Full-Stack especializado en Flutter&lt;/strong>, con &lt;strong>más de 6 años de experiencia&lt;/strong> y cuya lengua materna es Lengua de Señas Colombia (LSC). Mi pasión radica en explorar la intersección entre tecnología, lógica y comunicación para crear soluciones digitales innovadoras y accesibles.&lt;/p>
+&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item><item><title>Acerca de</title><link>https://tech-andgar.me/es/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/about/</guid><description>&lt;p>¡Hola! Soy Andrés García, un &lt;strong>desarrollador Sordo de aplicaciones móviles Full-Stack especializado en Flutter&lt;/strong>, con &lt;strong>más de 7 años de experiencia&lt;/strong> y cuya lengua materna es Lengua de Señas Colombia (LSC). Mi pasión radica en explorar la intersección entre tecnología, lógica y comunicación para crear soluciones digitales innovadoras y accesibles.&lt;/p>
 &lt;p>Mi experiencia abarca:&lt;/p>
 &lt;p>• Desarrollo móvil: &lt;strong>Flutter, Dart&lt;/strong>&lt;/p>
 &lt;p>• Tecnologías web: ES6+, HTML5, CSS3, &lt;strong>Vue.js&lt;/strong>, TypeScript&lt;/p>

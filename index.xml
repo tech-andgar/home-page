@@ -464,6 +464,7 @@
  
 
  
+ &lt;div class="talk-tags-wrapper">
  &lt;div class="talk-tags-label">Tag:&lt;/div>
  &lt;div class="tags">
  
@@ -482,6 +483,7 @@
  &lt;span class="tag-item topic">Teamwork&lt;/span>
  
  &lt;/div>
+ &lt;/div>
  
  &lt;/summary>
 
@@ -489,6 +491,9 @@
  &lt;strong>Date:&lt;/strong> &lt;time datetime="2025-06-05" data-pagefind-meta="date[datetime]">2025-06-05&lt;/time>&amp;nbsp;-&amp;nbsp;
  &lt;strong>Location:&lt;/strong> Michoacán, México
  
+ 
+ 
+
  
  &lt;/div>
 
@@ -1022,7 +1027,7 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 &lt;/h3>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item><item><title>About</title><link>https://tech-andgar.me/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/about/</guid><description>&lt;p>Hi! I&amp;rsquo;m Andres Garcia, a &lt;strong>Deaf Developer&lt;/strong> with over &lt;strong>6 years of experience&lt;/strong>, whose native language is Colombian Sign Language (Lengua de Señas Colombiana, LSC). I&amp;rsquo;m passionate about exploring the intersection of technology, logic, and communication to create innovative digital solutions.&lt;/p>
+&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item><item><title>About</title><link>https://tech-andgar.me/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/about/</guid><description>&lt;p>Hi! I&amp;rsquo;m Andres Garcia, a &lt;strong>Deaf Developer&lt;/strong> with over &lt;strong>7 years of experience&lt;/strong>, whose native language is Colombian Sign Language (Lengua de Señas Colombiana, LSC). I&amp;rsquo;m passionate about exploring the intersection of technology, logic, and communication to create innovative digital solutions.&lt;/p>
 &lt;!-- raw HTML omitted -->
 &lt;p>My expertise spans:&lt;/p>
 &lt;p>• Mobile development: &lt;strong>Flutter, Dart&lt;/strong>&lt;/p>
