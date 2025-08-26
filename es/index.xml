@@ -175,15 +175,13 @@
  
  &lt;option value="CNCF Accessibility">CNCF Accessibility&lt;/option>
  
- &lt;option value="Community Deaf">Community Deaf&lt;/option>
- 
- &lt;option value="Culture Deaf">Culture Deaf&lt;/option>
- 
  &lt;option value="Dart">Dart&lt;/option>
  
  &lt;option value="Deaf">Deaf&lt;/option>
  
  &lt;option value="Deaf Awareness Month">Deaf Awareness Month&lt;/option>
+ 
+ &lt;option value="Deaf Community">Deaf Community&lt;/option>
  
  &lt;option value="Deaf Culture">Deaf Culture&lt;/option>
  
