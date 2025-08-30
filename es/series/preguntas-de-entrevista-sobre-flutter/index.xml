@@ -1,64 +1,64 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Preguntas De Entrevista Sobre Flutter on TECH-ANDGAR</title><link>https://tech-andgar.me/es/series/preguntas-de-entrevista-sobre-flutter/</link><description>Recent content in Preguntas De Entrevista Sobre Flutter on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/series/preguntas-de-entrevista-sobre-flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;ul>
-&lt;li>&lt;a href="#t%c3%a9rminos-t%c3%a9cnicos-TLDR" >Términos técnicos TLDR&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-entrevista-sobre-flutter" >Preguntas de Entrevista sobre Flutter&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#categor%c3%adas-de-preguntas" >Categorías de Preguntas&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas" >Preguntas&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#preguntas-de-flutter" >Preguntas de Flutter&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#nivel-novato" >Nivel Novato&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-intermedio" >Nivel Intermedio&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-avanzado" >Nivel Avanzado&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-experto" >Nivel Experto&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-dart" >Preguntas de Dart&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#nivel-novato---dart" >Nivel Novato - Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-intermedio---dart" >Nivel Intermedio - Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-avanzado---dart" >Nivel Avanzado - Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-experto---dart" >Nivel Experto - Dart&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-api" >Preguntas de API&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#sharedpreferences" >SharedPreferences&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#google-maps-api" >Google Maps API&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#pasarela-de-pago-en-flutter" >Pasarela de Pago en Flutter&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-getx" >Preguntas de GetX&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-firebase" >Preguntas de Firebase&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-git" >Preguntas de Git&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-generales-sobre-desarrollo-de-aplicaciones" >Preguntas Generales sobre Desarrollo de Aplicaciones&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-dise%c3%b1o-y-resoluci%c3%b3n-de-problemas-en-flutterdart" >Preguntas de Diseño y Resolución de Problemas en Flutter/Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-sobre-nuevas-tecnolog%c3%adas-y-adaptaci%c3%b3n" >Preguntas sobre Nuevas Tecnologías y Adaptación&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-espec%c3%adficas-de-la-aplicaci%c3%b3n-omdb-movie" >Preguntas Específicas de la Aplicación OMDB Movie&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-liderazgo-t%c3%a9cnico-y-desarrollador-senior" >Preguntas de Liderazgo Técnico y Desarrollador Senior&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h1 id="preguntas-de-entrevista-sobre-flutter">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Preguntas De Entrevista Sobre Flutter on TECH-ANDGAR</title><link>https://tech-andgar.me/es/series/preguntas-de-entrevista-sobre-flutter/</link><description>Recent content in Preguntas De Entrevista Sobre Flutter on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/series/preguntas-de-entrevista-sobre-flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="#t%c3%a9rminos-t%c3%a9cnicos-TLDR" &gt;Términos técnicos TLDR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-entrevista-sobre-flutter" &gt;Preguntas de Entrevista sobre Flutter&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#categor%c3%adas-de-preguntas" &gt;Categorías de Preguntas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas" &gt;Preguntas&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-flutter" &gt;Preguntas de Flutter&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#nivel-novato" &gt;Nivel Novato&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-intermedio" &gt;Nivel Intermedio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-avanzado" &gt;Nivel Avanzado&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-experto" &gt;Nivel Experto&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-dart" &gt;Preguntas de Dart&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#nivel-novato---dart" &gt;Nivel Novato - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-intermedio---dart" &gt;Nivel Intermedio - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-avanzado---dart" &gt;Nivel Avanzado - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-experto---dart" &gt;Nivel Experto - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-api" &gt;Preguntas de API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sharedpreferences" &gt;SharedPreferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#google-maps-api" &gt;Google Maps API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pasarela-de-pago-en-flutter" &gt;Pasarela de Pago en Flutter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-getx" &gt;Preguntas de GetX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-firebase" &gt;Preguntas de Firebase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-git" &gt;Preguntas de Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-generales-sobre-desarrollo-de-aplicaciones" &gt;Preguntas Generales sobre Desarrollo de Aplicaciones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-dise%c3%b1o-y-resoluci%c3%b3n-de-problemas-en-flutterdart" &gt;Preguntas de Diseño y Resolución de Problemas en Flutter/Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-sobre-nuevas-tecnolog%c3%adas-y-adaptaci%c3%b3n" &gt;Preguntas sobre Nuevas Tecnologías y Adaptación&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-espec%c3%adficas-de-la-aplicaci%c3%b3n-omdb-movie" &gt;Preguntas Específicas de la Aplicación OMDB Movie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-liderazgo-t%c3%a9cnico-y-desarrollador-senior" &gt;Preguntas de Liderazgo Técnico y Desarrollador Senior&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="preguntas-de-entrevista-sobre-flutter"&gt;
  Preguntas de Entrevista sobre Flutter
- &lt;a class="heading-link" href="#preguntas-de-entrevista-sobre-flutter">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="términos-técnicos-tldr">
+ &lt;a class="heading-link" href="#preguntas-de-entrevista-sobre-flutter"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="términos-técnicos-tldr"&gt;
  Términos técnicos TLDR
- &lt;a class="heading-link" href="#t%c3%a9rminos-t%c3%a9cnicos-tldr">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;h3 id="1-fundamentos-de-flutter--dart">
+ &lt;a class="heading-link" href="#t%c3%a9rminos-t%c3%a9cnicos-tldr"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="1-fundamentos-de-flutter--dart"&gt;
  1. Fundamentos de Flutter &amp;amp; Dart
- &lt;a class="heading-link" href="#1-fundamentos-de-flutter--dart">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item></channel></rss>
+ &lt;a class="heading-link" href="#1-fundamentos-de-flutter--dart"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

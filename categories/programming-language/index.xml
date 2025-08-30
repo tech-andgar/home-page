@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming Language on TECH-ANDGAR</title><link>https://tech-andgar.me/categories/programming-language/</link><description>Recent content in Programming Language on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/categories/programming-language/index.xml" rel="self" type="application/rss+xml"/><item><title>Solving Artifacts with `ImageFilter.blur` in Flutter on Android, iOS and macOS</title><link>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos">
- Solving Artifacts with &lt;code>ImageFilter.blur&lt;/code> in Flutter on Android, iOS and macOS
- &lt;a class="heading-link" href="#solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener">&lt;img src="https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/preview-issue.webp" alt="Flutter ImageFilter.blur Issue">&lt;/a>&lt;/p>
-&lt;h2 id="introduction">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Programming Language on TECH-ANDGAR</title><link>https://tech-andgar.me/categories/programming-language/</link><description>Recent content in Programming Language on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/categories/programming-language/index.xml" rel="self" type="application/rss+xml"/><item><title>Solving Artifacts with `ImageFilter.blur` in Flutter on Android, iOS and macOS</title><link>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos"&gt;
+ Solving Artifacts with &lt;code&gt;ImageFilter.blur&lt;/code&gt; in Flutter on Android, iOS and macOS
+ &lt;a class="heading-link" href="#solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener"&gt;&lt;img src="https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/preview-issue.webp" alt="Flutter ImageFilter.blur Issue"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;
  Introduction
- &lt;a class="heading-link" href="#introduction">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>When developing mobile and desktop applications with Flutter, it&amp;rsquo;s common to use blur effects to enhance the user interface. One of the most used methods is &lt;code>ImageFilter.blur&lt;/code>. However, some developers have encountered visual artifacts when applying this effect on Android, iOS and macOS, while it works correctly on web. In this article, we&amp;rsquo;ll explore this issue, understand the reason behind it, and provide an effective solution.&lt;/p></description></item><item><title>Dart - Use late allocation if possible</title><link>https://tech-andgar.me/posts/dart-late-keyword/</link><pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-late-keyword/</guid><description>&lt;p>Dart v2.9 added the &lt;strong>late&lt;/strong> modifier on variables.&lt;/p>
-&lt;p>When Null Safety is enabled, it is sometimes necessary to explicitly state that we will initialize a non-null variable later.
-Dart cannot always assume that a variable will be initialized later, as in the case of high-level variables. The following example would throw an error in Dart.&lt;/p>
-&lt;p>This can be used in the following two cases.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Late assign: promise to assign later&lt;/p></description></item></channel></rss>
+ &lt;a class="heading-link" href="#introduction"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;When developing mobile and desktop applications with Flutter, it&amp;rsquo;s common to use blur effects to enhance the user interface. One of the most used methods is &lt;code&gt;ImageFilter.blur&lt;/code&gt;. However, some developers have encountered visual artifacts when applying this effect on Android, iOS and macOS, while it works correctly on web. In this article, we&amp;rsquo;ll explore this issue, understand the reason behind it, and provide an effective solution.&lt;/p&gt;</description></item><item><title>Dart - Use late allocation if possible</title><link>https://tech-andgar.me/posts/dart-late-keyword/</link><pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-late-keyword/</guid><description>&lt;p&gt;Dart v2.9 added the &lt;strong&gt;late&lt;/strong&gt; modifier on variables.&lt;/p&gt;
+&lt;p&gt;When Null Safety is enabled, it is sometimes necessary to explicitly state that we will initialize a non-null variable later.
+Dart cannot always assume that a variable will be initialized later, as in the case of high-level variables. The following example would throw an error in Dart.&lt;/p&gt;
+&lt;p&gt;This can be used in the following two cases.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Late assign: promise to assign later&lt;/p&gt;</description></item></channel></rss>

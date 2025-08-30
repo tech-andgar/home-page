@@ -1,488 +1,488 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TECH-ANDGAR</title><link>https://tech-andgar.me/es/posts/</link><description>Recent content in Posts on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 19 Apr 2025 11:30:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Resolviendo Artefactos con `ImageFilter.blur` en Flutter en Android, iOS y macOS</title><link>https://tech-andgar.me/es/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="resolviendo-artefactos-con-imagefilterblur-en-flutter-en-android-ios-y-macos">
- Resolviendo Artefactos con &lt;code>ImageFilter.blur&lt;/code> en Flutter en Android, iOS y macOS
- &lt;a class="heading-link" href="#resolviendo-artefactos-con-imagefilterblur-en-flutter-en-android-ios-y-macos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener">&lt;img src="https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/preview-issue.webp" alt="Flutter ImageFilter.blur Issue">&lt;/a>&lt;/p>
-&lt;h2 id="introducción">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TECH-ANDGAR</title><link>https://tech-andgar.me/es/posts/</link><description>Recent content in Posts on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 19 Apr 2025 11:30:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Resolviendo Artefactos con `ImageFilter.blur` en Flutter en Android, iOS y macOS</title><link>https://tech-andgar.me/es/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="resolviendo-artefactos-con-imagefilterblur-en-flutter-en-android-ios-y-macos"&gt;
+ Resolviendo Artefactos con &lt;code&gt;ImageFilter.blur&lt;/code&gt; en Flutter en Android, iOS y macOS
+ &lt;a class="heading-link" href="#resolviendo-artefactos-con-imagefilterblur-en-flutter-en-android-ios-y-macos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener"&gt;&lt;img src="https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/preview-issue.webp" alt="Flutter ImageFilter.blur Issue"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="introducción"&gt;
  Introducción
- &lt;a class="heading-link" href="#introducci%c3%b3n">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>Al desarrollar aplicaciones móviles y de escritorio con Flutter, es común utilizar efectos de desenfoque para mejorar la interfaz de usuario. Uno de los métodos más utilizados es &lt;code>ImageFilter.blur&lt;/code>. Sin embargo, algunos desarrolladores han encontrado artefactos visuales al aplicar este efecto en Android, iOS y macOS, mientras que en la web funciona correctamente. En este artículo, exploraremos este problema, entenderemos la razón detrás de él y proporcionaremos una solución efectiva.&lt;/p></description></item><item><title>Innovación en la Accesibilidad: ¿Inclusión Real o Barrera para la Comunidad Sorda?</title><link>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</guid><description>&lt;h1 id="innovación-en-la-accesibilidad-inclusión-real-o-barrera-para-la-comunidad-sorda">
+ &lt;a class="heading-link" href="#introducci%c3%b3n"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Al desarrollar aplicaciones móviles y de escritorio con Flutter, es común utilizar efectos de desenfoque para mejorar la interfaz de usuario. Uno de los métodos más utilizados es &lt;code&gt;ImageFilter.blur&lt;/code&gt;. Sin embargo, algunos desarrolladores han encontrado artefactos visuales al aplicar este efecto en Android, iOS y macOS, mientras que en la web funciona correctamente. En este artículo, exploraremos este problema, entenderemos la razón detrás de él y proporcionaremos una solución efectiva.&lt;/p&gt;</description></item><item><title>Innovación en la Accesibilidad: ¿Inclusión Real o Barrera para la Comunidad Sorda?</title><link>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</link><pubDate>Mon, 21 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/innovacion-accesibilidad-comunidad-sorda/</guid><description>&lt;h1 id="innovación-en-la-accesibilidad-inclusión-real-o-barrera-para-la-comunidad-sorda"&gt;
  Innovación en la Accesibilidad: ¿Inclusión Real o Barrera para la Comunidad Sorda?
- &lt;a class="heading-link" href="#innovaci%c3%b3n-en-la-accesibilidad-inclusi%c3%b3n-real-o-barrera-para-la-comunidad-sorda">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>La accesibilidad en el mundo digital ha sido un tema recurrente en los últimos años, especialmente con el crecimiento de tecnologías interactivas como los videojuegos. Recientemente, una gran compañía ha patentado un concepto que permitiría a las personas usuarias de Lengua de Señas comunicarse con otras personas que usan un Lengua de Señas diferente en los videojuegos, mediante un traductor en tiempo real. Según la patente, llamada “Traducción de Lengua de Señas en un Entorno Virtual”, esta tecnología promete mejorar la accesibilidad en el ámbito de los juegos y más allá.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> Como persona Sorda y desarrollador, veo tanto oportunidades como riesgos en este avance que necesitan ser discutidos.&lt;/p></description></item><item><title>Manejo de Errores en Dart: ¿Deberías Usar `try/catch`, Valores de Retorno o Enfoques Funcionales?</title><link>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</guid><description>&lt;h1 id="manejo-de-errores-en-dart-deberías-usar-trycatch-valores-de-retorno-o-enfoques-funcionales">
- Manejo de Errores en Dart: ¿Deberías Usar &lt;code>try/catch&lt;/code>, Valores de Retorno o Enfoques Funcionales?
- &lt;a class="heading-link" href="#manejo-de-errores-en-dart-deber%c3%adas-usar-trycatch-valores-de-retorno-o-enfoques-funcionales">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="resumen">
+ &lt;a class="heading-link" href="#innovaci%c3%b3n-en-la-accesibilidad-inclusi%c3%b3n-real-o-barrera-para-la-comunidad-sorda"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;La accesibilidad en el mundo digital ha sido un tema recurrente en los últimos años, especialmente con el crecimiento de tecnologías interactivas como los videojuegos. Recientemente, una gran compañía ha patentado un concepto que permitiría a las personas usuarias de Lengua de Señas comunicarse con otras personas que usan un Lengua de Señas diferente en los videojuegos, mediante un traductor en tiempo real. Según la patente, llamada “Traducción de Lengua de Señas en un Entorno Virtual”, esta tecnología promete mejorar la accesibilidad en el ámbito de los juegos y más allá.&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;sup id="fnref:2"&gt;&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref"&gt;2&lt;/a&gt;&lt;/sup&gt; Como persona Sorda y desarrollador, veo tanto oportunidades como riesgos en este avance que necesitan ser discutidos.&lt;/p&gt;</description></item><item><title>Manejo de Errores en Dart: ¿Deberías Usar `try/catch`, Valores de Retorno o Enfoques Funcionales?</title><link>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</guid><description>&lt;h1 id="manejo-de-errores-en-dart-deberías-usar-trycatch-valores-de-retorno-o-enfoques-funcionales"&gt;
+ Manejo de Errores en Dart: ¿Deberías Usar &lt;code&gt;try/catch&lt;/code&gt;, Valores de Retorno o Enfoques Funcionales?
+ &lt;a class="heading-link" href="#manejo-de-errores-en-dart-deber%c3%adas-usar-trycatch-valores-de-retorno-o-enfoques-funcionales"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="resumen"&gt;
  Resumen
- &lt;a class="heading-link" href="#resumen">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>Este artículo explora las diferentes estrategias para el manejo de errores en Dart, comparando el enfoque tradicional de &lt;code>try/catch&lt;/code> con métodos más modernos como el uso de valores de retorno, clases personalizadas y enfoques funcionales utilizando paquetes como &lt;code>dartz&lt;/code> y &lt;code>fpdart&lt;/code>. Aprenderás cuándo y por qué usar cada enfoque, con ejemplos prácticos y consideraciones de rendimiento.&lt;/p></description></item><item><title>`http_status` Paquete de Dart: Una Guía Completa</title><link>https://tech-andgar.me/es/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-http_status-package/</guid><description>&lt;h1 id="http_status-paquete-de-dart-una-guía-completa">
- &lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code>&lt;/a> Paquete de Dart: Una Guía Completa
- &lt;a class="heading-link" href="#http_status-paquete-de-dart-una-gu%c3%ada-completa">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="descripción">
+ &lt;a class="heading-link" href="#resumen"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Este artículo explora las diferentes estrategias para el manejo de errores en Dart, comparando el enfoque tradicional de &lt;code&gt;try/catch&lt;/code&gt; con métodos más modernos como el uso de valores de retorno, clases personalizadas y enfoques funcionales utilizando paquetes como &lt;code&gt;dartz&lt;/code&gt; y &lt;code&gt;fpdart&lt;/code&gt;. Aprenderás cuándo y por qué usar cada enfoque, con ejemplos prácticos y consideraciones de rendimiento.&lt;/p&gt;</description></item><item><title>`http_status` Paquete de Dart: Una Guía Completa</title><link>https://tech-andgar.me/es/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-http_status-package/</guid><description>&lt;h1 id="http_status-paquete-de-dart-una-guía-completa"&gt;
+ &lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener"&gt;&lt;code&gt;http_status&lt;/code&gt;&lt;/a&gt; Paquete de Dart: Una Guía Completa
+ &lt;a class="heading-link" href="#http_status-paquete-de-dart-una-gu%c3%ada-completa"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="descripción"&gt;
  Descripción
- &lt;a class="heading-link" href="#descripci%c3%b3n">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Constantes:&lt;/strong> &lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code>&lt;/a> proporciona constantes estáticas que representan todos los códigos de estado HTTP definidos en RFC 1945 (HTTP/1.0), RFC 2616 (HTTP/1.1), y RFC 2518 (WebDAV).&lt;/li>
-&lt;li>&lt;strong>Claridad:&lt;/strong> Cada constante ofrece un nombre claro (por ejemplo, &lt;code>ok&lt;/code>, &lt;code>notFound&lt;/code>, &lt;code>forbidden&lt;/code>), facilitando la comprensión del significado de un código de estado de un vistazo.&lt;/li>
-&lt;li>&lt;strong>Información:&lt;/strong> Las constantes también ofrecen una descripción concisa del código de estado, que puede ser útil para depurar o entender las respuestas de la API.&lt;/li>
-&lt;/ul>
-&lt;h2 id="códigos-de-estado-http">
+ &lt;a class="heading-link" href="#descripci%c3%b3n"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Constantes:&lt;/strong&gt; &lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener"&gt;&lt;code&gt;http_status&lt;/code&gt;&lt;/a&gt; proporciona constantes estáticas que representan todos los códigos de estado HTTP definidos en RFC 1945 (HTTP/1.0), RFC 2616 (HTTP/1.1), y RFC 2518 (WebDAV).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Claridad:&lt;/strong&gt; Cada constante ofrece un nombre claro (por ejemplo, &lt;code&gt;ok&lt;/code&gt;, &lt;code&gt;notFound&lt;/code&gt;, &lt;code&gt;forbidden&lt;/code&gt;), facilitando la comprensión del significado de un código de estado de un vistazo.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Información:&lt;/strong&gt; Las constantes también ofrecen una descripción concisa del código de estado, que puede ser útil para depurar o entender las respuestas de la API.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="códigos-de-estado-http"&gt;
  Códigos de estado HTTP
- &lt;a class="heading-link" href="#c%c3%b3digos-de-estado-http">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>Code&lt;/th>
- &lt;th>Nombre de estado HTTP&lt;/th>
- &lt;th>&lt;a href="https://github.com/DartForge/http_status/tree/2.1.0" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> v1.x - v2.x Deprecated (obsoleto)&lt;/a>&lt;/th>
- &lt;th>&lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener">&lt;code>http_status&lt;/code> (v2.x - v3.x)&lt;/a>&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>100&lt;/td>
- &lt;td>Continue&lt;/td>
- &lt;td>Continue / CONTINUE&lt;/td>
- &lt;td>continue_&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>101&lt;/td>
- &lt;td>Switching Protocols&lt;/td>
- &lt;td>Switching_Protocols / SWITCHING_PROTOCOLS&lt;/td>
- &lt;td>switchingProtocols&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>102&lt;/td>
- &lt;td>Processing&lt;/td>
- &lt;td>Processing / PROCESSING&lt;/td>
- &lt;td>processing&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>103&lt;/td>
- &lt;td>Early Hints&lt;/td>
- &lt;td>-&lt;/td>
- &lt;td>earlyHints&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>200&lt;/td>
- &lt;td>OK&lt;/td>
- &lt;td>Ok / OK&lt;/td>
- &lt;td>ok&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>201&lt;/td>
- &lt;td>Created&lt;/td>
- &lt;td>Created / CREATED&lt;/td>
- &lt;td>created&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>202&lt;/td>
- &lt;td>Accepted&lt;/td>
- &lt;td>Accepted / ACCEPTED&lt;/td>
- &lt;td>accepted&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>203&lt;/td>
- &lt;td>Non Authoritative Information&lt;/td>
- &lt;td>NonAuthoritative_Information / NON_AUTHORITATIVE_INFORMATION&lt;/td>
- &lt;td>nonAuthoritativeInformation&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>204&lt;/td>
- &lt;td>No Content&lt;/td>
- &lt;td>No_Content / NO_CONTENT&lt;/td>
- &lt;td>noContent&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>205&lt;/td>
- &lt;td>Reset Content&lt;/td>
- &lt;td>Reset_Content / RESET_CONTENT&lt;/td>
- &lt;td>resetContent&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>206&lt;/td>
- &lt;td>Partial Content&lt;/td>
- &lt;td>Partial_Content / PARTIAL_CONTENT&lt;/td>
- &lt;td>partialContent&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>207&lt;/td>
- &lt;td>Multi-Status&lt;/td>
- &lt;td>MultiStatus / MULTISTATUS&lt;/td>
- &lt;td>multiStatus&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>208&lt;/td>
- &lt;td>Already Reported&lt;/td>
- &lt;td>Already_Reported / ALREADY_REPORTED&lt;/td>
- &lt;td>alreadyReported&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>226&lt;/td>
- &lt;td>I&amp;rsquo;M Used&lt;/td>
- &lt;td>IM_Used / IM_USED&lt;/td>
- &lt;td>imUsed&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>300&lt;/td>
- &lt;td>Multiple Choices&lt;/td>
- &lt;td>Multiple_Choices / MULTIPLE_CHOICES&lt;/td>
- &lt;td>multipleChoices&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>301&lt;/td>
- &lt;td>Moved Permanently&lt;/td>
- &lt;td>Moved_Permanently / MOVED_PERMANENTLY&lt;/td>
- &lt;td>movedPermanently&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>302&lt;/td>
- &lt;td>Found / Moved Temporarily&lt;/td>
- &lt;td>Found / Moved_Temporarily / FOUND / MOVED_TEMPORARILY&lt;/td>
- &lt;td>found / movedTemporarily&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>303&lt;/td>
- &lt;td>See Other&lt;/td>
- &lt;td>See_Other / SEE_OTHER&lt;/td>
- &lt;td>seeOther&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>304&lt;/td>
- &lt;td>Not Modified&lt;/td>
- &lt;td>Not_Modified / NOT_MODIFIED&lt;/td>
- &lt;td>notModified&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>305&lt;/td>
- &lt;td>Use Proxy&lt;/td>
- &lt;td>Use_Proxy / USE_PROXY&lt;/td>
- &lt;td>useProxy&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>307&lt;/td>
- &lt;td>Temporary Redirect&lt;/td>
- &lt;td>Temporary_Redirect / TEMPORARY_REDIRECT&lt;/td>
- &lt;td>temporaryRedirect&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>308&lt;/td>
- &lt;td>Permanent Redirect&lt;/td>
- &lt;td>Permanent_Redirect / PERMANENT_REDIRECT&lt;/td>
- &lt;td>permanentRedirect&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>400&lt;/td>
- &lt;td>Bad Request&lt;/td>
- &lt;td>Bad_Request / BAD_REQUEST&lt;/td>
- &lt;td>badRequest&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>401&lt;/td>
- &lt;td>Unauthorized&lt;/td>
- &lt;td>Unauthorized / UNAUTHORIZED&lt;/td>
- &lt;td>unauthorized&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>402&lt;/td>
- &lt;td>Payment Required&lt;/td>
- &lt;td>Payment_Required / PAYMENT_REQUIRED&lt;/td>
- &lt;td>paymentRequired&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>403&lt;/td>
- &lt;td>Forbidden&lt;/td>
- &lt;td>Forbidden / FORBIDDEN&lt;/td>
- &lt;td>forbidden&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>404&lt;/td>
- &lt;td>Not Found&lt;/td>
- &lt;td>Not_Found / NOT_FOUND&lt;/td>
- &lt;td>notFound&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>405&lt;/td>
- &lt;td>Method Not Allowed&lt;/td>
- &lt;td>Method_Not_Allowed / METHOD_NOT_ALLOWED&lt;/td>
- &lt;td>methodNotAllowed&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>406&lt;/td>
- &lt;td>Not Acceptable&lt;/td>
- &lt;td>Not_Acceptable / NOT_ACCEPTABLE&lt;/td>
- &lt;td>notAcceptable&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>407&lt;/td>
- &lt;td>Proxy Authentication Required&lt;/td>
- &lt;td>Proxy_Authentication_Required / PROXY_AUTHENTICATION_REQUIRED&lt;/td>
- &lt;td>proxyAuthenticationRequired&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>408&lt;/td>
- &lt;td>Request Timeout&lt;/td>
- &lt;td>Request_Timeout / REQUEST_TIMEOUT&lt;/td>
- &lt;td>requestTimeout&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>409&lt;/td>
- &lt;td>Conflict&lt;/td>
- &lt;td>Conflict / CONFLICT&lt;/td>
- &lt;td>conflict&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>410&lt;/td>
- &lt;td>Gone&lt;/td>
- &lt;td>Gone / GONE&lt;/td>
- &lt;td>gone&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>411&lt;/td>
- &lt;td>Length Required&lt;/td>
- &lt;td>Length_Required / LENGTH_REQUIRED&lt;/td>
- &lt;td>lengthRequired&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>412&lt;/td>
- &lt;td>Precondition Failed&lt;/td>
- &lt;td>Precondition_Failed / PRECONDITION_FAILED&lt;/td>
- &lt;td>preconditionFailed&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>413&lt;/td>
- &lt;td>Request Entity Too Large&lt;/td>
- &lt;td>Payload_Too_Large / PAYLOAD_TOO_LARGE / Request_Entity_Too_Large / REQUEST_ENTITY_TOO_LARGE&lt;/td>
- &lt;td>requestEntityTooLarge&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>414&lt;/td>
- &lt;td>Request-URI Too Long&lt;/td>
- &lt;td>RequestURI_Too_Long / REQUESTURI_TOO_LONG / Request_Uri_Too_Long / REQUEST_URI_TOO_LONG&lt;/td>
- &lt;td>requestUriTooLong&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>415&lt;/td>
- &lt;td>Unsupported Media Type&lt;/td>
- &lt;td>Unsupported_Media_Type / UNSUPPORTED_MEDIA_TYPE&lt;/td>
- &lt;td>unsupportedMediaType&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>416&lt;/td>
- &lt;td>Requested Range Not Satisfiable&lt;/td>
- &lt;td>Requested_Range_Not_Satisfiable / REQUESTED_RANGE_NOT_SATISFIABLE&lt;/td>
- &lt;td>requestedRangeNotSatisfiable&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>417&lt;/td>
- &lt;td>Expectation Failed&lt;/td>
- &lt;td>Expectation_Failed / EXPECTATION_FAILED&lt;/td>
- &lt;td>expectationFailed&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>418&lt;/td>
- &lt;td>I&amp;rsquo;m a teapot&lt;/td>
- &lt;td>-&lt;/td>
- &lt;td>imATeapot&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>419&lt;/td>
- &lt;td>Insufficient Space on Resource&lt;/td>
- &lt;td>-&lt;/td>
- &lt;td>insufficientSpaceOnResource&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>420&lt;/td>
- &lt;td>Method Failure&lt;/td>
- &lt;td>-&lt;/td>
- &lt;td>methodFailure&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>421&lt;/td>
- &lt;td>Misdirected Request&lt;/td>
- &lt;td>Misdirected_Request / MISDIRECTED_REQUEST&lt;/td>
- &lt;td>misdirectedRequest&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>422&lt;/td>
- &lt;td>Unprocessable Entity&lt;/td>
- &lt;td>Unprocessable_Entity / UNPROCESSABLE_ENTITY&lt;/td>
- &lt;td>unprocessableEntity&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>423&lt;/td>
- &lt;td>Locked&lt;/td>
- &lt;td>Locked / LOCKED&lt;/td>
- &lt;td>locked&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>424&lt;/td>
- &lt;td>Failed Dependency&lt;/td>
- &lt;td>Failed_Dependency / FAILED_DEPENDENCY&lt;/td>
- &lt;td>failedDependency&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>426&lt;/td>
- &lt;td>Upgrade Required&lt;/td>
- &lt;td>Upgrade_Required / UPGRADE_REQUIRED&lt;/td>
- &lt;td>upgradeRequired&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>428&lt;/td>
- &lt;td>Precondition Required&lt;/td>
- &lt;td>Precondition_Required / PRECONDITION_REQUIRED&lt;/td>
- &lt;td>preconditionRequired&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>429&lt;/td>
- &lt;td>Too Many Requests&lt;/td>
- &lt;td>Too_Many_Requests / TOO_MANY_REQUESTS&lt;/td>
- &lt;td>tooManyRequests&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>431&lt;/td>
- &lt;td>Request Header Fields Too Large&lt;/td>
- &lt;td>Request_Header_Fields_Too_Large / REQUEST_HEADER_FIELDS_TOO_LARGE&lt;/td>
- &lt;td>requestHeaderFieldsTooLarge&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>444&lt;/td>
- &lt;td>Connection Closed Without Response&lt;/td>
- &lt;td>Connection_Closed_Without_Response / CONNECTION_CLOSED_WITHOUT_RESPONSE&lt;/td>
- &lt;td>connectionClosedWithoutResponse&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>451&lt;/td>
- &lt;td>Unavailable For Legal Reasons&lt;/td>
- &lt;td>Unavailable_For_Legal_Reasons / UNAVAILABLE_FOR_LEGAL_REASONS&lt;/td>
- &lt;td>unavailableForLegalReasons&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>499&lt;/td>
- &lt;td>Client Closed Request&lt;/td>
- &lt;td>Client_Closed_Request / CLIENT_CLOSED_REQUEST&lt;/td>
- &lt;td>clientClosedRequest&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>500&lt;/td>
- &lt;td>Internal Server Error&lt;/td>
- &lt;td>Internal_Server_Error / INTERNAL_SERVER_ERROR&lt;/td>
- &lt;td>internalServerError&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>501&lt;/td>
- &lt;td>Not Implemented&lt;/td>
- &lt;td>Not_Implemented / NOT_IMPLEMENTED&lt;/td>
- &lt;td>notImplemented&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>502&lt;/td>
- &lt;td>Bad Gateway&lt;/td>
- &lt;td>Bad_Gateway / BAD_GATEWAY&lt;/td>
- &lt;td>badGateway&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>503&lt;/td>
- &lt;td>Service Unavailable&lt;/td>
- &lt;td>Service_Unavailable / SERVICE_UNAVAILABLE&lt;/td>
- &lt;td>serviceUnavailable&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>504&lt;/td>
- &lt;td>Gateway Timeout&lt;/td>
- &lt;td>Gateway_Timeout / GATEWAY_TIMEOUT&lt;/td>
- &lt;td>gatewayTimeout&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>505&lt;/td>
- &lt;td>HTTP Version Not Supported&lt;/td>
- &lt;td>HTTP_Version_Not_Supported / HTTP_VERSION_NOT_SUPPORTED&lt;/td>
- &lt;td>httpVersionNotSupported&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>506&lt;/td>
- &lt;td>Variant Also Negotiates&lt;/td>
- &lt;td>Variant_Also_Negotiates / VARIANT_ALSO_NEGOTIATES&lt;/td>
- &lt;td>variantAlsoNegotiates&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>507&lt;/td>
- &lt;td>Insufficient Storage&lt;/td>
- &lt;td>Insufficient_Storage / INSUFFICIENT_STORAGE&lt;/td>
- &lt;td>insufficientStorage&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>508&lt;/td>
- &lt;td>Loop Detected&lt;/td>
- &lt;td>Loop_Detected / LOOP_DETECTED&lt;/td>
- &lt;td>loopDetected&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>510&lt;/td>
- &lt;td>Not Extended&lt;/td>
- &lt;td>Not_Extended / NOT_EXTENDED&lt;/td>
- &lt;td>notExtended&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>511&lt;/td>
- &lt;td>Network Authentication Required&lt;/td>
- &lt;td>Network_Authentication_Required / NETWORK_AUTHENTICATION_REQUIRED&lt;/td>
- &lt;td>networkAuthenticationRequired&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>599&lt;/td>
- &lt;td>Network Connect Timeout Error&lt;/td>
- &lt;td>Network_Connect_Timeout_Error / NETWORK_CONNECT_TIMEOUT_ERROR&lt;/td>
- &lt;td>networkConnectTimeoutError&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;p>Una librería para debuguear y mostrar códigos de estado http.
-Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especificaciones oficiales &lt;a href="https://tools.ietf.org/html/rfc723" class="external-link" target="_blank" rel="noopener">https://tools.ietf.org/html/rfc723&lt;/a> y &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/" class="external-link" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/&lt;/a>&lt;/p></description></item><item><title>Recursos Lengua De Señas Colombiana (LSC)</title><link>https://tech-andgar.me/es/posts/recursos-lengua-de-se%C3%B1as-colombiana-lsc/</link><pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/recursos-lengua-de-se%C3%B1as-colombiana-lsc/</guid><description>&lt;h1 id="recursos-lengua-de-señas-colombiana-lsc">
+ &lt;a class="heading-link" href="#c%c3%b3digos-de-estado-http"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Code&lt;/th&gt;
+ &lt;th&gt;Nombre de estado HTTP&lt;/th&gt;
+ &lt;th&gt;&lt;a href="https://github.com/DartForge/http_status/tree/2.1.0" class="external-link" target="_blank" rel="noopener"&gt;&lt;code&gt;http_status&lt;/code&gt; v1.x - v2.x Deprecated (obsoleto)&lt;/a&gt;&lt;/th&gt;
+ &lt;th&gt;&lt;a href="https://github.com/DartForge/http_status" class="external-link" target="_blank" rel="noopener"&gt;&lt;code&gt;http_status&lt;/code&gt; (v2.x - v3.x)&lt;/a&gt;&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;100&lt;/td&gt;
+ &lt;td&gt;Continue&lt;/td&gt;
+ &lt;td&gt;Continue / CONTINUE&lt;/td&gt;
+ &lt;td&gt;continue_&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;101&lt;/td&gt;
+ &lt;td&gt;Switching Protocols&lt;/td&gt;
+ &lt;td&gt;Switching_Protocols / SWITCHING_PROTOCOLS&lt;/td&gt;
+ &lt;td&gt;switchingProtocols&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;102&lt;/td&gt;
+ &lt;td&gt;Processing&lt;/td&gt;
+ &lt;td&gt;Processing / PROCESSING&lt;/td&gt;
+ &lt;td&gt;processing&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;103&lt;/td&gt;
+ &lt;td&gt;Early Hints&lt;/td&gt;
+ &lt;td&gt;-&lt;/td&gt;
+ &lt;td&gt;earlyHints&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;200&lt;/td&gt;
+ &lt;td&gt;OK&lt;/td&gt;
+ &lt;td&gt;Ok / OK&lt;/td&gt;
+ &lt;td&gt;ok&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;201&lt;/td&gt;
+ &lt;td&gt;Created&lt;/td&gt;
+ &lt;td&gt;Created / CREATED&lt;/td&gt;
+ &lt;td&gt;created&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;202&lt;/td&gt;
+ &lt;td&gt;Accepted&lt;/td&gt;
+ &lt;td&gt;Accepted / ACCEPTED&lt;/td&gt;
+ &lt;td&gt;accepted&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;203&lt;/td&gt;
+ &lt;td&gt;Non Authoritative Information&lt;/td&gt;
+ &lt;td&gt;NonAuthoritative_Information / NON_AUTHORITATIVE_INFORMATION&lt;/td&gt;
+ &lt;td&gt;nonAuthoritativeInformation&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;204&lt;/td&gt;
+ &lt;td&gt;No Content&lt;/td&gt;
+ &lt;td&gt;No_Content / NO_CONTENT&lt;/td&gt;
+ &lt;td&gt;noContent&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;205&lt;/td&gt;
+ &lt;td&gt;Reset Content&lt;/td&gt;
+ &lt;td&gt;Reset_Content / RESET_CONTENT&lt;/td&gt;
+ &lt;td&gt;resetContent&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;206&lt;/td&gt;
+ &lt;td&gt;Partial Content&lt;/td&gt;
+ &lt;td&gt;Partial_Content / PARTIAL_CONTENT&lt;/td&gt;
+ &lt;td&gt;partialContent&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;207&lt;/td&gt;
+ &lt;td&gt;Multi-Status&lt;/td&gt;
+ &lt;td&gt;MultiStatus / MULTISTATUS&lt;/td&gt;
+ &lt;td&gt;multiStatus&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;208&lt;/td&gt;
+ &lt;td&gt;Already Reported&lt;/td&gt;
+ &lt;td&gt;Already_Reported / ALREADY_REPORTED&lt;/td&gt;
+ &lt;td&gt;alreadyReported&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;226&lt;/td&gt;
+ &lt;td&gt;I&amp;rsquo;M Used&lt;/td&gt;
+ &lt;td&gt;IM_Used / IM_USED&lt;/td&gt;
+ &lt;td&gt;imUsed&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;300&lt;/td&gt;
+ &lt;td&gt;Multiple Choices&lt;/td&gt;
+ &lt;td&gt;Multiple_Choices / MULTIPLE_CHOICES&lt;/td&gt;
+ &lt;td&gt;multipleChoices&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;301&lt;/td&gt;
+ &lt;td&gt;Moved Permanently&lt;/td&gt;
+ &lt;td&gt;Moved_Permanently / MOVED_PERMANENTLY&lt;/td&gt;
+ &lt;td&gt;movedPermanently&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;302&lt;/td&gt;
+ &lt;td&gt;Found / Moved Temporarily&lt;/td&gt;
+ &lt;td&gt;Found / Moved_Temporarily / FOUND / MOVED_TEMPORARILY&lt;/td&gt;
+ &lt;td&gt;found / movedTemporarily&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;303&lt;/td&gt;
+ &lt;td&gt;See Other&lt;/td&gt;
+ &lt;td&gt;See_Other / SEE_OTHER&lt;/td&gt;
+ &lt;td&gt;seeOther&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;304&lt;/td&gt;
+ &lt;td&gt;Not Modified&lt;/td&gt;
+ &lt;td&gt;Not_Modified / NOT_MODIFIED&lt;/td&gt;
+ &lt;td&gt;notModified&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;305&lt;/td&gt;
+ &lt;td&gt;Use Proxy&lt;/td&gt;
+ &lt;td&gt;Use_Proxy / USE_PROXY&lt;/td&gt;
+ &lt;td&gt;useProxy&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;307&lt;/td&gt;
+ &lt;td&gt;Temporary Redirect&lt;/td&gt;
+ &lt;td&gt;Temporary_Redirect / TEMPORARY_REDIRECT&lt;/td&gt;
+ &lt;td&gt;temporaryRedirect&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;308&lt;/td&gt;
+ &lt;td&gt;Permanent Redirect&lt;/td&gt;
+ &lt;td&gt;Permanent_Redirect / PERMANENT_REDIRECT&lt;/td&gt;
+ &lt;td&gt;permanentRedirect&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;400&lt;/td&gt;
+ &lt;td&gt;Bad Request&lt;/td&gt;
+ &lt;td&gt;Bad_Request / BAD_REQUEST&lt;/td&gt;
+ &lt;td&gt;badRequest&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;401&lt;/td&gt;
+ &lt;td&gt;Unauthorized&lt;/td&gt;
+ &lt;td&gt;Unauthorized / UNAUTHORIZED&lt;/td&gt;
+ &lt;td&gt;unauthorized&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;402&lt;/td&gt;
+ &lt;td&gt;Payment Required&lt;/td&gt;
+ &lt;td&gt;Payment_Required / PAYMENT_REQUIRED&lt;/td&gt;
+ &lt;td&gt;paymentRequired&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;403&lt;/td&gt;
+ &lt;td&gt;Forbidden&lt;/td&gt;
+ &lt;td&gt;Forbidden / FORBIDDEN&lt;/td&gt;
+ &lt;td&gt;forbidden&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;404&lt;/td&gt;
+ &lt;td&gt;Not Found&lt;/td&gt;
+ &lt;td&gt;Not_Found / NOT_FOUND&lt;/td&gt;
+ &lt;td&gt;notFound&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;405&lt;/td&gt;
+ &lt;td&gt;Method Not Allowed&lt;/td&gt;
+ &lt;td&gt;Method_Not_Allowed / METHOD_NOT_ALLOWED&lt;/td&gt;
+ &lt;td&gt;methodNotAllowed&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;406&lt;/td&gt;
+ &lt;td&gt;Not Acceptable&lt;/td&gt;
+ &lt;td&gt;Not_Acceptable / NOT_ACCEPTABLE&lt;/td&gt;
+ &lt;td&gt;notAcceptable&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;407&lt;/td&gt;
+ &lt;td&gt;Proxy Authentication Required&lt;/td&gt;
+ &lt;td&gt;Proxy_Authentication_Required / PROXY_AUTHENTICATION_REQUIRED&lt;/td&gt;
+ &lt;td&gt;proxyAuthenticationRequired&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;408&lt;/td&gt;
+ &lt;td&gt;Request Timeout&lt;/td&gt;
+ &lt;td&gt;Request_Timeout / REQUEST_TIMEOUT&lt;/td&gt;
+ &lt;td&gt;requestTimeout&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;409&lt;/td&gt;
+ &lt;td&gt;Conflict&lt;/td&gt;
+ &lt;td&gt;Conflict / CONFLICT&lt;/td&gt;
+ &lt;td&gt;conflict&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;410&lt;/td&gt;
+ &lt;td&gt;Gone&lt;/td&gt;
+ &lt;td&gt;Gone / GONE&lt;/td&gt;
+ &lt;td&gt;gone&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;411&lt;/td&gt;
+ &lt;td&gt;Length Required&lt;/td&gt;
+ &lt;td&gt;Length_Required / LENGTH_REQUIRED&lt;/td&gt;
+ &lt;td&gt;lengthRequired&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;412&lt;/td&gt;
+ &lt;td&gt;Precondition Failed&lt;/td&gt;
+ &lt;td&gt;Precondition_Failed / PRECONDITION_FAILED&lt;/td&gt;
+ &lt;td&gt;preconditionFailed&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;413&lt;/td&gt;
+ &lt;td&gt;Request Entity Too Large&lt;/td&gt;
+ &lt;td&gt;Payload_Too_Large / PAYLOAD_TOO_LARGE / Request_Entity_Too_Large / REQUEST_ENTITY_TOO_LARGE&lt;/td&gt;
+ &lt;td&gt;requestEntityTooLarge&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;414&lt;/td&gt;
+ &lt;td&gt;Request-URI Too Long&lt;/td&gt;
+ &lt;td&gt;RequestURI_Too_Long / REQUESTURI_TOO_LONG / Request_Uri_Too_Long / REQUEST_URI_TOO_LONG&lt;/td&gt;
+ &lt;td&gt;requestUriTooLong&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;415&lt;/td&gt;
+ &lt;td&gt;Unsupported Media Type&lt;/td&gt;
+ &lt;td&gt;Unsupported_Media_Type / UNSUPPORTED_MEDIA_TYPE&lt;/td&gt;
+ &lt;td&gt;unsupportedMediaType&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;416&lt;/td&gt;
+ &lt;td&gt;Requested Range Not Satisfiable&lt;/td&gt;
+ &lt;td&gt;Requested_Range_Not_Satisfiable / REQUESTED_RANGE_NOT_SATISFIABLE&lt;/td&gt;
+ &lt;td&gt;requestedRangeNotSatisfiable&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;417&lt;/td&gt;
+ &lt;td&gt;Expectation Failed&lt;/td&gt;
+ &lt;td&gt;Expectation_Failed / EXPECTATION_FAILED&lt;/td&gt;
+ &lt;td&gt;expectationFailed&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;418&lt;/td&gt;
+ &lt;td&gt;I&amp;rsquo;m a teapot&lt;/td&gt;
+ &lt;td&gt;-&lt;/td&gt;
+ &lt;td&gt;imATeapot&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;419&lt;/td&gt;
+ &lt;td&gt;Insufficient Space on Resource&lt;/td&gt;
+ &lt;td&gt;-&lt;/td&gt;
+ &lt;td&gt;insufficientSpaceOnResource&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;420&lt;/td&gt;
+ &lt;td&gt;Method Failure&lt;/td&gt;
+ &lt;td&gt;-&lt;/td&gt;
+ &lt;td&gt;methodFailure&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;421&lt;/td&gt;
+ &lt;td&gt;Misdirected Request&lt;/td&gt;
+ &lt;td&gt;Misdirected_Request / MISDIRECTED_REQUEST&lt;/td&gt;
+ &lt;td&gt;misdirectedRequest&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;422&lt;/td&gt;
+ &lt;td&gt;Unprocessable Entity&lt;/td&gt;
+ &lt;td&gt;Unprocessable_Entity / UNPROCESSABLE_ENTITY&lt;/td&gt;
+ &lt;td&gt;unprocessableEntity&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;423&lt;/td&gt;
+ &lt;td&gt;Locked&lt;/td&gt;
+ &lt;td&gt;Locked / LOCKED&lt;/td&gt;
+ &lt;td&gt;locked&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;424&lt;/td&gt;
+ &lt;td&gt;Failed Dependency&lt;/td&gt;
+ &lt;td&gt;Failed_Dependency / FAILED_DEPENDENCY&lt;/td&gt;
+ &lt;td&gt;failedDependency&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;426&lt;/td&gt;
+ &lt;td&gt;Upgrade Required&lt;/td&gt;
+ &lt;td&gt;Upgrade_Required / UPGRADE_REQUIRED&lt;/td&gt;
+ &lt;td&gt;upgradeRequired&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;428&lt;/td&gt;
+ &lt;td&gt;Precondition Required&lt;/td&gt;
+ &lt;td&gt;Precondition_Required / PRECONDITION_REQUIRED&lt;/td&gt;
+ &lt;td&gt;preconditionRequired&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;429&lt;/td&gt;
+ &lt;td&gt;Too Many Requests&lt;/td&gt;
+ &lt;td&gt;Too_Many_Requests / TOO_MANY_REQUESTS&lt;/td&gt;
+ &lt;td&gt;tooManyRequests&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;431&lt;/td&gt;
+ &lt;td&gt;Request Header Fields Too Large&lt;/td&gt;
+ &lt;td&gt;Request_Header_Fields_Too_Large / REQUEST_HEADER_FIELDS_TOO_LARGE&lt;/td&gt;
+ &lt;td&gt;requestHeaderFieldsTooLarge&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;444&lt;/td&gt;
+ &lt;td&gt;Connection Closed Without Response&lt;/td&gt;
+ &lt;td&gt;Connection_Closed_Without_Response / CONNECTION_CLOSED_WITHOUT_RESPONSE&lt;/td&gt;
+ &lt;td&gt;connectionClosedWithoutResponse&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;451&lt;/td&gt;
+ &lt;td&gt;Unavailable For Legal Reasons&lt;/td&gt;
+ &lt;td&gt;Unavailable_For_Legal_Reasons / UNAVAILABLE_FOR_LEGAL_REASONS&lt;/td&gt;
+ &lt;td&gt;unavailableForLegalReasons&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;499&lt;/td&gt;
+ &lt;td&gt;Client Closed Request&lt;/td&gt;
+ &lt;td&gt;Client_Closed_Request / CLIENT_CLOSED_REQUEST&lt;/td&gt;
+ &lt;td&gt;clientClosedRequest&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;500&lt;/td&gt;
+ &lt;td&gt;Internal Server Error&lt;/td&gt;
+ &lt;td&gt;Internal_Server_Error / INTERNAL_SERVER_ERROR&lt;/td&gt;
+ &lt;td&gt;internalServerError&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;501&lt;/td&gt;
+ &lt;td&gt;Not Implemented&lt;/td&gt;
+ &lt;td&gt;Not_Implemented / NOT_IMPLEMENTED&lt;/td&gt;
+ &lt;td&gt;notImplemented&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;502&lt;/td&gt;
+ &lt;td&gt;Bad Gateway&lt;/td&gt;
+ &lt;td&gt;Bad_Gateway / BAD_GATEWAY&lt;/td&gt;
+ &lt;td&gt;badGateway&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;503&lt;/td&gt;
+ &lt;td&gt;Service Unavailable&lt;/td&gt;
+ &lt;td&gt;Service_Unavailable / SERVICE_UNAVAILABLE&lt;/td&gt;
+ &lt;td&gt;serviceUnavailable&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;504&lt;/td&gt;
+ &lt;td&gt;Gateway Timeout&lt;/td&gt;
+ &lt;td&gt;Gateway_Timeout / GATEWAY_TIMEOUT&lt;/td&gt;
+ &lt;td&gt;gatewayTimeout&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;505&lt;/td&gt;
+ &lt;td&gt;HTTP Version Not Supported&lt;/td&gt;
+ &lt;td&gt;HTTP_Version_Not_Supported / HTTP_VERSION_NOT_SUPPORTED&lt;/td&gt;
+ &lt;td&gt;httpVersionNotSupported&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;506&lt;/td&gt;
+ &lt;td&gt;Variant Also Negotiates&lt;/td&gt;
+ &lt;td&gt;Variant_Also_Negotiates / VARIANT_ALSO_NEGOTIATES&lt;/td&gt;
+ &lt;td&gt;variantAlsoNegotiates&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;507&lt;/td&gt;
+ &lt;td&gt;Insufficient Storage&lt;/td&gt;
+ &lt;td&gt;Insufficient_Storage / INSUFFICIENT_STORAGE&lt;/td&gt;
+ &lt;td&gt;insufficientStorage&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;508&lt;/td&gt;
+ &lt;td&gt;Loop Detected&lt;/td&gt;
+ &lt;td&gt;Loop_Detected / LOOP_DETECTED&lt;/td&gt;
+ &lt;td&gt;loopDetected&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;510&lt;/td&gt;
+ &lt;td&gt;Not Extended&lt;/td&gt;
+ &lt;td&gt;Not_Extended / NOT_EXTENDED&lt;/td&gt;
+ &lt;td&gt;notExtended&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;511&lt;/td&gt;
+ &lt;td&gt;Network Authentication Required&lt;/td&gt;
+ &lt;td&gt;Network_Authentication_Required / NETWORK_AUTHENTICATION_REQUIRED&lt;/td&gt;
+ &lt;td&gt;networkAuthenticationRequired&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;599&lt;/td&gt;
+ &lt;td&gt;Network Connect Timeout Error&lt;/td&gt;
+ &lt;td&gt;Network_Connect_Timeout_Error / NETWORK_CONNECT_TIMEOUT_ERROR&lt;/td&gt;
+ &lt;td&gt;networkConnectTimeoutError&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Una librería para debuguear y mostrar códigos de estado http.
+Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especificaciones oficiales &lt;a href="https://tools.ietf.org/html/rfc723" class="external-link" target="_blank" rel="noopener"&gt;https://tools.ietf.org/html/rfc723&lt;/a&gt; y &lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/" class="external-link" target="_blank" rel="noopener"&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Recursos Lengua De Señas Colombiana (LSC)</title><link>https://tech-andgar.me/es/posts/recursos-lengua-de-se%C3%B1as-colombiana-lsc/</link><pubDate>Fri, 05 Jan 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/recursos-lengua-de-se%C3%B1as-colombiana-lsc/</guid><description>&lt;h1 id="recursos-lengua-de-señas-colombiana-lsc"&gt;
  RECURSOS LENGUA DE SEÑAS COLOMBIANA (LSC)
- &lt;a class="heading-link" href="#recursos-lengua-de-se%c3%b1as-colombiana-lsc">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="quién-es-una-persona-sorda-porqué-no-somos-sordomudos-fenascol">
+ &lt;a class="heading-link" href="#recursos-lengua-de-se%c3%b1as-colombiana-lsc"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="quién-es-una-persona-sorda-porqué-no-somos-sordomudos-fenascol"&gt;
  ¿Quién es una persona sorda? ¿Porqué no somos sordomudos? (FENASCOL)
- &lt;a class="heading-link" href="#qui%c3%a9n-es-una-persona-sorda-porqu%c3%a9-no-somos-sordomudos-fenascol">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
+ &lt;a class="heading-link" href="#qui%c3%a9n-es-una-persona-sorda-porqu%c3%a9-no-somos-sordomudos-fenascol"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
 
 
 
@@ -493,26 +493,26 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  height: 0;
  overflow: hidden;
  "
- >
+ &gt;
  &lt;lite-youtube
  videotitle="¿Quién es una persona sorda? ¿Porqué no somos sordomudos? (FENASCOL)"
  videoid="YOhdHDNjxb8"
  videoStartAt=""
  posterquality="maxresdefault"
  params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=YOhdHDNjxb8">Watch on YouTube: "¿Quién es una persona sorda? ¿Porqué no somos sordomudos? (FENASCOL)"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
+ &gt;
+ &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=YOhdHDNjxb8"&gt;Watch on YouTube: "¿Quién es una persona sorda? ¿Porqué no somos sordomudos? (FENASCOL)"&lt;/a&gt;
+ &lt;/lite-youtube&gt;
+ &lt;/div&gt;
 
-&lt;!-- raw HTML omitted -->
-&lt;h2 id="no-es-lenguaje-de-señas-es-lengua-de-señas-fenascol">
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id="no-es-lenguaje-de-señas-es-lengua-de-señas-fenascol"&gt;
  No es lenguaje de señas, es Lengua de Señas (FENASCOL)
- &lt;a class="heading-link" href="#no-es-lenguaje-de-se%c3%b1as-es-lengua-de-se%c3%b1as-fenascol">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
+ &lt;a class="heading-link" href="#no-es-lenguaje-de-se%c3%b1as-es-lengua-de-se%c3%b1as-fenascol"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
 
 
 
@@ -523,26 +523,26 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  height: 0;
  overflow: hidden;
  "
- >
+ &gt;
  &lt;lite-youtube
  videotitle="No es lenguaje de señas, es Lengua de Señas (FENASCOL)"
  videoid="erzaw5M0QuY"
  videoStartAt=""
  posterquality="maxresdefault"
  params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=erzaw5M0QuY">Watch on YouTube: "No es lenguaje de señas, es Lengua de Señas (FENASCOL)"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
+ &gt;
+ &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=erzaw5M0QuY"&gt;Watch on YouTube: "No es lenguaje de señas, es Lengua de Señas (FENASCOL)"&lt;/a&gt;
+ &lt;/lite-youtube&gt;
+ &lt;/div&gt;
 
-&lt;!-- raw HTML omitted -->
-&lt;h2 id="qué-significa-comunidad-sorda-fenascol">
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id="qué-significa-comunidad-sorda-fenascol"&gt;
  ¿Qué significa &amp;ldquo;Comunidad Sorda&amp;rdquo;? (FENASCOL)
- &lt;a class="heading-link" href="#qu%c3%a9-significa-comunidad-sorda-fenascol">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
+ &lt;a class="heading-link" href="#qu%c3%a9-significa-comunidad-sorda-fenascol"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
 
 
 
@@ -553,26 +553,26 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  height: 0;
  overflow: hidden;
  "
- >
+ &gt;
  &lt;lite-youtube
  videotitle="¿Qué significa &amp;#39;Comunidad Sorda&amp;#39;? (FENASCOL)"
  videoid="9oiROM2XahY"
  videoStartAt=""
  posterquality="maxresdefault"
  params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=9oiROM2XahY">Watch on YouTube: "¿Qué significa &amp;#39;Comunidad Sorda&amp;#39;? (FENASCOL)"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
+ &gt;
+ &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=9oiROM2XahY"&gt;Watch on YouTube: "¿Qué significa &amp;#39;Comunidad Sorda&amp;#39;? (FENASCOL)"&lt;/a&gt;
+ &lt;/lite-youtube&gt;
+ &lt;/div&gt;
 
-&lt;!-- raw HTML omitted -->
-&lt;h2 id="ensayo-cómo-se-escucha-el-silencio-edición-en-lsc-sub-es">
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id="ensayo-cómo-se-escucha-el-silencio-edición-en-lsc-sub-es"&gt;
  Ensayo: ¿Cómo se escucha el silencio? (Edición en LSC) [sub-ES]
- &lt;a class="heading-link" href="#ensayo-c%c3%b3mo-se-escucha-el-silencio-edici%c3%b3n-en-lsc-sub-es">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
+ &lt;a class="heading-link" href="#ensayo-c%c3%b3mo-se-escucha-el-silencio-edici%c3%b3n-en-lsc-sub-es"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
 
 
 
@@ -583,49 +583,49 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  height: 0;
  overflow: hidden;
  "
- >
+ &gt;
  &lt;lite-youtube
  videotitle="Ensayo: ¿Cómo se escucha el silencio? (Edición en LSC) [sub-ES]"
  videoid="6lWRI5gwbm4"
  videoStartAt=""
  posterquality="maxresdefault"
  params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=6lWRI5gwbm4">Watch on YouTube: "Ensayo: ¿Cómo se escucha el silencio? (Edición en LSC) [sub-ES]"&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
+ &gt;
+ &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=6lWRI5gwbm4"&gt;Watch on YouTube: "Ensayo: ¿Cómo se escucha el silencio? (Edición en LSC) [sub-ES]"&lt;/a&gt;
+ &lt;/lite-youtube&gt;
+ &lt;/div&gt;
 
-&lt;!-- raw HTML omitted -->
-&lt;h2 id="playlists-de-videos">
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id="playlists-de-videos"&gt;
  Playlists de videos
- &lt;a class="heading-link" href="#playlists-de-videos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>&lt;a href="https://www.youtube.com/playlist?list=PLKw3VoW4MxvovzME2Nme5k2wXOYCj7xTc" class="external-link" target="_blank" rel="noopener">Historia de la LSC (FENASCOL)&lt;/a>&lt;/p></description></item><item><title>Playlist - FlutterConf Latam 2023 - Medellín, Colombia (Con Interpretación Lengua de Señas Colombiana LSC) - No oficial</title><link>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</guid><description>&lt;h1 id="flutterconf-latam-2023-medellín-colombia---no-oficial">
+ &lt;a class="heading-link" href="#playlists-de-videos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/playlist?list=PLKw3VoW4MxvovzME2Nme5k2wXOYCj7xTc" class="external-link" target="_blank" rel="noopener"&gt;Historia de la LSC (FENASCOL)&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Playlist - FlutterConf Latam 2023 - Medellín, Colombia (Con Interpretación Lengua de Señas Colombiana LSC) - No oficial</title><link>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</link><pubDate>Fri, 27 Oct 2023 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/playlist-flutterconf-latam-2023-medell%C3%ADn-colombia-con-interpretaci%C3%B3n-lengua-de-se%C3%B1as-colombiana-lsc-no-oficial/</guid><description>&lt;h1 id="flutterconf-latam-2023-medellín-colombia---no-oficial"&gt;
  FlutterConf Latam 2023, Medellín, Colombia - No oficial
- &lt;a class="heading-link" href="#flutterconf-latam-2023-medell%c3%adn-colombia---no-oficial">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>&lt;a href="https://www.youtube.com/playlist?list=PLY8qSd9OJKNeNELeYve5mZ1C95p3iOoj6" class="external-link" target="_blank" rel="noopener">Playlist YT&lt;/a>&lt;/p>
-&lt;h2 id="con-audio-español-y-interpretación-lengua-de-señas-colombiana-lsc">
- Con audio español y interpretación Lengua de Señas Colombiana (&lt;strong>LSC&lt;/strong>)
- &lt;a class="heading-link" href="#con-audio-espa%c3%b1ol-y-interpretaci%c3%b3n-lengua-de-se%c3%b1as-colombiana-lsc">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;h3 id="performance-best-practices">
+ &lt;a class="heading-link" href="#flutterconf-latam-2023-medell%c3%adn-colombia---no-oficial"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/playlist?list=PLY8qSd9OJKNeNELeYve5mZ1C95p3iOoj6" class="external-link" target="_blank" rel="noopener"&gt;Playlist YT&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="con-audio-español-y-interpretación-lengua-de-señas-colombiana-lsc"&gt;
+ Con audio español y interpretación Lengua de Señas Colombiana (&lt;strong&gt;LSC&lt;/strong&gt;)
+ &lt;a class="heading-link" href="#con-audio-espa%c3%b1ol-y-interpretaci%c3%b3n-lengua-de-se%c3%b1as-colombiana-lsc"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="performance-best-practices"&gt;
  Performance Best Practices
- &lt;a class="heading-link" href="#performance-best-practices">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>Expositor: David Rios - Track 2 - 2023/10/25 17:20&lt;/p>
+ &lt;a class="heading-link" href="#performance-best-practices"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Expositor: David Rios - Track 2 - 2023/10/25 17:20&lt;/p&gt;
 
 
 
@@ -636,194 +636,194 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  height: 0;
  overflow: hidden;
  "
- >
+ &gt;
  &lt;lite-youtube
  videotitle=""
  videoid="bxU2iMYCIs8"
  videoStartAt=""
  posterquality="maxresdefault"
  params="controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;"
- >
- &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=bxU2iMYCIs8">Watch on YouTube: ""&lt;/a>
- &lt;/lite-youtube>
- &lt;/div>
+ &gt;
+ &lt;a class="lite-youtube-fallback" href="https://www.youtube.com/watch?v=bxU2iMYCIs8"&gt;Watch on YouTube: ""&lt;/a&gt;
+ &lt;/lite-youtube&gt;
+ &lt;/div&gt;
 
-&lt;hr>
-&lt;!-- raw HTML omitted -->
-&lt;h3 id="powering-your-flutter-apps-with-grpc">
+&lt;hr&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h3 id="powering-your-flutter-apps-with-grpc"&gt;
  Powering your Flutter apps with gRPC
- &lt;a class="heading-link" href="#powering-your-flutter-apps-with-grpc">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>Expositor: Gianfranco Papa - Track 1 - 2023/10/25 16:22&lt;/p></description></item><item><title>Lenguas de señas y lengua hablada: una comparación de sistemas lingüísticos</title><link>https://tech-andgar.me/es/posts/lenguas-de-se%C3%B1as-y-lengua-hablada-una-comparaci%C3%B3n-de-sistemas-ling%C3%BC%C3%ADsticos/</link><pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/lenguas-de-se%C3%B1as-y-lengua-hablada-una-comparaci%C3%B3n-de-sistemas-ling%C3%BC%C3%ADsticos/</guid><description>&lt;h1 id="lenguas-de-señas-y-lengua-hablada-una-comparación-de-sistemas-lingüísticos">
+ &lt;a class="heading-link" href="#powering-your-flutter-apps-with-grpc"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Expositor: Gianfranco Papa - Track 1 - 2023/10/25 16:22&lt;/p&gt;</description></item><item><title>Lenguas de señas y lengua hablada: una comparación de sistemas lingüísticos</title><link>https://tech-andgar.me/es/posts/lenguas-de-se%C3%B1as-y-lengua-hablada-una-comparaci%C3%B3n-de-sistemas-ling%C3%BC%C3%ADsticos/</link><pubDate>Wed, 29 Mar 2023 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/lenguas-de-se%C3%B1as-y-lengua-hablada-una-comparaci%C3%B3n-de-sistemas-ling%C3%BC%C3%ADsticos/</guid><description>&lt;h1 id="lenguas-de-señas-y-lengua-hablada-una-comparación-de-sistemas-lingüísticos"&gt;
  Lenguas de señas y lengua hablada: una comparación de sistemas lingüísticos
- &lt;a class="heading-link" href="#lenguas-de-se%c3%b1as-y-lengua-hablada-una-comparaci%c3%b3n-de-sistemas-ling%c3%bc%c3%adsticos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>Las lenguas de señas explotan las características únicas del medio visual y táctil para la comunicación, incluso existen lenguas de señas táctiles. Por otro lado, la lengua hablada se basa en la percepción auditiva y es un sistema de comunicación bidimensional, secuencial y lineal, en el cual las palabras se disponen en una secuencia temporal para formar una oración y transmitir significado. Esta lengua utiliza la duración de las palabras y frases como una dimensión temporal, y el espectro de frecuencias de sonido (altura e intensidad) como otra dimensión para la comunicación lingüística. La organización secuencial de las palabras, la entonación y el acento son elementos importantes en la lengua hablada. Los hablantes de la lengua hablada procesan la información auditiva de manera secuencial y lineal. El cerebro humano tiene la capacidad de procesar la información auditiva de manera rápida y eficiente, permitiendo que los hablantes comprendan y produzcan el lenguaje de manera fluida y natural. Sin embargo, la percepción auditiva también puede verse afectada por diversos factores, como el ruido ambiental o la pérdida de audición, lo que puede dificultar la comunicación verbal.&lt;/p></description></item><item><title>ABC de la Sordera-Hipoacusia</title><link>https://tech-andgar.me/es/posts/abc-de-la-sordera-hipoacusia/</link><pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/abc-de-la-sordera-hipoacusia/</guid><description>&lt;h1 id="el-abc-de-la-sordera-y-la-hipoacusia">
+ &lt;a class="heading-link" href="#lenguas-de-se%c3%b1as-y-lengua-hablada-una-comparaci%c3%b3n-de-sistemas-ling%c3%bc%c3%adsticos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Las lenguas de señas explotan las características únicas del medio visual y táctil para la comunicación, incluso existen lenguas de señas táctiles. Por otro lado, la lengua hablada se basa en la percepción auditiva y es un sistema de comunicación bidimensional, secuencial y lineal, en el cual las palabras se disponen en una secuencia temporal para formar una oración y transmitir significado. Esta lengua utiliza la duración de las palabras y frases como una dimensión temporal, y el espectro de frecuencias de sonido (altura e intensidad) como otra dimensión para la comunicación lingüística. La organización secuencial de las palabras, la entonación y el acento son elementos importantes en la lengua hablada. Los hablantes de la lengua hablada procesan la información auditiva de manera secuencial y lineal. El cerebro humano tiene la capacidad de procesar la información auditiva de manera rápida y eficiente, permitiendo que los hablantes comprendan y produzcan el lenguaje de manera fluida y natural. Sin embargo, la percepción auditiva también puede verse afectada por diversos factores, como el ruido ambiental o la pérdida de audición, lo que puede dificultar la comunicación verbal.&lt;/p&gt;</description></item><item><title>ABC de la Sordera-Hipoacusia</title><link>https://tech-andgar.me/es/posts/abc-de-la-sordera-hipoacusia/</link><pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/abc-de-la-sordera-hipoacusia/</guid><description>&lt;h1 id="el-abc-de-la-sordera-y-la-hipoacusia"&gt;
  El ABC de la sordera y la hipoacusia
- &lt;a class="heading-link" href="#el-abc-de-la-sordera-y-la-hipoacusia">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>Por Andrés García&lt;/p>
-&lt;p>Adaptación de la versión original en inglés &lt;em>(American Sign Language Class Reference Handout of DHCC Deaf-Hearing Communication Centre [Clase de Lengua de Señas Estadounidense - Folleto de referencia de Centro de comunicación para sordos] y Nagish)&lt;/em> para el &lt;strong>español&lt;/strong> y la &lt;strong>Lengua de Señas Colombiana (LSC)&lt;/strong>.&lt;/p>
-&lt;p>Agradecimientos: Traducción automática por DeepL AI y Revisado por Mateo Restrepo &amp;lt;mateo.restrepo049 -at- gmail.com&amp;gt;&lt;/p></description></item><item><title>Nomenclatura Jerárquica de Variables: De General a Específico</title><link>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</guid><description>&lt;h1 id="propuesta-de-estándar-nomenclatura-jerárquica-para-variables-de-lo-general-a-lo-específico">
+ &lt;a class="heading-link" href="#el-abc-de-la-sordera-y-la-hipoacusia"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Por Andrés García&lt;/p&gt;
+&lt;p&gt;Adaptación de la versión original en inglés &lt;em&gt;(American Sign Language Class Reference Handout of DHCC Deaf-Hearing Communication Centre [Clase de Lengua de Señas Estadounidense - Folleto de referencia de Centro de comunicación para sordos] y Nagish)&lt;/em&gt; para el &lt;strong&gt;español&lt;/strong&gt; y la &lt;strong&gt;Lengua de Señas Colombiana (LSC)&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Agradecimientos: Traducción automática por DeepL AI y Revisado por Mateo Restrepo &amp;lt;mateo.restrepo049 -at- gmail.com&amp;gt;&lt;/p&gt;</description></item><item><title>Nomenclatura Jerárquica de Variables: De General a Específico</title><link>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</guid><description>&lt;h1 id="propuesta-de-estándar-nomenclatura-jerárquica-para-variables-de-lo-general-a-lo-específico"&gt;
  Propuesta de Estándar: Nomenclatura Jerárquica para Variables de lo General a lo Específico
- &lt;a class="heading-link" href="#propuesta-de-est%c3%a1ndar-nomenclatura-jer%c3%a1rquica-para-variables-de-lo-general-a-lo-espec%c3%adfico">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>**** Nota: Este artículo fue actualizado y su URL modificada el 2025-04-19. ****&lt;/p>
-&lt;h2 id="el-problema-nombres-de-variables-inconsistentes-y-caóticos">
+ &lt;a class="heading-link" href="#propuesta-de-est%c3%a1ndar-nomenclatura-jer%c3%a1rquica-para-variables-de-lo-general-a-lo-espec%c3%adfico"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;**** Nota: Este artículo fue actualizado y su URL modificada el 2025-04-19. ****&lt;/p&gt;
+&lt;h2 id="el-problema-nombres-de-variables-inconsistentes-y-caóticos"&gt;
  El Problema: Nombres de Variables Inconsistentes y Caóticos
- &lt;a class="heading-link" href="#el-problema-nombres-de-variables-inconsistentes-y-ca%c3%b3ticos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>Al programar, especialmente en el desarrollo de UI y sistemas de diseño, el nombramiento de variables es fundamental. Sin embargo, un enfoque ad-hoc y espontáneo a menudo conduce a convenciones incoherentes, especialmente a medida que el proyecto crece o participan más colaboradores. Recordar nombres exactos se vuelve una carga, lo que resulta en búsquedas globales ineficientes, refactorizaciones costosas y una disminución general de la legibilidad y mantenibilidad del código. Necesitamos un enfoque estructurado y predecible.&lt;/p></description></item><item><title>Dart - En lo posible utilice la asignación tardía</title><link>https://tech-andgar.me/es/posts/dart-late-keyword/</link><pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-late-keyword/</guid><description>&lt;p>Dart v2.9 añadió el modificador &lt;strong>late&lt;/strong> en las variables.&lt;/p>
-&lt;p>Cuando Null Safety está activado, en algunas ocasiones es necesario indicar explícitamente que inicializaremos una variable no nula posteriormente.
-Dart no siempre puede asumir que una variable será inicializada más adelante, como en el caso de las variables de alto nivel. El siguiente ejemplo arrojaría un error en Dart.&lt;/p>
-&lt;p>Esto puede ser usado en los siguientes dos casos.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Late assign: promesa de asignación más tarde&lt;/p></description></item><item><title>La cobertura de pruebas (Test Coverage) en Flutter</title><link>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</guid><description>&lt;p>LCOV es una herramienta gráfica para las pruebas de cobertura de GCC con gcov. Crea páginas HTML que contienen el código fuente anotado con información de cobertura mediante la recopilación de datos gcov de múltiples archivos fuente. LCOV soporta la medición de &amp;ldquo;Cobertura de líneas&amp;rdquo; y &amp;ldquo;Cobertura de funciones&amp;rdquo;.&lt;/p>
-&lt;p>El informe de LCOV tiene el siguiente aspecto:&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png" alt="image.png">&lt;/p>
-&lt;h2 id="instalación">
+ &lt;a class="heading-link" href="#el-problema-nombres-de-variables-inconsistentes-y-ca%c3%b3ticos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Al programar, especialmente en el desarrollo de UI y sistemas de diseño, el nombramiento de variables es fundamental. Sin embargo, un enfoque ad-hoc y espontáneo a menudo conduce a convenciones incoherentes, especialmente a medida que el proyecto crece o participan más colaboradores. Recordar nombres exactos se vuelve una carga, lo que resulta en búsquedas globales ineficientes, refactorizaciones costosas y una disminución general de la legibilidad y mantenibilidad del código. Necesitamos un enfoque estructurado y predecible.&lt;/p&gt;</description></item><item><title>Dart - En lo posible utilice la asignación tardía</title><link>https://tech-andgar.me/es/posts/dart-late-keyword/</link><pubDate>Fri, 29 Oct 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-late-keyword/</guid><description>&lt;p&gt;Dart v2.9 añadió el modificador &lt;strong&gt;late&lt;/strong&gt; en las variables.&lt;/p&gt;
+&lt;p&gt;Cuando Null Safety está activado, en algunas ocasiones es necesario indicar explícitamente que inicializaremos una variable no nula posteriormente.
+Dart no siempre puede asumir que una variable será inicializada más adelante, como en el caso de las variables de alto nivel. El siguiente ejemplo arrojaría un error en Dart.&lt;/p&gt;
+&lt;p&gt;Esto puede ser usado en los siguientes dos casos.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Late assign: promesa de asignación más tarde&lt;/p&gt;</description></item><item><title>La cobertura de pruebas (Test Coverage) en Flutter</title><link>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/la-cobertura-de-pruebas-test-coverage-en-flutter/</guid><description>&lt;p&gt;LCOV es una herramienta gráfica para las pruebas de cobertura de GCC con gcov. Crea páginas HTML que contienen el código fuente anotado con información de cobertura mediante la recopilación de datos gcov de múltiples archivos fuente. LCOV soporta la medición de &amp;ldquo;Cobertura de líneas&amp;rdquo; y &amp;ldquo;Cobertura de funciones&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;El informe de LCOV tiene el siguiente aspecto:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png" alt="image.png"&gt;&lt;/p&gt;
+&lt;h2 id="instalación"&gt;
  Instalación
- &lt;a class="heading-link" href="#instalaci%c3%b3n">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;h3 id="instalar-en-ubuntu">
+ &lt;a class="heading-link" href="#instalaci%c3%b3n"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="instalar-en-ubuntu"&gt;
  Instalar en Ubuntu
- &lt;a class="heading-link" href="#instalar-en-ubuntu">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo apt-get update -qq -y
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt-get install lcov -y
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="instalar-en-mac">
+ &lt;a class="heading-link" href="#instalar-en-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get update -qq -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get install lcov -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="instalar-en-mac"&gt;
  Instalar en Mac
- &lt;a class="heading-link" href="#instalar-en-mac">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">brew install lcov
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="instalar-en-windows">
+ &lt;a class="heading-link" href="#instalar-en-mac"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install lcov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="instalar-en-windows"&gt;
  Instalar en Windows
- &lt;a class="heading-link" href="#instalar-en-windows">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>Se requiere:&lt;/p></description></item><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;ul>
-&lt;li>&lt;a href="#t%c3%a9rminos-t%c3%a9cnicos-TLDR" >Términos técnicos TLDR&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-entrevista-sobre-flutter" >Preguntas de Entrevista sobre Flutter&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#categor%c3%adas-de-preguntas" >Categorías de Preguntas&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas" >Preguntas&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#preguntas-de-flutter" >Preguntas de Flutter&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#nivel-novato" >Nivel Novato&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-intermedio" >Nivel Intermedio&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-avanzado" >Nivel Avanzado&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-experto" >Nivel Experto&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-dart" >Preguntas de Dart&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#nivel-novato---dart" >Nivel Novato - Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-intermedio---dart" >Nivel Intermedio - Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-avanzado---dart" >Nivel Avanzado - Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#nivel-experto---dart" >Nivel Experto - Dart&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-api" >Preguntas de API&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#sharedpreferences" >SharedPreferences&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#google-maps-api" >Google Maps API&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#pasarela-de-pago-en-flutter" >Pasarela de Pago en Flutter&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-getx" >Preguntas de GetX&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-firebase" >Preguntas de Firebase&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-git" >Preguntas de Git&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-generales-sobre-desarrollo-de-aplicaciones" >Preguntas Generales sobre Desarrollo de Aplicaciones&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-dise%c3%b1o-y-resoluci%c3%b3n-de-problemas-en-flutterdart" >Preguntas de Diseño y Resolución de Problemas en Flutter/Dart&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-sobre-nuevas-tecnolog%c3%adas-y-adaptaci%c3%b3n" >Preguntas sobre Nuevas Tecnologías y Adaptación&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-espec%c3%adficas-de-la-aplicaci%c3%b3n-omdb-movie" >Preguntas Específicas de la Aplicación OMDB Movie&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#preguntas-de-liderazgo-t%c3%a9cnico-y-desarrollador-senior" >Preguntas de Liderazgo Técnico y Desarrollador Senior&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h1 id="preguntas-de-entrevista-sobre-flutter">
+ &lt;a class="heading-link" href="#instalar-en-windows"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Se requiere:&lt;/p&gt;</description></item><item><title>Preguntas de Entrevista sobre Flutter</title><link>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/preguntas-de-entrevista-sobre-flutter/</guid><description>&lt;ul&gt;
+&lt;li&gt;&lt;a href="#t%c3%a9rminos-t%c3%a9cnicos-TLDR" &gt;Términos técnicos TLDR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-entrevista-sobre-flutter" &gt;Preguntas de Entrevista sobre Flutter&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#categor%c3%adas-de-preguntas" &gt;Categorías de Preguntas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas" &gt;Preguntas&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-flutter" &gt;Preguntas de Flutter&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#nivel-novato" &gt;Nivel Novato&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-intermedio" &gt;Nivel Intermedio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-avanzado" &gt;Nivel Avanzado&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-experto" &gt;Nivel Experto&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-dart" &gt;Preguntas de Dart&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#nivel-novato---dart" &gt;Nivel Novato - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-intermedio---dart" &gt;Nivel Intermedio - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-avanzado---dart" &gt;Nivel Avanzado - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#nivel-experto---dart" &gt;Nivel Experto - Dart&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-api" &gt;Preguntas de API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sharedpreferences" &gt;SharedPreferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#google-maps-api" &gt;Google Maps API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#pasarela-de-pago-en-flutter" &gt;Pasarela de Pago en Flutter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-getx" &gt;Preguntas de GetX&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-firebase" &gt;Preguntas de Firebase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-git" &gt;Preguntas de Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-generales-sobre-desarrollo-de-aplicaciones" &gt;Preguntas Generales sobre Desarrollo de Aplicaciones&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-dise%c3%b1o-y-resoluci%c3%b3n-de-problemas-en-flutterdart" &gt;Preguntas de Diseño y Resolución de Problemas en Flutter/Dart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-sobre-nuevas-tecnolog%c3%adas-y-adaptaci%c3%b3n" &gt;Preguntas sobre Nuevas Tecnologías y Adaptación&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-espec%c3%adficas-de-la-aplicaci%c3%b3n-omdb-movie" &gt;Preguntas Específicas de la Aplicación OMDB Movie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#preguntas-de-liderazgo-t%c3%a9cnico-y-desarrollador-senior" &gt;Preguntas de Liderazgo Técnico y Desarrollador Senior&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="preguntas-de-entrevista-sobre-flutter"&gt;
  Preguntas de Entrevista sobre Flutter
- &lt;a class="heading-link" href="#preguntas-de-entrevista-sobre-flutter">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="términos-técnicos-tldr">
+ &lt;a class="heading-link" href="#preguntas-de-entrevista-sobre-flutter"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="términos-técnicos-tldr"&gt;
  Términos técnicos TLDR
- &lt;a class="heading-link" href="#t%c3%a9rminos-t%c3%a9cnicos-tldr">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;h3 id="1-fundamentos-de-flutter--dart">
+ &lt;a class="heading-link" href="#t%c3%a9rminos-t%c3%a9cnicos-tldr"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="1-fundamentos-de-flutter--dart"&gt;
  1. Fundamentos de Flutter &amp;amp; Dart
- &lt;a class="heading-link" href="#1-fundamentos-de-flutter--dart">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item><item><title>Corrección Error 15517 MS SQL SERVER</title><link>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</link><pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</guid><description>&lt;p>Corrección Error 15517 MS SQL SERVER&lt;/p>
-&lt;p>&lt;a href="https://gist.github.com/tech-andgar/1bc6958ea6565c009f4513fe12e1d32b" class="external-link" target="_blank" rel="noopener">Original link&lt;/a>&lt;/p>
-&lt;p>No se puede ejecutar como la entidad de seguridad de base de datos porque la entidad &amp;lsquo;dbo&amp;rsquo; no existe, este tipo de entidad de seguridad no se puede suplantar o el usuario no tiene permiso.&lt;/p>
-&lt;p>Este fragmento de código que se usa para cambiar el propietario de una base de datos en Microsoft SQL Server en particular está utilizando un procedimiento almacenado del sistema llamado &lt;code>sp_changedbowner&lt;/code> para realizar la acción.&lt;/p></description></item><item><title/><link>https://tech-andgar.me/es/posts/2023-11-24-silvers-flutter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2023-11-24-silvers-flutter/</guid><description>&lt;h1 id="desplazamiento-en-flutter-slivers-y-más">
+ &lt;a class="heading-link" href="#1-fundamentos-de-flutter--dart"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Corrección Error 15517 MS SQL SERVER</title><link>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</link><pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</guid><description>&lt;p&gt;Corrección Error 15517 MS SQL SERVER&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gist.github.com/tech-andgar/1bc6958ea6565c009f4513fe12e1d32b" class="external-link" target="_blank" rel="noopener"&gt;Original link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;No se puede ejecutar como la entidad de seguridad de base de datos porque la entidad &amp;lsquo;dbo&amp;rsquo; no existe, este tipo de entidad de seguridad no se puede suplantar o el usuario no tiene permiso.&lt;/p&gt;
+&lt;p&gt;Este fragmento de código que se usa para cambiar el propietario de una base de datos en Microsoft SQL Server en particular está utilizando un procedimiento almacenado del sistema llamado &lt;code&gt;sp_changedbowner&lt;/code&gt; para realizar la acción.&lt;/p&gt;</description></item><item><title/><link>https://tech-andgar.me/es/posts/2023-11-24-silvers-flutter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2023-11-24-silvers-flutter/</guid><description>&lt;h1 id="desplazamiento-en-flutter-slivers-y-más"&gt;
  Desplazamiento en Flutter: Slivers y Más
- &lt;a class="heading-link" href="#desplazamiento-en-flutter-slivers-y-m%c3%a1s">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>Flutter utiliza &amp;lsquo;slivers&amp;rsquo; para el desplazamiento, donde un &amp;lsquo;sliver&amp;rsquo; es una unidad de cualquier área desplazable. Las pantallas desplazables son colecciones de &amp;lsquo;slivers&amp;rsquo;.&lt;/p>
-&lt;p>&lt;strong>Transformación de Widgets No-Desplazables a Desplazables:&lt;/strong>
-Convierte elementos no-desplazables en desplazables.&lt;/p>
-&lt;p>&lt;strong>SingleChildScrollview vs ListView:&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>ListView:&lt;/strong> Para múltiples widgets desplazables.
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="line">&lt;span class="cl">&lt;span class="n">ListView&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nl">children:&lt;/span> &lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Widget&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="p">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Item 1&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Item 2&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Más widgets
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;li>&lt;strong>SingleChildScrollview:&lt;/strong> Para un único widget, manejando múltiples desplazamientos internos.
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-dart" data-lang="dart">&lt;span class="line">&lt;span class="cl">&lt;span class="n">SingleChildScrollView&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nl">child:&lt;/span> &lt;span class="n">Column&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nl">children:&lt;/span> &lt;span class="o">&amp;lt;&lt;/span>&lt;span class="n">Widget&lt;/span>&lt;span class="o">&amp;gt;&lt;/span>&lt;span class="p">[&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Largo contenido aquí&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1">// Más widgets
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">],&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">),&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>NestedScrollView vs CustomScrollView:&lt;/strong>&lt;/p></description></item></channel></rss>
+ &lt;a class="heading-link" href="#desplazamiento-en-flutter-slivers-y-m%c3%a1s"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;Flutter utiliza &amp;lsquo;slivers&amp;rsquo; para el desplazamiento, donde un &amp;lsquo;sliver&amp;rsquo; es una unidad de cualquier área desplazable. Las pantallas desplazables son colecciones de &amp;lsquo;slivers&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transformación de Widgets No-Desplazables a Desplazables:&lt;/strong&gt;
+Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;SingleChildScrollview vs ListView:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ListView:&lt;/strong&gt; Para múltiples widgets desplazables.
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;ListView&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nl"&gt;children:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Widget&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Item 1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Item 2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Más widgets
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SingleChildScrollview:&lt;/strong&gt; Para un único widget, manejando múltiples desplazamientos internos.
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;SingleChildScrollView&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nl"&gt;child:&lt;/span&gt; &lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nl"&gt;children:&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;Widget&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;Text&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Largo contenido aquí&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="c1"&gt;// Más widgets
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;&lt;/span&gt; &lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;NestedScrollView vs CustomScrollView:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

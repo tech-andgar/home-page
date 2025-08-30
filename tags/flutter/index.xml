@@ -1,99 +1,99 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/flutter/</link><description>Recent content in Flutter on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Solving Artifacts with `ImageFilter.blur` in Flutter on Android, iOS and macOS</title><link>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos">
- Solving Artifacts with &lt;code>ImageFilter.blur&lt;/code> in Flutter on Android, iOS and macOS
- &lt;a class="heading-link" href="#solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener">&lt;img src="https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/preview-issue.webp" alt="Flutter ImageFilter.blur Issue">&lt;/a>&lt;/p>
-&lt;h2 id="introduction">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Flutter on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/flutter/</link><description>Recent content in Flutter on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 27 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>Solving Artifacts with `ImageFilter.blur` in Flutter on Android, iOS and macOS</title><link>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</link><pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/</guid><description>&lt;h1 id="solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos"&gt;
+ Solving Artifacts with &lt;code&gt;ImageFilter.blur&lt;/code&gt; in Flutter on Android, iOS and macOS
+ &lt;a class="heading-link" href="#solving-artifacts-with-imagefilterblur-in-flutter-on-android-ios-and-macos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://github.com/flutter/flutter/issues/157693" class="external-link" target="_blank" rel="noopener"&gt;&lt;img src="https://tech-andgar.me/posts/solving-artifacts-imagefilter-blur-flutter/preview-issue.webp" alt="Flutter ImageFilter.blur Issue"&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id="introduction"&gt;
  Introduction
- &lt;a class="heading-link" href="#introduction">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>When developing mobile and desktop applications with Flutter, it&amp;rsquo;s common to use blur effects to enhance the user interface. One of the most used methods is &lt;code>ImageFilter.blur&lt;/code>. However, some developers have encountered visual artifacts when applying this effect on Android, iOS and macOS, while it works correctly on web. In this article, we&amp;rsquo;ll explore this issue, understand the reason behind it, and provide an effective solution.&lt;/p></description></item><item><title>Flutter Test Coverage</title><link>https://tech-andgar.me/posts/flutter-test-coverage/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-test-coverage/</guid><description>&lt;p>LCOV is a graphical tool for GCC coverage testing with gcov. It creates HTML pages containing source code annotated with coverage information by collecting gcov data from multiple source files. LCOV supports &amp;ldquo;Line Coverage&amp;rdquo; and &amp;ldquo;Function Coverage&amp;rdquo; measurement.&lt;/p>
-&lt;p>The LCOV report looks as follows:&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png" alt="image.png">&lt;/p>
-&lt;h2 id="installation">
+ &lt;a class="heading-link" href="#introduction"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;When developing mobile and desktop applications with Flutter, it&amp;rsquo;s common to use blur effects to enhance the user interface. One of the most used methods is &lt;code&gt;ImageFilter.blur&lt;/code&gt;. However, some developers have encountered visual artifacts when applying this effect on Android, iOS and macOS, while it works correctly on web. In this article, we&amp;rsquo;ll explore this issue, understand the reason behind it, and provide an effective solution.&lt;/p&gt;</description></item><item><title>Flutter Test Coverage</title><link>https://tech-andgar.me/posts/flutter-test-coverage/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-test-coverage/</guid><description>&lt;p&gt;LCOV is a graphical tool for GCC coverage testing with gcov. It creates HTML pages containing source code annotated with coverage information by collecting gcov data from multiple source files. LCOV supports &amp;ldquo;Line Coverage&amp;rdquo; and &amp;ldquo;Function Coverage&amp;rdquo; measurement.&lt;/p&gt;
+&lt;p&gt;The LCOV report looks as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png" alt="image.png"&gt;&lt;/p&gt;
+&lt;h2 id="installation"&gt;
  Installation
- &lt;a class="heading-link" href="#installation">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;h3 id="install-on-ubuntu">
+ &lt;a class="heading-link" href="#installation"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="install-on-ubuntu"&gt;
  Install on Ubuntu
- &lt;a class="heading-link" href="#install-on-ubuntu">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo apt-get update -qq -y
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt-get install lcov -y
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-on-mac">
+ &lt;a class="heading-link" href="#install-on-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get update -qq -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get install lcov -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="install-on-mac"&gt;
  Install on Mac
- &lt;a class="heading-link" href="#install-on-mac">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">brew install lcov
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-on-windows">
+ &lt;a class="heading-link" href="#install-on-mac"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install lcov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="install-on-windows"&gt;
  Install on Windows
- &lt;a class="heading-link" href="#install-on-windows">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;p>Required:&lt;/p></description></item><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions">
+ &lt;a class="heading-link" href="#install-on-windows"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Required:&lt;/p&gt;</description></item><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions"&gt;
  Flutter Interview Questions
- &lt;a class="heading-link" href="#flutter-interview-questions">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;ul>
-&lt;li>&lt;a href="#technical-terms-tldr" >Technical Terms TLDR&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#flutter-interview-questions" >Flutter Interview Questions&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#question-categories" >Question Categories&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#questions" >Questions&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#flutter-questions" >Flutter Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#dart-questions" >Dart Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#api-questions" >API Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#sharedpreferences" >SharedPreferences&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#google-maps-api" >Google Maps API&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#payment-gateway-in-flutter" >Payment Gateway in Flutter&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#getx-questions" >GetX Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#firebase-questions" >Firebase Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#git-questions" >Git Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#general-app-development-questions" >General App Development Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#project-specific-flutter-questions" >Project-Specific Flutter Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#technical-leadership-and-senior-developer-questions" >Technical Leadership and Senior Developer Questions&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#omdb-movie-app-specific-questions" >OMDB Movie App Specific Questions&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="technical-terms-tldr">
+ &lt;a class="heading-link" href="#flutter-interview-questions"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#technical-terms-tldr" &gt;Technical Terms TLDR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#flutter-interview-questions" &gt;Flutter Interview Questions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#question-categories" &gt;Question Categories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#questions" &gt;Questions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#flutter-questions" &gt;Flutter Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dart-questions" &gt;Dart Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#api-questions" &gt;API Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sharedpreferences" &gt;SharedPreferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#google-maps-api" &gt;Google Maps API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#payment-gateway-in-flutter" &gt;Payment Gateway in Flutter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#getx-questions" &gt;GetX Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#firebase-questions" &gt;Firebase Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#git-questions" &gt;Git Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#general-app-development-questions" &gt;General App Development Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#project-specific-flutter-questions" &gt;Project-Specific Flutter Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#technical-leadership-and-senior-developer-questions" &gt;Technical Leadership and Senior Developer Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#omdb-movie-app-specific-questions" &gt;OMDB Movie App Specific Questions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="technical-terms-tldr"&gt;
  Technical Terms TLDR
- &lt;a class="heading-link" href="#technical-terms-tldr">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h3 id="1-flutter--dart-fundamentals">
+ &lt;a class="heading-link" href="#technical-terms-tldr"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="1-flutter--dart-fundamentals"&gt;
  1. Flutter &amp;amp; Dart Fundamentals
- &lt;a class="heading-link" href="#1-flutter--dart-fundamentals">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>
-&lt;p>&lt;strong>Flutter/Dart:&lt;/strong>&lt;/p></description></item></channel></rss>
+ &lt;a class="heading-link" href="#1-flutter--dart-fundamentals"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>

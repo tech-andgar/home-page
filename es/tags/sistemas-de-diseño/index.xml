@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sistemas De Diseño on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/sistemas-de-dise%C3%B1o/</link><description>Recent content in Sistemas De Diseño on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 19 Apr 2025 11:30:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/sistemas-de-dise%C3%B1o/index.xml" rel="self" type="application/rss+xml"/><item><title>Nomenclatura Jerárquica de Variables: De General a Específico</title><link>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</guid><description>&lt;h1 id="propuesta-de-estándar-nomenclatura-jerárquica-para-variables-de-lo-general-a-lo-específico">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sistemas De Diseño on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/sistemas-de-dise%C3%B1o/</link><description>Recent content in Sistemas De Diseño on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 19 Apr 2025 11:30:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/sistemas-de-dise%C3%B1o/index.xml" rel="self" type="application/rss+xml"/><item><title>Nomenclatura Jerárquica de Variables: De General a Específico</title><link>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</link><pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/nomenclatura-jerarquica-variables/</guid><description>&lt;h1 id="propuesta-de-estándar-nomenclatura-jerárquica-para-variables-de-lo-general-a-lo-específico"&gt;
  Propuesta de Estándar: Nomenclatura Jerárquica para Variables de lo General a lo Específico
- &lt;a class="heading-link" href="#propuesta-de-est%c3%a1ndar-nomenclatura-jer%c3%a1rquica-para-variables-de-lo-general-a-lo-espec%c3%adfico">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;p>**** Nota: Este artículo fue actualizado y su URL modificada el 2025-04-19. ****&lt;/p>
-&lt;h2 id="el-problema-nombres-de-variables-inconsistentes-y-caóticos">
+ &lt;a class="heading-link" href="#propuesta-de-est%c3%a1ndar-nomenclatura-jer%c3%a1rquica-para-variables-de-lo-general-a-lo-espec%c3%adfico"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;**** Nota: Este artículo fue actualizado y su URL modificada el 2025-04-19. ****&lt;/p&gt;
+&lt;h2 id="el-problema-nombres-de-variables-inconsistentes-y-caóticos"&gt;
  El Problema: Nombres de Variables Inconsistentes y Caóticos
- &lt;a class="heading-link" href="#el-problema-nombres-de-variables-inconsistentes-y-ca%c3%b3ticos">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>Al programar, especialmente en el desarrollo de UI y sistemas de diseño, el nombramiento de variables es fundamental. Sin embargo, un enfoque ad-hoc y espontáneo a menudo conduce a convenciones incoherentes, especialmente a medida que el proyecto crece o participan más colaboradores. Recordar nombres exactos se vuelve una carga, lo que resulta en búsquedas globales ineficientes, refactorizaciones costosas y una disminución general de la legibilidad y mantenibilidad del código. Necesitamos un enfoque estructurado y predecible.&lt;/p></description></item></channel></rss>
+ &lt;a class="heading-link" href="#el-problema-nombres-de-variables-inconsistentes-y-ca%c3%b3ticos"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Al programar, especialmente en el desarrollo de UI y sistemas de diseño, el nombramiento de variables es fundamental. Sin embargo, un enfoque ad-hoc y espontáneo a menudo conduce a convenciones incoherentes, especialmente a medida que el proyecto crece o participan más colaboradores. Recordar nombres exactos se vuelve una carga, lo que resulta en búsquedas globales ineficientes, refactorizaciones costosas y una disminución general de la legibilidad y mantenibilidad del código. Necesitamos un enfoque estructurado y predecible.&lt;/p&gt;</description></item></channel></rss>

@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dartz on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/dartz/</link><description>Recent content in Dartz on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/dartz/index.xml" rel="self" type="application/rss+xml"/><item><title>Manejo de Errores en Dart: ¿Deberías Usar `try/catch`, Valores de Retorno o Enfoques Funcionales?</title><link>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</guid><description>&lt;h1 id="manejo-de-errores-en-dart-deberías-usar-trycatch-valores-de-retorno-o-enfoques-funcionales">
- Manejo de Errores en Dart: ¿Deberías Usar &lt;code>try/catch&lt;/code>, Valores de Retorno o Enfoques Funcionales?
- &lt;a class="heading-link" href="#manejo-de-errores-en-dart-deber%c3%adas-usar-trycatch-valores-de-retorno-o-enfoques-funcionales">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h1>
-&lt;h2 id="resumen">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Dartz on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/dartz/</link><description>Recent content in Dartz on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 17 Aug 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/dartz/index.xml" rel="self" type="application/rss+xml"/><item><title>Manejo de Errores en Dart: ¿Deberías Usar `try/catch`, Valores de Retorno o Enfoques Funcionales?</title><link>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</link><pubDate>Sat, 17 Aug 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/</guid><description>&lt;h1 id="manejo-de-errores-en-dart-deberías-usar-trycatch-valores-de-retorno-o-enfoques-funcionales"&gt;
+ Manejo de Errores en Dart: ¿Deberías Usar &lt;code&gt;try/catch&lt;/code&gt;, Valores de Retorno o Enfoques Funcionales?
+ &lt;a class="heading-link" href="#manejo-de-errores-en-dart-deber%c3%adas-usar-trycatch-valores-de-retorno-o-enfoques-funcionales"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h2 id="resumen"&gt;
  Resumen
- &lt;a class="heading-link" href="#resumen">
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
- &lt;span class="sr-only">Link to heading&lt;/span>
- &lt;/a>
-&lt;/h2>
-&lt;p>Este artículo explora las diferentes estrategias para el manejo de errores en Dart, comparando el enfoque tradicional de &lt;code>try/catch&lt;/code> con métodos más modernos como el uso de valores de retorno, clases personalizadas y enfoques funcionales utilizando paquetes como &lt;code>dartz&lt;/code> y &lt;code>fpdart&lt;/code>. Aprenderás cuándo y por qué usar cada enfoque, con ejemplos prácticos y consideraciones de rendimiento.&lt;/p></description></item></channel></rss>
+ &lt;a class="heading-link" href="#resumen"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Este artículo explora las diferentes estrategias para el manejo de errores en Dart, comparando el enfoque tradicional de &lt;code&gt;try/catch&lt;/code&gt; con métodos más modernos como el uso de valores de retorno, clases personalizadas y enfoques funcionales utilizando paquetes como &lt;code&gt;dartz&lt;/code&gt; y &lt;code&gt;fpdart&lt;/code&gt;. Aprenderás cuándo y por qué usar cada enfoque, con ejemplos prácticos y consideraciones de rendimiento.&lt;/p&gt;</description></item></channel></rss>
