@@ -1239,28 +1239,6 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  
  
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-PLAY WITH ASL, LCC"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
- type="image/png"
- alt="Logo PLAY WITH ASL, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
  
  
  
@@ -1271,6 +1249,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
  type="image/svg+xml"
  alt="Logo Sign Language Tech"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-Deaf Tech"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Deaf-Tech.svg"
+ type="image/svg+xml"
+ alt="Logo Deaf Tech"
  /&gt;
  
  &lt;/div&gt;
@@ -1300,6 +1290,28 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;/div&gt;
  
  
+ 
+ 
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-PLAY WITH ASL, LCC"
+ class="png"
+ src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
+ type="image/png"
+ alt="Logo PLAY WITH ASL, LCC"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
+ 
+
  
  
  
@@ -1491,28 +1503,6 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  
  
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-PLAY WITH ASL, LCC"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
- type="image/png"
- alt="Logo PLAY WITH ASL, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
  
  
  
@@ -1523,6 +1513,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
  type="image/svg+xml"
  alt="Logo Sign Language Tech"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-Deaf Tech"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Deaf-Tech.svg"
+ type="image/svg+xml"
+ alt="Logo Deaf Tech"
  /&gt;
  
  &lt;/div&gt;
@@ -1552,6 +1554,28 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;/div&gt;
  
  
+ 
+ 
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-PLAY WITH ASL, LCC"
+ class="png"
+ src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
+ type="image/png"
+ alt="Logo PLAY WITH ASL, LCC"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
+ 
+
  
  
  
@@ -1741,28 +1765,6 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  
  
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-PLAY WITH ASL, LCC"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
- type="image/png"
- alt="Logo PLAY WITH ASL, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
  
  
  
@@ -1773,6 +1775,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
  type="image/svg+xml"
  alt="Logo Sign Language Tech"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-Deaf Tech"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Deaf-Tech.svg"
+ type="image/svg+xml"
+ alt="Logo Deaf Tech"
  /&gt;
  
  &lt;/div&gt;
@@ -1802,6 +1816,28 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;/div&gt;
  
  
+ 
+ 
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-PLAY WITH ASL, LCC"
+ class="png"
+ src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
+ type="image/png"
+ alt="Logo PLAY WITH ASL, LCC"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
+ 
+
  
  
  
