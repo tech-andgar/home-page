@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Security on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/security/</link><description>Recent content in Security on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 25 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/security/index.xml" rel="self" type="application/rss+xml"/><item><title>Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access</title><link>https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/</link><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/</guid><description>&lt;h3 id="table-of-contents"&gt;
+ Table of Contents
+ &lt;a class="heading-link" href="#table-of-contents"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#ultimate-guide-to-managing-multiple-ssh-keys-for-git-and-server-access" &gt;Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#table-of-contents" &gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#executive-summary" &gt;Executive Summary&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tldr" &gt;TL;DR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#1-principles-and-justification" &gt;1. Principles and Justification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-prerequisites" &gt;2. Prerequisites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#3-step-1-generating-your-ssh-keys" &gt;3. Step 1: Generating Your SSH Keys&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#31-choosing-the-algorithm" &gt;3.1. Choosing the Algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#32-standard-naming-and-generation" &gt;3.2. Standard Naming and Generation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#4-step-2-managing-keys-with-the-ssh-agent" &gt;4. Step 2: Managing Keys with the SSH Agent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#5-step-3-configuring-the-ssh-client-sshconfig" &gt;5. Step 3: Configuring the SSH Client (&lt;code&gt;~/.ssh/config&lt;/code&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#6-step-4-adding-public-keys-to-remote-services" &gt;6. Step 4: Adding Public Keys to Remote Services&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#7-step-5-configuring-git-for-multiple-identities-and-gpg-signing" &gt;7. Step 5: Configuring Git for Multiple Identities and GPG Signing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#8-step-6-workflow-with-repositories" &gt;8. Step 6: Workflow with Repositories&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#81-cloning-a-new-repository" &gt;8.1. Cloning a New Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#82-updating-an-existing-repository" &gt;8.2. Updating an Existing Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#9-step-7-signing-off-on-commits---signoff" &gt;9. Step 7: Signing Off on Commits (&lt;code&gt;--signoff&lt;/code&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#10-risk-management-and-security-considerations" &gt;10. Risk Management and Security Considerations&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#11-troubleshooting" &gt;11. Troubleshooting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#appendix-a-authentication-flowchart" &gt;Appendix A: Authentication Flowchart&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#appendix-b-advanced-security---integration-with-secrets-managers" &gt;Appendix B: Advanced Security - Integration with Secrets Managers&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#appendix-c-automation-script-for-initial-setup" &gt;Appendix C: Automation Script for Initial Setup&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="executive-summary"&gt;
+ Executive Summary
+ &lt;a class="heading-link" href="#executive-summary"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;This document establishes a comprehensive methodology for managing multiple SSH keys on a developer&amp;rsquo;s workstation. The primary goal is to ensure a clear and secure segregation of digital identities (e.g., personal vs. work) for interacting with Git repositories (GitHub, GitLab, etc.) and accessing remote servers. By adopting this guide, you will enhance security by applying the &lt;strong&gt;principle of least privilege&lt;/strong&gt;, reduce the risk of commit attribution errors, and create a scalable solution for managing access to various resources. This solution relies on the native functionalities of OpenSSH and Git, requiring no additional software.&lt;/p&gt;</description></item></channel></rss>
