@@ -186,32 +186,30 @@ Para añadir una certificación a un commit, usa el flag <code>-s</code> o <code
 <a class=heading-link href=#11-soluci%c3%b3n-de-problemas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><ul><li><strong><code>Permission denied (publickey)</code>:</strong><ol><li>Verifica la conexión con <code>ssh -vT git@&lt;alias-host></code>. El modo verboso (<code>-v</code>) te mostrará qué archivo de identidad está intentando usar.</li><li>Confirma que la clave pública correcta está en el servidor/servicio.</li><li>Asegúrate de que <code>ssh-agent</code> esté en ejecución y tenga la clave cargada (<code>ssh-add -l</code>).</li><li>Verifica los permisos de los archivos y directorios en <code>~/.ssh</code>.</li></ol></li><li><strong><code>WARNING: UNPROTECTED PRIVATE KEY FILE!</code>:</strong><ul><li>Los permisos en tu archivo de clave privada son demasiado abiertos. Arréglalo con <code>chmod 600 ~/.ssh/tu_clave_privada</code>.</li></ul></li><li><strong>Git está usando la identidad incorrecta:</strong><ul><li>Dentro del repositorio, ejecuta <code>git config --list --show-origin</code> para ver de dónde se origina cada valor de configuración, ayudándote a depurar las directivas <code>includeIf</code>.</li></ul></li><li><strong><code>Broken pipe fatal: Could not read from remote repository</code>:</strong> Esto puede ser un problema de conexión. Añadir <code>ServerAliveInterval 60</code> y <code>TCPKeepAlive yes</code> a la entrada de tu host en <code>~/.ssh/config</code> puede ayudar.</li><li><strong>Problemas de Conexión con Azure</strong>: Si ves un mensaje como <code>The authenticity of host 'ssh.dev.azure.com (X.X.X.X)' can't be established</code>, es una advertencia estándar de la primera conexión. Puedes escribir <code>yes</code> para continuar. El mensaje <code>remote: Shell access is not supported.</code> es normal para los proveedores de Git.</li></ul><hr><h3 id=apéndice-a-diagrama-de-flujo-de-autenticación>Apéndice A: Diagrama de Flujo de Autenticación
 <a class=heading-link href=#ap%c3%a9ndice-a-diagrama-de-flujo-de-autenticaci%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p>Este diagrama ilustra el proceso cuando se ejecuta un comando como <code>git push</code>.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>sequenceDiagram
-</span></span><span class=line><span class=cl>    participant Dev as Desarrollador
-</span></span><span class=line><span class=cl>    participant Git as Cliente Git
-</span></span><span class=line><span class=cl>    participant SSH as Cliente SSH
-</span></span><span class=line><span class=cl>    participant SSH_Config as ~/.ssh/config
-</span></span><span class=line><span class=cl>    participant SSH_Agent as Agente SSH
-</span></span><span class=line><span class=cl>    participant Remote as Servidor Remoto (p. ej., GitHub)
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    Dev-&gt;&gt;Git: git push origin main
-</span></span><span class=line><span class=cl>    Git-&gt;&gt;SSH: Invoca SSH con URL remota (p. ej., git@github.com-trabajo:org/repo.git)
-</span></span><span class=line><span class=cl>    SSH-&gt;&gt;SSH_Config: Analiza el archivo de configuración
-</span></span><span class=line><span class=cl>    SSH_Config--&gt;&gt;SSH: Encuentra el bloque &#34;Host github.com-trabajo&#34; y aplica las reglas
-</span></span><span class=line><span class=cl>    SSH-&gt;&gt;SSH_Agent: Solicita la clave privada descifrada
-</span></span><span class=line><span class=cl>    alt La clave ya está cargada
-</span></span><span class=line><span class=cl>        SSH_Agent--&gt;&gt;SSH: Devuelve la clave desde la memoria
-</span></span><span class=line><span class=cl>    else La clave no está cargada
-</span></span><span class=line><span class=cl>        SSH_Agent-&gt;&gt;Dev: Pide la frase de contraseña de la clave
-</span></span><span class=line><span class=cl>        Dev-&gt;&gt;SSH_Agent: Introduce la frase de contraseña
-</span></span><span class=line><span class=cl>        SSH_Agent--&gt;&gt;SSH: Devuelve la clave descifrada
-</span></span><span class=line><span class=cl>    end
-</span></span><span class=line><span class=cl>    SSH-&gt;&gt;Remote: Inicia la conexión con el HostName real (github.com) usando la clave correcta
-</span></span><span class=line><span class=cl>    Remote-&gt;&gt;Remote: Valida la clave pública
-</span></span><span class=line><span class=cl>    Remote--&gt;&gt;SSH: Autenticación exitosa
-</span></span><span class=line><span class=cl>    SSH--&gt;&gt;Git: Conexión establecida
-</span></span><span class=line><span class=cl>    Git-&gt;&gt;Remote: Transfiere los datos del push
-</span></span></code></pre></div><h3 id=apéndice-b-seguridad-avanzada---integración-con-gestores-de-secretos>Apéndice B: Seguridad Avanzada - Integración con Gestores de Secretos
+<span class=sr-only>Link to heading</span></a></h3><p>Este diagrama ilustra el proceso cuando se ejecuta un comando como <code>git push</code>.</p><div class=mermaid>sequenceDiagram
+participant Dev as Desarrollador
+participant Git as Cliente Git
+participant SSH as Cliente SSH
+participant SSH_Config as ~/.ssh/config
+participant SSH_Agent as Agente SSH
+participant Remote as Servidor Remoto (p. ej., GitHub)
+Dev->>Git: git push origin main
+Git->>SSH: Invoca SSH con URL remota (p. ej., git@github.com-trabajo:org/repo.git)
+SSH->>SSH_Config: Analiza el archivo de configuración
+SSH_Config-->>SSH: Encuentra el bloque "Host github.com-trabajo" y aplica las reglas
+SSH->>SSH_Agent: Solicita la clave privada descifrada
+alt La clave ya está cargada
+SSH_Agent-->>SSH: Devuelve la clave desde la memoria
+else La clave no está cargada
+SSH_Agent->>Dev: Pide la frase de contraseña de la clave
+Dev->>SSH_Agent: Introduce la frase de contraseña
+SSH_Agent-->>SSH: Devuelve la clave descifrada
+end
+SSH->>Remote: Inicia la conexión con el HostName real (github.com) usando la clave correcta
+Remote->>Remote: Valida la clave pública
+Remote-->>SSH: Autenticación exitosa
+SSH-->>Git: Conexión establecida
+Git->>Remote: Transfiere los datos del push</div><h3 id=apéndice-b-seguridad-avanzada---integración-con-gestores-de-secretos>Apéndice B: Seguridad Avanzada - Integración con Gestores de Secretos
 <a class=heading-link href=#ap%c3%a9ndice-b-seguridad-avanzada---integraci%c3%b3n-con-gestores-de-secretos><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>Para una seguridad mejorada, las claves SSH privadas pueden ser gestionadas por herramientas externas, eliminando la necesidad de almacenarlas directamente en el disco.</p><ul><li><strong>1Password:</strong> El cliente de escritorio de 1Password puede actuar como un <code>ssh-agent</code>. Las claves SSH se almacenan de forma segura en la bóveda de 1Password y se cargan en el agente solo cuando es necesario, autenticando al usuario a través del gestor de contraseñas.</li><li><strong>HashiCorp Vault:</strong> En infraestructuras más complejas, Vault puede generar credenciales SSH de corta duración (certificados SSH) bajo demanda. Esto elimina por completo las claves estáticas de larga duración, alineándose con un modelo de seguridad de confianza cero (zero-trust).</li></ul><p>La implementación de estas soluciones está fuera del alcance de esta guía básica, pero debe considerarse como el siguiente paso evolutivo para fortalecer la seguridad del acceso de los desarrolladores.</p><h3 id=apéndice-c-script-de-automatización-para-la-configuración-inicial>Apéndice C: Script de Automatización para la Configuración Inicial
 <a class=heading-link href=#ap%c3%a9ndice-c-script-de-automatizaci%c3%b3n-para-la-configuraci%c3%b3n-inicial><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
@@ -284,6 +282,6 @@ Para añadir una certificación a un commit, usa el flag <code>-s</code> o <code
 ©
 2020 -
 2025
-Andrés García<br><a href=/privacy-policy target=_self>Política de privacidad</a></section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script>partytown={forward:["dataLayer.push"]}</script><script defer src=/js/main_partytown.js></script><script defer type=text/partytown>
+Andrés García<br><a href=/privacy-policy target=_self>Política de privacidad</a></section></footer></main><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0})</script><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script>partytown={forward:["dataLayer.push"]}</script><script defer src=/js/main_partytown.js></script><script defer type=text/partytown>
 !function(e,t,a){e.dataLayer=e[s]||[],e.dataLayer.push({"gtm.start":new Date().getTime(),event:"gtm.js"});var g=t.getElementsByTagName("script")[0],r=t.createElement("script"),s="";r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id="+a+s,g.parentNode.insertBefore(r,g)}(window,document,"G-Z91ZFKFVDX");
 </script></body></html>

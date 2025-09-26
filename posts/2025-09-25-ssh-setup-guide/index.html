@@ -186,32 +186,30 @@ To add a sign-off to a commit, use the <code>-s</code> or <code>--signoff</code>
 <a class=heading-link href=#11-troubleshooting><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><ul><li><strong><code>Permission denied (publickey)</code>:</strong><ol><li>Verify the connection with <code>ssh -vT git@&lt;host-alias></code>. The verbose mode (<code>-v</code>) will show you which identity file it is trying to use.</li><li>Confirm that the correct public key is on the server/service.</li><li>Ensure that <code>ssh-agent</code> is running and has the key loaded (<code>ssh-add -l</code>).</li><li>Check the permissions of the files and directories in <code>~/.ssh</code>.</li></ol></li><li><strong><code>WARNING: UNPROTECTED PRIVATE KEY FILE!</code>:</strong><ul><li>The permissions on your private key file are too open. Fix this with <code>chmod 600 ~/.ssh/your_private_key</code>.</li></ul></li><li><strong>Git is using the wrong identity:</strong><ul><li>Inside the repository, run <code>git config --list --show-origin</code> to see where each configuration value originates, helping you debug <code>includeIf</code> directives.</li></ul></li><li><strong>Broken pipe fatal: Could not read from remote repository:</strong> This can be a connection issue. Adding <code>ServerAliveInterval 60</code> and <code>TCPKeepAlive yes</code> to your <code>~/.ssh/config</code> host entry can help.</li><li><strong>Azure Connection Issues</strong>: If you see a message like <code>The authenticity of host 'ssh.dev.azure.com (X.X.X.X)' can't be established</code>, it&rsquo;s a standard first-time connection warning. You can type <code>yes</code> to continue. The <code>remote: Shell access is not supported.</code> message is normal for Git providers.</li></ul><hr><h3 id=appendix-a-authentication-flowchart>Appendix A: Authentication Flowchart
 <a class=heading-link href=#appendix-a-authentication-flowchart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p>This diagram illustrates the process when a command like <code>git push</code> is executed.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-gdscript3 data-lang=gdscript3><span class=line><span class=cl><span class=n>sequenceDiagram</span>
-</span></span><span class=line><span class=cl>    <span class=n>participant</span> <span class=n>Dev</span> <span class=n>as</span> <span class=n>Developer</span>
-</span></span><span class=line><span class=cl>    <span class=n>participant</span> <span class=n>Git</span> <span class=n>as</span> <span class=n>Git</span> <span class=n>Client</span>
-</span></span><span class=line><span class=cl>    <span class=n>participant</span> <span class=n>SSH</span> <span class=n>as</span> <span class=n>SSH</span> <span class=n>Client</span>
-</span></span><span class=line><span class=cl>    <span class=n>participant</span> <span class=n>SSH_Config</span> <span class=n>as</span> <span class=o>~/.</span><span class=n>ssh</span><span class=o>/</span><span class=n>config</span>
-</span></span><span class=line><span class=cl>    <span class=n>participant</span> <span class=n>SSH_Agent</span> <span class=n>as</span> <span class=n>SSH</span> <span class=n>Agent</span>
-</span></span><span class=line><span class=cl>    <span class=n>participant</span> <span class=n>Remote</span> <span class=n>as</span> <span class=n>Remote</span> <span class=n>Server</span> <span class=p>(</span><span class=n>e</span><span class=o>.</span><span class=n>g</span><span class=o>.</span><span class=p>,</span> <span class=n>GitHub</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=n>Dev</span><span class=o>-&gt;&gt;</span><span class=n>Git</span><span class=p>:</span> <span class=n>git</span> <span class=n>push</span> <span class=n>origin</span> <span class=n>main</span>
-</span></span><span class=line><span class=cl>    <span class=n>Git</span><span class=o>-&gt;&gt;</span><span class=n>SSH</span><span class=p>:</span> <span class=n>Invokes</span> <span class=n>SSH</span> <span class=n>with</span> <span class=n>remote</span> <span class=n>URL</span> <span class=p>(</span><span class=n>e</span><span class=o>.</span><span class=n>g</span><span class=o>.</span><span class=p>,</span> <span class=n>git</span><span class=err>@</span><span class=n>github</span><span class=o>.</span><span class=n>com</span><span class=o>-</span><span class=n>work</span><span class=p>:</span><span class=n>org</span><span class=o>/</span><span class=n>repo</span><span class=o>.</span><span class=n>git</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>    <span class=n>SSH</span><span class=o>-&gt;&gt;</span><span class=n>SSH_Config</span><span class=p>:</span> <span class=n>Parses</span> <span class=n>configuration</span> <span class=n>file</span>
-</span></span><span class=line><span class=cl>    <span class=n>SSH_Config</span><span class=o>--&gt;&gt;</span><span class=n>SSH</span><span class=p>:</span> <span class=n>Finds</span> <span class=s2>&#34;Host github.com-work&#34;</span> <span class=n>block</span> <span class=ow>and</span> <span class=n>applies</span> <span class=n>rules</span>
-</span></span><span class=line><span class=cl>    <span class=n>SSH</span><span class=o>-&gt;&gt;</span><span class=n>SSH_Agent</span><span class=p>:</span> <span class=n>Requests</span> <span class=n>the</span> <span class=n>decrypted</span> <span class=n>private</span> <span class=n>key</span>
-</span></span><span class=line><span class=cl>    <span class=n>alt</span> <span class=n>Key</span> <span class=n>is</span> <span class=n>already</span> <span class=n>loaded</span>
-</span></span><span class=line><span class=cl>        <span class=n>SSH_Agent</span><span class=o>--&gt;&gt;</span><span class=n>SSH</span><span class=p>:</span> <span class=n>Returns</span> <span class=n>key</span> <span class=n>from</span> <span class=n>memory</span>
-</span></span><span class=line><span class=cl>    <span class=k>else</span> <span class=n>Key</span> <span class=n>is</span> <span class=ow>not</span> <span class=n>loaded</span>
-</span></span><span class=line><span class=cl>        <span class=n>SSH_Agent</span><span class=o>-&gt;&gt;</span><span class=n>Dev</span><span class=p>:</span> <span class=n>Asks</span> <span class=k>for</span> <span class=n>key</span><span class=s1>&#39;s passphrase</span>
-</span></span><span class=line><span class=cl>        <span class=n>Dev</span><span class=o>-&gt;&gt;</span><span class=n>SSH_Agent</span><span class=p>:</span> <span class=n>Enters</span> <span class=n>passphrase</span>
-</span></span><span class=line><span class=cl>        <span class=n>SSH_Agent</span><span class=o>--&gt;&gt;</span><span class=n>SSH</span><span class=p>:</span> <span class=n>Returns</span> <span class=n>decrypted</span> <span class=n>key</span>
-</span></span><span class=line><span class=cl>    <span class=n>end</span>
-</span></span><span class=line><span class=cl>    <span class=n>SSH</span><span class=o>-&gt;&gt;</span><span class=n>Remote</span><span class=p>:</span> <span class=n>Initiates</span> <span class=n>connection</span> <span class=n>to</span> <span class=n>real</span> <span class=n>HostName</span> <span class=p>(</span><span class=n>github</span><span class=o>.</span><span class=n>com</span><span class=p>)</span> <span class=n>with</span> <span class=n>the</span> <span class=n>correct</span> <span class=n>key</span>
-</span></span><span class=line><span class=cl>    <span class=n>Remote</span><span class=o>-&gt;&gt;</span><span class=n>Remote</span><span class=p>:</span> <span class=n>Validates</span> <span class=n>the</span> <span class=n>public</span> <span class=n>key</span>
-</span></span><span class=line><span class=cl>    <span class=n>Remote</span><span class=o>--&gt;&gt;</span><span class=n>SSH</span><span class=p>:</span> <span class=n>Authentication</span> <span class=n>successful</span>
-</span></span><span class=line><span class=cl>    <span class=n>SSH</span><span class=o>--&gt;&gt;</span><span class=n>Git</span><span class=p>:</span> <span class=n>Connection</span> <span class=n>established</span>
-</span></span><span class=line><span class=cl>    <span class=n>Git</span><span class=o>-&gt;&gt;</span><span class=n>Remote</span><span class=p>:</span> <span class=n>Transfers</span> <span class=n>push</span> <span class=n>data</span>
-</span></span></code></pre></div><h3 id=appendix-b-advanced-security---integration-with-secrets-managers>Appendix B: Advanced Security - Integration with Secrets Managers
+<span class=sr-only>Link to heading</span></a></h3><p>This diagram illustrates the process when a command like <code>git push</code> is executed.</p><div class=mermaid>sequenceDiagram
+participant Dev as Developer
+participant Git as Git Client
+participant SSH as SSH Client
+participant SSH_Config as ~/.ssh/config
+participant SSH_Agent as SSH Agent
+participant Remote as Remote Server (e.g., GitHub)
+Dev->>Git: git push origin main
+Git->>SSH: Invokes SSH with remote URL (e.g., git@github.com-work:org/repo.git)
+SSH->>SSH_Config: Parses configuration file
+SSH_Config-->>SSH: Finds "Host github.com-work" block and applies rules
+SSH->>SSH_Agent: Requests the decrypted private key
+alt Key is already loaded
+SSH_Agent-->>SSH: Returns key from memory
+else Key is not loaded
+SSH_Agent->>Dev: Asks for key's passphrase
+Dev->>SSH_Agent: Enters passphrase
+SSH_Agent-->>SSH: Returns decrypted key
+end
+SSH->>Remote: Initiates connection to real HostName (github.com) with the correct key
+Remote->>Remote: Validates the public key
+Remote-->>SSH: Authentication successful
+SSH-->>Git: Connection established
+Git->>Remote: Transfers push data</div><h3 id=appendix-b-advanced-security---integration-with-secrets-managers>Appendix B: Advanced Security - Integration with Secrets Managers
 <a class=heading-link href=#appendix-b-advanced-security---integration-with-secrets-managers><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>For enhanced security, private SSH keys can be managed by external tools, eliminating the need to store them directly on disk.</p><ul><li><strong>1Password:</strong> The 1Password desktop client can act as an <code>ssh-agent</code>. SSH keys are stored securely in the 1Password vault and are loaded into the agent only when needed, authenticating the user through the password manager.</li><li><strong>HashiCorp Vault:</strong> In more complex infrastructures, Vault can generate short-lived SSH credentials (SSH certificates) on demand. This completely eliminates static, long-lived keys, aligning with a zero-trust security model.</li></ul><p>The implementation of these solutions is beyond the scope of this basic guide but should be considered as the next evolutionary step to strengthen developer access security.</p><h3 id=appendix-c-automation-script-for-initial-setup>Appendix C: Automation Script for Initial Setup
 <a class=heading-link href=#appendix-c-automation-script-for-initial-setup><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
@@ -284,6 +282,6 @@ To add a sign-off to a commit, use the <code>-s</code> or <code>--signoff</code>
 ©
 2020 -
 2025
-Andrés García<br><a href=/privacy-policy target=_self>Privacy Policy</a></section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script>partytown={forward:["dataLayer.push"]}</script><script defer src=/js/main_partytown.js></script><script defer type=text/partytown>
+Andrés García<br><a href=/privacy-policy target=_self>Privacy Policy</a></section></footer></main><script src=https://cdn.jsdelivr.net/npm/mermaid@9.3.0/dist/mermaid.min.js integrity="sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU=" crossorigin=anonymous></script><script>mermaid.initialize({startOnLoad:!0})</script><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script>partytown={forward:["dataLayer.push"]}</script><script defer src=/js/main_partytown.js></script><script defer type=text/partytown>
 !function(e,t,a){e.dataLayer=e[s]||[],e.dataLayer.push({"gtm.start":new Date().getTime(),event:"gtm.js"});var g=t.getElementsByTagName("script")[0],r=t.createElement("script"),s="";r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id="+a+s,g.parentNode.insertBefore(r,g)}(window,document,"G-Z91ZFKFVDX");
 </script></body></html>

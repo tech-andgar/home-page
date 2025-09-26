@@ -2,21 +2,11 @@
   // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/projects_filter.ts
   var ProjectsFilter = class {
     constructor() {
-      this.typeFilter = document.getElementById(
-        "type-filter"
-      );
-      this.categoryFilter = document.getElementById(
-        "category-filter"
-      );
-      this.techFilter = document.getElementById(
-        "tech-filter"
-      );
-      this.complexityFilter = document.getElementById(
-        "complexity-filter"
-      );
-      this.projectCards = document.querySelectorAll(
-        ".project-card, .test-project-card"
-      );
+      this.typeFilter = document.getElementById("type-filter");
+      this.categoryFilter = document.getElementById("category-filter");
+      this.techFilter = document.getElementById("tech-filter");
+      this.complexityFilter = document.getElementById("complexity-filter");
+      this.projectCards = document.querySelectorAll(".project-card, .test-project-card");
       this.visibleCountElement = document.getElementById("visible-count");
       this.totalCountElement = document.getElementById("total-count");
       this.totalProjects = this.projectCards.length;
@@ -36,15 +26,9 @@
       const clearFiltersBtn = document.getElementById("clear-filters-btn");
       if (this.typeFilter && this.categoryFilter && this.techFilter && this.complexityFilter && clearFiltersBtn) {
         this.typeFilter.addEventListener("change", () => this.filterProjects());
-        this.categoryFilter.addEventListener(
-          "change",
-          () => this.filterProjects()
-        );
+        this.categoryFilter.addEventListener("change", () => this.filterProjects());
         this.techFilter.addEventListener("change", () => this.filterProjects());
-        this.complexityFilter.addEventListener(
-          "change",
-          () => this.filterProjects()
-        );
+        this.complexityFilter.addEventListener("change", () => this.filterProjects());
         clearFiltersBtn.addEventListener("click", () => this.clearFilters());
       }
     }
