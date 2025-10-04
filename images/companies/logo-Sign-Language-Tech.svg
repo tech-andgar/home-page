@@ -1,68 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   viewBox="151.13 228.12 1173.05 257.88"
-   version="1.1"
-   id="svg1"
-   sodipodi:docname="logo-Sign-Language-Tech.svg"
-   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
-   xml:space="preserve"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs1" /><sodipodi:namedview
-     id="namedview1"
-     pagecolor="#ffffff"
-     bordercolor="#000000"
-     borderopacity="0.25"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="0.44940494"
-     inkscape:cx="758.78116"
-     inkscape:cy="433.90711"
-     inkscape:window-width="1728"
-     inkscape:window-height="1051"
-     inkscape:window-x="0"
-     inkscape:window-y="38"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" /><style
-     id="style1">
-    .s0 {
-      fill: #000000;
-    }
-    .s1 {
-      fill: #ffffff;
-      stroke: #000000;
-      paint-order: stroke fill markers;
-      stroke-linejoin: round;
-      stroke-width: 6;
-    }
-    @media (prefers-color-scheme: dark) {
-      path { fill: #FFF; }
-    }
-  </style><g
-     id="g1"
-     transform="matrix(0.46226936,0,0,0.46226936,240.40996,239.57794)"><path
-       fill-rule="evenodd"
-       class="s0"
-       d="m 3.1707505,63.9985 c -13.5000005,-7.1 -30.6000005,-7.3 -44.4000005,-0.7 -13.8,6.6 -22.4,19 -22.4,32.5 v 273.3 c 0,13.5 8.6,26 22.4,32.6 13.8,6.6 30.9,6.2 44.4000005,-0.7 l 263.6999995,-136.7 c 13.1,-6.8 21.1,-18.8 21.1,-31.8 0,-13.1 -8,-25 -21.1,-31.9 z"
-       id="path1-4" /><path
-       fill-rule="evenodd"
-       class="s1"
-       d="m -139.02925,134.0985 c -14.1,-2.2 -29.3,2.8 -39.5,12.8 -10.2,10 -14.1,23.7 -10,35.6 l 82.9,242 c 4.1,11.9 15.5,20.3 29.7,22 14.3,1.6 29.2,-3.8 39.1,-14.1 l 192,-201 c 9.5,-9.9 12.9,-23 9,-34.5 -4,-11.6 -14.7,-19.7 -28.3,-21.8 z"
-       id="path2" /></g><text
-     xml:space="preserve"
-     style="font-size:100px;text-align:start;letter-spacing:-0.1px;word-spacing:0px;writing-mode:lr-tb;direction:ltr;text-anchor:start;fill:#000000"
-     x="381.97992"
-     y="384.81003"
-     id="text1"><tspan
-       sodipodi:role="line"
-       id="tspan1"
-       x="381.97992"
-       y="384.81003"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:100px;font-family:'Atkinson Hyperlegible';-inkscape-font-specification:'Atkinson Hyperlegible Bold';letter-spacing:-0.1px;word-spacing:0px"
-       dx="0"
-       dy="0"
-       rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0">Sign Language Tech</tspan></text></svg>
+<svg id="logo-SLT-svg" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" viewBox="151.13 228.12 1173.05 257.88">
+  
+  <g id="g1" transform="matrix(.46227 0 0 .46227 240.41 239.578)">
+    <path id="path1" fill="#000" fill-rule="evenodd" d="M3.17 63.998c-13.5-7.1-30.6-7.3-44.4-.7-13.8 6.6-22.4 19-22.4 32.5v273.3c0 13.5 8.6 26 22.4 32.6 13.8 6.6 30.9 6.2 44.4-.7l263.7-136.7c13.1-6.8 21.1-18.8 21.1-31.8 0-13.1-8-25-21.1-31.9z"/>
+    <path id="path2" fill="#fff" fill-rule="evenodd" stroke="#000" stroke-linejoin="round" stroke-width="6" d="M-139.03 134.099c-14.1-2.2-29.3 2.8-39.5 12.8s-14.1 23.7-10 35.6l82.9 242c4.1 11.9 15.5 20.3 29.7 22 14.3 1.6 29.2-3.8 39.1-14.1l192-201c9.5-9.9 12.9-23 9-34.5-4-11.6-14.7-19.7-28.3-21.8z" paint-order="stroke fill markers"/>
+  </g>
+  <text xml:space="preserve" id="text1" x="381.98" y="384.81" fill="#000" direction="ltr" font-size="100" letter-spacing="-.1" style="text-align:start" text-anchor="start" word-spacing="0" writing-mode="lr-tb"><tspan id="tspan1" x="381.98" y="384.81" dx="0" dy="0" font-family="Atkinson Hyperlegible" font-size="100" font-stretch="normal" font-style="normal" font-variant="normal" font-weight="700" letter-spacing="-.1" rotate="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" style="-inkscape-font-specification:&quot;Atkinson Hyperlegible Bold&quot;" word-spacing="0">Sign Language Tech</tspan></text>
+</svg>
