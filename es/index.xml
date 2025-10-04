@@ -1443,6 +1443,18 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;div class="card_company"&gt;
  &lt;img
+ id="logo-Jof Foundation"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-jof.svg"
+ type="image/svg+xml"
+ alt="Logo Jof Foundation"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
  id="logo-Sign Language Tech"
  class="svg"
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
@@ -1707,6 +1719,18 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;div class="card_company"&gt;
  &lt;img
+ id="logo-Jof Foundation"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-jof.svg"
+ type="image/svg+xml"
+ alt="Logo Jof Foundation"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
  id="logo-Sign Language Tech"
  class="svg"
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
@@ -1965,6 +1989,18 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  
  
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-Jof Foundation"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-jof.svg"
+ type="image/svg+xml"
+ alt="Logo Jof Foundation"
+ /&gt;
+ 
+ &lt;/div&gt;
  
  
  &lt;div class="card_company"&gt;
@@ -2254,10 +2290,10 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
 
  &lt;li class="splide__slide"&gt;
- &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="Propuso de forma proactiva una idea que reducía de cuatro a uno los pasos manuales en el procesamiento de solicitudes pull, automatizando la generación de soluciones. El resultado fue una drástica reducción del 75% en el tiempo de procesamiento. También lo implementó en GitHub Actions y contribuyó a la configuración inicial del proyecto, demostrando un trabajo bien diseñado, impecable y sin fisuras que superó mis expectativas. - Milad Vafaeifard Lead Software Engineer | Tech Content Creator | Open-Source Contributor Epam "&gt;
+ &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="¡Increíblemente Guau! Mis experiencias previas con otras personas con las que me comunicaba eran frustrantes. Pero contigo nos comunicamos en lengua de señas sin problemas, no hubo barreras. La comunicación fue instantánea, natural y clara. Compartimos nuestra visión contigo y te explicamos. Tomaste cada detalle, desde el diseño hasta la navegación, fue construido con la perspectiva incrustada en él. Quedamos totalmente impresionados por la calidad de tu entrega. ¿Por qué? Porque el sitio web se siente genuinamente amigable para los sordos. Guau. Mi visión que tomaste e implementaste al 100% fue cumplida. No sentí ninguna carga sobre mis hombros. Estaba realmente aliviado y feliz de trabajar contigo, es auténtico. Fue una asociación verdaderamente agradable. - Eduard Dobra President JOF Foundation "&gt;
  
  
  
- &lt;p class="text-content" id="textContent" aria-hidden="true"&gt;Propuso de forma proactiva una idea que reducía de cuatro a uno los pasos manuales en el procesamiento de solicitudes pull, automatizando la generación de soluciones. El resultado&lt;span id="dots" aria-hidden="true"&gt;...&lt;/span&gt;‏&lt;span id="moreText" aria-hidden="true"&gt;fue una drástica reducción del 75% en el tiempo de procesamiento. También lo implementó en GitHub Actions y contribuyó a la configuración inicial del proyecto, demostrando un trabajo bien diseñado, impecable y sin fisuras que superó mis expectativas.&lt;/span&gt;
+ &lt;p class="text-content" id="textContent" aria-hidden="true"&gt;¡Increíblemente Guau! Mis experiencias previas con otras personas con las que me comunicaba eran frustrantes. Pero contigo nos comunicamos en lengua de señas sin problemas, no hub&lt;span id="dots" aria-hidden="true"&gt;...&lt;/span&gt;‏&lt;span id="moreText" aria-hidden="true"&gt;o barreras. La comunicación fue instantánea, natural y clara. Compartimos nuestra visión contigo y te explicamos. Tomaste cada detalle, desde el diseño hasta la navegación, fue construido con la perspectiva incrustada en él. Quedamos totalmente impresionados por la calidad de tu entrega. ¿Por qué? Porque el sitio web se siente genuinamente amigable para los sordos. Guau. Mi visión que tomaste e implementaste al 100% fue cumplida. No sentí ninguna carga sobre mis hombros. Estaba realmente aliviado y feliz de trabajar contigo, es auténtico. Fue una asociación verdaderamente agradable.&lt;/span&gt;
  &lt;span class="read-more-link" onclick="toggleTextOverflowSpan(this)"&gt;Leer más ▼&lt;/span&gt;
  &lt;/p&gt;</description></item></channel></rss>

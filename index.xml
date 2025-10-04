@@ -1289,6 +1289,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  &lt;div class="card_company"&gt;
  &lt;img
+ id="logo-Jof Foundation"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-jof.svg"
+ type="image/svg+xml"
+ alt="Logo Jof Foundation"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
  id="logo-Sign Language Tech"
  class="svg"
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
@@ -1553,6 +1565,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  &lt;div class="card_company"&gt;
  &lt;img
+ id="logo-Jof Foundation"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-jof.svg"
+ type="image/svg+xml"
+ alt="Logo Jof Foundation"
+ /&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
  id="logo-Sign Language Tech"
  class="svg"
  src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
@@ -1811,6 +1835,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  
  
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-Jof Foundation"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-jof.svg"
+ type="image/svg+xml"
+ alt="Logo Jof Foundation"
+ /&gt;
+ 
+ &lt;/div&gt;
  
  
  &lt;div class="card_company"&gt;
@@ -2100,10 +2136,10 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
 
  &lt;li class="splide__slide"&gt;
- &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="He proactively proposed an idea that reduced the manual steps in pull request processing from four to one, automating solution generation. This resulted in a dramatic 75% reduction in processing time. He also implemented this in GitHub Actions and contributed to the project&amp;#39;s initial setup, demonstrating well-architected, spotless, and seamless work that exceeded my expectations. - Milad Vafaeifard Lead Software Engineer | Tech Content Creator | Open-Source Contributor Epam "&gt;
+ &lt;a class="card_recommendations title" onclick="toggleTextOverflowTagA(this)" aria-label="Incredibly Wow! My previous experiences with other people I communicated with were frustrating. But with you we communicated in sign language seamlessly, there were no barriers. Communication was instant, natural, and clear. We shared our vision with you and explained. You took from every detail, from the layout to the navigation, was built with the perspective embedded in it. We got totally blown away by your quality delivery. Why? because the website feels genuinely deaf-friendly. WoW My vision you fully took and implemented was 100% met. I couldn&amp;#39;t feel any burden on my shoulder. I was really relieved and happy to work with you it’s an authentic one. It was a truly enjoyable partnership. - Eduard Dobra President JOF Foundation "&gt;
  
  
  
- &lt;p class="text-content" id="textContent" aria-hidden="true"&gt;He proactively proposed an idea that reduced the manual steps in pull request processing from four to one, automating solution generation. This resulted in a dramatic 75% reduct&lt;span id="dots" aria-hidden="true"&gt;...&lt;/span&gt;‏&lt;span id="moreText" aria-hidden="true"&gt;ion in processing time. He also implemented this in GitHub Actions and contributed to the project&amp;#39;s initial setup, demonstrating well-architected, spotless, and seamless work that exceeded my expectations.&lt;/span&gt;
+ &lt;p class="text-content" id="textContent" aria-hidden="true"&gt;Incredibly Wow! My previous experiences with other people I communicated with were frustrating. But with you we communicated in sign language seamlessly, there were no barriers.&lt;span id="dots" aria-hidden="true"&gt;...&lt;/span&gt;‏&lt;span id="moreText" aria-hidden="true"&gt;Communication was instant, natural, and clear. We shared our vision with you and explained. You took from every detail, from the layout to the navigation, was built with the perspective embedded in it. We got totally blown away by your quality delivery. Why? because the website feels genuinely deaf-friendly. WoW My vision you fully took and implemented was 100% met. I couldn&amp;#39;t feel any burden on my shoulder. I was really relieved and happy to work with you it’s an authentic one. It was a truly enjoyable partnership.&lt;/span&gt;
  &lt;span class="read-more-link" onclick="toggleTextOverflowSpan(this)"&gt;Read More ▼&lt;/span&gt;
  &lt;/p&gt;</description></item></channel></rss>
