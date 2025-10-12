@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/es/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 25 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía Definitiva para Gestionar Múltiples Claves SSH para Git y Acceso a Servidores</title><link>https://tech-andgar.me/es/posts/2025-09-25-ssh-setup-guide/</link><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2025-09-25-ssh-setup-guide/</guid><description>&lt;h3 id="tabla-de-contenidos"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/es/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/index.xml" rel="self" type="application/rss+xml"/><item><title>Te falta Dart? Cuando TypeScript se siente como el desierto</title><link>https://tech-andgar.me/es/posts/dart-vs-typescript-switch-expressions-collection-control-flow/</link><pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/dart-vs-typescript-switch-expressions-collection-control-flow/</guid><description>&lt;h2 id="te-falta-dart-cuando-typescript-se-siente-como-el-desierto"&gt;
+ ¿Te falta Dart? Cuando TypeScript se siente como el desierto
+ &lt;a class="heading-link" href="#te-falta-dart-cuando-typescript-se-siente-como-el-desierto"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Recientemente, me topé con una conversación en Twitter que resonó profundamente con algunos de mis propios &amp;ldquo;dolores&amp;rdquo; como desarrollador. Se trataba de la frustración de trabajar en TypeScript y extrañar ciertas características de sintaxis que hacen que la vida sea mucho más dulce en Dart.&lt;/p&gt;
+&lt;p&gt;Si alguna vez te has sentido como si estuvieras &amp;ldquo;muriendo de sed&amp;rdquo; buscando una forma elegante de manejar condicionales o construir listas en TypeScript, no estás solo. Hoy exploraremos dos de esas características que hacen que Dart se sienta tan ergonómico: las &lt;strong&gt;Expresiones Switch&lt;/strong&gt; y el &lt;strong&gt;Control de Flujo en Colecciones&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Guía Definitiva para Gestionar Múltiples Claves SSH para Git y Acceso a Servidores</title><link>https://tech-andgar.me/es/posts/2025-09-25-ssh-setup-guide/</link><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2025-09-25-ssh-setup-guide/</guid><description>&lt;h3 id="tabla-de-contenidos"&gt;
  Tabla de Contenidos
  &lt;a class="heading-link" href="#tabla-de-contenidos"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
@@ -6,7 +14,6 @@
  &lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#gu%c3%ada-definitiva-para-gestionar-m%c3%baltiples-claves-ssh-para-git-y-acceso-a-servidores" &gt;Guía Definitiva para Gestionar Múltiples Claves SSH para Git y Acceso a Servidores&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#tabla-de-contenidos" &gt;Tabla de Contenidos&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#resumen-ejecutivo" &gt;Resumen Ejecutivo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#tldr-resumen-corto" &gt;TL;DR (Resumen Corto)&lt;/a&gt;&lt;/li&gt;

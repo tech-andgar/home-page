@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 25 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access</title><link>https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/</link><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/</guid><description>&lt;h3 id="table-of-contents"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 11 Oct 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Missing Dart? When TypeScript Feels Like a Desert</title><link>https://tech-andgar.me/posts/dart-vs-typescript-switch-expressions-collection-control-flow/</link><pubDate>Sat, 11 Oct 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-vs-typescript-switch-expressions-collection-control-flow/</guid><description>&lt;h2 id="missing-dart-when-typescript-feels-like-a-desert"&gt;
+ Missing Dart? When TypeScript Feels Like a Desert
+ &lt;a class="heading-link" href="#missing-dart-when-typescript-feels-like-a-desert"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;I recently stumbled upon a Twitter conversation that deeply resonated with some of my own &amp;ldquo;pains&amp;rdquo; as a developer. It was about the frustration of working in TypeScript and missing certain syntax features that make life so much sweeter in Dart.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;ve ever felt like you were &amp;ldquo;dying of thirst&amp;rdquo; looking for an elegant way to handle conditionals or build lists in TypeScript, you are not alone. Today, we&amp;rsquo;ll explore two of those features that make Dart feel so ergonomic: &lt;strong&gt;Switch Expressions&lt;/strong&gt; and &lt;strong&gt;Collection Control Flow&lt;/strong&gt;.&lt;/p&gt;</description></item><item><title>Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access</title><link>https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/</link><pubDate>Thu, 25 Sep 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/</guid><description>&lt;h3 id="table-of-contents"&gt;
  Table of Contents
  &lt;a class="heading-link" href="#table-of-contents"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
@@ -6,7 +14,6 @@
  &lt;/a&gt;
 &lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href="#ultimate-guide-to-managing-multiple-ssh-keys-for-git-and-server-access" &gt;Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#table-of-contents" &gt;Table of Contents&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#executive-summary" &gt;Executive Summary&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="#tldr" &gt;TL;DR&lt;/a&gt;&lt;/li&gt;

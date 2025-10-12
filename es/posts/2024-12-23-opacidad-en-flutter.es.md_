@@ -183,5 +183,6 @@ Con estos tests, el artículo se refuerza significativamente, demostrando con c�
 
 Recuerda incluir la importación de `package:flutter_test/flutter_test.dart` al principio del archivo de tests. Y si usas la extensión `HexColor` en tu proyecto, asegúrate de tenerla definida. Si no, puedes usar la conversión directa con `int.parse()` como se menciona en el código.
 
+---
 
-
+****Este artículo fue escrito y curado por Andres García, con el apoyo de una inteligencia artificial que utiliza aprendizaje automático (machine learning) para producir texto.****
