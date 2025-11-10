@@ -1,4 +1,4 @@
-<!doctype html><html lang=es><head><title>`http_status` Paquete de Dart: Una Guía Completa · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="`http_status` Paquete de Dart: Una Guía Completa"><meta name=keywords content="blog,desarrollador,personal,flutter,Sordo"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="`http_status` Paquete de Dart: Una Guía Completa"><meta name=twitter:description content="`http_status` Paquete de Dart: Una Guía Completa"><meta property="og:url" content="https://tech-andgar.me/es/posts/dart-http_status-package/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="`http_status` Paquete de Dart: Una Guía Completa"><meta property="og:description" content="`http_status` Paquete de Dart: Una Guía Completa"><meta property="og:locale" content="es"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-14T00:00:00+00:00"><meta property="article:modified_time" content="2024-02-14T00:00:00+00:00"><meta property="article:tag" content="Dart"><meta property="article:tag" content="Http Status"><meta property="article:tag" content="Paquete"><meta property="og:see_also" content="https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/"><meta property="og:see_also" content="https://tech-andgar.me/es/posts/dart-late-keyword/"><link rel=canonical href=https://tech-andgar.me/es/posts/dart-http_status-package/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.39600a4765f8dfd1f4d0dc385d0ecc579778aa8273d4fd0ba856a237610c7322.css" rel=stylesheet integrity="sha256-OWAKR2X439H00Nw4XQ7MV5d4qoJz1P0LqFaiN2EMcyI=" crossorigin=anonymous><link href="/css/bundle.min.328eb7ad8528dbb1bdc7abe97aaa5cfedce43a064f1fc0f6328b348fd43b7703.css" rel=stylesheet integrity="sha256-Mo63rYUo27G9x6vpeqpc/tzkOgZPH8D2Mos0j9Q7dwM=" crossorigin=anonymous><script defer src=/js/bundle.min.879be80457ab4d011ad3d7223cfb42487a6e0c527d6221df8150d06207874f85.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
+<!doctype html><html lang=es><head><title>`http_status` Paquete de Dart: Una Guía Completa · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="`http_status` Paquete de Dart: Una Guía Completa"><meta name=keywords content="blog,desarrollador,personal,flutter,Sordo"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="`http_status` Paquete de Dart: Una Guía Completa"><meta name=twitter:description content="`http_status` Paquete de Dart: Una Guía Completa"><meta property="og:url" content="https://tech-andgar.me/es/posts/dart-http_status-package/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="`http_status` Paquete de Dart: Una Guía Completa"><meta property="og:description" content="`http_status` Paquete de Dart: Una Guía Completa"><meta property="og:locale" content="es"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-02-14T00:00:00+00:00"><meta property="article:modified_time" content="2024-02-14T00:00:00+00:00"><meta property="article:tag" content="Dart"><meta property="article:tag" content="Http Status"><meta property="article:tag" content="Paquete"><meta property="og:see_also" content="https://tech-andgar.me/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/"><meta property="og:see_also" content="https://tech-andgar.me/es/posts/dart-late-keyword/"><link rel=canonical href=https://tech-andgar.me/es/posts/dart-http_status-package/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.42655007b45bae5dc11ffea436937bf51939c20ad456410392557064fb94ce7d.css" rel=stylesheet integrity="sha256-QmVQB7Rbrl3BH/6kNpN79Rk5wgrUVkEDklVwZPuUzn0=" crossorigin=anonymous><link href="/css/bundle.min.c576086e4898507f53ce05e1c3e87ef7ce970aa03e12b732d0e52359e15c9dff.css" rel=stylesheet integrity="sha256-xXYIbkiYUH9TzgXhw+h+986XCqA+Ercy0OUjWeFcnf8=" crossorigin=anonymous><script defer src=/js/bundle.min.89c18a35b7c4dede80900125c3dd9b756141fe2209d9dccb9d663942550d1912.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
 <i class="fas fa-times fa-2x"></i></button></header><main class=modal__content id=modal-1-content><div class=searchDivPF data-pagefind-ignore><div id=search data-pagefind-ignore></div><p></p></div><noscript data-pagefind-ignore><div class=searchDivPF data-pagefind-ignore><p class="ctr pokey">Since you have JavaScript disabled, you can use the following form
 to search this site with&nbsp;
 <a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>,&nbsp;instead.<br><em class=legal>(Thanks to <a href=https://kevq.uk/search/ rel=noopener>Kev Quirk</a> for the&nbsp;idea.)</em></p><div class=searchDiv data-pagefind-ignore><form method=get id=search-ddg class=pagefind-ui__form action=https://duckduckgo.com/ title="DuckDuckGo search for www.tech-andgar.me"><input type=hidden name=sites value=tech-andgar.me>
@@ -9,7 +9,7 @@ to search this site with&nbsp;
 <label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/es/about/ data-cursor=block>Acerca de</a></li><li class=navigation-item><a class=navigation-link href=/es/posts/ data-cursor=block>Blog</a></li><li class=navigation-item><a class=navigation-link href=/es/projects/ data-cursor=block>Proyectos</a></li><li class=navigation-item><a class=navigation-link href=/es/talks/ data-cursor=block>Charlas</a></li><li class=navigation-item><a class=navigation-link href=/es/contact/ data-cursor=block>Contacto</a></li><li class=navigation-item><a class=navigation-link href=https://link.tech-andgar.me/CVAFGR202404DEV data-cursor=block>CV</a></li><li class=navigation-item><a class=navigation-link href=/es/privacy-policy/ data-cursor=block>Política de Privacidad</a></li><li class="navigation-item nav-link-search"><a href=# class=navigation-link title=Search data-cursor=block><i class="fa fa-search"></i></a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=/posts/dart-http_status-package/ data-cursor=block>English 🇬🇧</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tech-andgar.me/es/posts/dart-http_status-package/>`http_status` Paquete de Dart: Una Guía Completa</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
 <time datetime=2024-02-14T00:00:00Z>febrero 14, 2024
 </time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
-7 minutos de lectura.</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
+8 minutos de lectura.</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
 <a href=/es/categories/dart/>Dart</a>
 <span class=separator>•</span>
 <a href=/es/categories/paquete/>Paquete</a></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
@@ -28,12 +28,27 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 <a class=heading-link href=#caracter%c3%adsticas-principales><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><ul><li>API limpia: La interfaz es sencilla e intuitiva, simplificando el uso de códigos de estado en sus aplicaciones Dart.</li><li>Legibilidad: Los nombres y descripciones de las constantes mejoran la claridad del código y su mantenimiento.</li><li>Seguridad tipográfica: Las constantes estáticas evitan errores tipográficos y el uso accidental de códigos de estado incorrectos.</li><li>Completitud: Una amplia cobertura de los códigos de estado HTTP asegura un manejo fiable de varios escenarios de respuesta.</li></ul><h2 id=instalación>Instalación
 <a class=heading-link href=#instalaci%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Añade la siguiente dependencia al <code>pubspec.yaml</code> de tu proyecto Dart:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>dependencias</span><span class=p>:</span><span class=w>
+<span class=sr-only>Link to heading</span></a></h2><p>Añade la siguiente dependencia al <code>pubspec.yaml</code> de tu proyecto Dart:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>dependencias</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>http_status</span><span class=p>:</span><span class=w> </span><span class=l>&lt;latest_version&gt;</span><span class=w> </span><span class=c># ^2.1.0 es la última versión compatible con v1.x</span><span class=w>
-</span></span></span></code></pre></div><h2 id=uso>Uso
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=uso>Uso
 <a class=heading-link href=#uso><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><ol><li><p><strong>Import:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:http_status/http_status.dart&#39;</span><span class=p>;</span>
-</span></span></code></pre></div></li><li><p><strong>Constantes de acceso:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=n>print</span><span class=p>(</span><span class=n>HttpStatusCode</span><span class=p>.</span><span class=n>ok</span><span class=p>);</span> <span class=c1>// Salida: 200
+<span class=sr-only>Link to heading</span></a></h2><ol><li><p><strong>Import:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:http_status/http_status.dart&#39;</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Constantes de acceso:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=n>print</span><span class=p>(</span><span class=n>HttpStatusCode</span><span class=p>.</span><span class=n>ok</span><span class=p>);</span> <span class=c1>// Salida: 200
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>print</span><span class=p>(</span><span class=n>HttpStatus</span><span class=p>.</span><span class=n>ok</span><span class=p>.</span><span class=n>name</span><span class=p>);</span> <span class=c1>// Salida: OK
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>print</span><span class=p>(</span><span class=n>HttpStatus</span><span class=p>.</span><span class=n>ok</span><span class=p>.</span><span class=n>code</span><span class=p>);</span> <span class=c1>// Salida: 200
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>print</span><span class=p>(</span><span class=n>HttpStatus</span><span class=p>.</span><span class=n>ok</span><span class=p>.</span><span class=n>description</span><span class=p>);</span> <span class=c1>// Salida: The request was fulfilled.
@@ -45,7 +60,41 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 </span></span></span><span class=line><span class=cl><span class=c1>//    description: &#39;The origin server did not find a current representation for &#39;
 </span></span></span><span class=line><span class=cl><span class=c1>//        &#39;the target resource or is not willing to disclose that one exists.&#39;,
 </span></span></span><span class=line><span class=cl><span class=c1>//  );`
-</span></span></span></code></pre></div></li><li><p><strong>Comprobar estados:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>/// Devuelve true si está entre 100 y 199
+</span></span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Comprobar estados:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>/// Devuelve true si está entre 100 y 199
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>response</span><span class=p>.</span><span class=n>statusCode</span><span class=p>.</span><span class=n>isInformationHttpStatusCode</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=n>print</span><span class=p>(</span><span class=n>HttpStatusCode</span><span class=p>.</span><span class=n>processing</span><span class=p>.</span><span class=n>isInformationHttpStatusCode</span><span class=p>);</span> <span class=c1>// true
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>print</span><span class=p>(</span><span class=n>HttpStatusCode</span><span class=p>.</span><span class=n>notFound</span><span class=p>.</span><span class=n>isInformationHttpStatusCode</span><span class=p>);</span> <span class=c1>// false
@@ -79,7 +128,17 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=c1>// Gestionar otros códigos o errores
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
-</span></span></code></pre></div></li><li><p><strong>Convertir desde Int:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kd>final</span> <span class=n>httpStatus</span> <span class=o>=</span> <span class=n>HttpStatus</span><span class=p>.</span><span class=n>fromCode</span><span class=p>(</span><span class=n>response</span><span class=p>.</span><span class=n>statusCode</span><span class=p>);</span> <span class=c1>// response.statusCode = 404
+</span></span></code></pre></td></tr></table></div></div></li><li><p><strong>Convertir desde Int:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kd>final</span> <span class=n>httpStatus</span> <span class=o>=</span> <span class=n>HttpStatus</span><span class=p>.</span><span class=n>fromCode</span><span class=p>(</span><span class=n>response</span><span class=p>.</span><span class=n>statusCode</span><span class=p>);</span> <span class=c1>// response.statusCode = 404
 </span></span></span><span class=line><span class=cl><span class=c1></span>
 </span></span><span class=line><span class=cl><span class=n>print</span><span class=p>(</span><span class=n>httpStatus</span><span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=c1>// Salida:
@@ -89,9 +148,38 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 </span></span></span><span class=line><span class=cl><span class=c1>//    description: &#39;The origin server did not find a current representation for &#39;
 </span></span></span><span class=line><span class=cl><span class=c1>//        &#39;the target resource or is not willing to disclose that one exists.&#39;,
 </span></span></span><span class=line><span class=cl><span class=c1>//  );
-</span></span></span></code></pre></div></li></ol><h2 id=ejemplo>Ejemplo
+</span></span></span></code></pre></td></tr></table></div></div></li></ol><h2 id=ejemplo>Ejemplo
 <a class=heading-link href=#ejemplo><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><ol><li><p>Método clásico</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http/http.dart&#39;</span> <span class=k>as</span> <span class=n>http</span><span class=p>;</span>
+<span class=sr-only>Link to heading</span></a></h2><ol><li><p>Método clásico</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http/http.dart&#39;</span> <span class=k>as</span> <span class=n>http</span><span class=p>;</span>
 </span></span><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http_status/http_status.dart&#39;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl> <span class=kd>final</span> <span class=n>url</span> <span class=o>=</span> <span class=s1>&#39;https://api.example.com/data&#39;</span><span class=p>;</span>
@@ -120,7 +208,34 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 </span></span><span class=line><span class=cl> <span class=kt>void</span> <span class=n>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>   <span class=n>fetchData</span><span class=p>();</span>
 </span></span><span class=line><span class=cl> <span class=p>}</span>
-</span></span></code></pre></div></li><li><p>Método alternativo (Igual que el método #1, pero con una validación más directa usando ej: <code>.isSuccessfulHttpStatusCode</code>)</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http/http.dart&#39;</span> <span class=k>as</span> <span class=n>http</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p>Método alternativo (Igual que el método #1, pero con una validación más directa usando ej: <code>.isSuccessfulHttpStatusCode</code>)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http/http.dart&#39;</span> <span class=k>as</span> <span class=n>http</span><span class=p>;</span>
 </span></span><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http_status/http_status.dart&#39;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl> <span class=kd>final</span> <span class=n>url</span> <span class=o>=</span> <span class=s1>&#39;https://api.example.com/data&#39;</span><span class=p>;</span>
@@ -147,7 +262,42 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 </span></span><span class=line><span class=cl> <span class=kt>void</span> <span class=n>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>   <span class=n>fetchData</span><span class=p>();</span>
 </span></span><span class=line><span class=cl> <span class=p>}</span>
-</span></span></code></pre></div></li><li><p>Método alternativo (Igual que el método #1, si necesita el objeto HttpStatus del código de estado generado dinámicamente de la respuesta)</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http/http.dart&#39;</span> <span class=k>as</span> <span class=n>http</span><span class=p>;</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><p>Método alternativo (Igual que el método #1, si necesita el objeto HttpStatus del código de estado generado dinámicamente de la respuesta)</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http/http.dart&#39;</span> <span class=k>as</span> <span class=n>http</span><span class=p>;</span>
 </span></span><span class=line><span class=cl> <span class=k>import</span> <span class=s1>&#39;package:http_status/http_status.dart&#39;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl> <span class=kd>final</span> <span class=n>url</span> <span class=o>=</span> <span class=s1>&#39;https://api.example.com/data&#39;</span><span class=p>;</span>
@@ -182,7 +332,7 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
 </span></span><span class=line><span class=cl> <span class=kt>void</span> <span class=n>main</span><span class=p>()</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>   <span class=n>fetchData</span><span class=p>();</span>
 </span></span><span class=line><span class=cl> <span class=p>}</span>
-</span></span></code></pre></div></li></ol><p>Este código obtiene datos de una API y comprueba el código de estado HTTP de la respuesta. Basado en el código, puedes tomar las acciones apropiadas dependiendo del resultado.</p><h2 id=consejos-adicionales>Consejos adicionales
+</span></span></code></pre></td></tr></table></div></div></li></ol><p>Este código obtiene datos de una API y comprueba el código de estado HTTP de la respuesta. Basado en el código, puedes tomar las acciones apropiadas dependiendo del resultado.</p><h2 id=consejos-adicionales>Consejos adicionales
 <a class=heading-link href=#consejos-adicionales><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><ul><li>Utiliza nombres de variables significativos (por ejemplo, <code>data</code> en lugar de <code>httpStatus.description</code>).</li><li>Considere el uso de bloques <code>try-catch</code> para manejar errores de red con gracia.</li><li>Consulte la documentación de <a href=https://github.com/DartForge/http_status class=external-link target=_blank rel=noopener><code>http_status</code></a> para obtener la última información y características adicionales.</li></ul><p>Espero que esta exhaustiva información valiosa sobre el uso del paquete <a href=https://github.com/DartForge/http_status class=external-link target=_blank rel=noopener><code>http_status</code></a> en tus proyectos Dart.</p></div><footer><section class=see-also><h3 id=también-ver-en-dart>También ver en Dart
 <a class=heading-link href=#tambi%c3%a9n-ver-en-dart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Desarrollo UI on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/desarrollo-ui/</link><description>Recent content in Desarrollo UI on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 07 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/desarrollo-ui/index.xml" rel="self" type="application/rss+xml"/><item><title>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)</title><link>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="resumen"&gt;
+ Resumen
+ &lt;a class="heading-link" href="#resumen"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Las Vistas Previas de Widgets de Flutter (Flutter Widget Previews) son una potente característica experimental que permite a los desarrolladores ver el renderizado de widgets en tiempo real, de forma separada a una aplicación completa, en el navegador Chrome. Esta guía cubre cómo implementar, ejecutar y optimizar las vistas previas de widgets en aplicaciones de Flutter. Está diseñada para complementar la &lt;a href="https://docs.flutter.dev/tools/widget-previewer" class="external-link" target="_blank" rel="noopener"&gt;documentación oficial de Flutter sobre el Previsualizador de Widgets&lt;/a&gt;.&lt;/p&gt;</description></item></channel></rss>

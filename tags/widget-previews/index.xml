@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Widget Previews on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/widget-previews/</link><description>Recent content in Widget Previews on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 07 Nov 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/widget-previews/index.xml" rel="self" type="application/rss+xml"/><item><title>A Comprehensive Guide to Flutter Widget Previews (Beta)</title><link>https://tech-andgar.me/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="overview"&gt;
+ Overview
+ &lt;a class="heading-link" href="#overview"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Flutter Widget Previews is a powerful experimental feature that allows developers to see widgets render in real-time, separate from a full app, in the Chrome browser. This guide covers how to implement, run, and optimize widget previews in Flutter applications. It is designed to complement the &lt;a href="https://docs.flutter.dev/tools/widget-previewer" class="external-link" target="_blank" rel="noopener"&gt;official Flutter documentation on the Widget Previewer&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id="understanding-the-beta-status"&gt;
+ Understanding the &amp;lsquo;Beta&amp;rsquo; Status
+ &lt;a class="heading-link" href="#understanding-the-beta-status"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;It is crucial to understand what &amp;ldquo;Beta&amp;rdquo; and &amp;ldquo;Experimental&amp;rdquo; mean in a practical sense for your team&amp;rsquo;s workflow.&lt;/p&gt;</description></item></channel></rss>

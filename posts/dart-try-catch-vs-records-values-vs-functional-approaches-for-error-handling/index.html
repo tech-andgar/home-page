@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><title>Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches? · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta name=keywords content="blog,developer,personal,flutter,deaf"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta name=twitter:description content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta property="og:url" content="https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta property="og:description" content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-08-17T00:00:00+00:00"><meta property="article:modified_time" content="2024-08-17T00:00:00+00:00"><meta property="article:tag" content="Dart"><meta property="article:tag" content="Try/Catch"><meta property="article:tag" content="Records"><meta property="article:tag" content="Package"><meta property="article:tag" content="Dartz"><meta property="article:tag" content="Fpdart"><meta property="og:see_also" content="https://tech-andgar.me/posts/dart-http_status-package/"><meta property="og:see_also" content="https://tech-andgar.me/posts/dart-late-keyword/"><meta property="og:see_also" content="https://tech-andgar.me/posts/dart-http_status-package/"><link rel=canonical href=https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.39600a4765f8dfd1f4d0dc385d0ecc579778aa8273d4fd0ba856a237610c7322.css" rel=stylesheet integrity="sha256-OWAKR2X439H00Nw4XQ7MV5d4qoJz1P0LqFaiN2EMcyI=" crossorigin=anonymous><link href="/css/bundle.min.328eb7ad8528dbb1bdc7abe97aaa5cfedce43a064f1fc0f6328b348fd43b7703.css" rel=stylesheet integrity="sha256-Mo63rYUo27G9x6vpeqpc/tzkOgZPH8D2Mos0j9Q7dwM=" crossorigin=anonymous><script defer src=/js/bundle.min.879be80457ab4d011ad3d7223cfb42487a6e0c527d6221df8150d06207874f85.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
+<!doctype html><html lang=en><head><title>Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches? · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta name=keywords content="blog,developer,personal,flutter,deaf"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta name=twitter:description content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta property="og:url" content="https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta property="og:description" content="Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-08-17T00:00:00+00:00"><meta property="article:modified_time" content="2024-08-17T00:00:00+00:00"><meta property="article:tag" content="Dart"><meta property="article:tag" content="Try/Catch"><meta property="article:tag" content="Records"><meta property="article:tag" content="Package"><meta property="article:tag" content="Dartz"><meta property="article:tag" content="Fpdart"><meta property="og:see_also" content="https://tech-andgar.me/posts/dart-http_status-package/"><meta property="og:see_also" content="https://tech-andgar.me/posts/dart-late-keyword/"><meta property="og:see_also" content="https://tech-andgar.me/posts/dart-http_status-package/"><link rel=canonical href=https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.42655007b45bae5dc11ffea436937bf51939c20ad456410392557064fb94ce7d.css" rel=stylesheet integrity="sha256-QmVQB7Rbrl3BH/6kNpN79Rk5wgrUVkEDklVwZPuUzn0=" crossorigin=anonymous><link href="/css/bundle.min.c576086e4898507f53ce05e1c3e87ef7ce970aa03e12b732d0e52359e15c9dff.css" rel=stylesheet integrity="sha256-xXYIbkiYUH9TzgXhw+h+986XCqA+Ercy0OUjWeFcnf8=" crossorigin=anonymous><script defer src=/js/bundle.min.89c18a35b7c4dede80900125c3dd9b756141fe2209d9dccb9d663942550d1912.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
 <i class="fas fa-times fa-2x"></i></button></header><main class=modal__content id=modal-1-content><div class=searchDivPF data-pagefind-ignore><div id=search data-pagefind-ignore></div><p></p></div><noscript data-pagefind-ignore><div class=searchDivPF data-pagefind-ignore><p class="ctr pokey">Since you have JavaScript disabled, you can use the following form
 to search this site with&nbsp;
 <a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>,&nbsp;instead.<br><em class=legal>(Thanks to <a href=https://kevq.uk/search/ rel=noopener>Kev Quirk</a> for the&nbsp;idea.)</em></p><div class=searchDiv data-pagefind-ignore><form method=get id=search-ddg class=pagefind-ui__form action=https://duckduckgo.com/ title="DuckDuckGo search for www.tech-andgar.me"><input type=hidden name=sites value=tech-andgar.me>
@@ -9,7 +9,7 @@ to search this site with&nbsp;
 <label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/ data-cursor=block>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/ data-cursor=block>Blog</a></li><li class=navigation-item><a class=navigation-link href=/projects/ data-cursor=block>Projects</a></li><li class=navigation-item><a class=navigation-link href=/talks/ data-cursor=block>Talks</a></li><li class=navigation-item><a class=navigation-link href=/contact/ data-cursor=block>Contact me</a></li><li class=navigation-item><a class=navigation-link href=https://link.tech-andgar.me/CVAFGR202404DEV data-cursor=block>CV</a></li><li class=navigation-item><a class=navigation-link href=/privacy-policy/ data-cursor=block>Privacy Policy</a></li><li class="navigation-item nav-link-search"><a href=# class=navigation-link title=Search data-cursor=block><i class="fa fa-search"></i></a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=/es/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/ data-cursor=block>Español 🇪🇸</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tech-andgar.me/posts/dart-try-catch-vs-records-values-vs-functional-approaches-for-error-handling/>Error Handling in Dart: Should You Use `try/catch`, Return Values, or Functional Approaches?</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
 <time datetime=2024-08-17T00:00:00Z>August 17, 2024
 </time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
-10-minute read</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
+11-minute read</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
 <a href=/categories/dart/>Dart</a>
 <span class=separator>•</span>
 <a href=/categories/package/>Package</a></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
@@ -33,7 +33,25 @@ to search this site with&nbsp;
 <a class=heading-link href=#the-classic-approach-trycatch><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>Error handling with <a href=https://dart.dev/language/error-handling class=external-link target=_blank rel=noopener><code>try/catch</code></a> is a pattern that many developers are familiar with. This approach allows the code to remain clean and focused on the main logic, while error handling is relegated to a separate block.</p><h3 id=example-of-trycatch-in-dart>Example of <code>try/catch</code> in Dart
 <a class=heading-link href=#example-of-trycatch-in-dart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kt>void</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kt>void</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=k>try</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>param</span> <span class=o>&lt;=</span> <span class=m>0</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>      <span class=k>throw</span> <span class=n>Exception</span><span class=p>(</span><span class=s2>&#34;Parameter must be greater than 0&#34;</span><span class=p>);</span>
@@ -51,7 +69,7 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=c1>// Failed case
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>performOperation</span><span class=p>(</span><span class=o>-</span><span class=m>1</span><span class=p>);</span> <span class=c1>// Output: Operation failed with error: Exception: Parameter must be greater than 0
 </span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>}</span>
-</span></span></code></pre></div><p>In this example, <code>performOperation</code> throws an exception if the parameter is less than or equal to zero. The <code>try/catch</code> block captures the exception and handles the error, allowing execution to continue without abruptly stopping.</p><h3 id=advantages-of-trycatch>Advantages of <code>try/catch</code>
+</span></span></code></pre></td></tr></table></div></div><p>In this example, <code>performOperation</code> throws an exception if the parameter is less than or equal to zero. The <code>try/catch</code> block captures the exception and handles the error, allowing execution to continue without abruptly stopping.</p><h3 id=advantages-of-trycatch>Advantages of <code>try/catch</code>
 <a class=heading-link href=#advantages-of-trycatch><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><ul><li><p><strong>Cleanliness and Focus:</strong> <code>try/catch</code> allows the code implementing the main logic to remain free of error handling details. You only need to handle the error if it occurs.</p></li><li><p><strong>Centralized Error Management:</strong> You can catch several types of exceptions in one place, simplifying the handling of errors that could arise in different parts of a complex operation.</p></li><li><p><strong>Ideal for Exceptional Errors:</strong> This approach is especially useful when errors are rare or truly exceptional. The &ldquo;happy&rdquo; code runs without interruptions, and the error is only handled if something really goes wrong.</p></li></ul><h3 id=disadvantages-of-trycatch>Disadvantages of <code>try/catch</code>
 <a class=heading-link href=#disadvantages-of-trycatch><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
@@ -59,7 +77,32 @@ to search this site with&nbsp;
 <a class=heading-link href=#the-alternative-approach-error-handling-with-return-values><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>In Dart, especially with the arrival of <a href=https://dart.dev/language/records class=external-link target=_blank rel=noopener><code>Records</code></a> <code>(T, E, ...) method(){ return (T, E, ...); }</code> in Dart 3, you have the option to return multiple values from a function, including the result and a possible error. This approach is similar to error handling in languages like Golang, where it&rsquo;s common to return a value and an explicit error for the caller to decide how to proceed.</p><h3 id=example-of-error-handling-with-records-in-dart-3>Example of Error Handling with <code>Records</code> in Dart 3
 <a class=heading-link href=#example-of-error-handling-with-records-in-dart-3><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>Object</span><span class=o>?</span><span class=p>)</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=kt>Object</span><span class=o>?</span><span class=p>)</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>param</span> <span class=o>&gt;</span> <span class=m>0</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span><span class=n>param</span><span class=p>,</span> <span class=kc>null</span><span class=p>);</span>  <span class=c1>// Success, no error.
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
@@ -84,20 +127,69 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>    <span class=n>print</span><span class=p>(</span><span class=s2>&#34;Operation failed with error: </span><span class=si>$</span><span class=n>error2</span><span class=s2>&#34;</span><span class=p>);</span>    <span class=c1>// Output: Operation failed with error: Parameter must be greater than 0
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>In this example, the <code>performOperation</code> function returns a <code>Record</code> containing both the operation result and a possible error. Depending on whether the parameter is valid, the function returns a <code>Record</code> with the value or an error message. Then, in <code>main</code>, the <code>Record</code> is destructured to handle the result and error explicitly.</p><h3 id=is-it-a-good-idea-to-return-exceptions-in-a-record>Is It a Good Idea to Return Exceptions in a <code>Record</code>?
+</span></span></code></pre></td></tr></table></div></div><p>In this example, the <code>performOperation</code> function returns a <code>Record</code> containing both the operation result and a possible error. Depending on whether the parameter is valid, the function returns a <code>Record</code> with the value or an error message. Then, in <code>main</code>, the <code>Record</code> is destructured to handle the result and error explicitly.</p><h3 id=is-it-a-good-idea-to-return-exceptions-in-a-record>Is It a Good Idea to Return Exceptions in a <code>Record</code>?
 <a class=heading-link href=#is-it-a-good-idea-to-return-exceptions-in-a-record><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p>An approach that might seem tempting is to return an exception as part of a <code>Record</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=n>Exception</span><span class=o>?</span><span class=p>)</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
+<span class=sr-only>Link to heading</span></a></h3><p>An approach that might seem tempting is to return an exception as part of a <code>Record</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=p>(</span><span class=kt>int</span><span class=p>,</span> <span class=n>Exception</span><span class=o>?</span><span class=p>)</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>param</span> <span class=o>&gt;</span> <span class=m>0</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span><span class=n>param</span><span class=p>,</span> <span class=kc>null</span><span class=p>);</span>  <span class=c1>// Success, no error.
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=p>(</span><span class=m>0</span><span class=p>,</span> <span class=n>Exception</span><span class=p>(</span><span class=s2>&#34;Parameter must be greater than 0&#34;</span><span class=p>));</span>  <span class=c1>// Failure, with exception.
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><p>While this is technically possible, it may not be the best idea for several reasons:</p><ul><li><p><strong>Separation of Concerns:</strong> Exceptions in Dart are designed to be thrown and caught, not simply passed as a return value. Returning an exception in a <code>Record</code> can lead to confusion about how the error should be handled.</p></li><li><p><strong>Loss of Stack Trace:</strong> By not throwing the exception, you might lose valuable information about where the error occurred, which will make debugging more difficult.</p></li></ul><h2 id=the-custom-result-class-approach>The Custom Result Class Approach
+</span></span></code></pre></td></tr></table></div></div><p>While this is technically possible, it may not be the best idea for several reasons:</p><ul><li><p><strong>Separation of Concerns:</strong> Exceptions in Dart are designed to be thrown and caught, not simply passed as a return value. Returning an exception in a <code>Record</code> can lead to confusion about how the error should be handled.</p></li><li><p><strong>Loss of Stack Trace:</strong> By not throwing the exception, you might lose valuable information about where the error occurred, which will make debugging more difficult.</p></li></ul><h2 id=the-custom-result-class-approach>The Custom Result Class Approach
 <a class=heading-link href=#the-custom-result-class-approach><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>An elegant and flexible alternative for handling errors is the use of a custom <code>Result</code> class. This approach encapsulates both success and error in a single structure, providing a clear interface for handling both cases.</p><h3 id=example-of-custom-result-class>Example of Custom Result Class
 <a class=heading-link href=#example-of-custom-result-class><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Result</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=p>{</span>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=kd>class</span> <span class=nc>Result</span><span class=o>&lt;</span><span class=n>T</span><span class=o>&gt;</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>T</span><span class=o>?</span> <span class=n>value</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=kt>Object</span><span class=o>?</span> <span class=n>error</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>StackTrace</span><span class=o>?</span> <span class=n>stackTrace</span><span class=p>;</span>
@@ -139,15 +231,38 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=n>print</span><span class=p>(</span><span class=s2>&#34;StackTrace: </span><span class=si>${</span><span class=n>failedResult</span><span class=p>.</span><span class=n>stackTrace</span><span class=si>}</span><span class=s2>&#34;</span><span class=p>);</span>             <span class=c1>// Output: StackTrace: ... (the stack trace will vary based on the execution environment)
 </span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><h3 id=advantages-of-the-result-class-approach>Advantages of the Result Class Approach
+</span></span></code></pre></td></tr></table></div></div><h3 id=advantages-of-the-result-class-approach>Advantages of the Result Class Approach
 <a class=heading-link href=#advantages-of-the-result-class-approach><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><ol><li><strong>Strong Typing</strong>: Provides an explicit type for successful results and errors.</li><li><strong>Clarity</strong>: Makes it obvious that a function can fail and how to handle both cases.</li><li><strong>Flexibility</strong>: Can be easily extended to include more information or behaviors.</li></ol><h2 id=functional-approaches-with-functional-packages-dartz-and-fpdart>Functional Approaches with Functional Packages: dartz and fpdart
 <a class=heading-link href=#functional-approaches-with-functional-packages-dartz-and-fpdart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>The <code>dartz</code> and <code>fpdart</code> packages provide data structures and utilities inspired by functional programming for Dart. These packages offer types like <code>Either</code> that are particularly useful for error handling.</p><h3 id=example-with-dartz>Example with dartz
 <a class=heading-link href=#example-with-dartz><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p>First, add <code>dartz</code> to your dependencies:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>dependencies</span><span class=p>:</span><span class=w>
+<span class=sr-only>Link to heading</span></a></h3><p>First, add <code>dartz</code> to your dependencies:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>dependencies</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>dartz</span><span class=p>:</span><span class=w> </span><span class=l>^0.10.1</span><span class=w> </span><span class=c># Latest version reviewed as of 2024-08-17</span><span class=w>
-</span></span></span></code></pre></div><p>Then, you can use <code>Either</code> to handle errors:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:dartz/dartz.dart&#39;</span><span class=p>;</span>
+</span></span></span></code></pre></td></tr></table></div></div><p>Then, you can use <code>Either</code> to handle errors:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:dartz/dartz.dart&#39;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>Either</span><span class=o>&lt;</span><span class=kt>String</span><span class=p>,</span> <span class=kt>int</span><span class=o>&gt;</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>param</span> <span class=o>&gt;</span> <span class=m>0</span><span class=p>)</span> <span class=p>{</span>
@@ -168,11 +283,34 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=p>(</span><span class=n>value</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>print</span><span class=p>(</span><span class=s2>&#34;Operation successful: </span><span class=si>$</span><span class=n>value</span><span class=s2>&#34;</span><span class=p>),</span>
 </span></span><span class=line><span class=cl>  <span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><h3 id=example-with-fpdart>Example with fpdart
+</span></span></code></pre></td></tr></table></div></div><h3 id=example-with-fpdart>Example with fpdart
 <a class=heading-link href=#example-with-fpdart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p><code>fpdart</code> is a more recent alternative to <code>dartz</code>. Add it to your dependencies:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>dependencies</span><span class=p>:</span><span class=w>
+<span class=sr-only>Link to heading</span></a></h3><p><code>fpdart</code> is a more recent alternative to <code>dartz</code>. Add it to your dependencies:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=nt>dependencies</span><span class=p>:</span><span class=w>
 </span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>fpdart</span><span class=p>:</span><span class=w> </span><span class=l>^1.1.0</span><span class=w> </span><span class=c># Latest version reviewed as of 2024-08-17</span><span class=w>
-</span></span></span></code></pre></div><p>The usage is similar to <code>dartz</code>:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:fpdart/fpdart.dart&#39;</span><span class=p>;</span>
+</span></span></span></code></pre></td></tr></table></div></div><p>The usage is similar to <code>dartz</code>:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:fpdart/fpdart.dart&#39;</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=n>Either</span><span class=o>&lt;</span><span class=kt>String</span><span class=p>,</span> <span class=kt>int</span><span class=o>&gt;</span> <span class=n>performOperation</span><span class=p>(</span><span class=kt>int</span> <span class=n>param</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=p>(</span><span class=n>param</span> <span class=o>&gt;</span> <span class=m>0</span><span class=p>)</span> <span class=p>{</span>
@@ -193,7 +331,7 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=p>(</span><span class=n>value</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>print</span><span class=p>(</span><span class=s2>&#34;Operation successful: </span><span class=si>$</span><span class=n>value</span><span class=s2>&#34;</span><span class=p>),</span>
 </span></span><span class=line><span class=cl>  <span class=p>);</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></div><h3 id=advantages-of-functional-approaches>Advantages of Functional Approaches
+</span></span></code></pre></td></tr></table></div></div><h3 id=advantages-of-functional-approaches>Advantages of Functional Approaches
 <a class=heading-link href=#advantages-of-functional-approaches><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><ol><li><strong>Composition</strong>: They facilitate the composition of operations that can fail.</li><li><strong>Immutability</strong>: They promote the use of immutable data structures.</li><li><strong>Explicit Error Handling</strong>: They force the developer to consider both the success and error cases.</li><li><strong>Interoperability</strong>: They provide a standard way of handling errors that can be used throughout the codebase.</li></ol><h3 id=considerations>Considerations
 <a class=heading-link href=#considerations><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>

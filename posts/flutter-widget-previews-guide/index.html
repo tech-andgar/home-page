@@ -1,0 +1,947 @@
+<!doctype html><html lang=en><head><title>A Comprehensive Guide to Flutter Widget Previews (Beta) · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="Learn how to implement, run, and optimize Flutter's experimental Widget Previews feature with this in-depth guide. Covers setup, best practices, troubleshooting, and advanced patterns."><meta name=keywords content="blog,developer,personal,flutter,deaf"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="A Comprehensive Guide to Flutter Widget Previews (Beta)"><meta name=twitter:description content="Learn how to implement, run, and optimize Flutter's experimental Widget Previews feature with this in-depth guide. Covers setup, best practices, troubleshooting, and advanced patterns."><meta property="og:url" content="https://tech-andgar.me/posts/flutter-widget-previews-guide/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="A Comprehensive Guide to Flutter Widget Previews (Beta)"><meta property="og:description" content="Learn how to implement, run, and optimize Flutter's experimental Widget Previews feature with this in-depth guide. Covers setup, best practices, troubleshooting, and advanced patterns."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-11-07T00:00:00+00:00"><meta property="article:modified_time" content="2025-11-07T00:00:00+00:00"><meta property="article:tag" content="Flutter"><meta property="article:tag" content="Dart"><meta property="article:tag" content="Widget Previews"><meta property="article:tag" content="Flutter Beta"><meta property="article:tag" content="UI Development"><meta property="article:tag" content="Testing"><link rel=canonical href=https://tech-andgar.me/posts/flutter-widget-previews-guide/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.42655007b45bae5dc11ffea436937bf51939c20ad456410392557064fb94ce7d.css" rel=stylesheet integrity="sha256-QmVQB7Rbrl3BH/6kNpN79Rk5wgrUVkEDklVwZPuUzn0=" crossorigin=anonymous><link href="/css/bundle.min.c576086e4898507f53ce05e1c3e87ef7ce970aa03e12b732d0e52359e15c9dff.css" rel=stylesheet integrity="sha256-xXYIbkiYUH9TzgXhw+h+986XCqA+Ercy0OUjWeFcnf8=" crossorigin=anonymous><script defer src=/js/bundle.min.89c18a35b7c4dede80900125c3dd9b756141fe2209d9dccb9d663942550d1912.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
+<i class="fas fa-times fa-2x"></i></button></header><main class=modal__content id=modal-1-content><div class=searchDivPF data-pagefind-ignore><div id=search data-pagefind-ignore></div><p></p></div><noscript data-pagefind-ignore><div class=searchDivPF data-pagefind-ignore><p class="ctr pokey">Since you have JavaScript disabled, you can use the following form
+to search this site with&nbsp;
+<a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>,&nbsp;instead.<br><em class=legal>(Thanks to <a href=https://kevq.uk/search/ rel=noopener>Kev Quirk</a> for the&nbsp;idea.)</em></p><div class=searchDiv data-pagefind-ignore><form method=get id=search-ddg class=pagefind-ui__form action=https://duckduckgo.com/ title="DuckDuckGo search for www.tech-andgar.me"><input type=hidden name=sites value=tech-andgar.me>
+<input class="searchInput pagefind-ui__search-input" type=text name=q maxlength=300 placeholder="Search this site"><br><input type=submit value=Search class=pagefind-ui__search-clear></form><p class="ctr legal">Results open in the same tab/window.</p></div><p class="ctr legal"><strong>Privacy notice</strong>: This search form sends site-specific queries to
+<a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>, a privacy-focused search engine. See&nbsp;also the
+<a href=https://duckduckgo.com/privacy rel=noopener>DuckDuckGo privacy&nbsp;policy </a>.</p></div></noscript></main></div></div></div><script defer src=/js/pagefind/pagefind-ui.js type=text/javascript></script><div id=consentModal class=modal aria-labelledby=consentModalLabel aria-hidden=true><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title id=consentModalLabel>Cookie Consent</h5></div><div class=modal-body><p>This site uses cookies to enhance your experience. By continuing to use our site, you agree to our use of cookies and acknowledge our privacy policy.</p><a href=/privacy-policy target=_self>Read our Privacy Policy</a></div><div class=modal-footer><button type=button class=primary-button id=consentOkButton>OK</button></div></div></div></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://tech-andgar.me/ data-cursor=block>TECH-ANDGAR
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/ data-cursor=block>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/ data-cursor=block>Blog</a></li><li class=navigation-item><a class=navigation-link href=/projects/ data-cursor=block>Projects</a></li><li class=navigation-item><a class=navigation-link href=/talks/ data-cursor=block>Talks</a></li><li class=navigation-item><a class=navigation-link href=/contact/ data-cursor=block>Contact me</a></li><li class=navigation-item><a class=navigation-link href=https://link.tech-andgar.me/CVAFGR202404DEV data-cursor=block>CV</a></li><li class=navigation-item><a class=navigation-link href=/privacy-policy/ data-cursor=block>Privacy Policy</a></li><li class="navigation-item nav-link-search"><a href=# class=navigation-link title=Search data-cursor=block><i class="fa fa-search"></i></a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=/es/posts/flutter-widget-previews-guide/ data-cursor=block>Español 🇪🇸</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tech-andgar.me/posts/flutter-widget-previews-guide/>A Comprehensive Guide to Flutter Widget Previews (Beta)</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
+<time datetime=2025-11-07T00:00:00Z>November 7, 2025
+</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
+16-minute read</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
+<a href=/categories/flutter/>Flutter</a>
+<span class=separator>•</span>
+<a href=/categories/tutorials/>Tutorials</a></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/tags/flutter/>Flutter</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/dart/>Dart</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/widget-previews/>Widget Previews</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/flutter-beta/>Flutter Beta</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/ui-development/>UI Development</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/tags/testing/>Testing</a></span></div></div></header><div class=post-content><img src=/posts/flutter-widget-previews-guide/00-widget-preview-main.webp alt="Featured image"><h2 id=overview>Overview
+<a class=heading-link href=#overview><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Flutter Widget Previews is a powerful experimental feature that allows developers to see widgets render in real-time, separate from a full app, in the Chrome browser. This guide covers how to implement, run, and optimize widget previews in Flutter applications. It is designed to complement the <a href=https://docs.flutter.dev/tools/widget-previewer class=external-link target=_blank rel=noopener>official Flutter documentation on the Widget Previewer</a>.</p><h3 id=understanding-the-beta-status>Understanding the &lsquo;Beta&rsquo; Status
+<a class=heading-link href=#understanding-the-beta-status><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>It is crucial to understand what &ldquo;Beta&rdquo; and &ldquo;Experimental&rdquo; mean in a practical sense for your team&rsquo;s workflow.</p><ul><li><strong>API Instability</strong>: The APIs are not stable and are subject to change in future Flutter releases without warning. Code relying on the current implementation may break.</li><li><strong>Development-Time Tool</strong>: This feature is intended strictly for accelerating development. It should not be used for production-critical validation, UI snapshot testing, or as a substitute for on-device testing.</li><li><strong>Potential Bugs</strong>: As a beta feature, you may encounter bugs or unexpected behavior.</li></ul><p>Embrace it as a tool to speed up your UI iteration loop, but do not build critical infrastructure around its current implementation.</p><h2 id=metadata>Metadata
+<a class=heading-link href=#metadata><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ul><li><strong>Flutter Version</strong>: 3.35 or higher (stable channel)</li><li><strong>Dart Version</strong>: 3.0+</li><li><strong>Package</strong>: <code>flutter/widget_previews.dart</code></li><li><strong>Browser Support</strong>: Chrome only (requires hot reload support)</li><li><strong>Web Server</strong>: <code>http://localhost:{{PORT}}</code> (default)</li><li><strong>Status</strong>: Experimental - APIs are not stable and will change</li></ul><h2 id=quick-start>Quick Start
+<a class=heading-link href=#quick-start><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=1-enable-flutter-beta-channel>1. Enable Flutter Beta Channel
+<a class=heading-link href=#1-enable-flutter-beta-channel><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>flutter channel beta
+</span></span><span class=line><span class=cl>flutter upgrade
+</span></span></code></pre></td></tr></table></div></div><h3 id=2-add-preview-annotations>2. Add Preview Annotations
+<a class=heading-link href=#2-add-preview-annotations><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:flutter/material.dart&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:flutter/widget_previews.dart&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;My Widget Preview&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myWidgetPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>Center</span><span class=p>(</span><span class=nl>child:</span> <span class=n>MyWidget</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=3-run-widget-preview-environment>3. Run Widget Preview Environment
+<a class=heading-link href=#3-run-widget-preview-environment><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Browser mode (launches directly in a new browser instance)</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Web server mode (recommended for most use cases)</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start --web-server
+</span></span></code></pre></td></tr></table></div></div><h2 id=core-concepts>Core Concepts
+<a class=heading-link href=#core-concepts><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=preview-annotations>Preview Annotations
+<a class=heading-link href=#preview-annotations><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>The <code>@Preview</code> annotation is the foundation of widget previews and can be applied to:</p><ul><li><strong>Top-level functions</strong> that return a <code>Widget</code> or <code>WidgetBuilder</code></li><li><strong>Static methods</strong> within a class that return a <code>Widget</code> or <code>WidgetBuilder</code></li><li><strong>Public Widget constructors and factories</strong> with no required arguments</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Descriptive Preview Name&#39;</span><span class=p>,</span>     <span class=c1>// Required: Display name
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>group:</span> <span class=s1>&#39;Component Group&#39;</span><span class=p>,</span>             <span class=c1>// Optional: Group previews together
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>brightness:</span> <span class=n>Brightness</span><span class=p>.</span><span class=n>light</span><span class=p>,</span>         <span class=c1>// Optional: Force light/dark theme
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>textScaleFactor:</span> <span class=m>1.0</span><span class=p>,</span>                 <span class=c1>// Optional: Text scaling
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>),</span>                 <span class=c1>// Optional: Preview dimensions
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>wrapper:</span> <span class=n>myWrapperFunction</span><span class=p>,</span>           <span class=c1>// Optional: Custom wrapper function
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>theme:</span> <span class=n>myThemeFunction</span><span class=p>,</span>               <span class=c1>// Optional: Custom theme function
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>localizations:</span> <span class=n>myLocalizationFunction</span><span class=p>,</span> <span class=c1>// Optional: Localization config
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=preview-function-requirements>Preview Function Requirements
+<a class=heading-link href=#preview-function-requirements><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><strong>Public function</strong>: Must be public (no underscore prefix)</li><li><strong>Return type</strong>: <code>Widget</code></li><li><strong>No parameters</strong>: Preview functions take no arguments</li><li><strong>Self-contained</strong>: Include all necessary wrapping (MaterialApp, Scaffold, etc.) unless using a wrapper.</li></ul><h2 id=implementation-patterns>Implementation Patterns
+<a class=heading-link href=#implementation-patterns><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=dry-preview-utilities>DRY Preview Utilities
+<a class=heading-link href=#dry-preview-utilities><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>To avoid code duplication, create reusable preview wrapper utilities. The recommended approach is to export top-level functions that can be directly imported by the widget preview system.</p><p><strong>Important</strong>: Static methods in classes cannot be used as wrapper functions in <code>@Preview</code> annotations. The widget preview system requires top-level functions that can be imported directly. Using static methods like <code>PreviewUtils.buttonWrapper</code> will result in compilation errors.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ This will NOT work - static method cannot be used as wrapper
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Button&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>PreviewUtils</span><span class=p>.</span><span class=n>buttonWrapper</span><span class=p>,</span>  <span class=c1>// Compilation error!
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyButton</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ This WILL work - top-level function can be used as wrapper
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Button&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>,</span>  <span class=c1>// Works correctly
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyButton</span><span class=p>();</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// preview_utils.dart
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>import</span> <span class=s1>&#39;package:flutter/material.dart&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Configuration for different preview types following DRY principles
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>enum</span> <span class=n>PreviewType</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=n>listItem</span><span class=p>(</span><span class=nl>width:</span> <span class=m>400</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>120</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>button</span><span class=p>(</span><span class=nl>width:</span> <span class=m>80</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>60</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>textElement</span><span class=p>(</span><span class=nl>width:</span> <span class=m>150</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>40</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>wordCount</span><span class=p>(</span><span class=nl>width:</span> <span class=m>200</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>50</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>colorElement</span><span class=p>(</span><span class=nl>width:</span> <span class=m>200</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>60</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>themeCard</span><span class=p>(</span><span class=nl>width:</span> <span class=m>120</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>140</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kd>const</span> <span class=n>PreviewType</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>    <span class=kd>required</span> <span class=k>this</span><span class=p>.</span><span class=n>width</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=kd>required</span> <span class=k>this</span><span class=p>.</span><span class=n>height</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=kt>double</span> <span class=n>width</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=kt>double</span> <span class=n>height</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>Size</span> <span class=kd>get</span> <span class=n>size</span> <span class=o>=&gt;</span> <span class=n>Size</span><span class=p>(</span><span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Creates a standardized preview wrapper for any widget type
+</span></span></span><span class=line><span class=cl><span class=c1>/// Note: This utility wraps in MaterialApp and Scaffold directly
+</span></span></span><span class=line><span class=cl><span class=c1>/// to provide a consistent theming and structure for all previews.
+</span></span></span><span class=line><span class=cl><span class=c1>/// Since the theme is explicitly set within this wrapper, the preview system&#39;s
+</span></span></span><span class=line><span class=cl><span class=c1>/// theme toggle will not override it.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Widget</span> <span class=n>_createPreview</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>  <span class=kd>required</span> <span class=n>Widget</span> <span class=n>child</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=kd>required</span> <span class=n>PreviewType</span> <span class=n>type</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>})</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>debugShowCheckedModeBanner:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>light</span><span class=p>.</span><span class=n>themeData</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>darkTheme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>dark</span><span class=p>.</span><span class=n>themeData</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>Center</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nl>child:</span> <span class=n>SizedBox</span><span class=p>(</span><span class=nl>width:</span> <span class=n>type</span><span class=p>.</span><span class=n>width</span><span class=p>,</span> <span class=nl>height:</span> <span class=n>type</span><span class=p>.</span><span class=n>height</span><span class=p>,</span> <span class=nl>child:</span> <span class=n>child</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>      <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Wrapper functions for @Preview annotations (WidgetWrapper signature)
+</span></span></span><span class=line><span class=cl><span class=c1>/// These are exported as top-level functions for the widget preview system
+</span></span></span><span class=line><span class=cl><span class=c1>/// They include MaterialApp and Scaffold, providing a consistent base for previews.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Widget</span> <span class=n>listItemWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>listItem</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>button</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>textElementWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>textElement</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>wordCountWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>wordCount</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>colorBarWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>colorElement</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>themeCardWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>themeCard</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=usage-examples>Usage Examples
+<a class=heading-link href=#usage-examples><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><h4 id=list-item-preview>List Item Preview
+<a class=heading-link href=#list-item-preview><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Regular Note Item&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>listItemWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>regularNoteItemPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>note</span> <span class=o>=</span> <span class=n>Note</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>id:</span> <span class=m>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>content:</span> <span class=s1>&#39;This is a sample note content for preview purposes.&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>creationDate:</span> <span class=n>DateTime</span><span class=p>.</span><span class=n>now</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>modifiedDate:</span> <span class=n>DateTime</span><span class=p>.</span><span class=n>now</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>isFavorite:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>SwipeableNoteListItem</span><span class=p>(</span><span class=nl>note:</span> <span class=n>note</span><span class=p>,</span> <span class=nl>onTap:</span> <span class=p>()</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/01-widget-preview-regular-note.webp alt="Widget Preview"></p><h4 id=button-preview>Button Preview
+<a class=heading-link href=#button-preview><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Favorite Button - Not Favorited&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>notFavoritedButtonPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>note</span> <span class=o>=</span> <span class=n>Note</span><span class=p>(</span><span class=nl>id:</span> <span class=m>1</span><span class=p>,</span> <span class=nl>content:</span> <span class=s1>&#39;Sample&#39;</span><span class=p>,</span> <span class=nl>isFavorite:</span> <span class=kc>false</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>NoteFavoriteButton</span><span class=p>(</span><span class=nl>note:</span> <span class=n>note</span><span class=p>,</span> <span class=nl>onPressed:</span> <span class=p>()</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/02-widget-preview-not-favorited-button.webp alt="Widget Preview"></p><h4 id=theme-specific-preview>Theme-Specific Preview
+<a class=heading-link href=#theme-specific-preview><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Light Theme&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>120</span><span class=p>,</span> <span class=m>140</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>themeCardWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>lightThemeCardPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>ThemePreviewCard</span><span class=p>.</span><span class=n>standard</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>light</span><span class=p>,</span> <span class=c1>// Use a specific theme
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nl>isSelected:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>onTap:</span> <span class=p>()</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Dark Theme&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>themeCardWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>brightness:</span> <span class=n>Brightness</span><span class=p>.</span><span class=n>dark</span><span class=p>,</span> <span class=c1>// Use a specific theme
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>darkThemeCardDarkPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>ThemePreviewCard</span><span class=p>.</span><span class=n>standard</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>dark</span><span class=p>,</span> <span class=c1>// Use a specific theme
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nl>isSelected:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>onTap:</span> <span class=p>()</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/03-widget-preview-theme-cards.webp alt="Widget Preview"></p><h4 id=when-to-set-a-theme-explicitly>When to Set a Theme Explicitly
+<a class=heading-link href=#when-to-set-a-theme-explicitly><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>Explicitly wrapping a preview in a <code>MaterialApp</code> with a specific <code>theme</code> is the correct pattern for:</p><ul><li><strong>Verifying Behavior</strong>: Ensuring a component renders correctly within a <em>specific</em> theme.</li><li><strong>Theme Galleries</strong>: Creating a visual library of different app themes, as shown in the <code>ThemePreviewCard</code> example.</li><li><strong>Isolated Components</strong>: Testing widgets that are designed to only ever exist within one theme (e.g., a special promotional component).</li></ul><p>For general-purpose previews where you want to toggle between light and dark modes, omit the <code>MaterialApp</code> and use a <code>wrapper</code> instead.</p><h2 id=running-previews>Running Previews
+<a class=heading-link href=#running-previews><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=development-server>Development Server
+<a class=heading-link href=#development-server><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>You can start the widget preview environment in two main ways:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Web server mode (recommended)</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start --web-server
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Browser mode</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># With a specific device</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start -d chrome
+</span></span></code></pre></td></tr></table></div></div><h4 id=which-command-should-i-use>Which Command Should I Use?
+<a class=heading-link href=#which-command-should-i-use><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><code>flutter widget-preview start --web-server</code>: This is the <strong>recommended</strong> approach. It starts a persistent web server that you can connect to from your browser. It&rsquo;s generally more stable and better suited for continuous development.</li><li><code>flutter widget-preview start</code>: This command compiles the previews and attempts to launch a new Chrome browser instance directly. It&rsquo;s useful for a quick, one-off check but the server mode is more robust for day-to-day work.</li></ul><h3 id=hot-reload>Hot Reload
+<a class=heading-link href=#hot-reload><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Previews automatically reload when:</p><ul><li>Preview functions are modified</li><li>Widget classes change</li><li>Dependencies are updated</li></ul><h3 id=ide-integration>IDE Integration
+<a class=heading-link href=#ide-integration><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><strong>VS Code</strong>: Flutter extension automatically detects previews</li><li><strong>Android Studio</strong>: Widget preview panel in run configurations</li><li><strong>Web Browser</strong>: Access at <code>http://localhost:{{PORT}}</code></li></ul><h3 id=preview-controls-and-interaction>Preview Controls and Interaction
+<a class=heading-link href=#preview-controls-and-interaction><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Each preview instance provides various controls for interacting with the previewed widget:</p><h4 id=zoom-controls>Zoom Controls
+<a class=heading-link href=#zoom-controls><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><strong>Zoom in</strong>: Magnifies the widget in the preview</li><li><strong>Zoom out</strong>: Reduces the magnification of the widget in the preview</li><li><strong>Reset zoom</strong>: Returns the widget preview to its default zoom level</li></ul><h4 id=theme-controls>Theme Controls
+<a class=heading-link href=#theme-controls><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><strong>Toggle between light and dark mode</strong>: Switches the preview&rsquo;s theme between light and dark color schemes (only works when no <code>brightness</code> is specified in the <code>@Preview</code> annotation)</li></ul><p><strong>Important</strong>: Theme switching only works when <code>brightness</code> is not explicitly set in the <code>@Preview</code> annotation. If you specify <code>brightness: Brightness.light</code> or <code>brightness: Brightness.dark</code>, the theme toggle button will not affect that preview.</p><h4 id=hot-restart>Hot Restart
+<a class=heading-link href=#hot-restart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><strong>Individual preview restart</strong>: Restarts only the specific widget preview, allowing changes to be applied quickly without restarting the entire application</li><li><strong>Global restart</strong>: For cases where global state has been modified (static initializers, etc.), the entire widget previewer can be restarted using the button at the top right of the environment</li></ul><h2 id=best-practices>Best Practices
+<a class=heading-link href=#best-practices><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=1-naming-conventions>1. Naming Conventions
+<a class=heading-link href=#1-naming-conventions><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Descriptive and consistent
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Regular Note Item&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Favorite Note Item&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Long Note Item&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Bad: Unclear or inconsistent
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Preview 1&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;NoteFav&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Test&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=2-grouping-related-previews>2. Grouping Related Previews
+<a class=heading-link href=#2-grouping-related-previews><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Grouping helps organize related previews in the widget preview interface:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Theme-related previews
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Light Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Dark Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Green Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Button state previews
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Not Favorited&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Favorite Buttons&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Favorited&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Favorite Buttons&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Not Favorited (Dark)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Favorite Buttons&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Favorited (Dark)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Favorite Buttons&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Time display variations
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Just Now&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Minutes Ago&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Hours Ago&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Days Ago&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Content length variations
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Short Text&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Word Count&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Medium Text&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Word Count&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Long Text&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Word Count&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Color variations
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Blue Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Color Bars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Green Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Color Bars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Purple Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Color Bars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Note item variations
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Regular Note&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Favorite Note&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Long Note&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Regular Note (Dark)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Favorite Note (Dark)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Long Note (Dark)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/04-widget-preview-group.webp alt="Widget Preview"></p><h3 id=3-realistic-test-data>3. Realistic Test Data
+<a class=heading-link href=#3-realistic-test-data><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Use varied and realistic mock data to test edge cases.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Realistic data variations
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Short Content&#39;</span><span class=p>,</span> <span class=nl>wrapper:</span> <span class=n>wordCountWrapper</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>shortContentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>WordCountDisplay</span><span class=p>(</span><span class=nl>content:</span> <span class=s1>&#39;Hello world&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Long Content&#39;</span><span class=p>,</span> <span class=nl>wrapper:</span> <span class=n>wordCountWrapper</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>longContentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>WordCountDisplay</span><span class=p>(</span><span class=nl>content:</span> <span class=s1>&#39;This is very long content with many words to demonstrate how the word counting functionality handles overflow and line wrapping...&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Bad: Same data everywhere, misses edge cases
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Preview 1&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>preview1</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>(</span><span class=nl>data:</span> <span class=s1>&#39;test&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Preview 2&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>preview2</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>(</span><span class=nl>data:</span> <span class=s1>&#39;test&#39;</span><span class=p>);</span> <span class=c1>// Same data!
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=4-theme-compatibility>4. Theme Compatibility
+<a class=heading-link href=#4-theme-compatibility><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>When creating previews, you have two primary approaches to handling themes:</p><p><img src=/posts/flutter-widget-previews-guide/05-widget-preview-theme-light-dark.webp alt="Widget Preview"></p><h4 id=1-allowing-the-previewer-to-control-the-theme><strong>1. Allowing the Previewer to Control the Theme</strong>
+<a class=heading-link href=#1-allowing-the-previewer-to-control-the-theme><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>If you want to use the widget previewer&rsquo;s built-in theme toggle, you should provide both a <code>theme</code> and a <code>darkTheme</code> to your <code>MaterialApp</code>. This allows the previewer to switch between them.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Providing both light and dark themes allows the previewer&#39;s toggle to work.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;My Component&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myComponentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>darkTheme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>dark</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span><span class=nl>body:</span> <span class=n>MyComponent</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=2-using-application-specific-themes><strong>2. Using Application-Specific Themes</strong>
+<a class=heading-link href=#2-using-application-specific-themes><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>For more realistic previews that use your actual application themes, you can provide your specific <code>theme</code> and <code>darkTheme</code> data. Our preview wrapper utilities (<code>listItemWrapper</code>, <code>buttonWrapper</code>, etc.) use this approach to ensure previews are consistent with the app&rsquo;s design. When using these wrappers, the theme is controlled by the wrapper, not the previewer&rsquo;s toggle.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Using a wrapper that provides a consistent, app-specific theme.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;My Wrapped Component&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>,</span> <span class=c1>// This wrapper provides the MaterialApp and theme.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myWrappedComponentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MyComponent</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Good: Manually specifying a theme for a specific showcase.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Theme Card&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>themeCardPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span> <span class=c1>// Manually setting a specific theme
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span><span class=nl>body:</span> <span class=n>ThemeCard</span><span class=p>(</span><span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>light</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=5-performance-considerations>5. Performance Considerations
+<a class=heading-link href=#5-performance-considerations><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Keep previews fast by minimizing their complexity.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Minimal widget tree with mocked data
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Simple Preview&#39;</span><span class=p>,</span> <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>simplePreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Use a simple mock object instead of a complex, real one
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=n>MyWidget</span><span class=p>(</span><span class=nl>data:</span> <span class=n>MyData</span><span class=p>.</span><span class=n>mock</span><span class=p>());</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Bad: Heavy widget tree, expensive operations
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Heavy Preview&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>heavyPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>appBar:</span> <span class=n>AppBar</span><span class=p>(</span><span class=nl>title:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Heavy&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>body:</span> <span class=n>ListView</span><span class=p>.</span><span class=n>builder</span><span class=p>(</span>  <span class=c1>// Expensive to render in a preview
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nl>itemCount:</span> <span class=m>1000</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nl>itemBuilder:</span> <span class=p>(</span><span class=n>context</span><span class=p>,</span> <span class=n>index</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>ListTile</span><span class=p>(</span><span class=nl>title:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Item </span><span class=si>$</span><span class=n>index</span><span class=s1>&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>),</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=advanced-features>Advanced Features
+<a class=heading-link href=#advanced-features><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=handling-state-and-dependencies>Handling State and Dependencies
+<a class=heading-link href=#handling-state-and-dependencies><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Most real-world widgets depend on state management solutions (like Provider, BLoC, or Riverpod) to function. To make these widgets previewable, you must provide mocked versions of their dependencies.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>/// Example of a widget that depends on a BLoC
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>UserAvatar</span> <span class=kd>extends</span> <span class=n>StatelessWidget</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=err>@</span><span class=n>override</span>
+</span></span><span class=line><span class=cl>  <span class=n>Widget</span> <span class=n>build</span><span class=p>(</span><span class=n>BuildContext</span> <span class=n>context</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// This widget needs a UserBloc to be available in the context
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>final</span> <span class=n>userState</span> <span class=o>=</span> <span class=n>context</span><span class=p>.</span><span class=n>watch</span><span class=o>&lt;</span><span class=n>UserBloc</span><span class=o>&gt;</span><span class=p>().</span><span class=n>state</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>userState</span><span class=p>.</span><span class=n>isLoggedIn</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>CircleAvatar</span><span class=p>(</span><span class=nl>child:</span> <span class=n>Text</span><span class=p>(</span><span class=n>userState</span><span class=p>.</span><span class=n>user</span><span class=p>.</span><span class=n>initials</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>Icon</span><span class=p>(</span><span class=n>Icons</span><span class=p>.</span><span class=n>person</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Preview for the UserAvatar widget
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Logged-in User Avatar&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Avatars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>loggedInUserAvatarPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 1. Create a mock version of your BLoC or Provider
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>final</span> <span class=n>mockUserBloc</span> <span class=o>=</span> <span class=n>MockUserBloc</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 2. Stub the state to represent the desired scenario
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>when</span><span class=p>(</span><span class=n>mockUserBloc</span><span class=p>.</span><span class=n>state</span><span class=p>).</span><span class=n>thenReturn</span><span class=p>(</span><span class=n>UserState</span><span class=p>.</span><span class=n>loggedIn</span><span class=p>(</span><span class=n>User</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Alex Doe&#39;</span><span class=p>)));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 3. Wrap the widget with the appropriate provider
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=n>BlocProvider</span><span class=o>&lt;</span><span class=n>UserBloc</span><span class=o>&gt;</span><span class=p>.</span><span class=n>value</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>value:</span> <span class=n>mockUserBloc</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>child:</span> <span class=n>UserAvatar</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Logged-out User Avatar&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Avatars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>loggedOutUserAvatarPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>mockUserBloc</span> <span class=o>=</span> <span class=n>MockUserBloc</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>  <span class=n>when</span><span class=p>(</span><span class=n>mockUserBloc</span><span class=p>.</span><span class=n>state</span><span class=p>).</span><span class=n>thenReturn</span><span class=p>(</span><span class=n>UserState</span><span class=p>.</span><span class=n>loggedOut</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>BlocProvider</span><span class=o>&lt;</span><span class=n>UserBloc</span><span class=o>&gt;</span><span class=p>.</span><span class=n>value</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>value:</span> <span class=n>mockUserBloc</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>child:</span> <span class=n>UserAvatar</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=multi-preview-components>Multi-Preview Components
+<a class=heading-link href=#multi-preview-components><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Button States&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonStatesPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>Column</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nl>mainAxisAlignment:</span> <span class=n>MainAxisAlignment</span><span class=p>.</span><span class=n>spaceEvenly</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nl>children:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>          <span class=n>ElevatedButton</span><span class=p>(</span><span class=nl>onPressed:</span> <span class=p>()</span> <span class=p>{},</span> <span class=nl>child:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Enabled&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>          <span class=n>ElevatedButton</span><span class=p>(</span><span class=nl>onPressed:</span> <span class=kc>null</span><span class=p>,</span> <span class=nl>child:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Disabled&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>      <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=responsive-previews>Responsive Previews
+<a class=heading-link href=#responsive-previews><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Responsive Layout&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>800</span><span class=p>,</span> <span class=m>600</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>responsivePreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>LayoutBuilder</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nl>builder:</span> <span class=p>(</span><span class=n>context</span><span class=p>,</span> <span class=n>constraints</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>constraints</span><span class=p>.</span><span class=n>maxWidth</span> <span class=o>&gt;</span> <span class=m>600</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>WideLayout</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>NarrowLayout</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=accessibility-testing>Accessibility Testing
+<a class=heading-link href=#accessibility-testing><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;High Contrast Mode&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>highContrastPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>().</span><span class=n>copyWith</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>colorScheme:</span> <span class=n>ColorScheme</span><span class=p>.</span><span class=n>highContrastLight</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span><span class=nl>body:</span> <span class=n>MyAccessibleWidget</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=official-restrictions-and-limitations>Official Restrictions and Limitations
+<a class=heading-link href=#official-restrictions-and-limitations><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=1-public-constants-requirement>1. Public Constants Requirement
+<a class=heading-link href=#1-public-constants-requirement><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>All arguments provided to the <code>@Preview</code> annotation must be <strong>public and constant</strong>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Public constant
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>const</span> <span class=n>mySize</span> <span class=o>=</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;My Preview&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>mySize</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Bad: Private constant
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>const</span> <span class=n>_mySize</span> <span class=o>=</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;My Preview&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>_mySize</span><span class=p>)</span> <span class=c1>// Will fail
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=2-unsupported-apis>2. Unsupported APIs
+<a class=heading-link href=#2-unsupported-apis><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><strong>Native plugins</strong>: Not supported (web environment limitation)</li><li><strong>dart:io library</strong>: Not supported (web environment limitation)</li><li><strong>Platform-specific APIs</strong>: May not work in web environment</li></ul><h3 id=3-asset-path-requirements>3. Asset Path Requirements
+<a class=heading-link href=#3-asset-path-requirements><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>When using <code>fromAsset</code> APIs, you must use <strong>package-based paths</strong>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Good: Package-based paths
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Image</span><span class=p>.</span><span class=n>asset</span><span class=p>(</span><span class=s1>&#39;packages/my_package_name/assets/my_image.png&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Bad: Direct local paths
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Image</span><span class=p>.</span><span class=n>asset</span><span class=p>(</span><span class=s1>&#39;assets/my_image.png&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=4-unconstrained-widgets>4. Unconstrained Widgets
+<a class=heading-link href=#4-unconstrained-widgets><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Unconstrained widgets are automatically constrained to approximately half the height and width of the widget previewer. Apply explicit constraints using the <code>size</code> parameter when possible:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Constrained Widget&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myConstrainedPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>();</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=troubleshooting>Troubleshooting
+<a class=heading-link href=#troubleshooting><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=common-issues>Common Issues
+<a class=heading-link href=#common-issues><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><h4 id=1-previews-not-showing>1. Previews Not Showing
+<a class=heading-link href=#1-previews-not-showing><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Check if beta channel is active</span>
+</span></span><span class=line><span class=cl>flutter channel
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Clean and rebuild</span>
+</span></span><span class=line><span class=cl>flutter clean
+</span></span><span class=line><span class=cl>flutter pub get
+</span></span><span class=line><span class=cl>flutter widget-preview clean
+</span></span><span class=line><span class=cl>flutter widget-preview start --web-server
+</span></span></code></pre></td></tr></table></div></div><h4 id=2-theme-toggle-not-working>2. Theme Toggle Not Working
+<a class=heading-link href=#2-theme-toggle-not-working><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>If the theme toggle button in the widget previewer is not working, it&rsquo;s likely due to one of the following reasons:</p><p><strong>a) A specific theme is hardcoded.</strong>
+If you provide a <code>theme</code> but no <code>darkTheme</code> to the <code>MaterialApp</code>, the previewer cannot toggle to a dark mode.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Problem: Only a light theme is provided.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>MaterialApp</span><span class=p>(</span><span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span> <span class=p>...)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Solution: Provide both light and dark themes.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=nl>darkTheme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>dark</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>b) The <code>brightness</code> property is set in the <code>@Preview</code> annotation.</strong>
+Setting <code>brightness</code> forces a specific theme and disables the toggle.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Problem: Explicit brightness prevents theme switching.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;My Preview&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>brightness:</span> <span class=n>Brightness</span><span class=p>.</span><span class=n>light</span><span class=p>,</span>  <span class=c1>// This prevents theme switching!
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Solution: Remove the brightness parameter to enable theme switching.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;My Preview&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// No brightness specified = enables theme switching
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>c) A preview wrapper is controlling the theme.</strong>
+If you are using a preview wrapper (like <code>buttonWrapper</code>), it may be providing the <code>MaterialApp</code> and themes for you. In this case, the theme is intentionally controlled by the wrapper to ensure consistency with your app&rsquo;s design, and the previewer&rsquo;s theme toggle will not affect it.</p><h4 id=3-preview-function-not-found>3. Preview Function Not Found
+<a class=heading-link href=#3-preview-function-not-found><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p><strong>Problem: Preview functions are private.</strong>
+Preview functions must be public (not prefixed with <code>_</code>) to be discovered by the Flutter Widget Previewer.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Problem: Private function (starts with _)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Test&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>_privatePreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>();</span>  <span class=c1>// Won&#39;t be detected
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Solution: Make the function public
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Test&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>publicPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>();</span>   <span class=c1>// Will be detected
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=integration-with-development-workflow>Integration with Development Workflow
+<a class=heading-link href=#integration-with-development-workflow><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=cicd-integration>CI/CD Integration
+<a class=heading-link href=#cicd-integration><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>You can add a basic check to your CI pipeline to ensure the preview server can start.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># .github/workflows/preview-check.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Widget Preview Check</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>pull_request]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>preview-check</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>subosito/flutter-action@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>channel</span><span class=p>:</span><span class=w> </span><span class=l>beta</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>flutter pub get</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>flutter widget-preview start --web-server &amp;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>sleep 15 </span><span class=w> </span><span class=c># Wait for server to start</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># This is a basic health check. More advanced checks could query</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># for a list of previews, but this confirms the server runs.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>curl --fail http://localhost:{{PORT}}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=conclusion>Conclusion
+<a class=heading-link href=#conclusion><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Flutter Widget Previews (Beta) provides a powerful way to visualize and test UI components during development. By following the patterns and best practices outlined in this guide, you can create maintainable, comprehensive preview systems that enhance your development workflow.</p><p>Key takeaways:</p><ul><li>Use DRY utilities to avoid code duplication</li><li>Make previews theme-compatible for better testing</li><li>Follow consistent naming and grouping conventions</li><li>Keep previews lightweight and focused</li><li>Integrate previews into your development process</li></ul><p>For more information, see the official Flutter documentation on widget previews.</p><p><strong><strong>This article was authored and verified by Andres Garcia. An AI assistant was used to support the drafting and editing process.</strong></strong></p></div><footer><section class=see-also></section><div class=comments><script>let getTheme=window.localStorage&&window.localStorage.getItem("colorscheme");getTheme=getTheme??"";let s=document.createElement("script");s.src="https://giscus.app/client.js",s.setAttribute("data-repo","tech-andgar/home-page"),s.setAttribute("data-repo-id","R_kgDOMNN8Yw"),s.setAttribute("data-category","Comments"),s.setAttribute("data-category-id","DIC_kwDOGJTFUc4CXnjc"),s.setAttribute("data-mapping","pathname"),s.setAttribute("data-term",""),s.setAttribute("data-strict","0"),s.setAttribute("data-reactions-enabled","1"),s.setAttribute("data-emit-metadata","0"),s.setAttribute("data-input-position","bottom"),s.setAttribute("data-theme",getTheme),s.setAttribute("data-lang","en"),s.setAttribute("data-loading",""),s.setAttribute("crossorigin","anonymous"),s.setAttribute("async",""),document.querySelector("div.comments").innerHTML="",document.querySelector("div.comments").appendChild(s)</script></div></footer></article></section></div><footer class=footer><section class=container><p>H E L L O @ T E C H - A N D G A R . M E</p>Licensed under <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA-4.0</a>
+·
+©
+2020 -
+2025
+Andrés García<br><a href=/privacy-policy target=_self>Privacy Policy</a></section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script>partytown={forward:["dataLayer.push"]}</script><script defer src=/js/main_partytown.js></script><script defer type=text/partytown>
+!function(e,t,a){e.dataLayer=e[s]||[],e.dataLayer.push({"gtm.start":new Date().getTime(),event:"gtm.js"});var g=t.getElementsByTagName("script")[0],r=t.createElement("script"),s="";r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id="+a+s,g.parentNode.insertBefore(r,g)}(window,document,"G-Z91ZFKFVDX");
+</script></body></html>

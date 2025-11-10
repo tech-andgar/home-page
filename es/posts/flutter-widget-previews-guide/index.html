@@ -1,0 +1,922 @@
+<!doctype html><html lang=es><head><title>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta) · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="Aprende a implementar, ejecutar y optimizar la característica experimental de Vistas Previas de Widgets de Flutter con esta guía detallada. Cubre la configuración, mejores prácticas, solución de problemas y patrones avanzados."><meta name=keywords content="blog,desarrollador,personal,flutter,Sordo"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)"><meta name=twitter:description content="Aprende a implementar, ejecutar y optimizar la característica experimental de Vistas Previas de Widgets de Flutter con esta guía detallada. Cubre la configuración, mejores prácticas, solución de problemas y patrones avanzados."><meta property="og:url" content="https://tech-andgar.me/es/posts/flutter-widget-previews-guide/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)"><meta property="og:description" content="Aprende a implementar, ejecutar y optimizar la característica experimental de Vistas Previas de Widgets de Flutter con esta guía detallada. Cubre la configuración, mejores prácticas, solución de problemas y patrones avanzados."><meta property="og:locale" content="es"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-11-07T00:00:00+00:00"><meta property="article:modified_time" content="2025-11-07T00:00:00+00:00"><meta property="article:tag" content="Flutter"><meta property="article:tag" content="Dart"><meta property="article:tag" content="Widget Previews"><meta property="article:tag" content="Flutter Beta"><meta property="article:tag" content="Desarrollo UI"><meta property="article:tag" content="Testing"><link rel=canonical href=https://tech-andgar.me/es/posts/flutter-widget-previews-guide/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.42655007b45bae5dc11ffea436937bf51939c20ad456410392557064fb94ce7d.css" rel=stylesheet integrity="sha256-QmVQB7Rbrl3BH/6kNpN79Rk5wgrUVkEDklVwZPuUzn0=" crossorigin=anonymous><link href="/css/bundle.min.c576086e4898507f53ce05e1c3e87ef7ce970aa03e12b732d0e52359e15c9dff.css" rel=stylesheet integrity="sha256-xXYIbkiYUH9TzgXhw+h+986XCqA+Ercy0OUjWeFcnf8=" crossorigin=anonymous><script defer src=/js/bundle.min.89c18a35b7c4dede80900125c3dd9b756141fe2209d9dccb9d663942550d1912.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
+<i class="fas fa-times fa-2x"></i></button></header><main class=modal__content id=modal-1-content><div class=searchDivPF data-pagefind-ignore><div id=search data-pagefind-ignore></div><p></p></div><noscript data-pagefind-ignore><div class=searchDivPF data-pagefind-ignore><p class="ctr pokey">Since you have JavaScript disabled, you can use the following form
+to search this site with&nbsp;
+<a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>,&nbsp;instead.<br><em class=legal>(Thanks to <a href=https://kevq.uk/search/ rel=noopener>Kev Quirk</a> for the&nbsp;idea.)</em></p><div class=searchDiv data-pagefind-ignore><form method=get id=search-ddg class=pagefind-ui__form action=https://duckduckgo.com/ title="DuckDuckGo search for www.tech-andgar.me"><input type=hidden name=sites value=tech-andgar.me>
+<input class="searchInput pagefind-ui__search-input" type=text name=q maxlength=300 placeholder="Search this site"><br><input type=submit value=Search class=pagefind-ui__search-clear></form><p class="ctr legal">Results open in the same tab/window.</p></div><p class="ctr legal"><strong>Privacy notice</strong>: This search form sends site-specific queries to
+<a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>, a privacy-focused search engine. See&nbsp;also the
+<a href=https://duckduckgo.com/privacy rel=noopener>DuckDuckGo privacy&nbsp;policy </a>.</p></div></noscript></main></div></div></div><script defer src=/js/pagefind/pagefind-ui.js type=text/javascript></script><div id=consentModal class=modal aria-labelledby=consentModalLabel aria-hidden=true><div class=modal-dialog><div class=modal-content><div class=modal-header><h5 class=modal-title id=consentModalLabel>Cookie Consent</h5></div><div class=modal-body><p>Este sitio utiliza cookies para mejorar tu experiencia. Si continúas navegando, consideramos que aceptas su uso y aceptas nuestra política de privacidad.</p><a href=/privacy-policy target=_self>Lea nuestra Política de privacidad</a></div><div class=modal-footer><button type=button class=primary-button id=consentOkButton>OK</button></div></div></div></div><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=https://tech-andgar.me/es/ data-cursor=block>TECH-ANDGAR
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/es/about/ data-cursor=block>Acerca de</a></li><li class=navigation-item><a class=navigation-link href=/es/posts/ data-cursor=block>Blog</a></li><li class=navigation-item><a class=navigation-link href=/es/projects/ data-cursor=block>Proyectos</a></li><li class=navigation-item><a class=navigation-link href=/es/talks/ data-cursor=block>Charlas</a></li><li class=navigation-item><a class=navigation-link href=/es/contact/ data-cursor=block>Contacto</a></li><li class=navigation-item><a class=navigation-link href=https://link.tech-andgar.me/CVAFGR202404DEV data-cursor=block>CV</a></li><li class=navigation-item><a class=navigation-link href=/es/privacy-policy/ data-cursor=block>Política de Privacidad</a></li><li class="navigation-item nav-link-search"><a href=# class=navigation-link title=Search data-cursor=block><i class="fa fa-search"></i></a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=/posts/flutter-widget-previews-guide/ data-cursor=block>English 🇬🇧</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tech-andgar.me/es/posts/flutter-widget-previews-guide/>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
+<time datetime=2025-11-07T00:00:00Z>noviembre 7, 2025
+</time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
+18 minutos de lectura.</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
+<a href=/es/categories/flutter/>Flutter</a>
+<span class=separator>•</span>
+<a href=/es/categories/tutoriales/>Tutoriales</a></div><div class=tags><i class="fa-solid fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/es/tags/flutter/>Flutter</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/es/tags/dart/>Dart</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/es/tags/widget-previews/>Widget Previews</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/es/tags/flutter-beta/>Flutter Beta</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/es/tags/desarrollo-ui/>Desarrollo UI</a>
+</span><span class=separator>•</span>
+<span class=tag><a href=/es/tags/testing/>Testing</a></span></div></div></header><div class=post-content><img src=/posts/flutter-widget-previews-guide/00-widget-preview-main.webp alt="Featured image"><h2 id=resumen>Resumen
+<a class=heading-link href=#resumen><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Las Vistas Previas de Widgets de Flutter (Flutter Widget Previews) son una potente característica experimental que permite a los desarrolladores ver el renderizado de widgets en tiempo real, de forma separada a una aplicación completa, en el navegador Chrome. Esta guía cubre cómo implementar, ejecutar y optimizar las vistas previas de widgets en aplicaciones de Flutter. Está diseñada para complementar la <a href=https://docs.flutter.dev/tools/widget-previewer class=external-link target=_blank rel=noopener>documentación oficial de Flutter sobre el Previsualizador de Widgets</a>.</p><h3 id=entendiendo-el-estado-beta>Entendiendo el Estado &lsquo;Beta&rsquo;
+<a class=heading-link href=#entendiendo-el-estado-beta><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Es crucial entender lo que &ldquo;Beta&rdquo; y &ldquo;Experimental&rdquo; significan en un sentido práctico para el flujo de trabajo de tu equipo.</p><ul><li><strong>Inestabilidad de la API</strong>: Las APIs no son estables y están sujetas a cambios en futuras versiones de Flutter sin previo aviso. El código que dependa de la implementación actual podría dejar de funcionar.</li><li><strong>Herramienta para el Tiempo de Desarrollo</strong>: Esta característica está pensada estrictamente para acelerar el desarrollo. No debe usarse para validaciones críticas de producción, pruebas de capturas de pantalla (snapshot testing) de la interfaz de usuario, o como sustituto de las pruebas en dispositivos reales.</li><li><strong>Posibles Errores</strong>: Como característica beta, es posible que encuentres errores o comportamientos inesperados.</li></ul><p>Adóptala como una herramienta para acelerar tu ciclo de iteración de la interfaz de usuario, pero no construyas infraestructura crítica en torno a su implementación actual.</p><h2 id=metadatos>Metadatos
+<a class=heading-link href=#metadatos><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><ul><li><strong>Versión de Flutter</strong>: 3.35 o superior (canal estable)</li><li><strong>Versión de Dart</strong>: 3.0+</li><li><strong>Paquete</strong>: <code>flutter/widget_previews.dart</code></li><li><strong>Navegadores Soportados</strong>: Solo Chrome (requiere soporte para recarga en caliente)</li><li><strong>Servidor Web</strong>: <code>http://localhost:{{PORT}}</code> (por defecto)</li><li><strong>Estado</strong>: Experimental - Las APIs no son estables y cambiarán</li></ul><h2 id=inicio-rápido>Inicio Rápido
+<a class=heading-link href=#inicio-r%c3%a1pido><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=1-habilitar-el-canal-beta-de-flutter>1. Habilitar el Canal Beta de Flutter
+<a class=heading-link href=#1-habilitar-el-canal-beta-de-flutter><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>flutter channel beta
+</span></span><span class=line><span class=cl>flutter upgrade
+</span></span></code></pre></td></tr></table></div></div><h3 id=2-añadir-anotaciones-de-vista-previa>2. Añadir Anotaciones de Vista Previa
+<a class=heading-link href=#2-a%c3%b1adir-anotaciones-de-vista-previa><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:flutter/material.dart&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl><span class=k>import</span> <span class=s1>&#39;package:flutter/widget_previews.dart&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Vista Previa de Mi Widget&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myWidgetPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>Center</span><span class=p>(</span><span class=nl>child:</span> <span class=n>MyWidget</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=3-ejecutar-el-entorno-de-vistas-previas>3. Ejecutar el Entorno de Vistas Previas
+<a class=heading-link href=#3-ejecutar-el-entorno-de-vistas-previas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Modo servidor web (recomendado para la mayoría de los casos)</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start --web-server
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Modo navegador (se lanza directamente en una nueva instancia del navegador)</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start
+</span></span></code></pre></td></tr></table></div></div><h2 id=conceptos-clave>Conceptos Clave
+<a class=heading-link href=#conceptos-clave><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=anotaciones-de-vista-previa>Anotaciones de Vista Previa
+<a class=heading-link href=#anotaciones-de-vista-previa><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>La anotación <code>@Preview</code> es la base de las vistas previas de widgets y se puede aplicar a:</p><ul><li><strong>Funciones de nivel superior</strong> que devuelven un <code>Widget</code> o <code>WidgetBuilder</code></li><li><strong>Métodos estáticos</strong> dentro de una clase que devuelven un <code>Widget</code> o <code>WidgetBuilder</code></li><li><strong>Constructores y factorías públicos de Widgets</strong> sin argumentos requeridos</li></ul><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Nombre Descriptivo de la Vista Previa&#39;</span><span class=p>,</span> <span class=c1>// Requerido: Nombre a mostrar
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>group:</span> <span class=s1>&#39;Grupo de Componentes&#39;</span><span class=p>,</span>                <span class=c1>// Opcional: Agrupa vistas previas
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>brightness:</span> <span class=n>Brightness</span><span class=p>.</span><span class=n>light</span><span class=p>,</span>                 <span class=c1>// Opcional: Fuerza el tema claro/oscuro
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>textScaleFactor:</span> <span class=m>1.0</span><span class=p>,</span>                         <span class=c1>// Opcional: Escalado de texto
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>),</span>                         <span class=c1>// Opcional: Dimensiones de la vista previa
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>wrapper:</span> <span class=n>miFuncionEnvoltorio</span><span class=p>,</span>                 <span class=c1>// Opcional: Función de envoltorio personalizada
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>theme:</span> <span class=n>miFuncionDeTema</span><span class=p>,</span>                       <span class=c1>// Opcional: Función de tema personalizada
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=nl>localizations:</span> <span class=n>miFuncionDeLocalizacion</span><span class=p>,</span>       <span class=c1>// Opcional: Configuración de localización
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=requisitos-de-la-función-de-vista-previa>Requisitos de la Función de Vista Previa
+<a class=heading-link href=#requisitos-de-la-funci%c3%b3n-de-vista-previa><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><strong>Función pública</strong>: Debe ser pública (sin prefijo de guion bajo)</li><li><strong>Tipo de retorno</strong>: <code>Widget</code></li><li><strong>Sin parámetros</strong>: Las funciones de vista previa no aceptan argumentos</li><li><strong>Autocontenida</strong>: Debe incluir todo el envoltorio necesario (MaterialApp, Scaffold, etc.) a menos que se use un <code>wrapper</code>.</li></ul><h2 id=patrones-de-implementación>Patrones de Implementación
+<a class=heading-link href=#patrones-de-implementaci%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=utilidades-de-vista-previa-dry-dont-repeat-yourself>Utilidades de Vista Previa DRY (Don&rsquo;t Repeat Yourself)
+<a class=heading-link href=#utilidades-de-vista-previa-dry-dont-repeat-yourself><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Para evitar la duplicación de código, crea utilidades de envoltorio reutilizables. El enfoque recomendado es exportar funciones de nivel superior que puedan ser importadas directamente por el sistema de vistas previas.</p><p><strong>Importante</strong>: Los métodos estáticos en clases no pueden ser usados como funciones de envoltorio en las anotaciones <code>@Preview</code>. El sistema de vistas previas requiere funciones de nivel superior que puedan ser importadas directamente. Usar métodos estáticos como <code>PreviewUtils.buttonWrapper</code> resultará en errores de compilación.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Esto NO funcionará - un método estático no puede ser usado como envoltorio
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Botón&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>PreviewUtils</span><span class=p>.</span><span class=n>buttonWrapper</span><span class=p>,</span>  <span class=c1>// ¡Error de compilación!
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyButton</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Esto SÍ funcionará - una función de nivel superior puede ser usada como envoltorio
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Botón&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>,</span>  <span class=c1>// Funciona correctamente
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyButton</span><span class=p>();</span>
+</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// preview_utils.dart
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=k>import</span> <span class=s1>&#39;package:flutter/material.dart&#39;</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Configuración para diferentes tipos de vistas previas siguiendo los principios DRY
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>enum</span> <span class=n>PreviewType</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=n>listItem</span><span class=p>(</span><span class=nl>width:</span> <span class=m>400</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>120</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>button</span><span class=p>(</span><span class=nl>width:</span> <span class=m>80</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>60</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>textElement</span><span class=p>(</span><span class=nl>width:</span> <span class=m>150</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>40</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>wordCount</span><span class=p>(</span><span class=nl>width:</span> <span class=m>200</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>50</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>colorElement</span><span class=p>(</span><span class=nl>width:</span> <span class=m>200</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>60</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=n>themeCard</span><span class=p>(</span><span class=nl>width:</span> <span class=m>120</span><span class=p>,</span> <span class=nl>height:</span> <span class=m>140</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kd>const</span> <span class=n>PreviewType</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>    <span class=kd>required</span> <span class=k>this</span><span class=p>.</span><span class=n>width</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=kd>required</span> <span class=k>this</span><span class=p>.</span><span class=n>height</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>});</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=kt>double</span> <span class=n>width</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=kt>double</span> <span class=n>height</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=n>Size</span> <span class=kd>get</span> <span class=n>size</span> <span class=o>=&gt;</span> <span class=n>Size</span><span class=p>(</span><span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Crea un envoltorio de vista previa estandarizado para cualquier tipo de widget.
+</span></span></span><span class=line><span class=cl><span class=c1>/// Nota: Esta utilidad envuelve directamente en MaterialApp y Scaffold
+</span></span></span><span class=line><span class=cl><span class=c1>/// para proporcionar un tema y una estructura consistentes para todas las vistas previas.
+</span></span></span><span class=line><span class=cl><span class=c1>/// Dado que el tema se establece explícitamente dentro de este envoltorio, el interruptor
+</span></span></span><span class=line><span class=cl><span class=c1>/// de tema del sistema de vistas previas no lo anulará.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Widget</span> <span class=n>_createPreview</span><span class=p>({</span>
+</span></span><span class=line><span class=cl>  <span class=kd>required</span> <span class=n>Widget</span> <span class=n>child</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=kd>required</span> <span class=n>PreviewType</span> <span class=n>type</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>})</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>debugShowCheckedModeBanner:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>light</span><span class=p>.</span><span class=n>themeData</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>darkTheme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>dark</span><span class=p>.</span><span class=n>themeData</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>Center</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nl>child:</span> <span class=n>SizedBox</span><span class=p>(</span><span class=nl>width:</span> <span class=n>type</span><span class=p>.</span><span class=n>width</span><span class=p>,</span> <span class=nl>height:</span> <span class=n>type</span><span class=p>.</span><span class=n>height</span><span class=p>,</span> <span class=nl>child:</span> <span class=n>child</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>      <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Funciones de envoltorio para las anotaciones @Preview (firma WidgetWrapper).
+</span></span></span><span class=line><span class=cl><span class=c1>/// Se exportan como funciones de nivel superior para el sistema de vistas previas.
+</span></span></span><span class=line><span class=cl><span class=c1>/// Incluyen MaterialApp y Scaffold, proporcionando una base consistente para las vistas previas.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Widget</span> <span class=n>listItemWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>listItem</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>button</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>textElementWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>textElement</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>wordCountWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>wordCount</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>colorBarWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>colorElement</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>themeCardWrapper</span><span class=p>(</span><span class=n>Widget</span> <span class=n>child</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>_createPreview</span><span class=p>(</span><span class=nl>child:</span> <span class=n>child</span><span class=p>,</span> <span class=nl>type:</span> <span class=n>PreviewType</span><span class=p>.</span><span class=n>themeCard</span><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=ejemplos-de-uso>Ejemplos de Uso
+<a class=heading-link href=#ejemplos-de-uso><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><h4 id=vista-previa-de-un-elemento-de-lista>Vista Previa de un Elemento de Lista
+<a class=heading-link href=#vista-previa-de-un-elemento-de-lista><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Regular Note&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>listItemWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>regularNoteItemPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>note</span> <span class=o>=</span> <span class=n>Note</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>id:</span> <span class=m>1</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>content:</span> <span class=s1>&#39;This is a sample note content for preview purposes.&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>creationDate:</span> <span class=n>DateTime</span><span class=p>.</span><span class=n>now</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>modifiedDate:</span> <span class=n>DateTime</span><span class=p>.</span><span class=n>now</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>isFavorite:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>SwipeableNoteListItem</span><span class=p>(</span><span class=nl>note:</span> <span class=n>note</span><span class=p>,</span> <span class=nl>onTap:</span> <span class=p>()</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/01-widget-preview-regular-note.webp alt="Widget Preview"></p><h4 id=vista-previa-de-un-botón>Vista Previa de un Botón
+<a class=heading-link href=#vista-previa-de-un-bot%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Botón de Favorito - No marcado como favorito&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>notFavoritedButtonPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>note</span> <span class=o>=</span> <span class=n>Note</span><span class=p>(</span><span class=nl>id:</span> <span class=m>1</span><span class=p>,</span> <span class=nl>content:</span> <span class=s1>&#39;Ejemplo&#39;</span><span class=p>,</span> <span class=nl>isFavorite:</span> <span class=kc>false</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>NoteFavoriteButton</span><span class=p>(</span><span class=nl>note:</span> <span class=n>note</span><span class=p>,</span> <span class=nl>onPressed:</span> <span class=p>()</span> <span class=p>{});</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/02-widget-preview-not-favorited-button.webp alt="Widget Preview"></p><h4 id=vista-previa-específica-de-un-tema>Vista Previa Específica de un Tema
+<a class=heading-link href=#vista-previa-espec%c3%adfica-de-un-tema><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Light Theme&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>120</span><span class=p>,</span> <span class=m>140</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>themeCardWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>lightThemeCardPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>ThemePreviewCard</span><span class=p>.</span><span class=n>standard</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>light</span><span class=p>,</span> <span class=c1>// Usa el tema real de la app
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nl>isSelected:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>onTap:</span> <span class=p>()</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Dark Theme&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>120</span><span class=p>,</span> <span class=m>140</span><span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>themeCardWrapper</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>brightness:</span> <span class=n>Brightness</span><span class=p>.</span><span class=n>dark</span><span class=p>,</span> <span class=c1>// Usa el tema real de la app
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>darkThemeCardDarkPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>ThemePreviewCard</span><span class=p>.</span><span class=n>standard</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>dark</span><span class=p>,</span> <span class=c1>// Usa el tema real de la app
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nl>isSelected:</span> <span class=kc>false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>onTap:</span> <span class=p>()</span> <span class=p>{},</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/03-widget-preview-theme-cards.webp alt="Widget Preview"></p><h4 id=cuándo-establecer-un-tema-explícitamente>Cuándo Establecer un Tema Explícitamente
+<a class=heading-link href=#cu%c3%a1ndo-establecer-un-tema-expl%c3%adcitamente><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>Envolver explícitamente una vista previa en un <code>MaterialApp</code> con un <code>theme</code> específico es el patrón correcto para:</p><ul><li><strong>Verificar Comportamiento</strong>: Asegurar que un componente se renderiza correctamente dentro de un tema <em>específico</em>.</li><li><strong>Galerías de Temas</strong>: Crear una biblioteca visual de diferentes temas de la aplicación, como se muestra en el ejemplo de <code>ThemePreviewCard</code>.</li><li><strong>Componentes Aislados</strong>: Probar widgets que están diseñados para existir únicamente dentro de un solo tema (por ejemplo, un componente promocional especial).</li></ul><p>Para vistas previas de propósito general donde quieras alternar entre los modos claro y oscuro, omite el <code>MaterialApp</code> y usa un <code>wrapper</code> en su lugar.</p><h2 id=ejecutando-las-vistas-previas>Ejecutando las Vistas Previas
+<a class=heading-link href=#ejecutando-las-vistas-previas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=servidor-de-desarrollo>Servidor de Desarrollo
+<a class=heading-link href=#servidor-de-desarrollo><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Puedes iniciar el entorno de vistas previas de dos maneras principales:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Modo servidor web (recomendado)</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start --web-server
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Modo navegador</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Con un dispositivo específico</span>
+</span></span><span class=line><span class=cl>flutter widget-preview start -d chrome
+</span></span></code></pre></td></tr></table></div></div><h4 id=qué-comando-debería-usar>¿Qué Comando Debería Usar?
+<a class=heading-link href=#qu%c3%a9-comando-deber%c3%ada-usar><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><code>flutter widget-preview start --web-server</code>: Este es el enfoque <strong>recomendado</strong>. Inicia un servidor web persistente al que puedes conectarte desde tu navegador. Generalmente es más estable y más adecuado para el desarrollo continuo.</li><li><code>flutter widget-preview start</code>: Este comando compila las vistas previas e intenta lanzar una nueva instancia del navegador Chrome directamente. Es útil para una revisión rápida y única, pero el modo servidor es más robusto para el trabajo diario.</li></ul><h3 id=recarga-en-caliente-hot-reload>Recarga en Caliente (Hot Reload)
+<a class=heading-link href=#recarga-en-caliente-hot-reload><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Las vistas previas se recargan automáticamente cuando:</p><ul><li>Se modifican las funciones de vista previa</li><li>Cambian las clases de los widgets</li><li>Se actualizan las dependencias</li></ul><h3 id=integración-con-ide>Integración con IDE
+<a class=heading-link href=#integraci%c3%b3n-con-ide><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><strong>VS Code</strong>: La extensión de Flutter detecta automáticamente las vistas previas.</li><li><strong>Android Studio</strong>: Panel de vistas previas de widgets en las configuraciones de ejecución.</li><li><strong>Navegador Web</strong>: Accede en <code>http://localhost:{{PORT}}</code>.</li></ul><h3 id=controles-e-interacción-de-la-vista-previa>Controles e Interacción de la Vista Previa
+<a class=heading-link href=#controles-e-interacci%c3%b3n-de-la-vista-previa><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Cada instancia de vista previa proporciona varios controles para interactuar con el widget previsualizado:</p><h4 id=controles-de-zoom>Controles de Zoom
+<a class=heading-link href=#controles-de-zoom><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><strong>Acercar (Zoom in)</strong>: Amplía el widget en la vista previa.</li><li><strong>Alejar (Zoom out)</strong>: Reduce la ampliación del widget en la vista previa.</li><li><strong>Restablecer zoom</strong>: Devuelve la vista previa del widget a su nivel de zoom predeterminado.</li></ul><h4 id=controles-de-tema>Controles de Tema
+<a class=heading-link href=#controles-de-tema><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><strong>Alternar entre modo claro y oscuro</strong>: Cambia el tema de la vista previa entre esquemas de colores claros y oscuros (solo funciona cuando no se especifica <code>brightness</code> en la anotación <code>@Preview</code>).</li></ul><p><strong>Importante</strong>: El cambio de tema solo funciona cuando <code>brightness</code> no está establecido explícitamente en la anotación <code>@Preview</code>. Si especificas <code>brightness: Brightness.light</code> o <code>brightness: Brightness.dark</code>, el botón de cambio de tema no afectará esa vista previa.</p><h4 id=reinicio-en-caliente-hot-restart>Reinicio en Caliente (Hot Restart)
+<a class=heading-link href=#reinicio-en-caliente-hot-restart><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><ul><li><strong>Reinicio de vista previa individual</strong>: Reinicia solo la vista previa específica del widget, permitiendo que los cambios se apliquen rápidamente sin reiniciar toda la aplicación.</li><li><strong>Reinicio global</strong>: Para casos en los que el estado global ha sido modificado (inicializadores estáticos, etc.), todo el previsualizador de widgets puede ser reiniciado usando el botón en la parte superior derecha del entorno.</li></ul><h2 id=mejores-prácticas>Mejores Prácticas
+<a class=heading-link href=#mejores-pr%c3%a1cticas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=1-convenciones-de-nomenclatura>1. Convenciones de Nomenclatura
+<a class=heading-link href=#1-convenciones-de-nomenclatura><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Descriptivo y consistente
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Elemento de Nota Regular&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Elemento de Nota Favorita&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Elemento de Nota Larga&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Mal: Poco claro o inconsistente
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Vista Previa 1&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;NotaFav&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Prueba&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=2-agrupar-vistas-previas-relacionadas>2. Agrupar Vistas Previas Relacionadas
+<a class=heading-link href=#2-agrupar-vistas-previas-relacionadas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Agrupar ayuda a organizar vistas previas relacionadas en la interfaz de vistas previas:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// Vistas previas de estados de botones
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;No Favorito&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Favorite Buttons&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Favorito&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Favorite Buttons&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Variaciones de visualización de tiempo
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Ahora Mismo&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Hace Minutos&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Hace Horas&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Hace Días&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Time Display&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Variaciones de longitud de contenido
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Texto Corto&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Word Count&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Texto Medio&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Word Count&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Texto Largo&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Word Count&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Variaciones de elementos de nota
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Nota Regular&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Nota Favorita&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Nota Larga&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Nota Regular (Oscuro)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Nota Favorita (Oscuro)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Nota Larga (Oscuro)&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Note List Items&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Variaciones de color
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Tema Azul&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Color Bars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Tema Verde&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Color Bars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Tema Morado&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Color Bars&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// Vistas previas relacionadas con temas
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Light Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Dark Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Selected Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Green Theme&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Theme Cards&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><img src=/posts/flutter-widget-previews-guide/04-widget-preview-group.webp alt="Widget Preview"></p><h3 id=3-datos-de-prueba-realistas>3. Datos de Prueba Realistas
+<a class=heading-link href=#3-datos-de-prueba-realistas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Usa datos de prueba (mocks) variados y realistas para probar casos extremos.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Variaciones de datos realistas
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Contenido Corto&#39;</span><span class=p>,</span> <span class=nl>wrapper:</span> <span class=n>wordCountWrapper</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>shortContentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>WordCountDisplay</span><span class=p>(</span><span class=nl>content:</span> <span class=s1>&#39;Hola mundo&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Contenido Largo&#39;</span><span class=p>,</span> <span class=nl>wrapper:</span> <span class=n>wordCountWrapper</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>longContentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>WordCountDisplay</span><span class=p>(</span><span class=nl>content:</span> <span class=s1>&#39;Este es un contenido muy largo con muchas palabras para demostrar cómo la funcionalidad de conteo de palabras maneja el desbordamiento y el ajuste de línea...&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Mal: Mismos datos en todas partes, no cubre casos extremos
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Vista Previa 1&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>preview1</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>(</span><span class=nl>data:</span> <span class=s1>&#39;prueba&#39;</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Vista Previa 2&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>preview2</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>(</span><span class=nl>data:</span> <span class=s1>&#39;prueba&#39;</span><span class=p>);</span> <span class=c1>// ¡Mismos datos!
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=4-compatibilidad-de-temas>4. Compatibilidad de Temas
+<a class=heading-link href=#4-compatibilidad-de-temas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Al crear vistas previas, tienes dos enfoques principales para manejar los temas:</p><p><img src=/posts/flutter-widget-previews-guide/05-widget-preview-theme-light-dark.webp alt="Widget Preview"></p><h4 id=1-permitir-que-el-previsualizador-controle-el-tema><strong>1. Permitir que el Previsualizador Controle el Tema</strong>
+<a class=heading-link href=#1-permitir-que-el-previsualizador-controle-el-tema><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>Si quieres usar el interruptor de tema incorporado en el previsualizador de widgets, debes proporcionar tanto un <code>theme</code> como un <code>darkTheme</code> a tu <code>MaterialApp</code>. Esto permite que el previsualizador cambie entre ellos.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Proporcionar tanto el tema claro como el oscuro permite que el interruptor del previsualizador funcione.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Mi Componente&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myComponentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>darkTheme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>dark</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span><span class=nl>body:</span> <span class=n>MyComponent</span><span class=p>()),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h4 id=2-usar-temas-específicos-de-la-aplicación><strong>2. Usar Temas Específicos de la Aplicación</strong>
+<a class=heading-link href=#2-usar-temas-espec%c3%adficos-de-la-aplicaci%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>Para vistas previas más realistas que usan los temas reales de tu aplicación, puedes proporcionar tus datos específicos de <code>theme</code> y <code>darkTheme</code>. Nuestras utilidades de envoltorio de vistas previas (<code>listItemWrapper</code>, <code>buttonWrapper</code>, etc.) usan este enfoque para asegurar que las vistas previas sean consistentes con el diseño de la aplicación. Al usar estos envoltorios, el tema es controlado por el envoltorio, no por el interruptor del previsualizador.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Usar un envoltorio que proporciona un tema consistente y específico de la aplicación.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Mi Componente Envuelto&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>,</span> <span class=c1>// Este envoltorio proporciona el MaterialApp y el tema.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>myWrappedComponentPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MyComponent</span><span class=p>();</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Bien: Especificar manualmente un tema para una demostración específica.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Tarjeta de Tema&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>themeCardPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span> <span class=c1>// Estableciendo manualmente un tema específico
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span><span class=nl>body:</span> <span class=n>ThemeCard</span><span class=p>(</span><span class=nl>theme:</span> <span class=n>AppThemes</span><span class=p>.</span><span class=n>light</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=5-consideraciones-de-rendimiento>5. Consideraciones de Rendimiento
+<a class=heading-link href=#5-consideraciones-de-rendimiento><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Mantén las vistas previas rápidas minimizando su complejidad.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Árbol de widgets mínimo con datos simulados (mock)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Vista Previa Simple&#39;</span><span class=p>,</span> <span class=nl>wrapper:</span> <span class=n>buttonWrapper</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>simplePreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Usa un objeto mock simple en lugar de uno complejo y real
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=n>MyWidget</span><span class=p>(</span><span class=nl>data:</span> <span class=n>MyData</span><span class=p>.</span><span class=n>mock</span><span class=p>());</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Mal: Árbol de widgets pesado, operaciones costosas
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Vista Previa Pesada&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>heavyPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>appBar:</span> <span class=n>AppBar</span><span class=p>(</span><span class=nl>title:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Pesado&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>    <span class=nl>body:</span> <span class=n>ListView</span><span class=p>.</span><span class=n>builder</span><span class=p>(</span>  <span class=c1>// Costoso de renderizar en una vista previa
+</span></span></span><span class=line><span class=cl><span class=c1></span>      <span class=nl>itemCount:</span> <span class=m>1000</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>      <span class=nl>itemBuilder:</span> <span class=p>(</span><span class=n>context</span><span class=p>,</span> <span class=n>index</span><span class=p>)</span> <span class=o>=&gt;</span> <span class=n>ListTile</span><span class=p>(</span><span class=nl>title:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Ítem </span><span class=si>$</span><span class=n>index</span><span class=s1>&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>),</span>
+</span></span><span class=line><span class=cl><span class=p>);</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=características-avanzadas>Características Avanzadas
+<a class=heading-link href=#caracter%c3%adsticas-avanzadas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=manejo-de-estado-y-dependencias>Manejo de Estado y Dependencias
+<a class=heading-link href=#manejo-de-estado-y-dependencias><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>La mayoría de los widgets del mundo real dependen de soluciones de gestión de estado (como Provider, BLoC o Riverpod) para funcionar. Para que estos widgets se puedan previsualizar, debes proporcionar versiones simuladas (mocks) de sus dependencias.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>/// Ejemplo de un widget que depende de un BLoC
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>class</span> <span class=nc>UserAvatar</span> <span class=kd>extends</span> <span class=n>StatelessWidget</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=err>@</span><span class=n>override</span>
+</span></span><span class=line><span class=cl>  <span class=n>Widget</span> <span class=n>build</span><span class=p>(</span><span class=n>BuildContext</span> <span class=n>context</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>    <span class=c1>// Este widget necesita que un UserBloc esté disponible en el contexto
+</span></span></span><span class=line><span class=cl><span class=c1></span>    <span class=kd>final</span> <span class=n>userState</span> <span class=o>=</span> <span class=n>context</span><span class=p>.</span><span class=n>watch</span><span class=o>&lt;</span><span class=n>UserBloc</span><span class=o>&gt;</span><span class=p>().</span><span class=n>state</span><span class=p>;</span>
+</span></span><span class=line><span class=cl>    <span class=k>if</span> <span class=p>(</span><span class=n>userState</span><span class=p>.</span><span class=n>isLoggedIn</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>      <span class=k>return</span> <span class=n>CircleAvatar</span><span class=p>(</span><span class=nl>child:</span> <span class=n>Text</span><span class=p>(</span><span class=n>userState</span><span class=p>.</span><span class=n>user</span><span class=p>.</span><span class=n>initials</span><span class=p>));</span>
+</span></span><span class=line><span class=cl>    <span class=p>}</span>
+</span></span><span class=line><span class=cl>    <span class=k>return</span> <span class=n>Icon</span><span class=p>(</span><span class=n>Icons</span><span class=p>.</span><span class=n>person</span><span class=p>);</span>
+</span></span><span class=line><span class=cl>  <span class=p>}</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>/// Vista previa para el widget UserAvatar
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Avatar de Usuario Conectado&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Avatares&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>loggedInUserAvatarPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// 1. Crea una versión mock de tu BLoC o Provider
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=kd>final</span> <span class=n>mockUserBloc</span> <span class=o>=</span> <span class=n>MockUserBloc</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 2. Simula el estado para representar el escenario deseado
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=n>when</span><span class=p>(</span><span class=n>mockUserBloc</span><span class=p>.</span><span class=n>state</span><span class=p>).</span><span class=n>thenReturn</span><span class=p>(</span><span class=n>UserState</span><span class=p>.</span><span class=n>loggedIn</span><span class=p>(</span><span class=n>User</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Alex Doe&#39;</span><span class=p>)));</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=c1>// 3. Envuelve el widget con el proveedor apropiado
+</span></span></span><span class=line><span class=cl><span class=c1></span>  <span class=k>return</span> <span class=n>BlocProvider</span><span class=o>&lt;</span><span class=n>UserBloc</span><span class=o>&gt;</span><span class=p>.</span><span class=n>value</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>value:</span> <span class=n>mockUserBloc</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>child:</span> <span class=n>UserAvatar</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Avatar de Usuario Desconectado&#39;</span><span class=p>,</span> <span class=nl>group:</span> <span class=s1>&#39;Avatares&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>loggedOutUserAvatarPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=kd>final</span> <span class=n>mockUserBloc</span> <span class=o>=</span> <span class=n>MockUserBloc</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>  <span class=n>when</span><span class=p>(</span><span class=n>mockUserBloc</span><span class=p>.</span><span class=n>state</span><span class=p>).</span><span class=n>thenReturn</span><span class=p>(</span><span class=n>UserState</span><span class=p>.</span><span class=n>loggedOut</span><span class=p>());</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>BlocProvider</span><span class=o>&lt;</span><span class=n>UserBloc</span><span class=o>&gt;</span><span class=p>.</span><span class=n>value</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>value:</span> <span class=n>mockUserBloc</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>    <span class=nl>child:</span> <span class=n>UserAvatar</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=componentes-con-múltiples-vistas-previas>Componentes con Múltiples Vistas Previas
+<a class=heading-link href=#componentes-con-m%c3%baltiples-vistas-previas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Estados de Botón&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>buttonStatesPreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>Column</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nl>mainAxisAlignment:</span> <span class=n>MainAxisAlignment</span><span class=p>.</span><span class=n>spaceEvenly</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=nl>children:</span> <span class=p>[</span>
+</span></span><span class=line><span class=cl>          <span class=n>ElevatedButton</span><span class=p>(</span><span class=nl>onPressed:</span> <span class=p>()</span> <span class=p>{},</span> <span class=nl>child:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Habilitado&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>          <span class=n>ElevatedButton</span><span class=p>(</span><span class=nl>onPressed:</span> <span class=kc>null</span><span class=p>,</span> <span class=nl>child:</span> <span class=n>Text</span><span class=p>(</span><span class=s1>&#39;Deshabilitado&#39;</span><span class=p>)),</span>
+</span></span><span class=line><span class=cl>        <span class=p>],</span>
+</span></span><span class=line><span class=cl>      <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h3 id=vistas-previas-responsivas>Vistas Previas Responsivas
+<a class=heading-link href=#vistas-previas-responsivas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Diseño Responsivo&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>Size</span><span class=p>(</span><span class=m>800</span><span class=p>,</span> <span class=m>600</span><span class=p>))</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>responsivePreview</span><span class=p>()</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>  <span class=k>return</span> <span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>    <span class=nl>home:</span> <span class=n>Scaffold</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>      <span class=nl>body:</span> <span class=n>LayoutBuilder</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=nl>builder:</span> <span class=p>(</span><span class=n>context</span><span class=p>,</span> <span class=n>constraints</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>          <span class=k>if</span> <span class=p>(</span><span class=n>constraints</span><span class=p>.</span><span class=n>maxWidth</span> <span class=o>&gt;</span> <span class=m>600</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>WideLayout</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>            <span class=k>return</span> <span class=n>NarrowLayout</span><span class=p>();</span>
+</span></span><span class=line><span class=cl>          <span class=p>}</span>
+</span></span><span class=line><span class=cl>        <span class=p>},</span>
+</span></span><span class=line><span class=cl>      <span class=p>),</span>
+</span></span><span class=line><span class=cl>    <span class=p>),</span>
+</span></span><span class=line><span class=cl>  <span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=p>}</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=restricciones-y-limitaciones-oficiales>Restricciones y Limitaciones Oficiales
+<a class=heading-link href=#restricciones-y-limitaciones-oficiales><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=1-requisito-de-constantes-públicas>1. Requisito de Constantes Públicas
+<a class=heading-link href=#1-requisito-de-constantes-p%c3%bablicas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Todos los argumentos proporcionados a la anotación <code>@Preview</code> deben ser <strong>públicos y constantes</strong>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Constante pública
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>const</span> <span class=n>mySize</span> <span class=o>=</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Mi Vista Previa&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>mySize</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Mal: Constante privada
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=kd>const</span> <span class=n>_mySize</span> <span class=o>=</span> <span class=n>Size</span><span class=p>(</span><span class=m>400</span><span class=p>,</span> <span class=m>300</span><span class=p>);</span>
+</span></span><span class=line><span class=cl><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Mi Vista Previa&#39;</span><span class=p>,</span> <span class=nl>size:</span> <span class=n>_mySize</span><span class=p>)</span> <span class=c1>// Fallará
+</span></span></span></code></pre></td></tr></table></div></div><h3 id=2-apis-no-soportadas>2. APIs no Soportadas
+<a class=heading-link href=#2-apis-no-soportadas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><ul><li><strong>Plugins nativos</strong>: No soportados (limitación del entorno web)</li><li><strong>Librería <code>dart:io</code></strong>: No soportada (limitación del entorno web)</li></ul><h3 id=3-requisitos-de-rutas-de-assets>3. Requisitos de Rutas de Assets
+<a class=heading-link href=#3-requisitos-de-rutas-de-assets><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Al usar APIs <code>fromAsset</code>, debes usar <strong>rutas basadas en paquetes</strong>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ✅ Bien: Rutas basadas en paquetes
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Image</span><span class=p>.</span><span class=n>asset</span><span class=p>(</span><span class=s1>&#39;packages/mi_paquete/assets/mi_imagen.png&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ❌ Mal: Rutas locales directas
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>Image</span><span class=p>.</span><span class=n>asset</span><span class=p>(</span><span class=s1>&#39;assets/mi_imagen.png&#39;</span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=solución-de-problemas>Solución de Problemas
+<a class=heading-link href=#soluci%c3%b3n-de-problemas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=problemas-comunes>Problemas Comunes
+<a class=heading-link href=#problemas-comunes><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><h4 id=1-las-vistas-previas-no-se-muestran>1. Las Vistas Previas no se Muestran
+<a class=heading-link href=#1-las-vistas-previas-no-se-muestran><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Verifica si el canal beta está activo</span>
+</span></span><span class=line><span class=cl>flutter channel
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># Limpia y reconstruye</span>
+</span></span><span class=line><span class=cl>flutter clean
+</span></span><span class=line><span class=cl>flutter pub get
+</span></span><span class=line><span class=cl>flutter widget-preview clean
+</span></span><span class=line><span class=cl>flutter widget-preview start --web-server
+</span></span></code></pre></td></tr></table></div></div><h4 id=2-el-botón-de-cambio-de-tema-no-funciona>2. El Botón de Cambio de Tema no Funciona
+<a class=heading-link href=#2-el-bot%c3%b3n-de-cambio-de-tema-no-funciona><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><p>Si el botón para cambiar de tema en el previsualizador de widgets no funciona, es probable que se deba a una de las siguientes razones:</p><p><strong>a) Un tema específico está fijado (hardcoded).</strong>
+Si proporcionas un <code>theme</code> pero no un <code>darkTheme</code> al <code>MaterialApp</code>, el previsualizador no puede cambiar a un modo oscuro.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Problema: Solo se proporciona un tema claro.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>MaterialApp</span><span class=p>(</span><span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span> <span class=p>...)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Solución: Proporciona tanto un tema claro como uno oscuro.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=n>MaterialApp</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>theme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>light</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=nl>darkTheme:</span> <span class=n>ThemeData</span><span class=p>.</span><span class=n>dark</span><span class=p>(),</span>
+</span></span><span class=line><span class=cl>  <span class=p>...</span>
+</span></span><span class=line><span class=cl><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>b) La propiedad <code>brightness</code> está establecida en la anotación <code>@Preview</code>.</strong>
+Establecer <code>brightness</code> fuerza un tema específico y deshabilita el interruptor.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Problema: El brillo explícito impide el cambio de tema.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Mi Vista Previa&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=nl>brightness:</span> <span class=n>Brightness</span><span class=p>.</span><span class=n>light</span><span class=p>,</span>  <span class=c1>// ¡Esto impide el cambio de tema!
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Solución: Elimina el parámetro brightness para habilitar el cambio de tema.
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>  <span class=nl>name:</span> <span class=s1>&#39;Mi Vista Previa&#39;</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>  <span class=c1>// Sin brightness especificado = permite el cambio de tema
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=p>)</span>
+</span></span></code></pre></td></tr></table></div></div><p><strong>c) Un envoltorio de vista previa está controlando el tema.</strong>
+Si estás usando un envoltorio de vista previa (como <code>buttonWrapper</code>), es posible que este esté proporcionando el <code>MaterialApp</code> y los temas por ti. En este caso, el tema es controlado intencionalmente por el envoltorio para asegurar la consistencia con el diseño de tu aplicación, y el interruptor de tema del previsualizador no lo afectará.</p><h4 id=3-función-de-vista-previa-no-encontrada>3. Función de Vista Previa no Encontrada
+<a class=heading-link href=#3-funci%c3%b3n-de-vista-previa-no-encontrada><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h4><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-dart data-lang=dart><span class=line><span class=cl><span class=c1>// ❌ Problema: Función privada (comienza con _)
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Prueba&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>_privatePreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>();</span>  <span class=c1>// No será detectada
+</span></span></span><span class=line><span class=cl><span class=c1></span>
+</span></span><span class=line><span class=cl><span class=c1>// ✅ Solución: Haz la función pública
+</span></span></span><span class=line><span class=cl><span class=c1></span><span class=err>@</span><span class=n>Preview</span><span class=p>(</span><span class=nl>name:</span> <span class=s1>&#39;Prueba&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=n>Widget</span> <span class=n>publicPreview</span><span class=p>()</span> <span class=o>=&gt;</span> <span class=n>MyWidget</span><span class=p>();</span>   <span class=c1>// Será detectada
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=integración-con-el-flujo-de-desarrollo>Integración con el Flujo de Desarrollo
+<a class=heading-link href=#integraci%c3%b3n-con-el-flujo-de-desarrollo><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><h3 id=integración-con-cicd>Integración con CI/CD
+<a class=heading-link href=#integraci%c3%b3n-con-cicd><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>Puedes añadir una verificación básica a tu pipeline de CI para asegurar que el servidor de vistas previas pueda iniciarse.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># .github/workflows/preview-check.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>Verificación de Vistas Previas de Widgets</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=l>pull_request]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>jobs</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>preview-check</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>runs-on</span><span class=p>:</span><span class=w> </span><span class=l>ubuntu-latest</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>steps</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>actions/checkout@v3</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>uses</span><span class=p>:</span><span class=w> </span><span class=l>subosito/flutter-action@v2</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>        </span><span class=nt>with</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>          </span><span class=nt>channel</span><span class=p>:</span><span class=w> </span><span class=l>beta</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>flutter pub get</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>flutter widget-preview start --web-server &amp;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>sleep 15 </span><span class=w> </span><span class=c># Espera a que el servidor se inicie</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># Esta es una verificación de salud básica. Verificaciones más avanzadas</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span><span class=c># podrían consultar una lista de vistas previas, pero esto confirma que el servidor se ejecuta.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=nt>run</span><span class=p>:</span><span class=w> </span><span class=l>curl --fail http://localhost:{{PORT}}</span><span class=w>
+</span></span></span></code></pre></td></tr></table></div></div><h2 id=conclusión>Conclusión
+<a class=heading-link href=#conclusi%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Las Vistas Previas de Widgets de Flutter (Beta) proporcionan una forma poderosa de visualizar y probar componentes de la interfaz de usuario durante el desarrollo. Siguiendo los patrones y mejores prácticas descritos en esta guía, puedes crear un sistema de vistas previas mantenible y completo que mejore significativamente tu flujo de trabajo de desarrollo.</p><p>Para obtener más información y las últimas actualizaciones, consulta siempre la <a href=https://docs.flutter.dev/tools/widget-previewer class=external-link target=_blank rel=noopener>documentación oficial de Flutter sobre el Previsualizador de Widgets</a>.</p><p><strong><strong>Este artículo fue redactado y verificado por Andres Garcia. Se utilizó un asistente de IA como apoyo en el proceso de redacción y edición.</strong></strong></p></div><footer><section class=see-also></section><div class=comments><script>let getTheme=window.localStorage&&window.localStorage.getItem("colorscheme");getTheme=getTheme??"";let s=document.createElement("script");s.src="https://giscus.app/client.js",s.setAttribute("data-repo","tech-andgar/home-page"),s.setAttribute("data-repo-id","R_kgDOMNN8Yw"),s.setAttribute("data-category","Comments"),s.setAttribute("data-category-id","DIC_kwDOGJTFUc4CXnjc"),s.setAttribute("data-mapping","pathname"),s.setAttribute("data-term",""),s.setAttribute("data-strict","0"),s.setAttribute("data-reactions-enabled","1"),s.setAttribute("data-emit-metadata","0"),s.setAttribute("data-input-position","bottom"),s.setAttribute("data-theme",getTheme),s.setAttribute("data-lang","en"),s.setAttribute("data-loading",""),s.setAttribute("crossorigin","anonymous"),s.setAttribute("async",""),document.querySelector("div.comments").innerHTML="",document.querySelector("div.comments").appendChild(s)</script></div></footer></article></section></div><footer class=footer><section class=container><p>H E L L O @ T E C H - A N D G A R . M E</p>Licensed under <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA-4.0</a>
+·
+©
+2020 -
+2025
+Andrés García<br><a href=/privacy-policy target=_self>Política de privacidad</a></section></footer></main><script src=/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script><script>partytown={forward:["dataLayer.push"]}</script><script defer src=/js/main_partytown.js></script><script defer type=text/partytown>
+!function(e,t,a){e.dataLayer=e[s]||[],e.dataLayer.push({"gtm.start":new Date().getTime(),event:"gtm.js"});var g=t.getElementsByTagName("script")[0],r=t.createElement("script"),s="";r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id="+a+s,g.parentNode.insertBefore(r,g)}(window,document,"G-Z91ZFKFVDX");
+</script></body></html>

@@ -1,4 +1,4 @@
-<!doctype html><html lang=en><head><title>Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="A comprehensive guide on securely managing multiple SSH keys for separate identities (e.g., work and personal) for use with Git, GitHub, GitLab, and remote servers. Covers key generation, ssh-agent, SSH config aliases, and conditional Git configurations."><meta name=keywords content="blog,developer,personal,flutter,deaf"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access"><meta name=twitter:description content="A comprehensive guide on securely managing multiple SSH keys for separate identities (e.g., work and personal) for use with Git, GitHub, GitLab, and remote servers. Covers key generation, ssh-agent, SSH config aliases, and conditional Git configurations."><meta property="og:url" content="https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access"><meta property="og:description" content="A comprehensive guide on securely managing multiple SSH keys for separate identities (e.g., work and personal) for use with Git, GitHub, GitLab, and remote servers. Covers key generation, ssh-agent, SSH config aliases, and conditional Git configurations."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-09-25T00:00:00+00:00"><meta property="article:modified_time" content="2025-09-25T00:00:00+00:00"><meta property="article:tag" content="Ssh"><meta property="article:tag" content="Git"><meta property="article:tag" content="Security"><meta property="article:tag" content="Devops"><meta property="article:tag" content="Workflow"><meta property="article:tag" content="Ssh-Agent"><link rel=canonical href=https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.39600a4765f8dfd1f4d0dc385d0ecc579778aa8273d4fd0ba856a237610c7322.css" rel=stylesheet integrity="sha256-OWAKR2X439H00Nw4XQ7MV5d4qoJz1P0LqFaiN2EMcyI=" crossorigin=anonymous><link href="/css/bundle.min.328eb7ad8528dbb1bdc7abe97aaa5cfedce43a064f1fc0f6328b348fd43b7703.css" rel=stylesheet integrity="sha256-Mo63rYUo27G9x6vpeqpc/tzkOgZPH8D2Mos0j9Q7dwM=" crossorigin=anonymous><script defer src=/js/bundle.min.879be80457ab4d011ad3d7223cfb42487a6e0c527d6221df8150d06207874f85.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
+<!doctype html><html lang=en><head><title>Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access · TECH-ANDGAR</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta http-equiv=Content-Security-Policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self' https://www.youtube.com https://giscus.app https://calendly.com https://app.cal.com; img-src data: 'self' https://user-images.githubusercontent.com https://www.google-analytics.com https://i.vimeocdn.com https://i.ytimg.com https://assets.calendly.com; object-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/ https://giscus.app/ https://assets.calendly.com/; script-src 'self' eval 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://static.cloudflareinsights.com https://www.googletagmanager.com/ https://polyfill.io https://cdn.jsdelivr.net https://giscus.app https://assets.calendly.com/ https://app.cal.com/; connect-src 'self' https://www.google-analytics.com;"><meta name=author content="Andrés García"><meta name=description content="A comprehensive guide on securely managing multiple SSH keys for separate identities (e.g., work and personal) for use with Git, GitHub, GitLab, and remote servers. Covers key generation, ssh-agent, SSH config aliases, and conditional Git configurations."><meta name=keywords content="blog,developer,personal,flutter,deaf"><meta property="og:image" content="https://tech-andgar.me/images/avatar"><meta property="twitter:image" content="https://tech-andgar.me/images/avatar"><meta property="og:logo" content="https://tech-andgar.me/images/avatar.avif"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access"><meta name=twitter:description content="A comprehensive guide on securely managing multiple SSH keys for separate identities (e.g., work and personal) for use with Git, GitHub, GitLab, and remote servers. Covers key generation, ssh-agent, SSH config aliases, and conditional Git configurations."><meta property="og:url" content="https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/"><meta property="og:site_name" content="TECH-ANDGAR"><meta property="og:title" content="Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access"><meta property="og:description" content="A comprehensive guide on securely managing multiple SSH keys for separate identities (e.g., work and personal) for use with Git, GitHub, GitLab, and remote servers. Covers key generation, ssh-agent, SSH config aliases, and conditional Git configurations."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-09-25T00:00:00+00:00"><meta property="article:modified_time" content="2025-09-25T00:00:00+00:00"><meta property="article:tag" content="Ssh"><meta property="article:tag" content="Git"><meta property="article:tag" content="Security"><meta property="article:tag" content="Devops"><meta property="article:tag" content="Workflow"><meta property="article:tag" content="Ssh-Agent"><link rel=canonical href=https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/><meta http-equiv=Permissions-Policy content="interest-cohort=()"><link rel=preload href=/fonts/fa-brands-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-regular-400.woff2 as=font type=font/woff2 crossorigin><link rel=preload href=/fonts/fa-solid-900.woff2 as=font type=font/woff2 crossorigin><link rel=stylesheet href=https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css><link href="/css/coder.min.42655007b45bae5dc11ffea436937bf51939c20ad456410392557064fb94ce7d.css" rel=stylesheet integrity="sha256-QmVQB7Rbrl3BH/6kNpN79Rk5wgrUVkEDklVwZPuUzn0=" crossorigin=anonymous><link href="/css/bundle.min.c576086e4898507f53ce05e1c3e87ef7ce970aa03e12b732d0e52359e15c9dff.css" rel=stylesheet integrity="sha256-xXYIbkiYUH9TzgXhw+h+986XCqA+Ercy0OUjWeFcnf8=" crossorigin=anonymous><script defer src=/js/bundle.min.89c18a35b7c4dede80900125c3dd9b756141fe2209d9dccb9d663942550d1912.js crossorigin=anonymous></script><link rel=stylesheet href=/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin=anonymous media=screen><link rel=icon type=image/svg+xml href=/images/favicon.svg sizes=any><link rel=icon type=image/png href=/images/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/images/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5></head><body class="preload-transitions colorscheme-auto"><div class="float-container tooltip" tooltip-title="Switch theme"><a id=dark-mode-toggle class=colorscheme-toggle role=link aria-label="Toggle color scheme"><i class="fa fa-adjust fa-fw" aria-hidden=true></i></a></div><div id=black-fire aria-hidden=true><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div><div class=circle></div></div><div id=cursor-color-bg aria-hidden=true></div><div id=cursor-color-bg--blur aria-hidden=true></div><div id=trailer aria-hidden=true><i id=trailer-icon aria-hidden=true></i></div><div class="modal micromodal-slide" id=modal-1 aria-hidden=true><div class=modal__overlay tabindex=-1 data-micromodal-close><div class=modal__container role=dialog aria-modal=true aria-labelledby=modal-1-title><header class=modal__header><h2 class=modal__title id=modal-1-title>Search</h2><button class="modal__btn modal__btn-primary" data-micromodal-close aria-label="Close this dialog window">
 <i class="fas fa-times fa-2x"></i></button></header><main class=modal__content id=modal-1-content><div class=searchDivPF data-pagefind-ignore><div id=search data-pagefind-ignore></div><p></p></div><noscript data-pagefind-ignore><div class=searchDivPF data-pagefind-ignore><p class="ctr pokey">Since you have JavaScript disabled, you can use the following form
 to search this site with&nbsp;
 <a href=https://duckduckgo.com rel=noopener>DuckDuckGo </a>,&nbsp;instead.<br><em class=legal>(Thanks to <a href=https://kevq.uk/search/ rel=noopener>Kev Quirk</a> for the&nbsp;idea.)</em></p><div class=searchDiv data-pagefind-ignore><form method=get id=search-ddg class=pagefind-ui__form action=https://duckduckgo.com/ title="DuckDuckGo search for www.tech-andgar.me"><input type=hidden name=sites value=tech-andgar.me>
@@ -9,7 +9,7 @@ to search this site with&nbsp;
 <label class="menu-button float-right" for=menu-toggle><i class="fa-solid fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/about/ data-cursor=block>About</a></li><li class=navigation-item><a class=navigation-link href=/posts/ data-cursor=block>Blog</a></li><li class=navigation-item><a class=navigation-link href=/projects/ data-cursor=block>Projects</a></li><li class=navigation-item><a class=navigation-link href=/talks/ data-cursor=block>Talks</a></li><li class=navigation-item><a class=navigation-link href=/contact/ data-cursor=block>Contact me</a></li><li class=navigation-item><a class=navigation-link href=https://link.tech-andgar.me/CVAFGR202404DEV data-cursor=block>CV</a></li><li class=navigation-item><a class=navigation-link href=/privacy-policy/ data-cursor=block>Privacy Policy</a></li><li class="navigation-item nav-link-search"><a href=# class=navigation-link title=Search data-cursor=block><i class="fa fa-search"></i></a></li><li class="navigation-item menu-separator"><span>|</span></li><li class=navigation-item><a href=/es/posts/2025-09-25-ssh-setup-guide/ data-cursor=block>Español 🇪🇸</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tech-andgar.me/posts/2025-09-25-ssh-setup-guide/>Ultimate Guide to Managing Multiple SSH Keys for Git and Server Access</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa-solid fa-calendar" aria-hidden=true></i>
 <time datetime=2025-09-25T00:00:00Z>September 25, 2025
 </time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
-13-minute read</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
+14-minute read</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
 <a href=/categories/security/>Security</a>
 <span class=separator>•</span>
 <a href=/categories/developer-tools/>Developer Tools</a>
@@ -37,9 +37,20 @@ to search this site with&nbsp;
 <a class=heading-link href=#executive-summary><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>This document establishes a comprehensive methodology for managing multiple SSH keys on a developer&rsquo;s workstation. The primary goal is to ensure a clear and secure segregation of digital identities (e.g., personal vs. work) for interacting with Git repositories (GitHub, GitLab, etc.) and accessing remote servers. By adopting this guide, you will enhance security by applying the <strong>principle of least privilege</strong>, reduce the risk of commit attribution errors, and create a scalable solution for managing access to various resources. This solution relies on the native functionalities of OpenSSH and Git, requiring no additional software.</p><h3 id=tldr>TL;DR
 <a class=heading-link href=#tldr><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><ol><li><strong>Generate Separate Keys:</strong> Create a unique SSH key pair for each identity (e.g., work, personal).<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_work -C <span class=s2>&#34;work@email.com&#34;</span>
+<span class=sr-only>Link to heading</span></a></h3><ol><li><strong>Generate Separate Keys:</strong> Create a unique SSH key pair for each identity (e.g., work, personal).<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_work -C <span class=s2>&#34;work@email.com&#34;</span>
 </span></span><span class=line><span class=cl>ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_personal -C <span class=s2>&#34;personal@email.com&#34;</span>
-</span></span></code></pre></div></li><li><strong>Configure SSH:</strong> Edit the <code>~/.ssh/config</code> file to create host aliases that map to the correct key.<div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Host github.com-work
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>Configure SSH:</strong> Edit the <code>~/.ssh/config</code> file to create host aliases that map to the correct key.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Host github.com-work
 </span></span><span class=line><span class=cl>  HostName github.com
 </span></span><span class=line><span class=cl>  IdentityFile ~/.ssh/id_ed25519_work
 </span></span><span class=line><span class=cl>  IdentitiesOnly yes
@@ -48,9 +59,11 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  HostName github.com
 </span></span><span class=line><span class=cl>  IdentityFile ~/.ssh/id_ed25519_personal
 </span></span><span class=line><span class=cl>  IdentitiesOnly yes
-</span></span></code></pre></div></li><li><strong>Use Aliases in Git:</strong> When cloning or updating remotes, replace the real hostname with your new alias.<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Instead of git@github.com:...</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>Use Aliases in Git:</strong> When cloning or updating remotes, replace the real hostname with your new alias.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Instead of git@github.com:...</span>
 </span></span><span class=line><span class=cl>git clone git@github.com-work:company/project.git
-</span></span></code></pre></div></li><li><strong>Configure Git Users (Recommended):</strong> Use <code>includeIf</code> in your <code>~/.gitconfig</code> to automatically set the correct <code>user.name</code> and <code>user.email</code> based on the project&rsquo;s directory (e.g., <code>~/projects/work/</code>). This ensures correct commit authorship and allows for identity-specific GPG signing.</li></ol><hr><h3 id=1-principles-and-justification>1. Principles and Justification
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>Configure Git Users (Recommended):</strong> Use <code>includeIf</code> in your <code>~/.gitconfig</code> to automatically set the correct <code>user.name</code> and <code>user.email</code> based on the project&rsquo;s directory (e.g., <code>~/projects/work/</code>). This ensures correct commit authorship and allows for identity-specific GPG signing.</li></ol><hr><h3 id=1-principles-and-justification>1. Principles and Justification
 <a class=heading-link href=#1-principles-and-justification><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>Managing identities through individual SSH keys is a fundamental security practice. The key justifications are:</p><ul><li><strong>Identity Segregation:</strong> It allows for a strict separation between development profiles (personal, work, clients), ensuring each contribution and access is correctly associated with the proper identity for auditing and code attribution.</li><li><strong>Security and Principle of Least Privilege:</strong> By using different keys for different services, the impact of a compromised private key is limited. A key granting access to a single repository is a much smaller risk than a master key providing access to all infrastructure.</li><li><strong>Auditability and Traceability:</strong> It simplifies tracking which identity (and therefore, which key) was used to perform a specific action on a system.</li><li><strong>Operational Flexibility:</strong> It streamlines the process of granting and revoking access. To revoke access to a service, you simply remove the corresponding public key from that service without affecting access to others.</li></ul><h3 id=2-prerequisites>2. Prerequisites
 <a class=heading-link href=#2-prerequisites><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
@@ -60,27 +73,69 @@ to search this site with&nbsp;
 <a class=heading-link href=#31-choosing-the-algorithm><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h4><p><strong>The use of <code>Ed25519</code> is highly recommended.</strong> It offers security comparable to 3072-bit RSA with much shorter keys, resulting in superior performance. RSA is an acceptable alternative for compatibility with legacy systems.</p><h4 id=32-standard-naming-and-generation>3.2. Standard Naming and Generation
 <a class=heading-link href=#32-standard-naming-and-generation><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h4><p>To ensure consistency, use the following naming convention for your key files and comments.</p><p><strong>Critical Security Action:</strong> When prompted, <strong>always</strong> assign a <strong>strong passphrase</strong> to each private key. This encrypts the private key on your disk, providing a vital layer of protection.</p><ul><li><strong>Key File Name (<code>-f</code>):</strong> <code>~/.ssh/id_&lt;algorithm>_&lt;context>_&lt;service></code><ul><li><strong><code>&lt;algorithm></code>:</strong> <code>ed25519</code> or <code>rsa</code>.</li><li><strong><code>&lt;context></code>:</strong> <code>work</code>, <code>personal</code>, <code>client_clientname</code>.</li><li><strong><code>&lt;service></code>:</strong> <code>github</code>, <code>gitlab</code>, <code>azure</code>, <code>prod_server</code>, etc.</li></ul></li><li><strong>Key Comment (<code>-C</code>):</strong> <code>"&lt;email> - &lt;device> - &lt;YYYY-MM-DD>"</code><ul><li><strong><code>&lt;email></code>:</strong> The email associated with the identity.</li><li><strong><code>&lt;device></code>:</strong> A machine identifier (e.g., <code>MacBookProM3</code>, <code>WorkstationDell</code>).</li><li><strong><code>&lt;YYYY-MM-DD></code>:</strong> The key creation date.</li></ul></li></ul><p><strong>Application Examples:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Key for a work GitHub account on a MacBook Pro</span>
+<span class=sr-only>Link to heading</span></a></h4><p>To ensure consistency, use the following naming convention for your key files and comments.</p><p><strong>Critical Security Action:</strong> When prompted, <strong>always</strong> assign a <strong>strong passphrase</strong> to each private key. This encrypts the private key on your disk, providing a vital layer of protection.</p><ul><li><strong>Key File Name (<code>-f</code>):</strong> <code>~/.ssh/id_&lt;algorithm>_&lt;context>_&lt;service></code><ul><li><strong><code>&lt;algorithm></code>:</strong> <code>ed25519</code> or <code>rsa</code>.</li><li><strong><code>&lt;context></code>:</strong> <code>work</code>, <code>personal</code>, <code>client_clientname</code>.</li><li><strong><code>&lt;service></code>:</strong> <code>github</code>, <code>gitlab</code>, <code>azure</code>, <code>prod_server</code>, etc.</li></ul></li><li><strong>Key Comment (<code>-C</code>):</strong> <code>"&lt;email> - &lt;device> - &lt;YYYY-MM-DD>"</code><ul><li><strong><code>&lt;email></code>:</strong> The email associated with the identity.</li><li><strong><code>&lt;device></code>:</strong> A machine identifier (e.g., <code>MacBookProM3</code>, <code>WorkstationDell</code>).</li><li><strong><code>&lt;YYYY-MM-DD></code>:</strong> The key creation date.</li></ul></li></ul><p><strong>Application Examples:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Key for a work GitHub account on a MacBook Pro</span>
 </span></span><span class=line><span class=cl>ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_work_github -C <span class=s2>&#34;firstname.lastname@company.com - MacBookProM3 - 2025-09-25&#34;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Key for a personal GitLab account on the same machine</span>
 </span></span><span class=line><span class=cl>ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_personal_gitlab -C <span class=s2>&#34;personal.email@example.com - MacBookProM3 - 2025-09-25&#34;</span>
-</span></span></code></pre></div><h3 id=4-step-2-managing-keys-with-the-ssh-agent>4. Step 2: Managing Keys with the SSH Agent
+</span></span></code></pre></td></tr></table></div></div><h3 id=4-step-2-managing-keys-with-the-ssh-agent>4. Step 2: Managing Keys with the SSH Agent
 <a class=heading-link href=#4-step-2-managing-keys-with-the-ssh-agent><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>The <code>ssh-agent</code> is a background service that securely stores your decrypted private keys in memory, so you don&rsquo;t have to enter the passphrase every time a key is used.</p><p><strong>4.1. Start the SSH Agent</strong>
-This command should be executed at the beginning of a new terminal session.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>ssh-agent -s<span class=k>)</span><span class=s2>&#34;</span>
-</span></span></code></pre></div><p><em>Note: Many modern terminals and operating systems manage this automatically per session.</em></p><p><strong>4.2. Load Keys into the Agent</strong>
-Add the private keys you have just generated.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-add ~/.ssh/id_ed25519_work_github
+This command should be executed at the beginning of a new terminal session.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>eval</span> <span class=s2>&#34;</span><span class=k>$(</span>ssh-agent -s<span class=k>)</span><span class=s2>&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p><em>Note: Many modern terminals and operating systems manage this automatically per session.</em></p><p><strong>4.2. Load Keys into the Agent</strong>
+Add the private keys you have just generated.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-add ~/.ssh/id_ed25519_work_github
 </span></span><span class=line><span class=cl>ssh-add ~/.ssh/id_ed25519_personal_gitlab
-</span></span></code></pre></div><p><strong>4.3. Persistence (macOS)</strong>
-On macOS, you can integrate <code>ssh-agent</code> with the system&rsquo;s Keychain to store passphrases securely. The most efficient way is through the SSH config file, but you can also add them manually:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-add --apple-use-keychain ~/.ssh/id_ed25519_work_github
-</span></span></code></pre></div><h3 id=5-step-3-configuring-the-ssh-client-sshconfig>5. Step 3: Configuring the SSH Client (<code>~/.ssh/config</code>)
+</span></span></code></pre></td></tr></table></div></div><p><strong>4.3. Persistence (macOS)</strong>
+On macOS, you can integrate <code>ssh-agent</code> with the system&rsquo;s Keychain to store passphrases securely. The most efficient way is through the SSH config file, but you can also add them manually:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-add --apple-use-keychain ~/.ssh/id_ed25519_work_github
+</span></span></code></pre></td></tr></table></div></div><h3 id=5-step-3-configuring-the-ssh-client-sshconfig>5. Step 3: Configuring the SSH Client (<code>~/.ssh/config</code>)
 <a class=heading-link href=#5-step-3-configuring-the-ssh-client-sshconfig><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>This is the central part of the setup, where you define rules for your SSH client to select the correct key for each connection.</p><p><strong>5.1. Create and Secure the Configuration File</strong>
-If the file does not exist, create it and set the appropriate permissions to ensure only you can read and write to it.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>touch ~/.ssh/config
+If the file does not exist, create it and set the appropriate permissions to ensure only you can read and write to it.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>touch ~/.ssh/config
 </span></span><span class=line><span class=cl>chmod <span class=m>600</span> ~/.ssh/config
-</span></span></code></pre></div><p><strong>5.2. Define Hosts and their Identities</strong>
-Edit the <code>~/.ssh/config</code> file to add a <code>Host</code> entry for each identity. These entries are aliases that map a custom hostname to a specific connection configuration.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#--- Work GitHub Account ---
+</span></span></code></pre></td></tr></table></div></div><p><strong>5.2. Define Hosts and their Identities</strong>
+Edit the <code>~/.ssh/config</code> file to add a <code>Host</code> entry for each identity. These entries are aliases that map a custom hostname to a specific connection configuration.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>#--- Work GitHub Account ---
 </span></span><span class=line><span class=cl>Host github.com-work
 </span></span><span class=line><span class=cl>  HostName github.com
 </span></span><span class=line><span class=cl>  User git
@@ -111,24 +166,48 @@ Edit the <code>~/.ssh/config</code> file to add a <code>Host</code> entry for ea
 </span></span><span class=line><span class=cl>Host *
 </span></span><span class=line><span class=cl>  ServerAliveInterval 60
 </span></span><span class=line><span class=cl>  TCPKeepAlive yes
-</span></span></code></pre></div><p><strong>Justification of Key Directives:</strong></p><ul><li><code>Host</code>: Defines a unique alias for the connection (e.g., <code>github.com-work</code>).</li><li><code>HostName</code>: The actual domain name or IP address of the server.</li><li><code>User</code>: The username for the connection (almost always <code>git</code> for Git providers).</li><li><code>IdentityFile</code>: The path to the <strong>private key</strong> to be used.</li><li><code>IdentitiesOnly yes</code>: <strong>Critical security directive.</strong> Forces SSH to only use the identity specified in <code>IdentityFile</code>, preventing it from trying other keys and causing potential account lockouts.</li><li><code>AddKeysToAgent yes</code>: Automatically adds the key to <code>ssh-agent</code> on first use.</li><li><code>UseKeychain yes</code>: (macOS) Stores the key&rsquo;s passphrase in the macOS Keychain after the first use.</li></ul><h3 id=6-step-4-adding-public-keys-to-remote-services>6. Step 4: Adding Public Keys to Remote Services
+</span></span></code></pre></td></tr></table></div></div><p><strong>Justification of Key Directives:</strong></p><ul><li><code>Host</code>: Defines a unique alias for the connection (e.g., <code>github.com-work</code>).</li><li><code>HostName</code>: The actual domain name or IP address of the server.</li><li><code>User</code>: The username for the connection (almost always <code>git</code> for Git providers).</li><li><code>IdentityFile</code>: The path to the <strong>private key</strong> to be used.</li><li><code>IdentitiesOnly yes</code>: <strong>Critical security directive.</strong> Forces SSH to only use the identity specified in <code>IdentityFile</code>, preventing it from trying other keys and causing potential account lockouts.</li><li><code>AddKeysToAgent yes</code>: Automatically adds the key to <code>ssh-agent</code> on first use.</li><li><code>UseKeychain yes</code>: (macOS) Stores the key&rsquo;s passphrase in the macOS Keychain after the first use.</li></ul><h3 id=6-step-4-adding-public-keys-to-remote-services>6. Step 4: Adding Public Keys to Remote Services
 <a class=heading-link href=#6-step-4-adding-public-keys-to-remote-services><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p>The <strong>public</strong> key (<code>.pub</code>) must be registered with the target service to verify your identity.</p><p><strong>6.1. Copy the Public Key</strong></p><ul><li><strong>macOS:</strong><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pbcopy &lt; ~/.ssh/id_ed25519_work_github.pub
-</span></span></code></pre></div></li><li><strong>Linux (requires <code>xclip</code>):</strong><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>xclip -selection clipboard &lt; ~/.ssh/id_ed25519_work_github.pub
-</span></span></code></pre></div></li><li><strong>Windows (Git Bash):</strong><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat ~/.ssh/id_ed25519_work_github.pub <span class=p>|</span> clip
-</span></span></code></pre></div></li></ul><p><strong>6.2. Register the Public Key</strong></p><ul><li><strong>For Git Providers (GitHub, GitLab, etc.):</strong> Navigate to the &ldquo;SSH and GPG keys&rdquo; section in your account settings and paste the public key content.<ul><li><strong>Good Practice:</strong> Give the key a descriptive name in the provider&rsquo;s interface, such as <code>MacBookPro M3 (Work)</code> or <code>Home-Desktop-PC (Personal)</code>.</li></ul></li><li><strong>For SSH Servers:</strong><ul><li><strong>Recommended Method (<code>ssh-copy-id</code>):</strong> This utility handles the process securely.<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-copy-id client-x-prod <span class=c1># Use the alias from ~/.ssh/config</span>
-</span></span></code></pre></div></li><li><strong>Manual Method (if <code>ssh-copy-id</code> is not available):</strong><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat ~/.ssh/id_ed25519_client_x_prod_server.pub <span class=p>|</span> ssh client-x-prod <span class=s2>&#34;mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys &amp;&amp; chmod 600 ~/.ssh/authorized_keys&#34;</span>
-</span></span></code></pre></div></li></ul></li></ul><p><strong>6.3. Verify the Connection</strong>
-Use the <code>Host</code> alias to test authentication.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh -T git@github.com-work
+<span class=sr-only>Link to heading</span></a></h3><p>The <strong>public</strong> key (<code>.pub</code>) must be registered with the target service to verify your identity.</p><p><strong>6.1. Copy the Public Key</strong></p><ul><li><strong>macOS:</strong><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pbcopy &lt; ~/.ssh/id_ed25519_work_github.pub
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>Linux (requires <code>xclip</code>):</strong><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>xclip -selection clipboard &lt; ~/.ssh/id_ed25519_work_github.pub
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>Windows (Git Bash):</strong><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat ~/.ssh/id_ed25519_work_github.pub <span class=p>|</span> clip
+</span></span></code></pre></td></tr></table></div></div></li></ul><p><strong>6.2. Register the Public Key</strong></p><ul><li><strong>For Git Providers (GitHub, GitLab, etc.):</strong> Navigate to the &ldquo;SSH and GPG keys&rdquo; section in your account settings and paste the public key content.<ul><li><strong>Good Practice:</strong> Give the key a descriptive name in the provider&rsquo;s interface, such as <code>MacBookPro M3 (Work)</code> or <code>Home-Desktop-PC (Personal)</code>.</li></ul></li><li><strong>For SSH Servers:</strong><ul><li><strong>Recommended Method (<code>ssh-copy-id</code>):</strong> This utility handles the process securely.<div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh-copy-id client-x-prod <span class=c1># Use the alias from ~/.ssh/config</span>
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>Manual Method (if <code>ssh-copy-id</code> is not available):</strong><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>cat ~/.ssh/id_ed25519_client_x_prod_server.pub <span class=p>|</span> ssh client-x-prod <span class=s2>&#34;mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys &amp;&amp; chmod 600 ~/.ssh/authorized_keys&#34;</span>
+</span></span></code></pre></td></tr></table></div></div></li></ul></li></ul><p><strong>6.3. Verify the Connection</strong>
+Use the <code>Host</code> alias to test authentication.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>ssh -T git@github.com-work
 </span></span><span class=line><span class=cl><span class=c1># Expected response: Hi username! You&#39;ve successfully authenticated...</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>ssh -T git@gitlab.com-personal
 </span></span><span class=line><span class=cl><span class=c1># Expected response: Welcome to GitLab, @username!</span>
-</span></span></code></pre></div><h3 id=7-step-5-configuring-git-for-multiple-identities-and-gpg-signing>7. Step 5: Configuring Git for Multiple Identities and GPG Signing
+</span></span></code></pre></td></tr></table></div></div><h3 id=7-step-5-configuring-git-for-multiple-identities-and-gpg-signing>7. Step 5: Configuring Git for Multiple Identities and GPG Signing
 <a class=heading-link href=#7-step-5-configuring-git-for-multiple-identities-and-gpg-signing><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>To ensure commits are attributed to the correct author and are cryptographically signed by the correct GPG key, use Git&rsquo;s conditional configuration feature. This approach is the most robust and scalable.</p><p><strong>1. Set up your directory structure:</strong>
 Organize your projects into context-specific directories (e.g., <code>~/projects/work/</code> and <code>~/projects/personal/</code>).</p><p><strong>2. Edit your global <code>~/.gitconfig</code>:</strong>
-Add <code>includeIf</code> directives to load additional configuration files based on the repository&rsquo;s path.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
+Add <code>includeIf</code> directives to load additional configuration files based on the repository&rsquo;s path.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
 </span></span><span class=line><span class=cl>    # Default identity (e.g., personal)
 </span></span><span class=line><span class=cl>    name = Your Personal Name
 </span></span><span class=line><span class=cl>    email = your.personal.email@example.com
@@ -142,8 +221,17 @@ Add <code>includeIf</code> directives to load additional configuration files bas
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>[includeIf &#34;gitdir:~/projects/personal/&#34;]
 </span></span><span class=line><span class=cl>    path = ~/projects/personal/.gitconfig
-</span></span></code></pre></div><p><strong>3. Create the directory-specific <code>.gitconfig</code> files:</strong>
-In these files, you can specify not only the user details but also the GPG key to use for signing commits within that context.</p><ul><li><strong>In <code>~/projects/work/.gitconfig</code>:</strong><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
+</span></span></code></pre></td></tr></table></div></div><p><strong>3. Create the directory-specific <code>.gitconfig</code> files:</strong>
+In these files, you can specify not only the user details but also the GPG key to use for signing commits within that context.</p><ul><li><strong>In <code>~/projects/work/.gitconfig</code>:</strong><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
 </span></span><span class=line><span class=cl>    name = Your Work Name
 </span></span><span class=line><span class=cl>    email = your.email@company.com
 </span></span><span class=line><span class=cl>    # Optional: GPG key for signing work commits
@@ -152,18 +240,34 @@ In these files, you can specify not only the user details but also the GPG key t
 </span></span><span class=line><span class=cl># Optional: To sign all commits in this context by default
 </span></span><span class=line><span class=cl>[commit]
 </span></span><span class=line><span class=cl>   gpgsign = true
-</span></span></code></pre></div></li><li><strong>In <code>~/projects/personal/.gitconfig</code>:</strong><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
+</span></span></code></pre></td></tr></table></div></div></li><li><strong>In <code>~/projects/personal/.gitconfig</code>:</strong><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[user]
 </span></span><span class=line><span class=cl>    name = Your Personal Name
 </span></span><span class=line><span class=cl>    email = your.personal.email@example.com
 </span></span><span class=line><span class=cl>    signingkey = 1A2B3C4D5E6F7G8H
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>[commit]
 </span></span><span class=line><span class=cl>   gpgsign = true
-</span></span></code></pre></div></li></ul><p>With this setup, any repository inside <code>~/projects/work/</code> will automatically use your work identity and corresponding GPG key for commits.</p><h3 id=8-step-6-workflow-with-repositories>8. Step 6: Workflow with Repositories
+</span></span></code></pre></td></tr></table></div></div></li></ul><p>With this setup, any repository inside <code>~/projects/work/</code> will automatically use your work identity and corresponding GPG key for commits.</p><h3 id=8-step-6-workflow-with-repositories>8. Step 6: Workflow with Repositories
 <a class=heading-link href=#8-step-6-workflow-with-repositories><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><h4 id=81-cloning-a-new-repository>8.1. Cloning a New Repository
 <a class=heading-link href=#81-cloning-a-new-repository><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h4><p>When cloning, modify the SSH URL to use the <code>Host</code> alias defined in <code>~/.ssh/config</code>.</p><ul><li><strong>Original URL:</strong> <code>git@github.com:organization-name/project.git</code></li><li><strong>Modified URL for work identity:</strong> <code>git@github.com-work:organization-name/project.git</code></li></ul><p><strong>Example Workflow:</strong></p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Navigate to the work directory</span>
+<span class=sr-only>Link to heading</span></a></h4><p>When cloning, modify the SSH URL to use the <code>Host</code> alias defined in <code>~/.ssh/config</code>.</p><ul><li><strong>Original URL:</strong> <code>git@github.com:organization-name/project.git</code></li><li><strong>Modified URL for work identity:</strong> <code>git@github.com-work:organization-name/project.git</code></li></ul><p><strong>Example Workflow:</strong></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># Navigate to the work directory</span>
 </span></span><span class=line><span class=cl><span class=nb>cd</span> ~/projects/work
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c1># Clone using the work alias</span>
@@ -172,15 +276,18 @@ In these files, you can specify not only the user details but also the GPG key t
 </span></span><span class=line><span class=cl><span class=c1># Git will automatically use the work identity and GPG key due to the includeIf config</span>
 </span></span><span class=line><span class=cl><span class=nb>cd</span> client-project
 </span></span><span class=line><span class=cl>git config --get user.email <span class=c1># Should return your.email@company.com</span>
-</span></span></code></pre></div><h4 id=82-updating-an-existing-repository>8.2. Updating an Existing Repository
+</span></span></code></pre></td></tr></table></div></div><h4 id=82-updating-an-existing-repository>8.2. Updating an Existing Repository
 <a class=heading-link href=#82-updating-an-existing-repository><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h4><p>If a repository was previously cloned with a different URL (HTTPS or the default SSH URL), update the <code>remote</code>&rsquo;s URL.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> /path/to/project
+<span class=sr-only>Link to heading</span></a></h4><p>If a repository was previously cloned with a different URL (HTTPS or the default SSH URL), update the <code>remote</code>&rsquo;s URL.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=nb>cd</span> /path/to/project
 </span></span><span class=line><span class=cl>git remote set-url origin git@github.com-work:work-organization/client-project.git
-</span></span></code></pre></div><h3 id=9-step-7-signing-off-on-commits---signoff>9. Step 7: Signing Off on Commits (<code>--signoff</code>)
+</span></span></code></pre></td></tr></table></div></div><h3 id=9-step-7-signing-off-on-commits---signoff>9. Step 7: Signing Off on Commits (<code>--signoff</code>)
 <a class=heading-link href=#9-step-7-signing-off-on-commits---signoff><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>Signing off on a commit is different from GPG signing. It is a simple, non-cryptographic way to certify that you have the right to submit the work. This is commonly required by projects that use a <strong>Developer Certificate of Origin (DCO)</strong>.</p><p>The sign-off adds a <code>Signed-off-by:</code> trailer at the end of the commit message, which includes your name and email from the Git configuration.</p><p><strong>How to Use:</strong>
-To add a sign-off to a commit, use the <code>-s</code> or <code>--signoff</code> flag.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git commit -s -m <span class=s2>&#34;Your commit message&#34;</span>
-</span></span></code></pre></div><p>This is not a replacement for GPG signing (<code>git commit -S</code>), which provides cryptographic verification of identity. Both can be used together if required by a project.</p><h3 id=10-risk-management-and-security-considerations>10. Risk Management and Security Considerations
+To add a sign-off to a commit, use the <code>-s</code> or <code>--signoff</code> flag.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>git commit -s -m <span class=s2>&#34;Your commit message&#34;</span>
+</span></span></code></pre></td></tr></table></div></div><p>This is not a replacement for GPG signing (<code>git commit -S</code>), which provides cryptographic verification of identity. Both can be used together if required by a project.</p><h3 id=10-risk-management-and-security-considerations>10. Risk Management and Security Considerations
 <a class=heading-link href=#10-risk-management-and-security-considerations><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><ul><li><strong>File Permissions:</strong> It is imperative to maintain correct permissions.<ul><li><code>~/.ssh</code> directory: <code>700</code> (drwx&mdash;&mdash;)</li><li>Private keys (<code>id_*</code>): <code>600</code> (-rw&mdash;&mdash;-)</li><li>Public keys (<code>id_*.pub</code>): <code>644</code> (-rw-r&ndash;r&ndash;)</li></ul></li><li><strong>Key Rotation:</strong> Establish a policy for rotating SSH keys periodically (e.g., annually), especially for production environments.</li><li><strong>Private Key Exposure:</strong> A private key should never be shared, versioned in Git, or stored in plaintext in insecure locations.</li></ul><h3 id=11-troubleshooting>11. Troubleshooting
 <a class=heading-link href=#11-troubleshooting><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
@@ -213,7 +320,71 @@ Git->>Remote: Transfers push data</div><h3 id=appendix-b-advanced-security---int
 <a class=heading-link href=#appendix-b-advanced-security---integration-with-secrets-managers><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h3><p>For enhanced security, private SSH keys can be managed by external tools, eliminating the need to store them directly on disk.</p><ul><li><strong>1Password:</strong> The 1Password desktop client can act as an <code>ssh-agent</code>. SSH keys are stored securely in the 1Password vault and are loaded into the agent only when needed, authenticating the user through the password manager.</li><li><strong>HashiCorp Vault:</strong> In more complex infrastructures, Vault can generate short-lived SSH credentials (SSH certificates) on demand. This completely eliminates static, long-lived keys, aligning with a zero-trust security model.</li></ul><p>The implementation of these solutions is beyond the scope of this basic guide but should be considered as the next evolutionary step to strengthen developer access security.</p><h3 id=appendix-c-automation-script-for-initial-setup>Appendix C: Automation Script for Initial Setup
 <a class=heading-link href=#appendix-c-automation-script-for-initial-setup><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h3><p>This <code>bash</code> script helps developers create the directory structure and conditional Git configuration files. It should be run once on a new machine.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+<span class=sr-only>Link to heading</span></a></h3><p>This <code>bash</code> script helps developers create the directory structure and conditional Git configuration files. It should be run once on a new machine.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
 </span></span></span><span class=line><span class=cl><span class=cp></span>
 </span></span><span class=line><span class=cl><span class=c1># Script to set up directory structure and conditional .gitconfig files.</span>
 </span></span><span class=line><span class=cl>
@@ -277,7 +448,7 @@ Git->>Remote: Transfers push data</div><h3 id=appendix-b-advanced-security---int
 </span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;--- Setup complete ---&#34;</span>
 </span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;Now, clone your work repositories into </span><span class=nv>$WORK_DIR</span><span class=s2> and your personal ones into </span><span class=nv>$PERSONAL_DIR</span><span class=s2>.&#34;</span>
 </span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;Git will automatically use the correct identity for each.&#34;</span>
-</span></span></code></pre></div><hr><p><strong><strong>This article was written and curated by Andres Garcia, with the support of an artificial intelligence tool that uses machine learning to produce text.</strong></strong></p></div><footer><section class=see-also></section><div class=comments><script>let getTheme=window.localStorage&&window.localStorage.getItem("colorscheme");getTheme=getTheme??"";let s=document.createElement("script");s.src="https://giscus.app/client.js",s.setAttribute("data-repo","tech-andgar/home-page"),s.setAttribute("data-repo-id","R_kgDOMNN8Yw"),s.setAttribute("data-category","Comments"),s.setAttribute("data-category-id","DIC_kwDOGJTFUc4CXnjc"),s.setAttribute("data-mapping","pathname"),s.setAttribute("data-term",""),s.setAttribute("data-strict","0"),s.setAttribute("data-reactions-enabled","1"),s.setAttribute("data-emit-metadata","0"),s.setAttribute("data-input-position","bottom"),s.setAttribute("data-theme",getTheme),s.setAttribute("data-lang","en"),s.setAttribute("data-loading",""),s.setAttribute("crossorigin","anonymous"),s.setAttribute("async",""),document.querySelector("div.comments").innerHTML="",document.querySelector("div.comments").appendChild(s)</script></div></footer></article></section></div><footer class=footer><section class=container><p>H E L L O @ T E C H - A N D G A R . M E</p>Licensed under <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA-4.0</a>
+</span></span></code></pre></td></tr></table></div></div><hr><p><strong><strong>This article was written and curated by Andres Garcia, with the support of an artificial intelligence tool that uses machine learning to produce text.</strong></strong></p></div><footer><section class=see-also></section><div class=comments><script>let getTheme=window.localStorage&&window.localStorage.getItem("colorscheme");getTheme=getTheme??"";let s=document.createElement("script");s.src="https://giscus.app/client.js",s.setAttribute("data-repo","tech-andgar/home-page"),s.setAttribute("data-repo-id","R_kgDOMNN8Yw"),s.setAttribute("data-category","Comments"),s.setAttribute("data-category-id","DIC_kwDOGJTFUc4CXnjc"),s.setAttribute("data-mapping","pathname"),s.setAttribute("data-term",""),s.setAttribute("data-strict","0"),s.setAttribute("data-reactions-enabled","1"),s.setAttribute("data-emit-metadata","0"),s.setAttribute("data-input-position","bottom"),s.setAttribute("data-theme",getTheme),s.setAttribute("data-lang","en"),s.setAttribute("data-loading",""),s.setAttribute("crossorigin","anonymous"),s.setAttribute("async",""),document.querySelector("div.comments").innerHTML="",document.querySelector("div.comments").appendChild(s)</script></div></footer></article></section></div><footer class=footer><section class=container><p>H E L L O @ T E C H - A N D G A R . M E</p>Licensed under <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA-4.0</a>
 ·
 ©
 2020 -
