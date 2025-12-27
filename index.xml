@@ -101,10 +101,10 @@
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;This article explores different strategies for error handling in Dart, comparing the traditional &lt;code&gt;try/catch&lt;/code&gt; approach with more modern methods such as using return values, custom classes, and functional approaches using packages like &lt;code&gt;dartz&lt;/code&gt; and &lt;code&gt;fpdart&lt;/code&gt;. You&amp;rsquo;ll learn when and why to use each approach, with practical examples and performance considerations.&lt;/p&gt;</description></item><item><title>Talks</title><link>https://tech-andgar.me/talks/</link><pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/talks/</guid><description>&lt;div id="talk-filters" class="talk-filters"&gt;
+&lt;p&gt;This article explores different strategies for error handling in Dart, comparing the traditional &lt;code&gt;try/catch&lt;/code&gt; approach with more modern methods such as using return values, custom classes, and functional approaches using packages like &lt;code&gt;dartz&lt;/code&gt; and &lt;code&gt;fpdart&lt;/code&gt;. You&amp;rsquo;ll learn when and why to use each approach, with practical examples and performance considerations.&lt;/p&gt;</description></item><item><title>Talks</title><link>https://tech-andgar.me/talks/</link><pubDate>Wed, 03 Jul 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/talks/</guid><description>&lt;div id="talks-filters" class="talk-filters"&gt;
  &lt;div class="filter-group"&gt;
- &lt;label for="topic-filter"&gt;Filter by Topic:&lt;/label&gt;
- &lt;select id="topic-filter"&gt;
+ &lt;label for="talks-topic-filter"&gt;Filter by Topic:&lt;/label&gt;
+ &lt;select id="talks-topic-filter"&gt;
  &lt;option value="all"&gt;All Topics&lt;/option&gt;
  
  
@@ -306,8 +306,8 @@
  &lt;/div&gt;
 
  &lt;div class="filter-group"&gt;
- &lt;label for="type-filter"&gt;Filter by Type:&lt;/label&gt;
- &lt;select id="type-filter"&gt;
+ &lt;label for="talks-type-filter"&gt;Filter by Type:&lt;/label&gt;
+ &lt;select id="talks-type-filter"&gt;
  &lt;option value="all"&gt;All Types&lt;/option&gt;
  
  
@@ -345,8 +345,8 @@
  &lt;/div&gt;
 
  &lt;div class="filter-group"&gt;
- &lt;label for="language-filter"&gt;Filter by Language:&lt;/label&gt;
- &lt;select id="language-filter"&gt;
+ &lt;label for="talks-language-filter"&gt;Filter by Language:&lt;/label&gt;
+ &lt;select id="talks-language-filter"&gt;
  &lt;option value="all"&gt;All Languages&lt;/option&gt;
  
  
@@ -408,21 +408,24 @@
  &lt;/div&gt;
 
  &lt;div class="filter-group"&gt;
- &lt;label for="search-input"&gt;Search:&lt;/label&gt;
- &lt;input type="text" id="search-input" placeholder="Search talks..."&gt;
+ &lt;label for="talks-search-input"&gt;Search:&lt;/label&gt;
+ &lt;input type="text" id="talks-search-input" placeholder="Search talks..."&gt;
  &lt;/div&gt;
  &lt;div class="filter-group"&gt;
- &lt;button id="clear-filters-btn"&gt;Clear Filters&lt;/button&gt;
+ &lt;button id="talks-clear-filters-btn"&gt;Clear Filters&lt;/button&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;script&gt;
  document.addEventListener('DOMContentLoaded', function() {
- const topicFilter = document.getElementById('topic-filter');
- const typeFilter = document.getElementById('type-filter');
- const languageFilter = document.getElementById('language-filter');
- const searchInput = document.getElementById('search-input');
- const talkItems = document.querySelectorAll('.container-fluid[data-pagefind-body]');
+ const topicFilter = document.getElementById('talks-topic-filter');
+ const typeFilter = document.getElementById('talks-type-filter');
+ const languageFilter = document.getElementById('talks-language-filter');
+ const searchInput = document.getElementById('talks-search-input');
+ const clearFiltersBtn = document.getElementById('talks-clear-filters-btn');
+ const talkItems = document.querySelectorAll('.talks-container[data-pagefind-body]');
+
+ if (!topicFilter || !typeFilter || !languageFilter || !searchInput) return;
 
  function filterTalks() {
  const selectedTopic = topicFilter.value;
@@ -431,27 +434,37 @@
  const searchTerm = searchInput.value.toLowerCase();
 
  talkItems.forEach(item =&gt; {
+ 
  const topics = Array.from(item.querySelectorAll('.topic')).map(span =&gt; span.textContent);
- const talkType = item.querySelector('summary span').textContent.split(':')[1].trim().split(' ')[0]; 
- const languages = item.querySelector('summary span').textContent.match(/\[(.*?)\]/);
+
+ 
+ const talkType = item.dataset.talkType || '';
+
+ 
+ const languagesEl = item.querySelector('.talk-languages');
  let itemLanguages = [];
- if (languages &amp;&amp; languages[1]) {
- itemLanguages = languages[1].split(/\s*&amp;\s*|\s*with\s*|\s*-\s*/).map(lang =&gt; lang.trim()).filter(n =&gt; n);
+ if (languagesEl) {
+ const langText = languagesEl.textContent.replaceAll('[', '').replaceAll(']', '');
+ itemLanguages = langText.split(/\s*&amp;\s*/).map(lang =&gt; lang.trim()).filter(Boolean);
  }
 
- const title = item.querySelector('[data-pagefind-meta="title"]') ? item.querySelector('[data-pagefind-meta="title"]').textContent.toLowerCase() : '';
- const description = item.querySelector('p') ? item.querySelector('p').textContent.toLowerCase() : '';
- const speaker = Array.from(item.querySelectorAll('.speaker')).map(span =&gt; span.textContent.toLowerCase());
- const eventName = item.querySelector('summary span') ? item.querySelector('summary span').textContent.toLowerCase() : '';
+ 
+ const titleEl = item.querySelector('.talk-title');
+ const title = titleEl ? titleEl.textContent.toLowerCase() : '';
 
+ const descriptionEls = item.querySelectorAll('.talk-description p');
+ const description = Array.from(descriptionEls).map(p =&gt; p.textContent.toLowerCase()).join(' ');
+
+ const speakers = Array.from(item.querySelectorAll('.speaker')).map(span =&gt; span.textContent.toLowerCase());
+
+ 
  const matchesTopic = selectedTopic === 'all' || topics.includes(selectedTopic);
  const matchesType = selectedType === 'all' || talkType.toLowerCase() === selectedType.toLowerCase();
  const matchesLanguage = selectedLanguage === 'all' || itemLanguages.includes(selectedLanguage);
  const matchesSearch = searchTerm === '' ||
  title.includes(searchTerm) ||
  description.includes(searchTerm) ||
- speaker.some(s =&gt; s.includes(searchTerm)) ||
- eventName.includes(searchTerm);
+ speakers.some(s =&gt; s.includes(searchTerm));
 
  if (matchesTopic &amp;&amp; matchesType &amp;&amp; matchesLanguage &amp;&amp; matchesSearch) {
  item.style.display = '';
@@ -466,7 +479,7 @@
  languageFilter.addEventListener('change', filterTalks);
  searchInput.addEventListener('keyup', filterTalks);
 
- const clearFiltersBtn = document.getElementById('clear-filters-btn');
+ if (clearFiltersBtn) {
  clearFiltersBtn.addEventListener('click', function() {
  topicFilter.value = 'all';
  typeFilter.value = 'all';
@@ -474,6 +487,7 @@
  searchInput.value = '';
  filterTalks();
  });
+ }
 
  filterTalks(); 
  });
@@ -504,34 +518,66 @@
  
  
  
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
 
  
  
  
  
-
- 
  
 
  
  
+ 
+ 
+ 
 
- &lt;div class="container-fluid talks-container" data-pagefind-body&gt;
+ &lt;div class="container-fluid talks-container" data-pagefind-body data-talk-type="in_person_seminar"&gt;
  &lt;details class="talk-item"&gt;
- &lt;summary&gt;
+ &lt;summary class="talk-summary"&gt;
+ &lt;div class="talk-summary-content"&gt;
+ 
+ 
+ &lt;div class="talk-thumbnail talk-thumbnail-placeholder"&gt;
+ &lt;span&gt;No Video&lt;/span&gt;
+ &lt;/div&gt;
+ 
 
  
- &lt;span&gt;
- 1: In-person seminar: 2° Encuentro Michoacano de Lengua de Señas Mexicana
+ &lt;div class="talk-info"&gt;
+ &lt;h3 class="talk-title" data-pagefind-meta="title"&gt;2° Encuentro Michoacano de Lengua de Señas Mexicana&lt;/h3&gt;
+
+ &lt;div class="talk-meta"&gt;
+ &lt;span class="talk-type-badge talk-type-in_person_seminar"&gt;In-person seminar&lt;/span&gt;
  
- &lt;br&gt;[Colombian Sign Language (LSC) &amp;amp; International Sign Language (ISL) &amp;amp; LSM with Spanish]
- &lt;/span&gt;
+ &lt;span class="talk-languages"&gt;[Colombian Sign Language (LSC) &amp;amp; International Sign Language (ISL) &amp;amp; LSM]&lt;/span&gt;
+ &lt;/div&gt;
+
+ 
+ 
+ &lt;div class="talk-av-info"&gt;
+ &lt;span class="talk-audio"&gt;Audio Spanish&lt;/span&gt;
+ 
+ 
+ &lt;/div&gt;
  
 
  
- &lt;div class="talk-tags-wrapper"&gt;
- &lt;div class="talk-tags-label"&gt;Tag:&lt;/div&gt;
- &lt;div class="tags"&gt;
+ 
+ &lt;div class="talk-tags"&gt;
  
  &lt;span class="tag-item topic"&gt;Educational Technology&lt;/span&gt;
  
@@ -548,24 +594,36 @@
  &lt;span class="tag-item topic"&gt;Teamwork&lt;/span&gt;
  
  &lt;/div&gt;
+ 
+ &lt;/div&gt;
  &lt;/div&gt;
  
  &lt;/summary&gt;
 
- &lt;div style="padding-top: 1rem;"&gt;
- &lt;strong&gt;Date:&lt;/strong&gt; &lt;time datetime="2025-06-05" data-pagefind-meta="date[datetime]"&gt;2025-06-05&lt;/time&gt;&amp;nbsp;-&amp;nbsp;
- &lt;strong&gt;Location:&lt;/strong&gt; Michoacán, México
  
+ &lt;div class="talk-details"&gt;
  
- 
-
+ &lt;div class="talk-metadata-grid"&gt;
+ &lt;div class="meta-item"&gt;
+ &lt;strong&gt;Date:&lt;/strong&gt;
+ &lt;time datetime="2025-06-05" data-pagefind-meta="date[datetime]"&gt;2025-06-05&lt;/time&gt;
+ &lt;/div&gt;
+ &lt;div class="meta-item"&gt;
+ &lt;strong&gt;Location:&lt;/strong&gt;
+ &lt;span&gt;Michoacán, México&lt;/span&gt;
+ &lt;/div&gt;
  
  &lt;/div&gt;
 
  
+ 
 
  
- &lt;br /&gt;
+ 
+
+ 
+ 
+ &lt;div class="talk-description"&gt;
  
  &lt;p&gt;Participation as presencial speaker:&lt;/p&gt;</description></item><item><title>`http_status` Dart Package: A Comprehensive Guide</title><link>https://tech-andgar.me/posts/dart-http_status-package/</link><pubDate>Wed, 14 Feb 2024 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/dart-http_status-package/</guid><description>&lt;h1 id="http_status-dart-package-a-comprehensive-guide"&gt;
  &lt;code&gt;http_status&lt;/code&gt; Dart Package: A Comprehensive Guide

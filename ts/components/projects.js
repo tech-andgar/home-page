@@ -30,6 +30,9 @@
       this.init();
     }
     init() {
+      if (!this.typeFilter || !this.categoryFilter || !this.techFilter || !this.complexityFilter) {
+        return;
+      }
       this.setInitialTotalCount();
       this.addEventListeners();
       this.filterProjects();
