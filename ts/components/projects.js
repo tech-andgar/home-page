@@ -1,4 +1,21 @@
+"use strict";
 (() => {
+  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/utils/utils.ts
+  function isDev() {
+    const hostname = globalThis.location?.hostname ?? "";
+    return hostname === "localhost" || hostname === "127.0.0.1" || hostname.endsWith(".local") || globalThis.location?.port === "1313";
+  }
+  function debug(...args) {
+    if (isDev()) {
+      console.log("[DEV]", ...args);
+    }
+  }
+  function debugError(...args) {
+    if (isDev()) {
+      console.error("[DEV]", ...args);
+    }
+  }
+
   // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/projects_filter.ts
   var ProjectsFilter = class {
     constructor() {
@@ -66,7 +83,7 @@
         }
       });
       this.updateCounter(visibleCount);
-      console.log(
+      debug(
         `Filtered: ${visibleCount}/${this.totalProjects} projects visible (Type: ${selectedType}, Category: ${selectedCategory}, Tech: ${selectedTech}, Complexity: ${selectedComplexity})`
       );
     }
@@ -89,7 +106,7 @@
       this.init();
     }
     init() {
-      console.log(`Found ${this.modalTriggers.length} modal triggers and ${this.modals.length} modals`);
+      debug(`Found ${this.modalTriggers.length} modal triggers and ${this.modals.length} modals`);
       this.addEventListeners();
     }
     addEventListeners() {
@@ -139,17 +156,17 @@
       });
     }
     openModal(trigger) {
-      console.log("Modal trigger clicked");
+      debug("Modal trigger clicked");
       const targetId = trigger.getAttribute("data-modal-target");
-      console.log("Target modal ID:", targetId);
+      debug("Target modal ID:", targetId);
       if (targetId) {
         const modal = this.findModal(targetId);
         if (modal) {
-          console.log("Opening modal:", targetId);
+          debug("Opening modal:", targetId);
           this.showModal(modal);
         } else {
-          console.error("Modal not found:", targetId);
-          console.log("Available modals:", Array.from(this.modals).map((m) => m.id));
+          debugError("Modal not found:", targetId);
+          debug("Available modals:", Array.from(this.modals).map((m) => m.id));
         }
       }
     }
@@ -157,12 +174,12 @@
       let modal = document.querySelector(targetId);
       if (!modal && targetId.startsWith("#")) {
         const escapedId = `#${this.escapeSelector(targetId)}`;
-        console.log("Trying escaped selector:", escapedId);
+        debug("Trying escaped selector:", escapedId);
         modal = document.querySelector(escapedId);
       }
       if (!modal) {
         const id = targetId.replace("#", "");
-        console.log("Trying getElementById:", id);
+        debug("Trying getElementById:", id);
         modal = document.getElementById(id);
       }
       return modal;
@@ -178,19 +195,19 @@
       }, 10);
     }
     closeModal(button) {
-      console.log("Close button clicked");
+      debug("Close button clicked");
       const modal = button.closest(".modal");
       if (modal) {
         this.closeModalElement(modal);
       }
     }
     closeModalElement(modal) {
-      console.log("Closing modal");
+      debug("Closing modal");
       modal.style.display = "none";
       modal.style.opacity = "0";
     }
     closeAllModals() {
-      console.log("Escape key pressed, closing all modals");
+      debug("Escape key pressed, closing all modals");
       this.modals.forEach((modal) => {
         this.closeModalElement(modal);
       });
@@ -308,14 +325,14 @@
       this.init();
     }
     init() {
-      console.log("Projects component loaded with modular architecture");
+      debug("Projects component loaded with modular architecture");
       try {
         this.filter = new ProjectsFilter();
         this.modal = new ProjectModal();
         this.fullscreen = new FullscreenModal();
-        console.log("All project components initialized successfully");
+        debug("All project components initialized successfully");
       } catch (error) {
-        console.error("Error initializing project components:", error);
+        debugError("Error initializing project components:", error);
       }
     }
     // Public API methods if needed
