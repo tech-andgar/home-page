@@ -103,7 +103,7 @@
   // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/project_modal.ts
   var ProjectModal = class {
     constructor() {
-      this.modalTriggers = document.querySelectorAll(".project-btn[data-modal-target]");
+      this.modalTriggers = document.querySelectorAll(".project-card[data-modal-target]");
       this.modals = document.querySelectorAll(".modal");
       this.closeButtons = document.querySelectorAll(".close-button");
       this.init();

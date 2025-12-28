@@ -1390,11 +1390,15 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Acerca de</title><link>https://tech-andgar.me/es/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/about/</guid><description>&lt;p&gt;¡Hola! Soy Andrés García, un &lt;strong&gt;desarrollador Sordo de aplicaciones móviles Full-Stack especializado en Flutter&lt;/strong&gt;, con &lt;strong&gt;más de 7 años de experiencia&lt;/strong&gt; y cuya lengua materna es Lengua de Señas Colombia (LSC). Mi pasión radica en explorar la intersección entre tecnología, lógica y comunicación para crear soluciones digitales innovadoras y accesibles.&lt;/p&gt;
-&lt;p&gt;Mi experiencia abarca:&lt;/p&gt;
-&lt;p&gt;• Desarrollo móvil: &lt;strong&gt;Flutter, Dart&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;• Tecnologías web: ES6+, HTML5, CSS3, &lt;strong&gt;Vue.js&lt;/strong&gt;, TypeScript&lt;/p&gt;
-&lt;p&gt;• Desarrollo back-end: &lt;strong&gt;Node.js&lt;/strong&gt;, Express, Loopback, Nest, APIs RESTful, GraphQL&lt;/p&gt;</description></item><item><title>Corrección Error 15517 MS SQL SERVER</title><link>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</link><pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</guid><description>&lt;p&gt;Corrección Error 15517 MS SQL SERVER&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Acerca de</title><link>https://tech-andgar.me/es/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/about/</guid><description>&lt;p&gt;¡Hola! Soy Andrés García, &lt;strong&gt;Ingeniero de Software Sordo&lt;/strong&gt; con &lt;strong&gt;más de 7 años de experiencia&lt;/strong&gt; construyendo aplicaciones móviles y web. Mi lengua materna es la Lengua de Señas Colombiana (LSC), y trabajo principalmente con &lt;strong&gt;Flutter y Dart&lt;/strong&gt; para desarrollo móvil.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Puntos clave:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ayudé a construir apps Flutter usadas por &lt;strong&gt;millones de usuarios&lt;/strong&gt; en Bancolombia (el banco más grande de Colombia)&lt;/li&gt;
+&lt;li&gt;Reduje deuda técnica en &lt;strong&gt;40%&lt;/strong&gt; y tiempo de CI/CD en &lt;strong&gt;50%&lt;/strong&gt; en apps de producción&lt;/li&gt;
+&lt;li&gt;Comunicación directa en lengua de señas = sin barreras con equipos/clientes Sordos&lt;/li&gt;
+&lt;li&gt;Contribuidor open-source con paquetes usados por miles de desarrolladores&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Actualmente soy Senior Software Engineer en &lt;strong&gt;Slalom Consulting&lt;/strong&gt; en Bogotá. También colaboro con organizaciones enfocadas en accesibilidad como Sign Language Tech en proyectos comunitarios.&lt;/p&gt;</description></item><item><title>Corrección Error 15517 MS SQL SERVER</title><link>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</link><pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/fix-error-ms-sql-server/</guid><description>&lt;p&gt;Corrección Error 15517 MS SQL SERVER&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://gist.github.com/tech-andgar/1bc6958ea6565c009f4513fe12e1d32b" class="external-link" target="_blank" rel="noopener"&gt;Original link&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;No se puede ejecutar como la entidad de seguridad de base de datos porque la entidad &amp;lsquo;dbo&amp;rsquo; no existe, este tipo de entidad de seguridad no se puede suplantar o el usuario no tiene permiso.&lt;/p&gt;
 &lt;p&gt;Este fragmento de código que se usa para cambiar el propietario de una base de datos en Microsoft SQL Server en particular está utilizando un procedimiento almacenado del sistema llamado &lt;code&gt;sp_changedbowner&lt;/code&gt; para realizar la acción.&lt;/p&gt;</description></item><item><title/><link>https://tech-andgar.me/es/posts/2023-11-24-silvers-flutter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2023-11-24-silvers-flutter/</guid><description>&lt;h1 id="desplazamiento-en-flutter-slivers-y-más"&gt;
@@ -1463,13 +1467,6 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h1&gt;
-&lt;h2 id="-"&gt;
- -
- &lt;a class="heading-link" href="#-"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
 &lt;h3 id="última-actualización-21-de-agosto-de-2024"&gt;
  Última actualización: 21 de agosto de 2024
  &lt;a class="heading-link" href="#%c3%baltima-actualizaci%c3%b3n-21-de-agosto-de-2024"&gt;
@@ -1548,6 +1545,24 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
  [ TU MARCA AQUI ]
  &lt;/div&gt;
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-SLALOM"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
+ type="image/svg+xml"
+ alt="Logo SLALOM"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
  
 
  
@@ -1829,6 +1844,24 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  
  
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-SLALOM"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
+ type="image/svg+xml"
+ alt="Logo SLALOM"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
  
  
  
@@ -2098,6 +2131,24 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
  [ TU MARCA AQUI ]
  &lt;/div&gt;
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-SLALOM"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
+ type="image/svg+xml"
+ alt="Logo SLALOM"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
  
 
  

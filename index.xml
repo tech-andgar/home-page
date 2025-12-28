@@ -1166,12 +1166,15 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 &lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>About</title><link>https://tech-andgar.me/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/about/</guid><description>&lt;p&gt;Hi! I&amp;rsquo;m Andres Garcia, a &lt;strong&gt;Deaf Developer&lt;/strong&gt; with over &lt;strong&gt;7 years of experience&lt;/strong&gt;, whose native language is Colombian Sign Language (Lengua de Señas Colombiana, LSC). I&amp;rsquo;m passionate about exploring the intersection of technology, logic, and communication to create innovative digital solutions.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;My expertise spans:&lt;/p&gt;
-&lt;p&gt;• Mobile development: &lt;strong&gt;Flutter, Dart&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;• Web technologies: ES6+, HTML5, CSS3, &lt;strong&gt;Vue.js&lt;/strong&gt;, TypeScript&lt;/p&gt;
-&lt;p&gt;• Back-end development: &lt;strong&gt;Node.js&lt;/strong&gt;,Express, Loopback, Nest, RESTful APIs, GraphQL&lt;/p&gt;</description></item><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix"&gt;
+&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>About</title><link>https://tech-andgar.me/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/about/</guid><description>&lt;p&gt;Hi, I&amp;rsquo;m Andrés García, a &lt;strong&gt;Deaf Software Engineer&lt;/strong&gt; with &lt;strong&gt;7+ years of experience&lt;/strong&gt; building mobile and web applications. Colombian Sign Language (LSC) is my native language, and I work primarily with &lt;strong&gt;Flutter and Dart&lt;/strong&gt; for mobile development.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Quick highlights:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Helped build Flutter apps used by &lt;strong&gt;millions of users&lt;/strong&gt; at Bancolombia (Colombia&amp;rsquo;s largest bank)&lt;/li&gt;
+&lt;li&gt;Reduced technical debt by &lt;strong&gt;40%&lt;/strong&gt; and CI/CD pipeline time by &lt;strong&gt;50%&lt;/strong&gt; in production apps&lt;/li&gt;
+&lt;li&gt;Direct communication in sign language = no barriers, no misunderstandings with Deaf teams/clients&lt;/li&gt;
+&lt;li&gt;Active open-source contributor with packages used by thousands of developers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Currently, I&amp;rsquo;m a Senior Software Engineer at &lt;strong&gt;Slalom Consulting&lt;/strong&gt; in Bogota. I also collaborate with accessibility-focused organizations like Sign Language Tech on community projects.&lt;/p&gt;</description></item><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix"&gt;
  View logs ngnix
  &lt;a class="heading-link" href="#view-logs-ngnix"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
@@ -1392,13 +1395,6 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h1&gt;
-&lt;h2 id="-"&gt;
- -
- &lt;a class="heading-link" href="#-"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
 &lt;h3 id="last-updated-21-aug-2024"&gt;
  Last updated: 21 Aug 2024
  &lt;a class="heading-link" href="#last-updated-21-aug-2024"&gt;
@@ -1476,6 +1472,24 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
  [ YOUR BRAND HERE ]
  &lt;/div&gt;
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-SLALOM"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
+ type="image/svg+xml"
+ alt="Logo SLALOM"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
  
 
  
@@ -1757,6 +1771,24 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  
  
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-SLALOM"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
+ type="image/svg+xml"
+ alt="Logo SLALOM"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
  
  
  
@@ -2026,6 +2058,24 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
  [ YOUR BRAND HERE ]
  &lt;/div&gt;
+ 
+
+ 
+ 
+ 
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-SLALOM"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
+ type="image/svg+xml"
+ alt="Logo SLALOM"
+ /&gt;
+ &lt;/div&gt;
+ 
+ 
+ 
+ 
  
 
  
