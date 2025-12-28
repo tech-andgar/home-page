@@ -1167,297 +1167,93 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>About</title><link>https://tech-andgar.me/about/</link><pubDate>Fri, 28 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/about/</guid><description>&lt;p&gt;Hi, I&amp;rsquo;m Andrés García, a &lt;strong&gt;Deaf Software Engineer&lt;/strong&gt; with &lt;strong&gt;7+ years of experience&lt;/strong&gt; building mobile and web applications. Colombian Sign Language (LSC) is my native language, and I work primarily with &lt;strong&gt;Flutter and Dart&lt;/strong&gt; for mobile development.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Quick highlights:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Helped build Flutter apps used by &lt;strong&gt;millions of users&lt;/strong&gt; at Bancolombia (Colombia&amp;rsquo;s largest bank)&lt;/li&gt;
-&lt;li&gt;Reduced technical debt by &lt;strong&gt;40%&lt;/strong&gt; and CI/CD pipeline time by &lt;strong&gt;50%&lt;/strong&gt; in production apps&lt;/li&gt;
-&lt;li&gt;Direct communication in sign language = no barriers, no misunderstandings with Deaf teams/clients&lt;/li&gt;
-&lt;li&gt;Active open-source contributor with packages used by thousands of developers&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Currently, I&amp;rsquo;m a Senior Software Engineer at &lt;strong&gt;Slalom Consulting&lt;/strong&gt; in Bogota. I also collaborate with accessibility-focused organizations like Sign Language Tech on community projects.&lt;/p&gt;</description></item><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix"&gt;
- View logs ngnix
- &lt;a class="heading-link" href="#view-logs-ngnix"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cat /var/log/nginx/error.log
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# OR&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ sudo tail -n &lt;span class="m"&gt;20&lt;/span&gt; /var/log/nginx/error.log
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="check-configuration-nginx"&gt;
- Check configuration nginx
- &lt;a class="heading-link" href="#check-configuration-nginx"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ nginx -c /etc/nginx/nginx.conf -t
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="reset-service-nginx-on-ubuntu"&gt;
- Reset service nginx on Ubuntu
- &lt;a class="heading-link" href="#reset-service-nginx-on-ubuntu"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ sudo systemctl restart nginx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="reload-configuration-of-service-nginx-on-ubuntu"&gt;
- Reload configuration of service nginx on Ubuntu
- &lt;a class="heading-link" href="#reload-configuration-of-service-nginx-on-ubuntu"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ sudo systemctl reload nginx
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="assign-permissitions-for-user-of-nginx-on-ubuntu"&gt;
- Assign permissitions for user of nginx on Ubuntu
- &lt;a class="heading-link" href="#assign-permissitions-for-user-of-nginx-on-ubuntu"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ chown -R www-data:www-data /var/www/domain.com/subdomain/*
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="copy-project-to-folder-www-public-nginx"&gt;
- Copy project to folder WWW public Nginx
- &lt;a class="heading-link" href="#copy-project-to-folder-www-public-nginx"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cp -rL /root/projects/project1/dist/public /var/www/domain.me/subdomain/project
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="fix-permissions-for-user-of-nginx-on-ubuntu"&gt;
- Fix permissions for user of nginx on Ubuntu
- &lt;a class="heading-link" href="#fix-permissions-for-user-of-nginx-on-ubuntu"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ chmod -R &lt;span class="m"&gt;755&lt;/span&gt; */ &lt;span class="c1"&gt;# or 751 Fix Permissions Folder&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ chmod -R &lt;span class="m"&gt;644&lt;/span&gt; */* &lt;span class="c1"&gt;# Fix Permissions Files&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="copy-project-to-folder-www-public-nginx-and-fix-permissions"&gt;
- Copy project to folder WWW public Nginx and Fix permissions
- &lt;a class="heading-link" href="#copy-project-to-folder-www-public-nginx-and-fix-permissions"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cp -rL /root/projects/Personal/demo_project_backend/app/dist/pwa /var/www/tech-andgar.me/subdomain/pwa &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod -R &lt;span class="m"&gt;755&lt;/span&gt; */ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod -R &lt;span class="m"&gt;644&lt;/span&gt; */*
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="link-symbolic"&gt;
- Link symbolic
- &lt;a class="heading-link" href="#link-symbolic"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ ln -s /root/projects/Personal/demo_project_backend/app/dist/pwa/* /var/www/tech-andgar.me/subdomain/demo_cobrando
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ ln -sv /root/projects/Personal/demo_project_backend/app/dist/pwa /var/www/tech-andgar.me/subdomain
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="pm2-freeze-list-process-for-startup"&gt;
- PM2 Freeze list process for startup
- &lt;a class="heading-link" href="#pm2-freeze-list-process-for-startup"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# [PM2] Freeze a process list on reboot via:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ pm2 save
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="pm2-remove-startup"&gt;
- PM2 remove startup
- &lt;a class="heading-link" href="#pm2-remove-startup"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# [PM2] Remove init script via:&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ pm2 unstartup systemd
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;h2 id="git-push"&gt;
- Git push
- &lt;a class="heading-link" href="#git-push"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ git push -u origin master
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;</description></item><item><title>Fix Error 15517 MS SQL SERVER</title><link>https://tech-andgar.me/posts/fix-error-ms-sql-server/</link><pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/fix-error-ms-sql-server/</guid><description>&lt;p&gt;Fix Error 15517 MS SQL SERVER&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://gist.github.com/tech-andgar/1bc6958ea6565c009f4513fe12e1d32b" class="external-link" target="_blank" rel="noopener"&gt;Original link&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;This particular snippet of code that is used to change the owner of a database in Microsoft SQL Server, is using a system stored procedure called &lt;code&gt;sp_changedbowner&lt;/code&gt; to perform the action.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
-&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
-&lt;/span&gt;&lt;span class="lnt"&gt;2
-&lt;/span&gt;&lt;span class="lnt"&gt;3
-&lt;/span&gt;&lt;span class="lnt"&gt;4
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class="lntd"&gt;
-&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;USE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;DB&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;GO&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;EXEC&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;dbo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sp_changedbowner&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;loginame&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sa&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="k"&gt;map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;false&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;GO&lt;/span&gt;&lt;span class="w"&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;Here&amp;rsquo;s the breakdown of what each line does:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;USE [DB Name]&lt;/code&gt;: This command switches the current database to the specified database. Replace &lt;code&gt;[DB Name]&lt;/code&gt; with the name of your database.&lt;/p&gt;</description></item><item><title/><link>https://tech-andgar.me/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/privacy-policy/</guid><description>&lt;h1 id="privacy-policy"&gt;
- Privacy Policy
- &lt;a class="heading-link" href="#privacy-policy"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h1&gt;
-&lt;h3 id="last-updated-21-aug-2024"&gt;
- Last updated: 21 Aug 2024
- &lt;a class="heading-link" href="#last-updated-21-aug-2024"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h3&gt;
-&lt;p&gt;This Privacy Policy outlines how TECH-ANDGAR (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;our&amp;rdquo;, or &amp;ldquo;us&amp;rdquo;) collects, uses, and protects your information when you visit and interact with our website &lt;a href="https://tech-andgar.me" class="external-link" target="_blank" rel="noopener"&gt;https://tech-andgar.me&lt;/a&gt; (&amp;ldquo;Website&amp;rdquo;). By using the Website, you agree to the terms of this Privacy Policy. If you do not agree with these terms, please discontinue use of the Website immediately.&lt;/p&gt;</description></item><item><title>Contact</title><link>https://tech-andgar.me/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/contact/</guid><description>&lt;p&gt;Let&amp;rsquo;s connect! I&amp;rsquo;m happy to answer your questions, discuss potential projects, or simply chat about technology.&lt;/p&gt;
-&lt;p&gt;You can reach me at&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;H E L L O @ T E C H - A N D G A R . M E&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Or by scheduling a call using the calendar below:&lt;/p&gt;
+&lt;p&gt;Currently, I&amp;rsquo;m a Senior Software Engineer at &lt;strong&gt;Slalom Consulting&lt;/strong&gt; in Bogota. I also collaborate with accessibility-focused organizations like Sign Language Tech on community projects.&lt;/p&gt;
 
 
-&lt;a data-cal-link="tech-andgar/30min-free"&gt;Schedule time with me&lt;/a&gt;
 
 
-&lt;script type="text/javascript"&gt;
- (function (C, A, L) {
- let p = function (a, ar) {
- a.q.push(ar);
- };
- let d = C.document;
- C.Cal =
- C.Cal ||
- function () {
- let cal = C.Cal;
- let ar = arguments;
- if (!cal.loaded) {
- cal.ns = {};
- cal.q = cal.q || [];
- d.head.appendChild(d.createElement("script")).src = A;
- cal.loaded = true;
- }
- if (ar[0] === L) {
- const api = function () {
- p(api, arguments);
- };
- const namespace = ar[1];
- api.q = api.q || [];
- if (typeof namespace === "string") {
- cal.ns[namespace] = cal.ns[namespace] || api;
- p(cal.ns[namespace], ar);
- p(cal, ["initNamespace", namespace]);
- } else p(cal, ar);
- return;
- }
- p(cal, ar);
- };
- })(window, "https://app.cal.com/embed/embed.js", "init");
- Cal("init", "meeting-free", { origin: "https://app.cal.com" });
+&lt;section class="stats-section" aria-label="Key highlights"&gt;
+ &lt;div class="stats-grid"&gt;
+
  
+ 
+ 
+ &lt;div class="stats-card animate-on-scroll"
+ &gt;
+ &lt;div class="stats-icon"&gt;
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;&lt;polyline points="12 6 12 12 16 14"&gt;&lt;/polyline&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ &lt;div class="stats-value"&gt;7+&lt;/div&gt;
+ &lt;div class="stats-label"&gt;Years of experience&lt;/div&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ 
+ &lt;div class="stats-card animate-on-scroll has-tooltip"
+ data-tooltip="Helped build Flutter apps used by millions at Bancolombia (Colombia&amp;#39;s largest bank)"&gt;
+ &lt;div class="stats-icon"&gt;
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;&lt;path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"&gt;&lt;/path&gt;&lt;circle cx="9" cy="7" r="4"&gt;&lt;/circle&gt;&lt;path d="M23 21v-2a4 4 0 0 0-3-3.87"&gt;&lt;/path&gt;&lt;path d="M16 3.13a4 4 0 0 1 0 7.75"&gt;&lt;/path&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ &lt;div class="stats-value"&gt;Millions&lt;/div&gt;
+ &lt;div class="stats-label"&gt;Users impacted&lt;/div&gt;
+ 
+ &lt;div class="stats-tooltip" role="tooltip"&gt;Helped build Flutter apps used by millions at Bancolombia (Colombia&amp;#39;s largest bank)&lt;/div&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ 
+ &lt;div class="stats-card animate-on-scroll has-tooltip"
+ data-tooltip="Reduced technical debt by 40% in production apps"&gt;
+ &lt;div class="stats-icon"&gt;
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;&lt;polyline points="23 6 13.5 15.5 8.5 10.5 1 18"&gt;&lt;/polyline&gt;&lt;polyline points="17 6 23 6 23 12"&gt;&lt;/polyline&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ &lt;div class="stats-value"&gt;40%&lt;/div&gt;
+ &lt;div class="stats-label"&gt;Technical debt reduced&lt;/div&gt;
+ 
+ &lt;div class="stats-tooltip" role="tooltip"&gt;Reduced technical debt by 40% in production apps&lt;/div&gt;
+ 
+ &lt;/div&gt;
+ 
+ 
+ 
+ &lt;div class="stats-card animate-on-scroll has-tooltip"
+ data-tooltip="Improved CI/CD pipeline speed by 50% in production apps"&gt;
+ &lt;div class="stats-icon"&gt;
+ &lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"&gt;&lt;circle cx="12" cy="12" r="10"&gt;&lt;/circle&gt;&lt;polygon points="10 8 16 12 10 16 10 8"&gt;&lt;/polygon&gt;&lt;/svg&gt;
+ &lt;/div&gt;
+ &lt;div class="stats-value"&gt;50%&lt;/div&gt;
+ &lt;div class="stats-label"&gt;Faster CI/CD pipeline&lt;/div&gt;
+ 
+ &lt;div class="stats-tooltip" role="tooltip"&gt;Improved CI/CD pipeline speed by 50% in production apps&lt;/div&gt;
+ 
+ &lt;/div&gt;
+ 
+
+ &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;h2 id="trusted-by"&gt;
+ Trusted by
+ &lt;a class="heading-link" href="#trusted-by"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+
+
+
+
+
+
+
  
  
  
 
- Cal.ns["meeting-free"]("ui", {
- hideEventTypeDetails: false,
- layout: "month_view",
- });
-&lt;/script&gt;
 
 
-&lt;p&gt;Follow me on social media:&lt;/p&gt;</description></item><item><title>Projects</title><link>https://tech-andgar.me/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/projects/</guid><description>&lt;h2&gt;TRUSTED BY&lt;/h2&gt;
 
 &lt;div class="container-card_company"&gt;
  &lt;div class="cards_company static-cards_company"&gt;
@@ -2341,6 +2137,13 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;/div&gt;
 &lt;/div&gt;
 
+&lt;h2 id="what-people-say"&gt;
+ What people say
+ &lt;a class="heading-link" href="#what-people-say"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-default.min.css" integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU=" crossorigin="anonymous"&gt;
 
 
@@ -2355,9 +2158,6 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 
 
 
-
-
-&lt;h2&gt;ENDORSEMENTS FROM CONNECTIONS&lt;/h2&gt;
 
 &lt;div class="container-card_recommendations"&gt;
  &lt;div class="cards_recommendations static-cards_recommendations"&gt;
@@ -2389,4 +2189,765 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  
  &lt;p class="text-content" id="textContent" aria-hidden="true"&gt;Partnering with Andres Garcia and the Sign Language Tech team on our Sign Tours Hungary platform was a game-changer for our foundation. From day one, the communication was seaml&lt;span id="dots" aria-hidden="true"&gt;...&lt;/span&gt;‏&lt;span id="moreText" aria-hidden="true"&gt;ess. Andres&amp;#39;s ability to skill in navigating complex technical discussions directly in sign language meant our vision was understood perfectly, with nothing lost in translation. The result speaks for itself: in just over 100 hours, they delivered a beautiful, robust platform featuring 30 landmarks and 60 videos, creating a vital resource where one didn&amp;#39;t exist before. Andres&amp;#39;s contribution to the user experience was critical; he ensured the site wasn&amp;#39;t just functional, but truly intuitive and authentic for our Deaf community. The final product didn&amp;#39;t just meet our expectations-it blew them away. I can&amp;#39;t recommend Andres Garcia highly enough. He brings a rare combination of deep technical skill, creative problem-solving, and a genuine commitment to building technology that truly serves its users.&lt;/span&gt;
  &lt;span class="read-more-link" onclick="toggleTextOverflowSpan(this)"&gt;Read More ▼&lt;/span&gt;
- &lt;/p&gt;</description></item></channel></rss>
+ &lt;/p&gt;</description></item><item><title>Cofiguration server</title><link>https://tech-andgar.me/posts/notes-config-server/</link><pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/notes-config-server/</guid><description>&lt;h2 id="view-logs-ngnix"&gt;
+ View logs ngnix
+ &lt;a class="heading-link" href="#view-logs-ngnix"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cat /var/log/nginx/error.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# OR&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ sudo tail -n &lt;span class="m"&gt;20&lt;/span&gt; /var/log/nginx/error.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="check-configuration-nginx"&gt;
+ Check configuration nginx
+ &lt;a class="heading-link" href="#check-configuration-nginx"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ nginx -c /etc/nginx/nginx.conf -t
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="reset-service-nginx-on-ubuntu"&gt;
+ Reset service nginx on Ubuntu
+ &lt;a class="heading-link" href="#reset-service-nginx-on-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ sudo systemctl restart nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="reload-configuration-of-service-nginx-on-ubuntu"&gt;
+ Reload configuration of service nginx on Ubuntu
+ &lt;a class="heading-link" href="#reload-configuration-of-service-nginx-on-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ sudo systemctl reload nginx
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="assign-permissitions-for-user-of-nginx-on-ubuntu"&gt;
+ Assign permissitions for user of nginx on Ubuntu
+ &lt;a class="heading-link" href="#assign-permissitions-for-user-of-nginx-on-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ chown -R www-data:www-data /var/www/domain.com/subdomain/*
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="copy-project-to-folder-www-public-nginx"&gt;
+ Copy project to folder WWW public Nginx
+ &lt;a class="heading-link" href="#copy-project-to-folder-www-public-nginx"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cp -rL /root/projects/project1/dist/public /var/www/domain.me/subdomain/project
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="fix-permissions-for-user-of-nginx-on-ubuntu"&gt;
+ Fix permissions for user of nginx on Ubuntu
+ &lt;a class="heading-link" href="#fix-permissions-for-user-of-nginx-on-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ chmod -R &lt;span class="m"&gt;755&lt;/span&gt; */ &lt;span class="c1"&gt;# or 751 Fix Permissions Folder&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ chmod -R &lt;span class="m"&gt;644&lt;/span&gt; */* &lt;span class="c1"&gt;# Fix Permissions Files&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="copy-project-to-folder-www-public-nginx-and-fix-permissions"&gt;
+ Copy project to folder WWW public Nginx and Fix permissions
+ &lt;a class="heading-link" href="#copy-project-to-folder-www-public-nginx-and-fix-permissions"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ cp -rL /root/projects/Personal/demo_project_backend/app/dist/pwa /var/www/tech-andgar.me/subdomain/pwa &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod -R &lt;span class="m"&gt;755&lt;/span&gt; */ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod -R &lt;span class="m"&gt;644&lt;/span&gt; */*
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="link-symbolic"&gt;
+ Link symbolic
+ &lt;a class="heading-link" href="#link-symbolic"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ ln -s /root/projects/Personal/demo_project_backend/app/dist/pwa/* /var/www/tech-andgar.me/subdomain/demo_cobrando
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ ln -sv /root/projects/Personal/demo_project_backend/app/dist/pwa /var/www/tech-andgar.me/subdomain
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="pm2-freeze-list-process-for-startup"&gt;
+ PM2 Freeze list process for startup
+ &lt;a class="heading-link" href="#pm2-freeze-list-process-for-startup"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# [PM2] Freeze a process list on reboot via:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ pm2 save
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="pm2-remove-startup"&gt;
+ PM2 remove startup
+ &lt;a class="heading-link" href="#pm2-remove-startup"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# [PM2] Remove init script via:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ pm2 unstartup systemd
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id="git-push"&gt;
+ Git push
+ &lt;a class="heading-link" href="#git-push"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ git push -u origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Fix Error 15517 MS SQL SERVER</title><link>https://tech-andgar.me/posts/fix-error-ms-sql-server/</link><pubDate>Sun, 19 Nov 2017 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/fix-error-ms-sql-server/</guid><description>&lt;p&gt;Fix Error 15517 MS SQL SERVER&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gist.github.com/tech-andgar/1bc6958ea6565c009f4513fe12e1d32b" class="external-link" target="_blank" rel="noopener"&gt;Original link&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This particular snippet of code that is used to change the owner of a database in Microsoft SQL Server, is using a system stored procedure called &lt;code&gt;sp_changedbowner&lt;/code&gt; to perform the action.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;USE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;DB&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;GO&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;EXEC&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;dbo&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sp_changedbowner&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="n"&gt;loginame&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;N&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;sa&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;@&lt;/span&gt;&lt;span class="k"&gt;map&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;false&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;GO&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Here&amp;rsquo;s the breakdown of what each line does:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;USE [DB Name]&lt;/code&gt;: This command switches the current database to the specified database. Replace &lt;code&gt;[DB Name]&lt;/code&gt; with the name of your database.&lt;/p&gt;</description></item><item><title/><link>https://tech-andgar.me/privacy-policy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/privacy-policy/</guid><description>&lt;h1 id="privacy-policy"&gt;
+ Privacy Policy
+ &lt;a class="heading-link" href="#privacy-policy"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;h3 id="last-updated-21-aug-2024"&gt;
+ Last updated: 21 Aug 2024
+ &lt;a class="heading-link" href="#last-updated-21-aug-2024"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;This Privacy Policy outlines how TECH-ANDGAR (&amp;ldquo;we&amp;rdquo;, &amp;ldquo;our&amp;rdquo;, or &amp;ldquo;us&amp;rdquo;) collects, uses, and protects your information when you visit and interact with our website &lt;a href="https://tech-andgar.me" class="external-link" target="_blank" rel="noopener"&gt;https://tech-andgar.me&lt;/a&gt; (&amp;ldquo;Website&amp;rdquo;). By using the Website, you agree to the terms of this Privacy Policy. If you do not agree with these terms, please discontinue use of the Website immediately.&lt;/p&gt;</description></item><item><title>Contact</title><link>https://tech-andgar.me/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/contact/</guid><description>&lt;p&gt;Let&amp;rsquo;s connect! I&amp;rsquo;m happy to answer your questions, discuss potential projects, or simply chat about technology.&lt;/p&gt;
+&lt;p&gt;You can reach me at&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;H E L L O @ T E C H - A N D G A R . M E&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Or by scheduling a call using the calendar below:&lt;/p&gt;
+
+
+&lt;a data-cal-link="tech-andgar/30min-free"&gt;Schedule time with me&lt;/a&gt;
+
+
+&lt;script type="text/javascript"&gt;
+ (function (C, A, L) {
+ let p = function (a, ar) {
+ a.q.push(ar);
+ };
+ let d = C.document;
+ C.Cal =
+ C.Cal ||
+ function () {
+ let cal = C.Cal;
+ let ar = arguments;
+ if (!cal.loaded) {
+ cal.ns = {};
+ cal.q = cal.q || [];
+ d.head.appendChild(d.createElement("script")).src = A;
+ cal.loaded = true;
+ }
+ if (ar[0] === L) {
+ const api = function () {
+ p(api, arguments);
+ };
+ const namespace = ar[1];
+ api.q = api.q || [];
+ if (typeof namespace === "string") {
+ cal.ns[namespace] = cal.ns[namespace] || api;
+ p(cal.ns[namespace], ar);
+ p(cal, ["initNamespace", namespace]);
+ } else p(cal, ar);
+ return;
+ }
+ p(cal, ar);
+ };
+ })(window, "https://app.cal.com/embed/embed.js", "init");
+ Cal("init", "meeting-free", { origin: "https://app.cal.com" });
+ 
+ 
+ 
+ 
+
+ Cal.ns["meeting-free"]("ui", {
+ hideEventTypeDetails: false,
+ layout: "month_view",
+ });
+&lt;/script&gt;
+
+
+&lt;p&gt;Follow me on social media:&lt;/p&gt;</description></item><item><title>Projects</title><link>https://tech-andgar.me/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/projects/</guid><description>&lt;p&gt;Here are some of the projects I&amp;rsquo;ve worked on, including open-source contributions and personal side projects.&lt;/p&gt;
+&lt;p&gt;For detailed client projects, visit my &lt;a href="https://link.tech-andgar.me/CVAFGR202404DEV" class="external-link" target="_blank" rel="noopener"&gt;CV&lt;/a&gt; or &lt;a href="https://link.tech-andgar.me/linkedin" class="external-link" target="_blank" rel="noopener"&gt;LinkedIn&lt;/a&gt; profile.&lt;/p&gt;
+
+
+
+ 
+ 
+ 
+
+
+
+
+
+&lt;div class="projects-container"&gt;
+ &lt;div class="project-filters"&gt;
+ &lt;div class="filters-group"&gt;
+ &lt;div class="filter-group"&gt;
+ 
+ 
+ &lt;label for="type-filter"&gt;Type:&lt;/label&gt;
+ &lt;select id="type-filter"&gt;
+ &lt;option value="all"&gt;All&lt;/option&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;option value="App desktop"&gt;App desktop&lt;/option&gt;
+ 
+ &lt;option value="App mobile"&gt;App mobile&lt;/option&gt;
+ 
+ &lt;option value="App Web"&gt;App Web&lt;/option&gt;
+ 
+ &lt;option value="App Web Full Stack"&gt;App Web Full Stack&lt;/option&gt;
+ 
+ &lt;option value="Documentation"&gt;Documentation&lt;/option&gt;
+ 
+ &lt;option value="Extension Browser"&gt;Extension Browser&lt;/option&gt;
+ 
+ &lt;option value="Extension GitHub Actions"&gt;Extension GitHub Actions&lt;/option&gt;
+ 
+ &lt;option value="Package Dart"&gt;Package Dart&lt;/option&gt;
+ 
+ &lt;option value="Package Quasar"&gt;Package Quasar&lt;/option&gt;
+ 
+ &lt;option value="Platform Edu"&gt;Platform Edu&lt;/option&gt;
+ 
+ &lt;option value="Web"&gt;Web&lt;/option&gt;
+ 
+ &lt;/select&gt;
+ &lt;/div&gt;
+ &lt;div class="filter-group"&gt;
+ 
+ 
+ &lt;label for="category-filter"&gt;Category:&lt;/label&gt;
+ &lt;select id="category-filter"&gt;
+ &lt;option value="all"&gt;All&lt;/option&gt;
+ &lt;option value="Side Project"&gt;Side Projects&lt;/option&gt;
+ &lt;option value="Contribution"&gt;Contributions&lt;/option&gt;
+ &lt;/select&gt;
+ &lt;/div&gt;
+ &lt;div class="filter-group"&gt;
+ 
+ 
+ &lt;label for="tech-filter"&gt;Technology:&lt;/label&gt;
+ &lt;input list="tech-filter-datalist" id="tech-filter" placeholder="All"&gt;
+ &lt;datalist id="tech-filter-datalist"&gt;
+ &lt;option value="all"&gt;All&lt;/option&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;option value="Animations"&gt;Animations&lt;/option&gt;
+ 
+ &lt;option value="Astro"&gt;Astro&lt;/option&gt;
+ 
+ &lt;option value="BLoC Pattern"&gt;BLoC Pattern&lt;/option&gt;
+ 
+ &lt;option value="CachedNetworkImage"&gt;CachedNetworkImage&lt;/option&gt;
+ 
+ &lt;option value="Clean Architecture"&gt;Clean Architecture&lt;/option&gt;
+ 
+ &lt;option value="Coveralls"&gt;Coveralls&lt;/option&gt;
+ 
+ &lt;option value="Crowdin"&gt;Crowdin&lt;/option&gt;
+ 
+ &lt;option value="CSS3"&gt;CSS3&lt;/option&gt;
+ 
+ &lt;option value="CSV"&gt;CSV&lt;/option&gt;
+ 
+ &lt;option value="Dart"&gt;Dart&lt;/option&gt;
+ 
+ &lt;option value="Date-fns"&gt;Date-fns&lt;/option&gt;
+ 
+ &lt;option value="Dio"&gt;Dio&lt;/option&gt;
+ 
+ &lt;option value="Docker"&gt;Docker&lt;/option&gt;
+ 
+ &lt;option value="Easy Localization"&gt;Easy Localization&lt;/option&gt;
+ 
+ &lt;option value="Express"&gt;Express&lt;/option&gt;
+ 
+ &lt;option value="Fast CSV"&gt;Fast CSV&lt;/option&gt;
+ 
+ &lt;option value="Flutter"&gt;Flutter&lt;/option&gt;
+ 
+ &lt;option value="Form Validation"&gt;Form Validation&lt;/option&gt;
+ 
+ &lt;option value="Framework Quasar v1"&gt;Framework Quasar v1&lt;/option&gt;
+ 
+ &lt;option value="Framework Quasar v2"&gt;Framework Quasar v2&lt;/option&gt;
+ 
+ &lt;option value="GitBook"&gt;GitBook&lt;/option&gt;
+ 
+ &lt;option value="GitHub"&gt;GitHub&lt;/option&gt;
+ 
+ &lt;option value="GitHub Actions"&gt;GitHub Actions&lt;/option&gt;
+ 
+ &lt;option value="GitHub Pages"&gt;GitHub Pages&lt;/option&gt;
+ 
+ &lt;option value="GitLab CD/CI"&gt;GitLab CD/CI&lt;/option&gt;
+ 
+ &lt;option value="GoRouter"&gt;GoRouter&lt;/option&gt;
+ 
+ &lt;option value="Hive"&gt;Hive&lt;/option&gt;
+ 
+ &lt;option value="HTML5"&gt;HTML5&lt;/option&gt;
+ 
+ &lt;option value="HTTP"&gt;HTTP&lt;/option&gt;
+ 
+ &lt;option value="HUGO"&gt;HUGO&lt;/option&gt;
+ 
+ &lt;option value="JavaScript"&gt;JavaScript&lt;/option&gt;
+ 
+ &lt;option value="JSON"&gt;JSON&lt;/option&gt;
+ 
+ &lt;option value="JWT"&gt;JWT&lt;/option&gt;
+ 
+ &lt;option value="Leaflet"&gt;Leaflet&lt;/option&gt;
+ 
+ &lt;option value="Markdown"&gt;Markdown&lt;/option&gt;
+ 
+ &lt;option value="mongoose"&gt;mongoose&lt;/option&gt;
+ 
+ &lt;option value="pdf-lib"&gt;pdf-lib&lt;/option&gt;
+ 
+ &lt;option value="PHP"&gt;PHP&lt;/option&gt;
+ 
+ &lt;option value="pnpm"&gt;pnpm&lt;/option&gt;
+ 
+ &lt;option value="PostCSS"&gt;PostCSS&lt;/option&gt;
+ 
+ &lt;option value="React"&gt;React&lt;/option&gt;
+ 
+ &lt;option value="REST API"&gt;REST API&lt;/option&gt;
+ 
+ &lt;option value="Riverpod"&gt;Riverpod&lt;/option&gt;
+ 
+ &lt;option value="Rollup"&gt;Rollup&lt;/option&gt;
+ 
+ &lt;option value="SharedPreferences"&gt;SharedPreferences&lt;/option&gt;
+ 
+ &lt;option value="SOLID Principles"&gt;SOLID Principles&lt;/option&gt;
+ 
+ &lt;option value="State Management"&gt;State Management&lt;/option&gt;
+ 
+ &lt;option value="TailwindCSS"&gt;TailwindCSS&lt;/option&gt;
+ 
+ &lt;option value="TDD"&gt;TDD&lt;/option&gt;
+ 
+ &lt;option value="Transifex"&gt;Transifex&lt;/option&gt;
+ 
+ &lt;option value="TypeScript"&gt;TypeScript&lt;/option&gt;
+ 
+ &lt;option value="Vite"&gt;Vite&lt;/option&gt;
+ 
+ &lt;option value="Vue.JS 2"&gt;Vue.JS 2&lt;/option&gt;
+ 
+ &lt;option value="Vue.JS 3"&gt;Vue.JS 3&lt;/option&gt;
+ 
+ &lt;/datalist&gt;
+ &lt;/div&gt;
+ &lt;div class="filter-group"&gt;
+ 
+ 
+ 
+ &lt;label for="complexity-filter"&gt;Complexity:&lt;/label&gt;
+ &lt;select id="complexity-filter"&gt;
+ &lt;option value="all"&gt;All&lt;/option&gt;
+ 
+ &lt;option value="Advanced"&gt;Advanced&lt;/option&gt;
+ 
+ &lt;option value="Intermediate"&gt;Intermediate&lt;/option&gt;
+ 
+ &lt;option value="Beginner"&gt;Beginner&lt;/option&gt;
+ 
+ &lt;/select&gt;
+ &lt;/div&gt;
+ &lt;button id="clear-filters-btn" class="clear-btn" aria-label="Clear Filters"&gt;Clear Filters&lt;/button&gt;
+ &lt;/div&gt;
+
+ 
+ &lt;div class="projects-counter"&gt;
+ &lt;span class="counter-text"&gt;Showing &lt;strong id="visible-count"&gt;32&lt;/strong&gt; of &lt;strong id="total-count"&gt;32&lt;/strong&gt; projects&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+ &lt;div class="projects-grid"&gt;
+ 
+ &lt;div class="project-card featured-project" data-type="App Web" data-category="Side Project" data-techs='[&amp;#34;React&amp;#34;,&amp;#34;Vite&amp;#34;,&amp;#34;TailwindCSS&amp;#34;,&amp;#34;pdf-lib&amp;#34;,&amp;#34;TypeScript&amp;#34;,&amp;#34;GitHub Actions&amp;#34;,&amp;#34;GitHub Pages&amp;#34;]' data-complexity="Intermediate" data-modal-target="#project-modal-image-to-pdf-client"&gt;
+ &lt;div class="card-header"&gt;
+ &lt;div class="project-type-header"&gt;
+ &lt;span class="project-type-icon"&gt;📄&lt;/span&gt;
+ &lt;span class="project-type-text"&gt;App Web&lt;/span&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class="project-preview"&gt;
+ &lt;div class="project-spotlight"&gt;⭐ Featured&lt;/div&gt;
+ &lt;span class="complexity-badge complexity-intermediate"&gt;Intermediate&lt;/span&gt;
+ 
+ &lt;img loading="lazy" src="https://tech-andgar.me/images/preview/preview-image-to-pdf-client_demo.avif" alt="Preview of Image to PDF Client project" class="project-preview-img"&gt;
+ 
+ &lt;/div&gt;
+ &lt;div class="card-body"&gt;
+ &lt;h3 class="card-title"&gt;Image to PDF Client&lt;/h3&gt;
+ &lt;p class="card-description"&gt;A web application to convert images to PDF.&lt;/p&gt;</description></item></channel></rss>
