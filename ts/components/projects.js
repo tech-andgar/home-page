@@ -151,6 +151,9 @@
     }
     addOutsideClickListeners() {
       this.modals.forEach((modal) => {
+        if (modal.dataset.preventOutsideClose === "true") {
+          return;
+        }
         modal.addEventListener("click", (e) => {
           if (e.target === modal) {
             this.closeModalElement(modal);
@@ -160,7 +163,7 @@
     }
     openModal(trigger) {
       debug("Modal trigger clicked");
-      const targetId = trigger.getAttribute("data-modal-target");
+      const targetId = trigger.dataset.modalTarget;
       debug("Target modal ID:", targetId);
       if (targetId) {
         const modal = this.findModal(targetId);
