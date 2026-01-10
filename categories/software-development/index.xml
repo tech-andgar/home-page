@@ -27,7 +27,56 @@ Dart cannot always assume that a variable will be initialized later, as in the c
 &lt;p&gt;This can be used in the following two cases.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;Late assign: promise to assign later&lt;/p&gt;</description></item><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions"&gt;
+&lt;p&gt;Late assign: promise to assign later&lt;/p&gt;</description></item><item><title>Flutter Test Coverage</title><link>https://tech-andgar.me/posts/flutter-test-coverage/</link><pubDate>Thu, 30 Sep 2021 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-test-coverage/</guid><description>&lt;p&gt;LCOV is a graphical tool for GCC coverage testing with gcov. It creates HTML pages containing source code annotated with coverage information by collecting gcov data from multiple source files. LCOV supports &amp;ldquo;Line Coverage&amp;rdquo; and &amp;ldquo;Function Coverage&amp;rdquo; measurement.&lt;/p&gt;
+&lt;p&gt;The LCOV report looks as follows:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://user-images.githubusercontent.com/9597207/79640726-1ad1f680-8161-11ea-9241-d7d6fe70f630.png" alt="image.png"&gt;&lt;/p&gt;
+&lt;h2 id="installation"&gt;
+ Installation
+ &lt;a class="heading-link" href="#installation"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;h3 id="install-on-ubuntu"&gt;
+ Install on Ubuntu
+ &lt;a class="heading-link" href="#install-on-ubuntu"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get update -qq -y
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo apt-get install lcov -y
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="install-on-mac"&gt;
+ Install on Mac
+ &lt;a class="heading-link" href="#install-on-mac"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install lcov
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="install-on-windows"&gt;
+ Install on Windows
+ &lt;a class="heading-link" href="#install-on-windows"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Required:&lt;/p&gt;</description></item><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions"&gt;
  Flutter Interview Questions
  &lt;a class="heading-link" href="#flutter-interview-questions"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
