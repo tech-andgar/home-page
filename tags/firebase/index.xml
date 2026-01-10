@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Firebase on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/firebase/</link><description>Recent content in Firebase on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/firebase/index.xml" rel="self" type="application/rss+xml"/><item><title>Flutter Interview Questions</title><link>https://tech-andgar.me/posts/flutter-interview-questions/</link><pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-interview-questions/</guid><description>&lt;h1 id="flutter-interview-questions"&gt;
+ Flutter Interview Questions
+ &lt;a class="heading-link" href="#flutter-interview-questions"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#technical-terms-tldr" &gt;Technical Terms TLDR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#flutter-interview-questions" &gt;Flutter Interview Questions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#question-categories" &gt;Question Categories&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#questions" &gt;Questions&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#flutter-questions" &gt;Flutter Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#dart-questions" &gt;Dart Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#api-questions" &gt;API Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sharedpreferences" &gt;SharedPreferences&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#google-maps-api" &gt;Google Maps API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#payment-gateway-in-flutter" &gt;Payment Gateway in Flutter&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#getx-questions" &gt;GetX Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#firebase-questions" &gt;Firebase Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#git-questions" &gt;Git Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#general-app-development-questions" &gt;General App Development Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#project-specific-flutter-questions" &gt;Project-Specific Flutter Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#technical-leadership-and-senior-developer-questions" &gt;Technical Leadership and Senior Developer Questions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#omdb-movie-app-specific-questions" &gt;OMDB Movie App Specific Questions&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="technical-terms-tldr"&gt;
+ Technical Terms TLDR
+ &lt;a class="heading-link" href="#technical-terms-tldr"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h3 id="1-flutter--dart-fundamentals"&gt;
+ 1. Flutter &amp;amp; Dart Fundamentals
+ &lt;a class="heading-link" href="#1-flutter--dart-fundamentals"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Flutter/Dart:&lt;/strong&gt;&lt;/p&gt;</description></item></channel></rss>
