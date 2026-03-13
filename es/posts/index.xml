@@ -1,4 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TECH-ANDGAR</title><link>https://tech-andgar.me/es/posts/</link><description>Recent content in Posts on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Modernizando Arquitecturas Monorepo: Principios y Compromisos</title><link>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</guid><description>Una inmersión profunda en los cambios arquitectónicos para monorepos robustos y con seguridad de tipos: Paquetes Compartidos, Validación Zod, Clean Architecture y automatización de la Experiencia de Desarrollo (DevEx).</description></item><item><title>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)</title><link>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="resumen"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TECH-ANDGAR</title><link>https://tech-andgar.me/es/posts/</link><description>Recent content in Posts on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Bucle de Login en macOS con Microsoft Intune: Por qué falla tu contraseña</title><link>https://tech-andgar.me/es/posts/2026-03-13-bucle_login_macos_microsoft_intune/</link><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2026-03-13-bucle_login_macos_microsoft_intune/</guid><description>&lt;p&gt;Si administras dispositivos Apple con &lt;strong&gt;Microsoft Intune&lt;/strong&gt;, es probable que te hayas topado con este &amp;ldquo;bug&amp;rdquo; crítico: un usuario cambia su contraseña, logra entrar una vez, pero al bloquearse la pantalla, el Mac rechaza la nueva clave.&lt;/p&gt;
+&lt;p&gt;Este comportamiento no es un fallo aleatorio del sistema operativo, sino un conflicto de jerarquía de identidad.&lt;/p&gt;
+&lt;h2 id="el-escenario-del-problema"&gt;
+ El Escenario del Problema
+ &lt;a class="heading-link" href="#el-escenario-del-problema"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;El usuario no puede ingresar con su contraseña habitual.&lt;/li&gt;
+&lt;li&gt;Se realiza un reset de contraseña desde las &lt;strong&gt;Opciones de Recuperación&lt;/strong&gt; (Boot options).&lt;/li&gt;
+&lt;li&gt;El Mac inicia sesión correctamente con la &lt;strong&gt;Contraseña B&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Tras unos minutos de inactividad o bloqueo manual, la &lt;strong&gt;Contraseña B&lt;/strong&gt; es rechazada.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="cuál-es-la-causa-raíz"&gt;
+ ¿Cuál es la causa raíz?
+ &lt;a class="heading-link" href="#cu%c3%a1l-es-la-causa-ra%c3%adz"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;El culpable suele ser el &lt;strong&gt;Microsoft Enterprise SSO plug-in&lt;/strong&gt; (o Platform SSO). Cuando macOS está vinculado a &lt;strong&gt;Entra ID (Azure AD)&lt;/strong&gt;, el sistema intenta sincronizar la contraseña local con la de la nube de forma agresiva.&lt;/p&gt;</description></item><item><title>Modernizando Arquitecturas Monorepo: Principios y Compromisos</title><link>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</guid><description>Una inmersión profunda en los cambios arquitectónicos para monorepos robustos y con seguridad de tipos: Paquetes Compartidos, Validación Zod, Clean Architecture y automatización de la Experiencia de Desarrollo (DevEx).</description></item><item><title>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)</title><link>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="resumen"&gt;
  Resumen
  &lt;a class="heading-link" href="#resumen"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
