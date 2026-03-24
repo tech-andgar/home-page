@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 05 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Modernizing Monorepo Architectures: Principles &amp; Trade-offs</title><link>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</guid><description>A deep dive into architectural shifts for robust, type-safe monorepos: Shared Packages, Zod Validation, Clean Architecture, and DevEx automation.</description></item><item><title>A Comprehensive Guide to Flutter Widget Previews (Beta)</title><link>https://tech-andgar.me/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="overview"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TECH-ANDGAR</title><link>https://tech-andgar.me/</link><description>Recent content on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/index.xml" rel="self" type="application/rss+xml"/><item><title>Switching Between Multiple Claude Code Accounts (Bedrock SSO + Claude.ai Team)</title><link>https://tech-andgar.me/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</guid><description>&lt;h2 id="problem"&gt;
+ Problem
+ &lt;a class="heading-link" href="#problem"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Claude Code stores its auth provider in &lt;code&gt;~/.claude/settings.json&lt;/code&gt;. If your machine is configured for AWS Bedrock SSO (e.g. via corporate setup), it overrides everything — including shell env vars and VSCode workspace settings. Logging out and back in doesn&amp;rsquo;t help because Bedrock reconnects automatically via AWS credentials.&lt;/p&gt;
+&lt;h2 id="root-cause"&gt;
+ Root Cause
+ &lt;a class="heading-link" href="#root-cause"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;~/.claude/settings.json&lt;/code&gt; has an &lt;code&gt;env&lt;/code&gt; block that injects env vars at the Claude process level, before your shell can override them:&lt;/p&gt;</description></item><item><title>Data Architecture’s Secret Weapon – RX vs. Protobuf</title><link>https://tech-andgar.me/posts/2026-03-23-data-architecture-secret-weapon-x-protobuf/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2026-03-23-data-architecture-secret-weapon-x-protobuf/</guid><description>&lt;p&gt;In modern software development, we are often forced to choose between speed and simplicity. If you are building a system that handles massive amounts of data, you’ve likely looked at Protobuf as the standard for binary efficiency. But there is a new contender in the ring: RX (Random-Access JSON). [1, 2]
+While they both speak &amp;ldquo;binary,&amp;rdquo; they solve two entirely different problems. [3]&lt;/p&gt;
+&lt;h3 id="protobuf-the-speed-of-sound-for-apis"&gt;
+ Protobuf: The Speed of Sound for APIs
+ &lt;a class="heading-link" href="#protobuf-the-speed-of-sound-for-apis"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://protobuf.dev/overview/" class="external-link" target="_blank" rel="noopener"&gt;Protocol Buffers (Protobuf)&lt;/a&gt; are Google’s answer to slow, bloated text-based APIs. By stripping away field names and using a strict, pre-shared &lt;a href="https://blog.postman.com/what-is-protobuf/" class="external-link" target="_blank" rel="noopener"&gt;schema (.proto)&lt;/a&gt;, Protobuf creates tiny payloads that fly across the network. [1, 4, 5]&lt;/p&gt;</description></item><item><title>Modernizing Monorepo Architectures: Principles &amp; Trade-offs</title><link>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</guid><description>A deep dive into architectural shifts for robust, type-safe monorepos: Shared Packages, Zod Validation, Clean Architecture, and DevEx automation.</description></item><item><title>A Comprehensive Guide to Flutter Widget Previews (Beta)</title><link>https://tech-andgar.me/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="overview"&gt;
  Overview
  &lt;a class="heading-link" href="#overview"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;

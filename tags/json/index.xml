@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Json on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/json/</link><description>Recent content in Json on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 23 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/json/index.xml" rel="self" type="application/rss+xml"/><item><title>Data Architecture’s Secret Weapon – RX vs. Protobuf</title><link>https://tech-andgar.me/posts/2026-03-23-data-architecture-secret-weapon-x-protobuf/</link><pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2026-03-23-data-architecture-secret-weapon-x-protobuf/</guid><description>&lt;p&gt;In modern software development, we are often forced to choose between speed and simplicity. If you are building a system that handles massive amounts of data, you’ve likely looked at Protobuf as the standard for binary efficiency. But there is a new contender in the ring: RX (Random-Access JSON). [1, 2]
+While they both speak &amp;ldquo;binary,&amp;rdquo; they solve two entirely different problems. [3]&lt;/p&gt;
+&lt;h3 id="protobuf-the-speed-of-sound-for-apis"&gt;
+ Protobuf: The Speed of Sound for APIs
+ &lt;a class="heading-link" href="#protobuf-the-speed-of-sound-for-apis"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://protobuf.dev/overview/" class="external-link" target="_blank" rel="noopener"&gt;Protocol Buffers (Protobuf)&lt;/a&gt; are Google’s answer to slow, bloated text-based APIs. By stripping away field names and using a strict, pre-shared &lt;a href="https://blog.postman.com/what-is-protobuf/" class="external-link" target="_blank" rel="noopener"&gt;schema (.proto)&lt;/a&gt;, Protobuf creates tiny payloads that fly across the network. [1, 4, 5]&lt;/p&gt;</description></item></channel></rss>

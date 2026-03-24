@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TECH-ANDGAR</title><link>https://tech-andgar.me/es/posts/</link><description>Recent content in Posts on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Fri, 13 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Bucle de Login en macOS con Microsoft Intune: Por qué falla tu contraseña</title><link>https://tech-andgar.me/es/posts/2026-03-13-bucle_login_macos_microsoft_intune/</link><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2026-03-13-bucle_login_macos_microsoft_intune/</guid><description>&lt;p&gt;Si administras dispositivos Apple con &lt;strong&gt;Microsoft Intune&lt;/strong&gt;, es probable que te hayas topado con este &amp;ldquo;bug&amp;rdquo; crítico: un usuario cambia su contraseña, logra entrar una vez, pero al bloquearse la pantalla, el Mac rechaza la nueva clave.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on TECH-ANDGAR</title><link>https://tech-andgar.me/es/posts/</link><description>Recent content in Posts on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Tue, 24 Mar 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Cambiar entre múltiples cuentas de Claude Code (Bedrock SSO + Claude.ai Team)</title><link>https://tech-andgar.me/es/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</guid><description>&lt;h2 id="problema"&gt;
+ Problema
+ &lt;a class="heading-link" href="#problema"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Claude Code almacena su proveedor de autenticación en &lt;code&gt;~/.claude/settings.json&lt;/code&gt;. Si tu máquina está configurada para AWS Bedrock SSO (por ejemplo, una configuración corporativa), esto sobreescribe todo — incluyendo variables de entorno del shell y configuraciones del workspace de VSCode. Cerrar sesión y volver a iniciarla no ayuda porque Bedrock se reconecta automáticamente usando las credenciales de AWS.&lt;/p&gt;
+&lt;h2 id="causa-raíz"&gt;
+ Causa raíz
+ &lt;a class="heading-link" href="#causa-ra%c3%adz"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;~/.claude/settings.json&lt;/code&gt; tiene un bloque &lt;code&gt;env&lt;/code&gt; que inyecta variables de entorno a nivel del proceso de Claude, antes de que el shell pueda sobreescribirlas:&lt;/p&gt;</description></item><item><title>Bucle de Login en macOS con Microsoft Intune: Por qué falla tu contraseña</title><link>https://tech-andgar.me/es/posts/2026-03-13-bucle_login_macos_microsoft_intune/</link><pubDate>Fri, 13 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/2026-03-13-bucle_login_macos_microsoft_intune/</guid><description>&lt;p&gt;Si administras dispositivos Apple con &lt;strong&gt;Microsoft Intune&lt;/strong&gt;, es probable que te hayas topado con este &amp;ldquo;bug&amp;rdquo; crítico: un usuario cambia su contraseña, logra entrar una vez, pero al bloquearse la pantalla, el Mac rechaza la nueva clave.&lt;/p&gt;
 &lt;p&gt;Este comportamiento no es un fallo aleatorio del sistema operativo, sino un conflicto de jerarquía de identidad.&lt;/p&gt;
 &lt;h2 id="el-escenario-del-problema"&gt;
  El Escenario del Problema
