@@ -1505,10 +1505,6 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
 
 
 
-
-
-
-
  
  
  
@@ -1516,24 +1512,23 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
 
 
 
-&lt;div class="container-card_company"&gt;
- &lt;div class="cards_company static-cards_company"&gt;
- 
- 
+&lt;div class="splide splide-company" role="group" aria-label="DE CONFIANZA POR"&gt;
+ &lt;div class="splide__track"&gt;
+ &lt;ul class="splide__list"&gt;
  
  
  
 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
  [ TU MARCA AQUI ]
  &lt;/div&gt;
- 
+ &lt;/li&gt;
 
  
  
  
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-SLALOM"
@@ -1543,18 +1538,15 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo SLALOM"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
- 
- 
- 
- 
-
  
  
  
  
  
  
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Jof Foundation"
@@ -1563,10 +1555,10 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/svg+xml"
  alt="Logo Jof Foundation"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Sign Language Tech"
@@ -1575,10 +1567,10 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/svg+xml"
  alt="Logo Sign Language Tech"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Deaf Tech"
@@ -1587,10 +1579,10 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/svg+xml"
  alt="Logo Deaf Tech"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-CORMED"
@@ -1599,10 +1591,10 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/svg+xml"
  alt="Logo CORMED"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-MultiSeñas"
@@ -1611,17 +1603,14 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/png"
  alt="Logo MultiSeñas"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
- 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-PLAY WITH ASL, LCC"
@@ -1631,19 +1620,16 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo PLAY WITH ASL, LCC"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
  
  
  
-
- 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-CAFETO SOFTWARE USA, LCC"
@@ -1653,10 +1639,10 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo CAFETO SOFTWARE USA, LCC"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-LogicMark, Inc"
@@ -1665,17 +1651,14 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/svg+xml"
  alt="Logo LogicMark, Inc"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
- 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Capgemini"
@@ -1685,10 +1668,10 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo Capgemini"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Bancolombia"
@@ -1697,21 +1680,16 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  type="image/svg+xml"
  alt="Logo Bancolombia"
  /&gt;
- 
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
  
  
- 
-
- 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Needzaio"
@@ -1721,15 +1699,14 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo Needzaio"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
  
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-COBRANDO BPO"
@@ -1739,19 +1716,16 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo COBRANDO BPO"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
  
  
  
-
- 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Innlab Company"
@@ -1761,19 +1735,16 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo Innlab Company"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
  
  
  
-
- 
- 
- 
+ &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
  id="logo-Servicio Nacional de Aprendizaje (SENA)"
@@ -1783,618 +1754,23 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  alt="Logo Servicio Nacional de Aprendizaje (SENA)"
  /&gt;
  &lt;/div&gt;
+ &lt;/li&gt;
  
  
  
  
  
-
  
  
  
-
  
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
-
- &lt;/div&gt;
-
- &lt;div class="marquee_company"&gt;
- &lt;div class="marquee__group_company"&gt;
  
  
  
  
  
 
- 
- 
- &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
- [ TU MARCA AQUI ]
- &lt;/div&gt;
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-SLALOM"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
- type="image/svg+xml"
- alt="Logo SLALOM"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Jof Foundation"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-jof.svg"
- type="image/svg+xml"
- alt="Logo Jof Foundation"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Sign Language Tech"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
- type="image/svg+xml"
- alt="Logo Sign Language Tech"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Deaf Tech"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Deaf-Tech.svg"
- type="image/svg+xml"
- alt="Logo Deaf Tech"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-CORMED"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-CORMED.svg"
- type="image/svg+xml"
- alt="Logo CORMED"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-MultiSeñas"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-Multisenas.png"
- type="image/png"
- alt="Logo MultiSeñas"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-PLAY WITH ASL, LCC"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
- type="image/png"
- alt="Logo PLAY WITH ASL, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-CAFETO SOFTWARE USA, LCC"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Cafeto-Software.svg"
- type="image/svg+xml"
- alt="Logo CAFETO SOFTWARE USA, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-LogicMark, Inc"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-LogicMark.svg"
- type="image/svg+xml"
- alt="Logo LogicMark, Inc"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Capgemini"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Capgemini.svg"
- type="image/svg+xml"
- alt="Logo Capgemini"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Bancolombia"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Bancolombia.svg"
- type="image/svg+xml"
- alt="Logo Bancolombia"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Needzaio"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-NEEDZAIO.svg"
- type="image/svg+xml"
- alt="Logo Needzaio"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-COBRANDO BPO"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Cobrando-BPO.svg"
- type="image/svg+xml"
- alt="Logo COBRANDO BPO"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Innlab Company"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Innlab-Company.svg"
- type="image/svg+xml"
- alt="Logo Innlab Company"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Servicio Nacional de Aprendizaje (SENA)"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-SENA.svg"
- type="image/svg+xml"
- alt="Logo Servicio Nacional de Aprendizaje (SENA)"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
-
- &lt;/div&gt;
- &lt;div aria-hidden="true" class="marquee__group_company"&gt;
- 
- 
- 
- 
- 
-
- 
- 
- &lt;div class="card_company" style="font-size: 1.375rem; font-weight: bold;"&gt;
- [ TU MARCA AQUI ]
- &lt;/div&gt;
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-SLALOM"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Slalom-Consulting.svg"
- type="image/svg+xml"
- alt="Logo SLALOM"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Jof Foundation"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-jof.svg"
- type="image/svg+xml"
- alt="Logo Jof Foundation"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Sign Language Tech"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Sign-Language-Tech.svg"
- type="image/svg+xml"
- alt="Logo Sign Language Tech"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Deaf Tech"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Deaf-Tech.svg"
- type="image/svg+xml"
- alt="Logo Deaf Tech"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-CORMED"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-CORMED.svg"
- type="image/svg+xml"
- alt="Logo CORMED"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-MultiSeñas"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-Multisenas.png"
- type="image/png"
- alt="Logo MultiSeñas"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-PLAY WITH ASL, LCC"
- class="png"
- src="https://tech-andgar.me/images/companies/logo-PlayWithASL.webp"
- type="image/png"
- alt="Logo PLAY WITH ASL, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-CAFETO SOFTWARE USA, LCC"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Cafeto-Software.svg"
- type="image/svg+xml"
- alt="Logo CAFETO SOFTWARE USA, LCC"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-LogicMark, Inc"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-LogicMark.svg"
- type="image/svg+xml"
- alt="Logo LogicMark, Inc"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Capgemini"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Capgemini.svg"
- type="image/svg+xml"
- alt="Logo Capgemini"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Bancolombia"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Bancolombia.svg"
- type="image/svg+xml"
- alt="Logo Bancolombia"
- /&gt;
- 
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Needzaio"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-NEEDZAIO.svg"
- type="image/svg+xml"
- alt="Logo Needzaio"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-COBRANDO BPO"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Cobrando-BPO.svg"
- type="image/svg+xml"
- alt="Logo COBRANDO BPO"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Innlab Company"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-Innlab-Company.svg"
- type="image/svg+xml"
- alt="Logo Innlab Company"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
- &lt;div class="card_company"&gt;
- &lt;img
- id="logo-Servicio Nacional de Aprendizaje (SENA)"
- class="svg"
- src="https://tech-andgar.me/images/companies/logo-SENA.svg"
- type="image/svg+xml"
- alt="Logo Servicio Nacional de Aprendizaje (SENA)"
- /&gt;
- &lt;/div&gt;
- 
- 
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
- 
-
- 
- 
-
- &lt;/div&gt;
+ &lt;/ul&gt;
  &lt;/div&gt;
 &lt;/div&gt;
 
