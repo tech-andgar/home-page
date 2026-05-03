@@ -1966,6 +1966,7 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  
  
+ 
 
 
 
@@ -1980,6 +1981,14 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;label for="type-filter"&gt;Tipo:&lt;/label&gt;
  &lt;select id="type-filter"&gt;
  &lt;option value="all"&gt;Todos&lt;/option&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -2127,6 +2136,8 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;option value="Package Dart"&gt;Package Dart&lt;/option&gt;
  
+ &lt;option value="Package Javascript"&gt;Package Javascript&lt;/option&gt;
+ 
  &lt;option value="Package Quasar"&gt;Package Quasar&lt;/option&gt;
  
  &lt;option value="Platform Edu"&gt;Platform Edu&lt;/option&gt;
@@ -2141,6 +2152,7 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;label for="category-filter"&gt;Categoría:&lt;/label&gt;
  &lt;select id="category-filter"&gt;
  &lt;option value="all"&gt;Todas&lt;/option&gt;
+ &lt;option value="Client"&gt;Cliente&lt;/option&gt;
  &lt;option value="Side Project"&gt;Proyectos Personales&lt;/option&gt;
  &lt;option value="Contribution"&gt;Contribuciones&lt;/option&gt;
  &lt;/select&gt;
@@ -2283,6 +2295,16 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;option value="Accessibility (ARIA)"&gt;Accessibility (ARIA)&lt;/option&gt;
+ 
  &lt;option value="Animations"&gt;Animations&lt;/option&gt;
  
  &lt;option value="Astro"&gt;Astro&lt;/option&gt;
@@ -2296,6 +2318,8 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;option value="Coveralls"&gt;Coveralls&lt;/option&gt;
  
  &lt;option value="Crowdin"&gt;Crowdin&lt;/option&gt;
+ 
+ &lt;option value="CSS"&gt;CSS&lt;/option&gt;
  
  &lt;option value="CSS3"&gt;CSS3&lt;/option&gt;
  
@@ -2333,6 +2357,8 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;option value="GitLab CD/CI"&gt;GitLab CD/CI&lt;/option&gt;
  
+ &lt;option value="Google Calendar API"&gt;Google Calendar API&lt;/option&gt;
+ 
  &lt;option value="GoRouter"&gt;GoRouter&lt;/option&gt;
  
  &lt;option value="Hive"&gt;Hive&lt;/option&gt;
@@ -2345,6 +2371,8 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;option value="JavaScript"&gt;JavaScript&lt;/option&gt;
  
+ &lt;option value="Jest"&gt;Jest&lt;/option&gt;
+ 
  &lt;option value="JSON"&gt;JSON&lt;/option&gt;
  
  &lt;option value="JWT"&gt;JWT&lt;/option&gt;
@@ -2353,7 +2381,15 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;option value="Markdown"&gt;Markdown&lt;/option&gt;
  
+ &lt;option value="Microsoft Graph API"&gt;Microsoft Graph API&lt;/option&gt;
+ 
  &lt;option value="mongoose"&gt;mongoose&lt;/option&gt;
+ 
+ &lt;option value="Nano Stores"&gt;Nano Stores&lt;/option&gt;
+ 
+ &lt;option value="OAuth2"&gt;OAuth2&lt;/option&gt;
+ 
+ &lt;option value="Open Source"&gt;Open Source&lt;/option&gt;
  
  &lt;option value="pdf-lib"&gt;pdf-lib&lt;/option&gt;
  
@@ -2377,6 +2413,10 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;option value="State Management"&gt;State Management&lt;/option&gt;
  
+ &lt;option value="Supabase"&gt;Supabase&lt;/option&gt;
+ 
+ &lt;option value="Tailwind CSS"&gt;Tailwind CSS&lt;/option&gt;
+ 
  &lt;option value="TailwindCSS"&gt;TailwindCSS&lt;/option&gt;
  
  &lt;option value="TDD"&gt;TDD&lt;/option&gt;
@@ -2385,11 +2425,15 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;option value="TypeScript"&gt;TypeScript&lt;/option&gt;
  
+ &lt;option value="Video.js"&gt;Video.js&lt;/option&gt;
+ 
  &lt;option value="Vite"&gt;Vite&lt;/option&gt;
  
  &lt;option value="Vue.JS 2"&gt;Vue.JS 2&lt;/option&gt;
  
  &lt;option value="Vue.JS 3"&gt;Vue.JS 3&lt;/option&gt;
+ 
+ &lt;option value="Web Components"&gt;Web Components&lt;/option&gt;
  
  &lt;/datalist&gt;
  &lt;/div&gt;
@@ -2409,31 +2453,49 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  
  &lt;/select&gt;
  &lt;/div&gt;
+ &lt;div class="filter-group"&gt;
+ 
+ 
+ 
+ &lt;label for="sort-order"&gt;Orden:&lt;/label&gt;
+ &lt;select id="sort-order"&gt;
+ &lt;option value="newest"&gt;Más reciente primero&lt;/option&gt;
+ &lt;option value="oldest"&gt;Más antiguo primero&lt;/option&gt;
+ &lt;option value="name-az"&gt;Nombre A → Z&lt;/option&gt;
+ &lt;option value="name-za"&gt;Nombre Z → A&lt;/option&gt;
+ &lt;option value="category-az"&gt;Tipo A → Z&lt;/option&gt;
+ &lt;option value="category-za"&gt;Tipo Z → A&lt;/option&gt;
+ &lt;/select&gt;
+ &lt;/div&gt;
  &lt;button id="clear-filters-btn" class="clear-btn" aria-label="Limpiar Filtros"&gt;Limpiar Filtros&lt;/button&gt;
  &lt;/div&gt;
 
  
  &lt;div class="projects-counter"&gt;
- &lt;span class="counter-text"&gt;Mostrando &lt;strong id="visible-count"&gt;32&lt;/strong&gt; de &lt;strong id="total-count"&gt;32&lt;/strong&gt; proyectos&lt;/span&gt;
+ &lt;span class="counter-text"&gt;Mostrando &lt;strong id="visible-count"&gt;34&lt;/strong&gt; de &lt;strong id="total-count"&gt;34&lt;/strong&gt; proyectos&lt;/span&gt;
  &lt;/div&gt;
  &lt;/div&gt;
 
  &lt;div class="projects-grid"&gt;
  
- &lt;div class="project-card featured-project" data-type="App Web" data-category="Side Project" data-techs='[&amp;#34;React&amp;#34;,&amp;#34;Vite&amp;#34;,&amp;#34;TailwindCSS&amp;#34;,&amp;#34;pdf-lib&amp;#34;,&amp;#34;TypeScript&amp;#34;,&amp;#34;GitHub Actions&amp;#34;,&amp;#34;GitHub Pages&amp;#34;]' data-complexity="Intermediate" data-modal-target="#project-modal-image-to-pdf-client"&gt;
+ &lt;a href="https://tech-andgar.me/client/" class="project-card featured-project client-teaser-card" aria-label="View client portfolio" data-filter-exempt="true"&gt;
  &lt;div class="card-header"&gt;
  &lt;div class="project-type-header"&gt;
- &lt;span class="project-type-icon"&gt;📄&lt;/span&gt;
- &lt;span class="project-type-text"&gt;App Web&lt;/span&gt;
+ &lt;span class="project-type-icon"&gt;🔒&lt;/span&gt;
+ &lt;span class="project-type-text"&gt;Client Work&lt;/span&gt;
  &lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="project-preview"&gt;
  &lt;div class="project-spotlight"&gt;⭐ Destacado&lt;/div&gt;
- &lt;span class="complexity-badge complexity-intermediate"&gt;Intermedio&lt;/span&gt;
- 
- &lt;img loading="lazy" src="https://tech-andgar.me/images/preview/preview-image-to-pdf-client_demo.avif" alt="Preview of Image to PDF Client project" class="project-preview-img"&gt;
- 
+ &lt;div class="project-preview-locked"&gt;
+ &lt;span class="preview-lock-icon"&gt;🔒&lt;/span&gt;
+ &lt;span class="preview-lock-text"&gt;Request Access&lt;/span&gt;
+ &lt;/div&gt;
  &lt;/div&gt;
  &lt;div class="card-body"&gt;
- &lt;h3 class="card-title"&gt;Image to PDF Client&lt;/h3&gt;
- &lt;p class="card-description"&gt;A web application to convert images to PDF.&lt;/p&gt;</description></item></channel></rss>
+ &lt;h3 class="card-title"&gt;Client Portfolio&lt;/h3&gt;
+ 
+ 
+ 
+ 
+ &lt;p class="card-description"&gt;5 client projects — mobile apps built for US and Colombian companies. Access requires a password.&lt;/p&gt;</description></item></channel></rss>

@@ -16,83 +16,131 @@
     }
   }
 
+  // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/utils/analytics.ts
+  function track(payload) {
+    window.dataLayer?.push(payload);
+  }
+
   // ns-hugo-imp:/home/runner/work/home-page_mirror/home-page_mirror/assets/ts/components/projects_filter.ts
+  var FILTER_DEFAULTS = {
+    type: "all",
+    category: "all",
+    tech: "",
+    complexity: "all",
+    sort: "newest"
+  };
   var ProjectsFilter = class {
     constructor() {
+      this.filterHandler = () => this.apply(true);
+      this.clearHandler = () => this.reset();
       this.typeFilter = document.getElementById("type-filter");
       this.categoryFilter = document.getElementById("category-filter");
       this.techFilter = document.getElementById("tech-filter");
       this.complexityFilter = document.getElementById("complexity-filter");
+      this.sortOrder = document.getElementById("sort-order");
+      this.grid = document.querySelector(".projects-grid");
       this.projectCards = document.querySelectorAll(".project-card, .test-project-card");
-      this.visibleCountElement = document.getElementById("visible-count");
-      this.totalCountElement = document.getElementById("total-count");
+      this.visibleCountEl = document.getElementById("visible-count");
+      this.totalCountEl = document.getElementById("total-count");
       this.totalProjects = this.projectCards.length;
       this.init();
     }
     init() {
-      if (!this.typeFilter || !this.categoryFilter || !this.techFilter || !this.complexityFilter) {
-        return;
-      }
-      this.setInitialTotalCount();
-      this.addEventListeners();
-      this.filterProjects();
+      if (!this.typeFilter || !this.categoryFilter || !this.techFilter || !this.complexityFilter) return;
+      if (this.totalCountEl) this.totalCountEl.textContent = String(this.totalProjects);
+      this.addListeners();
+      this.apply();
     }
-    setInitialTotalCount() {
-      if (this.totalCountElement) {
-        this.totalCountElement.textContent = this.totalProjects.toString();
-      }
+    addListeners() {
+      const clearBtn = document.getElementById("clear-filters-btn");
+      if (!clearBtn) return;
+      const filterEls = [
+        this.typeFilter,
+        this.categoryFilter,
+        this.techFilter,
+        this.complexityFilter,
+        ...this.sortOrder ? [this.sortOrder] : []
+      ];
+      filterEls.forEach((el) => el.addEventListener("change", this.filterHandler));
+      clearBtn.addEventListener("click", this.clearHandler);
     }
-    addEventListeners() {
-      const clearFiltersBtn = document.getElementById("clear-filters-btn");
-      if (this.typeFilter && this.categoryFilter && this.techFilter && this.complexityFilter && clearFiltersBtn) {
-        this.typeFilter.addEventListener("change", () => this.filterProjects());
-        this.categoryFilter.addEventListener("change", () => this.filterProjects());
-        this.techFilter.addEventListener("change", () => this.filterProjects());
-        this.complexityFilter.addEventListener("change", () => this.filterProjects());
-        clearFiltersBtn.addEventListener("click", () => this.clearFilters());
-      }
+    removeListeners() {
+      const clearBtn = document.getElementById("clear-filters-btn");
+      const filterEls = [
+        this.typeFilter,
+        this.categoryFilter,
+        this.techFilter,
+        this.complexityFilter,
+        ...this.sortOrder ? [this.sortOrder] : []
+      ];
+      filterEls.forEach((el) => el.removeEventListener("change", this.filterHandler));
+      clearBtn?.removeEventListener("click", this.clearHandler);
     }
-    clearFilters() {
-      this.typeFilter.value = "all";
-      this.categoryFilter.value = "all";
-      this.techFilter.value = "";
-      this.complexityFilter.value = "all";
-      this.filterProjects();
+    reset() {
+      this.typeFilter.value = FILTER_DEFAULTS.type;
+      this.categoryFilter.value = FILTER_DEFAULTS.category;
+      this.techFilter.value = FILTER_DEFAULTS.tech;
+      this.complexityFilter.value = FILTER_DEFAULTS.complexity;
+      if (this.sortOrder) this.sortOrder.value = FILTER_DEFAULTS.sort;
+      this.apply();
+      track({ event: "project_filter_cleared" });
     }
-    filterProjects() {
-      const selectedType = this.typeFilter.value;
-      const selectedCategory = this.categoryFilter.value;
-      const selectedTech = this.techFilter.value.toLowerCase();
-      const selectedComplexity = this.complexityFilter.value;
-      let visibleCount = 0;
-      this.projectCards.forEach((card) => {
-        const cardType = card.dataset.type;
-        const cardCategory = card.dataset.category;
-        const cardTechs = JSON.parse(card.dataset.techs || "[]");
-        const cardComplexity = card.dataset.complexity;
-        const typeMatch = selectedType === "all" || cardType === selectedType;
-        const categoryMatch = selectedCategory === "all" || cardCategory === selectedCategory;
-        const techMatch = selectedTech === "all" || cardTechs.some(
-          (tech) => tech.toLowerCase().includes(selectedTech)
-        );
-        const complexityMatch = selectedComplexity === "all" || cardComplexity === selectedComplexity;
-        if (typeMatch && categoryMatch && techMatch && complexityMatch) {
-          if (card instanceof HTMLElement) {
-            card.style.display = "grid";
-            visibleCount++;
-          }
-        } else if (card instanceof HTMLElement) {
-          card.style.display = "none";
-        }
+    getState() {
+      return {
+        type: this.typeFilter.value,
+        category: this.categoryFilter.value,
+        tech: this.techFilter.value.toLowerCase(),
+        complexity: this.complexityFilter.value,
+        sort: this.sortOrder?.value ?? FILTER_DEFAULTS.sort
+      };
+    }
+    cardMatches(card, state) {
+      const techs = JSON.parse(card.dataset.techs || "[]");
+      return (state.type === "all" || card.dataset.type === state.type) && (state.category === "all" || card.dataset.category === state.category) && (state.complexity === "all" || card.dataset.complexity === state.complexity) && (state.tech === "" || techs.some((t) => t.toLowerCase().includes(state.tech)));
+    }
+    sortCards(cards, order) {
+      const key = (card) => {
+        if (order === "name-az" || order === "name-za")
+          return (card.querySelector(".card-title")?.textContent ?? "").trim().toLowerCase();
+        if (order === "category-az" || order === "category-za")
+          return (card.querySelector(".project-type-text")?.textContent ?? "").trim().toLowerCase();
+        return String(this.extractYear(card.dataset.date ?? ""));
+      };
+      return [...cards].sort((a, b) => {
+        const [ka, kb] = [key(a), key(b)];
+        if (order === "oldest") return Number(ka) - Number(kb);
+        if (order === "newest") return Number(kb) - Number(ka);
+        const cmp = ka.localeCompare(kb);
+        return order === "name-za" || order === "category-za" ? -cmp : cmp;
       });
-      this.updateCounter(visibleCount);
-      debug(
-        `Filtered: ${visibleCount}/${this.totalProjects} projects visible (Type: ${selectedType}, Category: ${selectedCategory}, Tech: ${selectedTech}, Complexity: ${selectedComplexity})`
-      );
     }
-    updateCounter(visibleCount) {
-      if (this.visibleCountElement) {
-        this.visibleCountElement.textContent = visibleCount.toString();
+    extractYear(dateStr) {
+      const match = dateStr.match(/\d{4}/);
+      return match ? parseInt(match[0], 10) : 0;
+    }
+    apply(trackChange = false) {
+      const state = this.getState();
+      const all = Array.from(this.projectCards);
+      const exempt = all.filter((c) => c.dataset.filterExempt === "true");
+      const sortable = all.filter((c) => c.dataset.filterExempt !== "true");
+      const sorted = this.sortCards(sortable, state.sort);
+      if (this.grid) {
+        exempt.forEach((c) => this.grid.appendChild(c));
+        sorted.forEach((c) => this.grid.appendChild(c));
+      }
+      let visibleCount = exempt.length;
+      exempt.forEach((c) => {
+        c.style.display = "grid";
+      });
+      sorted.forEach((card) => {
+        const visible = this.cardMatches(card, state);
+        card.style.display = visible ? "grid" : "none";
+        if (visible) visibleCount++;
+      });
+      if (this.visibleCountEl) this.visibleCountEl.textContent = String(visibleCount);
+      debug(`Filtered: ${visibleCount}/${this.totalProjects} projects visible (Type: ${state.type}, Category: ${state.category}, Tech: ${state.tech}, Complexity: ${state.complexity}, Sort: ${state.sort})`);
+      if (trackChange) {
+        track({ event: "project_filtered", ...state, tech: state.tech || "all", visible_count: String(visibleCount) });
       }
     }
     getProjectCards() {
@@ -106,7 +154,13 @@
       this.modalTriggers = document.querySelectorAll(".project-card[data-modal-target]");
       this.modals = document.querySelectorAll(".modal");
       this.closeButtons = document.querySelectorAll(".close-button");
+      this.keydownHandler = (e) => {
+        if (e.key === "Escape") this.closeAllModals();
+      };
       this.init();
+    }
+    destroy() {
+      document.removeEventListener("keydown", this.keydownHandler);
     }
     init() {
       debug(`Found ${this.modalTriggers.length} modal triggers and ${this.modals.length} modals`);
@@ -135,11 +189,7 @@
       });
     }
     addKeyboardListeners() {
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          this.closeAllModals();
-        }
-      });
+      document.addEventListener("keydown", this.keydownHandler);
       this.modalTriggers.forEach((trigger) => {
         trigger.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -170,6 +220,8 @@
         if (modal) {
           debug("Opening modal:", targetId);
           this.showModal(modal);
+          const name = modal.querySelector("h2")?.textContent?.trim() ?? targetId;
+          track({ event: "project_opened", project_name: name });
         } else {
           debugError("Modal not found:", targetId);
           debug("Available modals:", Array.from(this.modals).map((m) => m.id));
