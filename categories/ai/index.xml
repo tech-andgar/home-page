@@ -6,7 +6,18 @@
  &lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;The AI coding era exposed a gap that neither TDD nor BDD were designed to fill: &lt;strong&gt;who owns the &amp;ldquo;why&amp;rdquo; when the machine writes the &amp;ldquo;how&amp;rdquo;?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Two emerging methodologies answer this from different altitudes. Spec-Driven Development (SDD) treats specs as enforceable contracts — the map. Intent-Driven Development (IDD) treats intent as the durable source of truth above specs — the compass. They&amp;rsquo;re not competing. They&amp;rsquo;re complementary layers.&lt;/p&gt;</description></item><item><title>Switching Between Multiple Claude Code Accounts (Bedrock SSO + Claude.ai Team)</title><link>https://tech-andgar.me/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</guid><description>&lt;h2 id="problem"&gt;
+&lt;p&gt;Two emerging methodologies answer this from different altitudes. Spec-Driven Development (SDD) treats specs as enforceable contracts — the map. Intent-Driven Development (IDD) treats intent as the durable source of truth above specs — the compass. They&amp;rsquo;re not competing. They&amp;rsquo;re complementary layers.&lt;/p&gt;</description></item><item><title>From "Wow It Works!" to "Wow It Still Works"</title><link>https://tech-andgar.me/posts/from-wow-it-works-to-wow-it-still-works/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/from-wow-it-works-to-wow-it-still-works/</guid><description>&lt;h1 id="from-wow-it-works-to-wow-it-still-works"&gt;
+ From &amp;ldquo;Wow It Works!&amp;rdquo; to &amp;ldquo;Wow It Still Works&amp;rdquo;
+ &lt;a class="heading-link" href="#from-wow-it-works-to-wow-it-still-works"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Making vibecoded apps production-worthy in five steps.&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Vibecoding&lt;/strong&gt; — term popularized by Andrej Karpathy (Feb 2025). Word of the Year 2025 — Collins Dictionary · Merriam-Webster trend.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;There&amp;rsquo;s a dangerous moment in every AI-assisted project: the moment the demo works perfectly on &lt;code&gt;localhost:8000&lt;/code&gt; and the team declares &amp;ldquo;we&amp;rsquo;re done.&amp;rdquo; The button changes color. The data loads. Business sees a finished product. Engineering sees the beginning of the real work.&lt;/p&gt;</description></item><item><title>Switching Between Multiple Claude Code Accounts (Bedrock SSO + Claude.ai Team)</title><link>https://tech-andgar.me/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</link><pubDate>Tue, 24 Mar 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/2026-03-24-switching-between-multiple-claude-code-accounts-bedrock-sso-with-claude.ai-team/</guid><description>&lt;h2 id="problem"&gt;
  Problem
  &lt;a class="heading-link" href="#problem"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
