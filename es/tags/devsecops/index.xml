@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DevSecOps on TECH-ANDGAR</title><link>https://tech-andgar.me/es/tags/devsecops/</link><description>Recent content in DevSecOps on TECH-ANDGAR</description><generator>Hugo</generator><language>es</language><lastBuildDate>Sat, 25 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/es/tags/devsecops/index.xml" rel="self" type="application/rss+xml"/><item><title>Intent-Driven Development vs Spec-Driven Development: Brújula y Mapa</title><link>https://tech-andgar.me/es/posts/intent-driven-development-vs-sdd/</link><pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/intent-driven-development-vs-sdd/</guid><description>&lt;h1 id="intent-driven-development-vs-spec-driven-development-brújula-y-mapa"&gt;
+ Intent-Driven Development vs Spec-Driven Development: Brújula y Mapa
+ &lt;a class="heading-link" href="#intent-driven-development-vs-spec-driven-development-br%c3%bajula-y-mapa"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;La era del código con IA expuso una brecha que ni TDD ni BDD fueron diseñados para llenar: &lt;strong&gt;¿quién es dueño del &amp;ldquo;por qué&amp;rdquo; cuando la máquina escribe el &amp;ldquo;cómo&amp;rdquo;?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Dos metodologías emergentes responden desde diferentes altitudes. Spec-Driven Development (SDD) trata las especificaciones como contratos ejecutables — el mapa. Intent-Driven Development (IDD) trata la intención como la fuente de verdad durable por encima de las specs — la brújula. No compiten. Son capas complementarias.&lt;/p&gt;</description></item></channel></rss>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Expo on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/expo/</link><description>Recent content in Expo on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 08 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/expo/index.xml" rel="self" type="application/rss+xml"/><item><title>React Native on Android: Live Font-Scale Changes Don't Re-render What You Think</title><link>https://tech-andgar.me/posts/react-native-font-scale-changes-re-render/</link><pubDate>Wed, 08 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/react-native-font-scale-changes-re-render/</guid><description>&lt;h2 id="the-symptom"&gt;
+ The symptom
+ &lt;a class="heading-link" href="#the-symptom"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;A QA tester bumped the system font size in Android&amp;rsquo;s &lt;strong&gt;Display size &amp;amp; text&lt;/strong&gt; settings while our app was open, went back to the app, and found button labels and status chips truncated — &lt;code&gt;&amp;quot;Deposit&amp;quot;&lt;/code&gt; became &lt;code&gt;&amp;quot;Dep..&amp;quot;&lt;/code&gt;, &lt;code&gt;&amp;quot;Completed&amp;quot;&lt;/code&gt; became &lt;code&gt;&amp;quot;Complet&amp;quot;&lt;/code&gt;. A previous fix for a related &amp;ldquo;app not loading&amp;rdquo; defect had already shipped, so this looked like a regression.&lt;/p&gt;
+&lt;h2 id="first-theory-its-a-memo-bug-partially-true"&gt;
+ First theory: it&amp;rsquo;s a memo bug (partially true)
+ &lt;a class="heading-link" href="#first-theory-its-a-memo-bug-partially-true"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;React Native provides a scale multiplier via &lt;code&gt;useWindowDimensions().fontScale&lt;/code&gt;. Our button component used it to compute a manually-scaled label style:&lt;/p&gt;</description></item></channel></rss>

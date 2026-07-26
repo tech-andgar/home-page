@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Building With AI on TECH-ANDGAR</title><link>https://tech-andgar.me/series/building-with-ai/</link><description>Recent content in Building With AI on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 25 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/series/building-with-ai/index.xml" rel="self" type="application/rss+xml"/><item><title>Intent-Driven Development vs Spec-Driven Development: Compass and Map</title><link>https://tech-andgar.me/posts/intent-driven-development-vs-sdd/</link><pubDate>Sat, 25 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/intent-driven-development-vs-sdd/</guid><description>&lt;h1 id="intent-driven-development-vs-spec-driven-development-compass-and-map"&gt;
+ Intent-Driven Development vs Spec-Driven Development: Compass and Map
+ &lt;a class="heading-link" href="#intent-driven-development-vs-spec-driven-development-compass-and-map"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h1&gt;
+&lt;p&gt;The AI coding era exposed a gap that neither TDD nor BDD were designed to fill: &lt;strong&gt;who owns the &amp;ldquo;why&amp;rdquo; when the machine writes the &amp;ldquo;how&amp;rdquo;?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Two emerging methodologies answer this from different altitudes. Spec-Driven Development (SDD) treats specs as enforceable contracts — the map. Intent-Driven Development (IDD) treats intent as the durable source of truth above specs — the compass. They&amp;rsquo;re not competing. They&amp;rsquo;re complementary layers.&lt;/p&gt;</description></item></channel></rss>
