@@ -1141,7 +1141,7 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  &lt;/lite-youtube&gt;
  &lt;/div&gt;
 
-&lt;!-- raw HTML omitted --&gt;
+&lt;br&gt;
 &lt;h2 id="no-es-lenguaje-de-señas-es-lengua-de-señas-fenascol"&gt;
  No es lenguaje de señas, es Lengua de Señas (FENASCOL)
  &lt;a class="heading-link" href="#no-es-lenguaje-de-se%c3%b1as-es-lengua-de-se%c3%b1as-fenascol"&gt;
@@ -1171,7 +1171,7 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  &lt;/lite-youtube&gt;
  &lt;/div&gt;
 
-&lt;!-- raw HTML omitted --&gt;
+&lt;br&gt;
 &lt;h2 id="qué-significa-comunidad-sorda-fenascol"&gt;
  ¿Qué significa &amp;ldquo;Comunidad Sorda&amp;rdquo;? (FENASCOL)
  &lt;a class="heading-link" href="#qu%c3%a9-significa-comunidad-sorda-fenascol"&gt;
@@ -1201,7 +1201,7 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  &lt;/lite-youtube&gt;
  &lt;/div&gt;
 
-&lt;!-- raw HTML omitted --&gt;
+&lt;br&gt;
 &lt;h2 id="ensayo-cómo-se-escucha-el-silencio-edición-en-lsc-sub-es"&gt;
  Ensayo: ¿Cómo se escucha el silencio? (Edición en LSC) [sub-ES]
  &lt;a class="heading-link" href="#ensayo-c%c3%b3mo-se-escucha-el-silencio-edici%c3%b3n-en-lsc-sub-es"&gt;
@@ -1231,7 +1231,7 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  &lt;/lite-youtube&gt;
  &lt;/div&gt;
 
-&lt;!-- raw HTML omitted --&gt;
+&lt;br&gt;
 &lt;h2 id="playlists-de-videos"&gt;
  Playlists de videos
  &lt;a class="heading-link" href="#playlists-de-videos"&gt;
@@ -1285,7 +1285,7 @@ Incluye 63 códigos de estado, mensajes y descripciones extraídos de las especi
  &lt;/div&gt;
 
 &lt;hr&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br&gt;
 &lt;h3 id="powering-your-flutter-apps-with-grpc"&gt;
  Powering your Flutter apps with gRPC
  &lt;a class="heading-link" href="#powering-your-flutter-apps-with-grpc"&gt;
@@ -1917,63 +1917,12 @@ Convierte elementos no-desplazables en desplazables.&lt;/p&gt;
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;Esta Política de Privacidad describe cómo TECH-ANDGAR (&amp;ldquo;nosotros&amp;rdquo;, &amp;ldquo;nuestro&amp;rdquo; o &amp;ldquo;nos&amp;rdquo;) recopila, utiliza y protege su información cuando visita e interactúa con nuestro sitio web &lt;a href="https://tech-andgar.me" class="external-link" target="_blank" rel="noopener"&gt;https://tech-andgar.me&lt;/a&gt; (&amp;ldquo;Sitio Web&amp;rdquo;). Al utilizar el Sitio Web, usted acepta los términos de esta Política de Privacidad. Si no está de acuerdo con estos términos, por favor deje de usar el Sitio Web de inmediato.&lt;/p&gt;</description></item><item><title>Contacto</title><link>https://tech-andgar.me/es/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/contact/</guid><description>&lt;p&gt;Si deseas ponerte en contacto conmigo, puedes hacerlo a través de las siguientes opciones.&lt;/p&gt;
+&lt;p&gt;Esta Política de Privacidad describe cómo TECH-ANDGAR (&amp;ldquo;nosotros&amp;rdquo;, &amp;ldquo;nuestro&amp;rdquo; o &amp;ldquo;nos&amp;rdquo;) recopila, utiliza y protege su información cuando visita e interactúa con nuestro sitio web &lt;a href="https://tech-andgar.me" class="external-link" target="_blank" rel="noopener"&gt;https://tech-andgar.me&lt;/a&gt; (&amp;ldquo;Sitio Web&amp;rdquo;). Al utilizar el Sitio Web, usted acepta los términos de esta Política de Privacidad. Si no está de acuerdo con estos términos, por favor deje de usar el Sitio Web de inmediato.&lt;/p&gt;</description></item><item><title>Contacto</title><link>https://tech-andgar.me/es/contact/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/contact/</guid><description>&lt;!-- Síganme, @TECH-ANDGAR en Twitter, para estar al tanto de las últimas noticias y actualizaciones. --&gt;
+&lt;p&gt;Si deseas ponerte en contacto conmigo, puedes hacerlo a través de las siguientes opciones.&lt;/p&gt;
 &lt;p&gt;Estoy encantado de responder tus preguntas, discutir proyectos potenciales o simplemente charlar sobre tecnología.&lt;/p&gt;
 &lt;p&gt;Puedes contactarme en&lt;/p&gt;
 &lt;p&gt;H E L L O @ T E C H - A N D G A R . M E&lt;/p&gt;
-&lt;p&gt;O programando una llamada utilizando el calendario de abajo:&lt;/p&gt;
-
-
-&lt;a data-cal-link="tech-andgar/30min-free"&gt;Programar un tiempo conmigo&lt;/a&gt;
-
-
-&lt;script type="text/javascript"&gt;
- (function (C, A, L) {
- let p = function (a, ar) {
- a.q.push(ar);
- };
- let d = C.document;
- C.Cal =
- C.Cal ||
- function () {
- let cal = C.Cal;
- let ar = arguments;
- if (!cal.loaded) {
- cal.ns = {};
- cal.q = cal.q || [];
- d.head.appendChild(d.createElement("script")).src = A;
- cal.loaded = true;
- }
- if (ar[0] === L) {
- const api = function () {
- p(api, arguments);
- };
- const namespace = ar[1];
- api.q = api.q || [];
- if (typeof namespace === "string") {
- cal.ns[namespace] = cal.ns[namespace] || api;
- p(cal.ns[namespace], ar);
- p(cal, ["initNamespace", namespace]);
- } else p(cal, ar);
- return;
- }
- p(cal, ar);
- };
- })(window, "https://app.cal.com/embed/embed.js", "init");
- Cal("init", "meeting-free", { origin: "https://app.cal.com" });
- 
- 
- 
- 
-
- Cal.ns["meeting-free"]("ui", {
- hideEventTypeDetails: false,
- layout: "month_view",
- });
-&lt;/script&gt;
-
-
-&lt;p&gt;Sígueme en las redes sociales:&lt;/p&gt;</description></item><item><title>Proyectos</title><link>https://tech-andgar.me/es/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/projects/</guid><description>&lt;p&gt;Estos son algunos de los proyectos en los que he trabajado, incluidas contribuciones de código abierto y proyectos personales.&lt;/p&gt;
+&lt;p&gt;O programando una llamada utilizando el calendario de abajo:&lt;/p&gt;</description></item><item><title>Proyectos</title><link>https://tech-andgar.me/es/projects/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/projects/</guid><description>&lt;p&gt;Estos son algunos de los proyectos en los que he trabajado, incluidas contribuciones de código abierto y proyectos personales.&lt;/p&gt;
 &lt;p&gt;Para proyectos detallados de clientes, visita mi &lt;a href="https://link.tech-andgar.me/CVAFGR202404DEV" class="external-link" target="_blank" rel="noopener"&gt;CV&lt;/a&gt; o perfil de &lt;a href="https://link.tech-andgar.me/linkedin" class="external-link" target="_blank" rel="noopener"&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
 
 

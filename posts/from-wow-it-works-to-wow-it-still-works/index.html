@@ -10,7 +10,7 @@ to search this site with&nbsp;
 <time datetime=2026-07-23T00:00:00Z>July 23, 2026
 </time></span><span class=reading-time><i class="fa-solid fa-clock" aria-hidden=true></i>
 8-minute read</span></div><div class=categories><i class="fa-solid fa-folder" aria-hidden=true></i>
-<a href=/categories/ai/>AI</a>
+<a href=/categories/ai/>Ai</a>
 <span class=separator>•</span>
 <a href=/categories/cloud/>Cloud</a>
 <span class=separator>•</span>
@@ -39,7 +39,7 @@ to search this site with&nbsp;
 </span><span class=separator>•</span>
 <span class=tag><a href=/tags/ci/cd/>CI/CD</a></span></div></div></header><div class=post-content><blockquote><p><strong>Note:</strong> You can read the Spanish (Español) version of this article <a href=../../es/posts/from-wow-it-works-to-wow-it-still-works/>here</a>.</p></blockquote><p><em>Making vibecoded apps production-worthy in five steps.</em></p><blockquote><p><strong>Vibecoding</strong> — term popularized by Andrej Karpathy (Feb 2025). Word of the Year 2025 — Collins Dictionary · Merriam-Webster trend.</p></blockquote><p>There&rsquo;s a dangerous moment in every AI-assisted project: the moment the demo works perfectly on <code>localhost:8000</code> and the team declares &ldquo;we&rsquo;re done.&rdquo; The button changes color. The data loads. Business sees a finished product. Engineering sees the beginning of the real work.</p><p>This guide is the survival manual for what comes after the demo.</p><hr><h2 id=the-slide-deck>The Slide Deck
 <a class=heading-link href=#the-slide-deck><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>The full talk, presented at <strong>Build with AI 2026</strong> (original concept: Carlos Prieto · Google Developer Expert · GDG Bogotá), is available as a PDF:</p><hr><h2 id=the-problem-local-success--architectural-resilience>The Problem: Local Success ≠ Architectural Resilience
+<span class=sr-only>Link to heading</span></a></h2><p>The full talk, presented at <strong>Build with AI 2026</strong> (original concept: Carlos Prieto · Google Developer Expert · GDG Bogotá), is available as a PDF:</p><object data=/slides/vibecoding-manual.pdf type=application/pdf width=100% height=600px><p>Your browser does not support embedded PDFs. <a href=/slides/vibecoding-manual.pdf>Download the PDF</a>.</p></object><hr><h2 id=the-problem-local-success--architectural-resilience>The Problem: Local Success ≠ Architectural Resilience
 <a class=heading-link href=#the-problem-local-success--architectural-resilience><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>Two real stories from the field:</p><p><strong>The Business Paradox.</strong> An Analytics Lead walks into the room: <em>&ldquo;Don&rsquo;t worry about timelines, guys. We&rsquo;ve already got it ready. We put it together in two hours with an AI assistant, we just need to deploy it.&rdquo;</em> For business, the backend and infrastructure are perceived as a mere copy-and-paste formality.</p><p><strong>The 5-Day Pitch.</strong> Built in 5 days with Claude, looked incredible in the demo. Then a real load test: 10 concurrent users brought it down. The database was being opened and closed on every request. No pagination. No error boundaries. The happy path was perfect. Everything else was not.</p><h3 id=the-uncomfortable-data>The Uncomfortable Data
 <a class=heading-link href=#the-uncomfortable-data><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>

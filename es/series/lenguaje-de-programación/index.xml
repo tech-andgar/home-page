@@ -44,7 +44,7 @@
  &lt;/div&gt;
 
 &lt;hr&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;br&gt;
 &lt;h3 id="powering-your-flutter-apps-with-grpc"&gt;
  Powering your Flutter apps with gRPC
  &lt;a class="heading-link" href="#powering-your-flutter-apps-with-grpc"&gt;

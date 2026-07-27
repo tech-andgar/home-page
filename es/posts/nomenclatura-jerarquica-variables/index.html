@@ -57,7 +57,7 @@ to search this site with&nbsp;
 <a class=heading-link href=#la-soluci%c3%b3n-nomenclatura-jer%c3%a1rquica-modular-y-predictiva><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>Proponemos un estándar de nomenclatura basado en una <strong>jerarquía clara y consistente</strong>, ordenando las partes del nombre <strong>de lo general a lo específico</strong>, de izquierda a derecha. Este enfoque no solo agrupa lógicamente las variables relacionadas, sino que mejora drásticamente la predictibilidad, la mantenibilidad y aprovecha al máximo las capacidades de autocompletado de los IDEs modernos.</p><p><strong>El Patrón Central Recomendado:</strong></p><p>La estructura general que recomendamos sigue este orden:</p><p><code>[Categoría/Contexto] -> Elemento/Componente -> Propiedad/Atributo -> [Variante/Estado]</code></p><p>Donde:</p><ul><li><strong>[Categoría/Contexto] (Opcional pero recomendado en sistemas grandes):</strong> Un agrupador de alto nivel que define un área funcional, tema o sub-sistema (ej: <code>ui-kit</code>, <code>theme</code>, <code>feature-auth</code>, <code>semantic-color</code>). A menudo puede estar implícito por la ubicación del archivo/módulo, pero explicitarlo en el nombre aumenta la claridad global.</li><li><strong>Elemento/Componente:</strong> El sujeto principal al que se aplica la variable. Puede ser un componente UI específico (<code>button</code>, <code>card</code>, <code>input</code>), un concepto abstracto (<code>color</code>, <code>spacing</code>, <code>font</code>, <code>border</code>, <code>icon</code>), o incluso una entidad más amplia (<code>userProfile</code>, <code>searchResults</code>).</li><li><strong>Propiedad/Atributo:</strong> La característica específica que se está definiendo para el Elemento (ej: <code>color</code>, <code>size</code>, <code>font-family</code>, <code>background-color</code>, <code>margin</code>, <code>z-index</code>, <code>opacity</code>, <code>padding</code>, <code>weight</code>).</li><li><strong>[Variante/Estado] (Opcional):</strong> Modificadores que especifican una variación, estado o excepción a la norma. Esto incluye estados interactivos (<code>hover</code>, <code>focus</code>, <code>disabled</code>, <code>active</code>), variantes semánticas o de propósito (<code>primary</code>, <code>secondary</code>, <code>error</code>, <code>success</code>, <code>info</code>), tamaños (<code>large</code>, <code>small</code>, <code>compact</code>), estilos visuales (<code>light</code>, <code>dark</code>, <code>subtle</code>) u otras distinciones necesarias. Se pueden encadenar si es lógico y necesario (ej: <code>disabled-light</code>).</li></ul><p><strong>Nota sobre Casos &ldquo;Default&rdquo; o &ldquo;Base&rdquo;:</strong></p><p>Para el valor más común o por defecto de una propiedad, se recomienda usar el nombre más corto y directo posible (ej: <code>textColor</code>, <code>buttonBackgroundColor</code>) si no genera ambigüedad en el contexto. Los sufijos como <code>-default</code>, <code>-base</code>, o <code>-medium</code> pueden usarse cuando sea necesario diferenciar explícitamente la variante principal de otras (ej: <code>fontSizeMedium</code> vs <code>fontSizeLarge</code>, <code>colorBrandBase</code> vs <code>colorBrandDark</code>). La consistencia dentro de un grupo de variables relacionadas es clave.</p><p><strong>Nota sobre Convenciones de Casos:</strong></p><p>Esta estructura jerárquica es el concepto fundamental. Debe adaptarse a las convenciones de mayúsculas/minúsculas estándar del lenguaje o plataforma específica:</p><ul><li><strong>CSS/SCSS/Less:</strong> <code>kebab-case</code> (ej: <code>--button-background-color-primary-hover</code>)</li><li><strong>JavaScript/TypeScript:</strong> <code>camelCase</code> (ej: <code>buttonBackgroundColorPrimaryHover</code>) o <code>PascalCase</code> para constantes/enums si la guía de estilo lo indica.</li><li><strong>Dart/Flutter:</strong> <code>camelCase</code> (ej: <code>buttonBackgroundColorPrimaryHover</code>)</li><li><strong>JSON/YAML (Tokens):</strong> <code>kebab-case</code> o <code>camelCase</code> son comunes.</li><li><strong>Swift:</strong> <code>camelCase</code> (ej: <code>buttonBackgroundColorPrimaryHover</code>)</li></ul><h2 id=ejemplo-1-paleta-de-colores-básica>Ejemplo 1: Paleta de Colores Básica
 <a class=heading-link href=#ejemplo-1-paleta-de-colores-b%c3%a1sica><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Incluso para definir tonos de un color, la estructura aporta claridad. Aquí, el &ldquo;Elemento&rdquo; es el concepto del color (<code>blue</code>, <code>grey</code>).</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Muestra orden inconsistente, mezcla de conceptos (matiz vs. sombra), ambigüedad y dificultad para escalar.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<span class=sr-only>Link to heading</span></a></h2><p>Incluso para definir tonos de un color, la estructura aporta claridad. Aquí, el &ldquo;Elemento&rdquo; es el concepto del color (<code>blue</code>, <code>grey</code>).</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Muestra orden inconsistente, mezcla de conceptos (matiz vs. sombra), ambigüedad y dificultad para escalar.</p><table><caption>Tabla 1: Enfoques Menos Estructurados para Colores (Malas Prácticas)</caption><tr><td align=center>Dart / TypeScript</td><td align=center>CSS</td></tr><tr><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -83,7 +83,7 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>grayDark</span> <span class=o>=</span> <span class=s1>&#39;#888&#39;</span><span class=p>;</span>       <span class=c1>// &#39;grey&#39; vs &#39;gray&#39;
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>lighterGreyValue</span> <span class=o>=</span> <span class=s1>&#39;#eee&#39;</span><span class=p>;</span><span class=c1>// Incluye &#39;Value&#39; innecesariamente
 </span></span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -113,7 +113,7 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=nv>--red</span><span class=p>:</span> <span class=kc>red</span><span class=p>;</span>
 </span></span><span class=line><span class=cl>  <span class=nv>--darkRed</span><span class=p>:</span> <span class=kc>darkred</span><span class=p>;</span>         <span class=c>/* ¿Y si necesito uno intermedio? */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p><strong>Enfoque Jerárquico Recomendado (<code>Elemento -> [Variante]</code>):</strong> Claro, consistente y escalable.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td></tr></table><p><strong>Enfoque Jerárquico Recomendado (<code>Elemento -> [Variante]</code>):</strong> Claro, consistente y escalable.</p><table><caption>Tabla 2: Enfoque Jerárquico Recomendado para Colores</caption><tr><td align=center>Dart / TypeScript</td><td align=center>CSS</td></tr><tr><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -153,7 +153,7 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyLight</span>   <span class=o>=</span> <span class=s1>&#39;#dddddd&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey300
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>colorGreyLighter</span> <span class=o>=</span> <span class=s1>&#39;#eeeeee&#39;</span><span class=p>;</span> <span class=c1>// O colorGrey100
 </span></span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -191,9 +191,9 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=nv>--color-grey-light</span><span class=p>:</span>   <span class=mh>#dddddd</span><span class=p>;</span>  <span class=c>/* O --color-grey-300 */</span>
 </span></span><span class=line><span class=cl>  <span class=nv>--color-grey-lighter</span><span class=p>:</span> <span class=mh>#eeeeee</span><span class=p>;</span>  <span class=c>/* O --color-grey-100 */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=ejemplo-2-estilos-de-ui-comunes-design-tokens>Ejemplo 2: Estilos de UI Comunes (Design Tokens)
+</span></span></code></pre></td></tr></table></div></div></td></tr></table><h2 id=ejemplo-2-estilos-de-ui-comunes-design-tokens>Ejemplo 2: Estilos de UI Comunes (Design Tokens)
 <a class=heading-link href=#ejemplo-2-estilos-de-ui-comunes-design-tokens><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Aplicando <code>Elemento -> Propiedad -> [Variante]</code> a variables de estilo diversas.</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Muestra orden inconsistente, ambigüedad sobre la propiedad, abreviaturas inconsistentes, nombres genéricos y mezcla de niveles de abstracción.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<span class=sr-only>Link to heading</span></a></h2><p>Aplicando <code>Elemento -> Propiedad -> [Variante]</code> a variables de estilo diversas.</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Muestra orden inconsistente, ambigüedad sobre la propiedad, abreviaturas inconsistentes, nombres genéricos y mezcla de niveles de abstracción.</p><table><caption>Tabla 3: Enfoques Menos Estructurados para Estilos de UI (Malas Prácticas)</caption><tr><td align=center>Dart / TypeScript</td><td align=center>CSS</td></tr><tr><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -231,7 +231,7 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl>  <span class=kt>double</span> <span class=n>mainFontSize</span> <span class=o>=</span> <span class=m>16.0</span><span class=p>;</span>    <span class=c1>// Incluye tipo en nombre (menos común en Dart)
 </span></span></span><span class=line><span class=cl>  <span class=kd>var</span> <span class=n>buttonPadding</span><span class=p>;</span>             <span class=c1>// Mezcla tokens con estilos de componente
 </span></span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -267,7 +267,7 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=nv>--margin-small</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>            <span class=c>/* ¿Comparado con qué? */</span>
 </span></span><span class=line><span class=cl>  <span class=nv>--border-width</span><span class=p>:</span> <span class=mi>1</span><span class=kt>px</span><span class=p>;</span>            <span class=c>/* Demasiado genérico para un sistema */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p><strong>Enfoque Jerárquico Recomendado (<code>Elemento -> Propiedad -> [Variante]</code>):</strong> Claro, predecible, agrupa lógicamente y potencia el autocompletado.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td></tr></table><p><strong>Enfoque Jerárquico Recomendado (<code>Elemento -> Propiedad -> [Variante]</code>):</strong> Claro, predecible, agrupa lógicamente y potencia el autocompletado.</p><table><caption>Tabla 4: Enfoque Jerárquico Recomendado para Estilos de UI (Design Tokens)</caption><tr><td align=center>Dart / TypeScript</td><td align=center>CSS</td></tr><tr><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -375,7 +375,7 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>spacingLarge</span> <span class=o>=</span> <span class=m>16.0</span><span class=p>;</span> <span class=c1>// sp-3 o spaceMd
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=kt>double</span> <span class=n>spacingXLarge</span> <span class=o>=</span> <span class=m>32.0</span><span class=p>;</span> <span class=c1>// sp-4 o spaceLg
 </span></span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -477,9 +477,9 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=nv>--spacing-large</span><span class=p>:</span> <span class=mi>16</span><span class=kt>px</span><span class=p>;</span> <span class=c>/* sp-3 o space-md */</span>
 </span></span><span class=line><span class=cl>  <span class=nv>--spacing-xlarge</span><span class=p>:</span> <span class=mi>32</span><span class=kt>px</span><span class=p>;</span> <span class=c>/* sp-4 o space-lg */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=ejemplo-3-escalando-con-categorías-componentes-específicos-o-temas>Ejemplo 3: Escalando con Categorías (Componentes Específicos o Temas)
+</span></span></code></pre></td></tr></table></div></div></td></tr></table><h2 id=ejemplo-3-escalando-con-categorías-componentes-específicos-o-temas>Ejemplo 3: Escalando con Categorías (Componentes Específicos o Temas)
 <a class=heading-link href=#ejemplo-3-escalando-con-categor%c3%adas-componentes-espec%c3%adficos-o-temas><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>En sistemas complejos con componentes específicos, múltiples temas o variantes semánticas, añadir una <strong>Categoría</strong> al principio proporciona máxima claridad y organización.</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Mezcla estilos globales y específicos sin jerarquía clara, nombres inconsistentes para estados, componente al final o ausente.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+<span class=sr-only>Link to heading</span></a></h2><p>En sistemas complejos con componentes específicos, múltiples temas o variantes semánticas, añadir una <strong>Categoría</strong> al principio proporciona máxima claridad y organización.</p><p><strong>Enfoque Menos Estructurado (No Recomendado):</strong> Mezcla estilos globales y específicos sin jerarquía clara, nombres inconsistentes para estados, componente al final o ausente.</p><table><caption>Tabla 5: Enfoques Menos Estructurados con Categorías/Componentes (Malas Prácticas)</caption><tr><td align=center>Dart / TypeScript</td><td align=center>CSS</td></tr><tr><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -511,7 +511,7 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>iconColorError</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>red</span><span class=p>;</span> <span class=c1>// ¿Qué icono? ¿Dentro del input?
 </span></span></span><span class=line><span class=cl>  <span class=kd>static</span> <span class=kd>const</span> <span class=n>darkThemePrimaryButtonBg</span> <span class=o>=</span> <span class=n>Colors</span><span class=p>.</span><span class=n>lightBlue</span><span class=p>;</span> <span class=c1>// Tema como prefijo simple
 </span></span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -557,7 +557,7 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl><span class=p>.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>primary-button</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>  <span class=k>background-color</span><span class=p>:</span> <span class=kc>lightblue</span><span class=p>;</span> <span class=c>/* Hardcoded */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><p><strong>Enfoque Jerárquico Recomendado (<code>[Categoría] -> Elemento -> Propiedad -> [Variante/Estado]</code>):</strong> Máxima claridad y organización.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></code></pre></td></tr></table></div></div></td></tr></table><p><strong>Enfoque Jerárquico Recomendado (<code>[Categoría] -> Elemento -> Propiedad -> [Variante/Estado]</code>):</strong> Máxima claridad y organización.</p><table><caption>Tabla 6: Nomenclatura Jerárquica Recomendada con Categorías</caption><tr><td align=center>Dart / TypeScript</td><td align=center>CSS</td></tr><tr><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -651,7 +651,7 @@ to search this site with&nbsp;
 </span></span></span><span class=line><span class=cl><span class=c1>//       : AppTheme.buttonPrimaryBackgroundColorDefault;
 </span></span></span><span class=line><span class=cl><span class=c1>//   // ...
 </span></span></span><span class=line><span class=cl><span class=c1>// }
-</span></span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></span></span></code></pre></td></tr></table></div></div></td><td><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -739,7 +739,7 @@ to search this site with&nbsp;
 </span></span><span class=line><span class=cl>  <span class=nv>--input-error-border-color</span><span class=p>:</span> <span class=kc>orange</span><span class=p>;</span> <span class=c>/* Ejemplo: Error en Dark es naranja */</span>
 </span></span><span class=line><span class=cl>  <span class=c>/* ...etc */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><h2 id=beneficios-clave-de-la-nomenclatura-jerárquica>Beneficios Clave de la Nomenclatura Jerárquica
+</span></span></code></pre></td></tr></table></div></div></td></tr></table><h2 id=beneficios-clave-de-la-nomenclatura-jerárquica>Beneficios Clave de la Nomenclatura Jerárquica
 <a class=heading-link href=#beneficios-clave-de-la-nomenclatura-jer%c3%a1rquica><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><ol><li><strong>Legibilidad y Comprensión:</strong> La estructura predecible hace que el código sea auto-explicativo. Es fácil deducir el propósito de una variable sin necesidad de buscar su definición.</li><li><strong>Mantenibilidad y Refactorización:</strong> Encontrar y modificar variables relacionadas es trivial. Cambiar un color base o un tamaño afecta a todas las variables que derivan de él de forma organizada.</li><li><strong>Autocompletado Potenciado (IntelliSense):</strong> Escribir la parte general (<code>button-</code>, <code>text-color-</code>, <code>theme-dark-</code>) permite al IDE filtrar y sugerir rápidamente las opciones específicas disponibles. Esto reduce drásticamente la carga cognitiva y los errores tipográficos.</li><li><strong>Colaboración Consistente:</strong> Un estándar claro y compartido elimina la ambigüedad y asegura que todos los miembros del equipo (incluyendo futuros miembros) nombren las variables de manera uniforme.</li><li><strong>Escalabilidad:</strong> El sistema se adapta bien a medida que el proyecto crece en complejidad, número de componentes o variantes de tema.</li><li><strong>Claridad Conceptual:</strong> Fomenta pensar en la estructura del sistema (componentes, propiedades, estados, variantes) de forma modular y sistemática durante el diseño y la codificación.</li></ol><h2 id=relación-con-principios-de-diseño-srp-y-cohesión>Relación con Principios de Diseño (SRP y Cohesión)
 <a class=heading-link href=#relaci%c3%b3n-con-principios-de-dise%c3%b1o-srp-y-cohesi%c3%b3n><i class="fa-solid fa-link" aria-hidden=true title="Link to heading"></i>
