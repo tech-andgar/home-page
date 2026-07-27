@@ -6,13 +6,9 @@
  &lt;/a&gt;
 &lt;/h1&gt;
 &lt;p&gt;La era del código con IA expuso una brecha que ni TDD ni BDD fueron diseñados para llenar: &lt;strong&gt;¿quién es dueño del &amp;ldquo;por qué&amp;rdquo; cuando la máquina escribe el &amp;ldquo;cómo&amp;rdquo;?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Dos metodologías emergentes responden desde diferentes altitudes. Spec-Driven Development (SDD) trata las especificaciones como contratos ejecutables — el mapa. Intent-Driven Development (IDD) trata la intención como la fuente de verdad durable por encima de las specs — la brújula. No compiten. Son capas complementarias.&lt;/p&gt;</description></item><item><title>De «¡Guau, funciona!» a «¡Guau, todavía funciona!»</title><link>https://tech-andgar.me/es/posts/from-wow-it-works-to-wow-it-still-works/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/from-wow-it-works-to-wow-it-still-works/</guid><description>&lt;h1 id="de-guau-funciona-a-guau-todavía-funciona"&gt;
- De «¡Guau, funciona!» a «¡Guau, todavía funciona!»
- &lt;a class="heading-link" href="#de-guau-funciona-a-guau-todav%c3%ada-funciona"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h1&gt;
+&lt;p&gt;Dos metodologías emergentes responden desde diferentes altitudes. Spec-Driven Development (SDD) trata las especificaciones como contratos ejecutables — el mapa. Intent-Driven Development (IDD) trata la intención como la fuente de verdad durable por encima de las specs — la brújula. No compiten. Son capas complementarias.&lt;/p&gt;</description></item><item><title>De «¡Guau, funciona!» a «¡Guau, todavía funciona!»</title><link>https://tech-andgar.me/es/posts/from-wow-it-works-to-wow-it-still-works/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/from-wow-it-works-to-wow-it-still-works/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Nota:&lt;/strong&gt; Puedes leer la versión en inglés (English) de este artículo &lt;a href="../../../posts/from-wow-it-works-to-wow-it-still-works/" &gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;Poniendo aplicaciones vibecodificadas a nivel de producción en cinco pasos.&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Vibecoding&lt;/strong&gt; — término popularizado por Andrej Karpathy (febr. 2025). Palabra del Año 2025 — Collins Dictionary · Tendencia de Merriam-Webster.&lt;/p&gt;

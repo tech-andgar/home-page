@@ -1,10 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Infrastructure on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/infrastructure/</link><description>Recent content in Infrastructure on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/infrastructure/index.xml" rel="self" type="application/rss+xml"/><item><title>From "Wow It Works!" to "Wow It Still Works"</title><link>https://tech-andgar.me/posts/from-wow-it-works-to-wow-it-still-works/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/from-wow-it-works-to-wow-it-still-works/</guid><description>&lt;h1 id="from-wow-it-works-to-wow-it-still-works"&gt;
- From &amp;ldquo;Wow It Works!&amp;rdquo; to &amp;ldquo;Wow It Still Works&amp;rdquo;
- &lt;a class="heading-link" href="#from-wow-it-works-to-wow-it-still-works"&gt;
- &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
- &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
- &lt;/a&gt;
-&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Infrastructure on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/infrastructure/</link><description>Recent content in Infrastructure on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 23 Jul 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/infrastructure/index.xml" rel="self" type="application/rss+xml"/><item><title>From "Wow It Works!" to "Wow It Still Works"</title><link>https://tech-andgar.me/posts/from-wow-it-works-to-wow-it-still-works/</link><pubDate>Thu, 23 Jul 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/from-wow-it-works-to-wow-it-still-works/</guid><description>&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; You can read the Spanish (Español) version of this article &lt;a href="../../es/posts/from-wow-it-works-to-wow-it-still-works/" &gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;&lt;em&gt;Making vibecoded apps production-worthy in five steps.&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Vibecoding&lt;/strong&gt; — term popularized by Andrej Karpathy (Feb 2025). Word of the Year 2025 — Collins Dictionary · Merriam-Webster trend.&lt;/p&gt;
