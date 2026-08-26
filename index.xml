@@ -1330,6 +1330,18 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;/li&gt;
  
  
+ &lt;li class="splide__slide"&gt;
+ &lt;div class="card_company"&gt;
+ &lt;img
+ id="logo-Inspira Fiancial"
+ class="svg"
+ src="https://tech-andgar.me/images/companies/logo-Inspira-Fiancial.svg"
+ type="image/svg+xml"
+ alt="Logo Inspira Fiancial"
+ /&gt;
+ &lt;/div&gt;
+ &lt;/li&gt;
+ 
  
  
  
