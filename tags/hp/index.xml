@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hp on TECH-ANDGAR</title><link>https://tech-andgar.me/tags/hp/</link><description>Recent content in Hp on TECH-ANDGAR</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 15 Sep 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tech-andgar.me/tags/hp/index.xml" rel="self" type="application/rss+xml"/><item><title>Fix: memory and Mach port leak in HP APMAgent (macOS)</title><link>https://tech-andgar.me/posts/hp-apmagent-memory-leak-fix/</link><pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/hp-apmagent-memory-leak-fix/</guid><description>&lt;h2 id="context"&gt;
+ Context
+ &lt;a class="heading-link" href="#context"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Activity Monitor showed &lt;code&gt;kernel_task&lt;/code&gt; at ~27 GB and &lt;code&gt;APMAgent&lt;/code&gt; at ~10 GB of reported memory, along with 219+ open Mach ports for &lt;code&gt;APMAgent&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="diagnosis"&gt;
+ Diagnosis
+ &lt;a class="heading-link" href="#diagnosis"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;High &lt;code&gt;kernel_task&lt;/code&gt; memory is normal: it&amp;rsquo;s macOS&amp;rsquo;s kernel mechanism for thermal/memory-pressure management, not a real process consuming that RAM. Not actionable.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;APMAgent&lt;/code&gt; (original PID, 10+ days of uptime) actually had only ~120 MB of RSS; the inflated number in Activity Monitor comes from reported virtual/shared memory, not physical usage.&lt;/li&gt;
+&lt;li&gt;The real concerning data point: &lt;strong&gt;219 Mach ports&lt;/strong&gt; accumulated and &lt;strong&gt;10 days 11 hours&lt;/strong&gt; of uptime without a restart — consistent with a slow leak of internal (IPC) resources, not a network leak.&lt;/li&gt;
+&lt;li&gt;The process belongs to &lt;strong&gt;HP Insights&lt;/strong&gt; (formerly HP TechPulse / HPDaaS), an enterprise device management agent:
+&lt;ul&gt;
+&lt;li&gt;Binary: &lt;code&gt;/usr/local/share/APMAgent/APMAgent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;LaunchDaemon: &lt;code&gt;/Library/LaunchDaemons/com.hp.APMAgent.plist&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Bundle ID: &lt;code&gt;com.hp.DaasClient.macOS.APMAgent&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Team ID: &lt;code&gt;6HB5Y2QTA3&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="root-causes-identified-in-the-agents-own-log"&gt;
+ Root causes identified in the agent&amp;rsquo;s own log
+ &lt;a class="heading-link" href="#root-causes-identified-in-the-agents-own-log"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;In &lt;code&gt;/var/log/APMAgent/agent.log&lt;/code&gt; (15 MB accumulated):&lt;/p&gt;</description></item></channel></rss>
