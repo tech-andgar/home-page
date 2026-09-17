@@ -33,7 +33,7 @@
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;In &lt;code&gt;/var/log/APMAgent/agent.log&lt;/code&gt; (15 MB accumulated):&lt;/p&gt;</description></item><item><title>Fix: plaintext credentials in ~/.zshrc → macOS Keychain</title><link>https://tech-andgar.me/posts/hp-apmagent-memory-leak-fix/</link><pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/hp-apmagent-memory-leak-fix/</guid><description>&lt;h2 id="context"&gt;
+&lt;p&gt;In &lt;code&gt;/var/log/APMAgent/agent.log&lt;/code&gt; (15 MB accumulated):&lt;/p&gt;</description></item><item><title>Fix: plaintext credentials in ~/.zshrc → macOS Keychain</title><link>https://tech-andgar.me/posts/zshrc-secrets-keychain-fix/</link><pubDate>Tue, 15 Sep 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/zshrc-secrets-keychain-fix/</guid><description>&lt;h2 id="context"&gt;
  Context
  &lt;a class="heading-link" href="#context"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
