@@ -53,7 +53,7 @@
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;El culpable suele ser el &lt;strong&gt;Microsoft Enterprise SSO plug-in&lt;/strong&gt; (o Platform SSO). Cuando macOS está vinculado a &lt;strong&gt;Entra ID (Azure AD)&lt;/strong&gt;, el sistema intenta sincronizar la contraseña local con la de la nube de forma agresiva.&lt;/p&gt;</description></item><item><title>Modernizando Arquitecturas Monorepo: Principios y Compromisos</title><link>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</guid><description>Una inmersión profunda en los cambios arquitectónicos para monorepos robustos y con seguridad de tipos: Paquetes Compartidos, Validación Zod, Clean Architecture y automatización de la Experiencia de Desarrollo (DevEx).</description></item><item><title>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)</title><link>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="resumen"&gt;
+&lt;p&gt;El culpable suele ser el &lt;strong&gt;Microsoft Enterprise SSO plug-in&lt;/strong&gt; (o Platform SSO). Cuando macOS está vinculado a &lt;strong&gt;Entra ID (Azure AD)&lt;/strong&gt;, el sistema intenta sincronizar la contraseña local con la de la nube de forma agresiva.&lt;/p&gt;</description></item><item><title>Modernizando Arquitecturas Monorepo: Principios y Compromisos</title><link>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/modernizing-monorepo-architecture/</guid><description>Una inmersión profunda en los cambios arquitectónicos para monorepos robustos y con seguridad de tipos: Paquetes Compartidos, Validación Zod, Clean Architecture y automatización de la Experiencia de Desarrollo (DevEx).</description></item><item><title>Links</title><link>https://tech-andgar.me/es/links/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/links/</guid><description/></item><item><title>Guía de Vistas Previas de Widgets en Flutter 'Flutter Widget Previews' (Beta)</title><link>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/es/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="resumen"&gt;
  Resumen
  &lt;a class="heading-link" href="#resumen"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
@@ -1562,11 +1562,11 @@ Dart no siempre puede asumir que una variable será inicializada más adelante, 
  &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
- id="logo-Inspira Fiancial"
+ id="logo-Inspira Financial"
  class="svg"
- src="https://tech-andgar.me/images/companies/logo-Inspira-Fiancial.svg"
+ src="https://tech-andgar.me/images/companies/logo-Inspira-Financial.svg"
  type="image/svg+xml"
- alt="Logo Inspira Fiancial"
+ alt="Logo Inspira Financial"
  /&gt;
  &lt;/div&gt;
  &lt;/li&gt;

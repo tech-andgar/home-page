@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Andrés García
+N:García;Andrés;;;
+TITLE:Senior Product Engineer
+ORG:tech-andgar.me
+EMAIL;TYPE=INTERNET:hello@tech-andgar.me
+URL;TYPE=Portfolio:https://tech-andgar.me
+URL;TYPE=GitHub:https://github.com/tech-andgar
+URL;TYPE=LinkedIn:https://link.tech-andgar.me/linkedin
+URL;TYPE=X:https://link.tech-andgar.me/twitter
+URL;TYPE=YouTube:https://link.tech-andgar.me/youtube
+NOTE:Deaf Senior Product Engineer · FullStack\, Mobile & Accessibility
+END:VCARD

@@ -103,7 +103,7 @@ While they both speak &amp;ldquo;binary,&amp;rdquo; they solve two entirely diff
  &lt;span class="sr-only"&gt;Link to heading&lt;/span&gt;
  &lt;/a&gt;
 &lt;/h3&gt;
-&lt;p&gt;&lt;a href="https://protobuf.dev/overview/" class="external-link" target="_blank" rel="noopener"&gt;Protocol Buffers (Protobuf)&lt;/a&gt; are Google’s answer to slow, bloated text-based APIs. By stripping away field names and using a strict, pre-shared &lt;a href="https://blog.postman.com/what-is-protobuf/" class="external-link" target="_blank" rel="noopener"&gt;schema (.proto)&lt;/a&gt;, Protobuf creates tiny payloads that fly across the network. [1, 4, 5]&lt;/p&gt;</description></item><item><title>Modernizing Monorepo Architectures: Principles &amp; Trade-offs</title><link>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</guid><description>A deep dive into architectural shifts for robust, type-safe monorepos: Shared Packages, Zod Validation, Clean Architecture, and DevEx automation.</description></item><item><title>A Comprehensive Guide to Flutter Widget Previews (Beta)</title><link>https://tech-andgar.me/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="overview"&gt;
+&lt;p&gt;&lt;a href="https://protobuf.dev/overview/" class="external-link" target="_blank" rel="noopener"&gt;Protocol Buffers (Protobuf)&lt;/a&gt; are Google’s answer to slow, bloated text-based APIs. By stripping away field names and using a strict, pre-shared &lt;a href="https://blog.postman.com/what-is-protobuf/" class="external-link" target="_blank" rel="noopener"&gt;schema (.proto)&lt;/a&gt;, Protobuf creates tiny payloads that fly across the network. [1, 4, 5]&lt;/p&gt;</description></item><item><title>Modernizing Monorepo Architectures: Principles &amp; Trade-offs</title><link>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</link><pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/modernizing-monorepo-architecture/</guid><description>A deep dive into architectural shifts for robust, type-safe monorepos: Shared Packages, Zod Validation, Clean Architecture, and DevEx automation.</description></item><item><title>Links</title><link>https://tech-andgar.me/links/</link><pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/links/</guid><description/></item><item><title>A Comprehensive Guide to Flutter Widget Previews (Beta)</title><link>https://tech-andgar.me/posts/flutter-widget-previews-guide/</link><pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate><guid>https://tech-andgar.me/posts/flutter-widget-previews-guide/</guid><description>&lt;h2 id="overview"&gt;
  Overview
  &lt;a class="heading-link" href="#overview"&gt;
  &lt;i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"&gt;&lt;/i&gt;
@@ -1388,11 +1388,11 @@ Dart cannot always assume that a variable will be initialized later, as in the c
  &lt;li class="splide__slide"&gt;
  &lt;div class="card_company"&gt;
  &lt;img
- id="logo-Inspira Fiancial"
+ id="logo-Inspira Financial"
  class="svg"
- src="https://tech-andgar.me/images/companies/logo-Inspira-Fiancial.svg"
+ src="https://tech-andgar.me/images/companies/logo-Inspira-Financial.svg"
  type="image/svg+xml"
- alt="Logo Inspira Fiancial"
+ alt="Logo Inspira Financial"
  /&gt;
  &lt;/div&gt;
  &lt;/li&gt;
