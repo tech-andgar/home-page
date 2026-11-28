@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1376" height="768" viewBox="0 0 1376 768" role="img" aria-labelledby="title description">
+<title id="title">Autorización: Ana puede ver su factura, Bruno no</title>
+<desc id="description">La API permite a Ana consultar la factura de su pedido y deniega a Bruno el acceso a esos datos.</desc>
+<style>g:target ~ g { display: none; }</style>
+<rect width="1376" height="768" fill="#FFE7A5"/>
+<g stroke="#1E1E1E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<g id="inicio"/>
+<g id="ana">
+<rect x="92" y="106" width="216" height="226" rx="28" fill="#fff" />
+<circle cx="200" cy="186" r="32" fill="#34A853"/>
+<path d="M144 282v-12a40 40 0 0 1 40-40h32a40 40 0 0 1 40 40v12z" fill="#34A853"/>
+<path d="M326 220H498" stroke="#34A853" stroke-width="8"/>
+<path d="M476 198l22 22-22 22" fill="none" stroke="#34A853" stroke-width="8"/>
+<rect x="532" y="137" width="312" height="166" rx="24" fill="#fff" />
+<text x="688" y="235" text-anchor="middle" font-family="'Google Sans','Google Sans Text',Roboto,Arial,sans-serif" font-size="44" font-weight="700" fill="#1E1E1E" stroke="none">API server</text>
+<path d="M876 220H1050" stroke="#1E1E1E" stroke-width="6"/>
+<path d="M1028 198l22 22-22 22" fill="none" stroke="#1E1E1E" stroke-width="6"/>
+<rect x="1067" y="106" width="218" height="226" rx="28" fill="#CCF6C5" />
+<path d="M1128 154h62l36 36v96a10 10 0 0 1-10 10h-88a10 10 0 0 1-10-10v-122a10 10 0 0 1 10-10z" fill="#fff"/>
+<path d="M1190 154v36h36" fill="none"/>
+<text x="1177" y="215" text-anchor="middle" fill="#1E1E1E" stroke="none" font-family="'Google Sans','Google Sans Text',Roboto,Arial,sans-serif" font-size="13" font-weight="700">FACTURA</text>
+<path d="M1147.8 239.1l15.4 15.4 33.0-33.0" fill="none" stroke="#34A853" stroke-width="11"/>
+</g>
+<g id="bruno">
+<rect x="92" y="434" width="216" height="226" rx="28" fill="#fff" />
+<circle cx="200" cy="514" r="32" fill="#BDC1C6"/>
+<path d="M144 610v-12a40 40 0 0 1 40-40h32a40 40 0 0 1 40 40v12z" fill="#BDC1C6"/>
+<path d="M326 548H498" stroke="#1E1E1E" stroke-width="6"/>
+<path d="M476 526l22 22-22 22" fill="none" stroke="#1E1E1E" stroke-width="6"/>
+<rect x="532" y="465" width="312" height="166" rx="24" fill="#fff" />
+<text x="688" y="563" text-anchor="middle" font-family="'Google Sans','Google Sans Text',Roboto,Arial,sans-serif" font-size="44" font-weight="700" fill="#1E1E1E" stroke="none">API server</text>
+<path d="M876 548H1050" stroke="#EA4335" stroke-width="8"/>
+<path d="M1028 526l22 22-22 22" fill="none" stroke="#EA4335" stroke-width="8"/>
+<rect x="1067" y="434" width="218" height="226" rx="28" fill="#F8D8D8" />
+<path d="M1176 478l62 22v40c0 44-28 72-62 86-34-14-62-42-62-86v-40z" fill="#EA4335"/>
+<path d="M1160.8 546.3v-11.4a15.2 15.2 0 0 1 30.4 0v11.4" fill="none" stroke-width="6"/>
+<rect x="1151.3" y="546.3" width="49.4" height="39.9" rx="7.6" fill="#fff" />
+<circle cx="1176" cy="563.4" r="4.8" fill="#1E1E1E" stroke="none"/>
+<path d="M1176 565.3v9.5" stroke-width="4.8"/>
+</g>
+</g>
+</svg>
